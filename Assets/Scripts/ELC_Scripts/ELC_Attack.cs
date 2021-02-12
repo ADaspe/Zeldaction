@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ELC_Attack : MonoBehaviour
 {
-    
-    void Update()
+    [SerializeField]
+    ELC_CharacterManager CharManager;
+
+    public void Attack()
     {
-        
+        if (CharManager.Together) AttackTogether();
     }
 
     private void MiaShield()
@@ -22,6 +24,6 @@ public class ELC_Attack : MonoBehaviour
 
     private void AttackTogether()
     {
-
+        Debug.Log("Attack Together");
     }
 }
