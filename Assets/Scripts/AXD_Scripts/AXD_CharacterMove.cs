@@ -7,8 +7,11 @@ public class AXD_CharacterMove : MonoBehaviour
 {
     public Rigidbody2D rb;
     public PlayerInput inputs;
-    private Vector2 rawInputMovement;
+    public ELC_CharacterManager charaManager;
+    public Vector2 rawInputMovement;
     public bool canMove;
+    public float speed;
+    public bool currentCharacter;
 
     private void Start()
     {
@@ -17,7 +20,7 @@ public class AXD_CharacterMove : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
+        if (canMove && currentCharacter)
         {
             rb.velocity = rawInputMovement;
         }
@@ -25,7 +28,7 @@ public class AXD_CharacterMove : MonoBehaviour
 
     public void Move(InputAction.CallbackContext value)
     {
-        Vector2 inputMovement = value.ReadValue<Vector2>();
+        Vector2 inputMovement = value.ReadValue<Vector2>()*speed;
         rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
     }
 }
