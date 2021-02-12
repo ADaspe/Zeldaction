@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ELC_SpiritIdle : MonoBehaviour
 {
+    [SerializeField]
     ELC_CharacterManager CharaManager;
-    void Start()
-    {
-        
-    }
+    private bool PlayerIsImmobile;
+    private float LastPlayerMove;
+    
 
     
     void Update()
     {
-        
+        //if()
     }
 
 
