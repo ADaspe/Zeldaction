@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7269403737041762972}
   - component: {fileID: 8259352534369264057}
   - component: {fileID: 7968706625101576435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerTmp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   inputs: {fileID: 0}
-  canMove: 0
+  charaManager: {fileID: 0}
+  rawInputMovement: {x: 0, y: 0}
+  canMove: 1
+  speed: 6
+  currentCharacter: 0
 --- !u!114 &7968706625101576435
 MonoBehaviour:
   m_ObjectHideFlags: 0
