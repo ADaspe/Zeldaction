@@ -22,9 +22,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Spirit",
+                    "name": "ChangeCam",
                     "type": "Button",
-                    "id": "cc07336e-d382-4352-b324-1e92078d9844",
+                    "id": "24f2b682-adf6-4d59-bd5c-01b1dcf64ec0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -96,6 +96,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3223189b-1c32-4f77-8a28-c3d8c651c410",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ChangeCam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
