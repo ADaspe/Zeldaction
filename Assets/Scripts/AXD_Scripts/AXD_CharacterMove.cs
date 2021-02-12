@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Sirenix.OdinInspector;
 
-public class AXD_Mia : MonoBehaviour
+public class AXD_CharacterMove : MonoBehaviour
 {
     public Rigidbody2D rb;
     public PlayerInput inputs;
     private Vector2 rawInputMovement;
+    public bool canMove;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void SpiritRelease()
+
+    private void Update()
     {
-        //To define
-        Debug.Log("Yet to define");
+        if (canMove)
+        {
+            rb.velocity = rawInputMovement;
+        }
     }
 
     public void Move(InputAction.CallbackContext value)
@@ -25,13 +28,4 @@ public class AXD_Mia : MonoBehaviour
         Vector2 inputMovement = value.ReadValue<Vector2>();
         rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
     }
-
-    public void Attack(InputAction.CallbackContext value)
-    {
-        if (value.started)
-        {
-            Debug.Log("Attack");
-        }
-    }
-
 }
