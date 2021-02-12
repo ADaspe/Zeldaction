@@ -2,25 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.InputSystem;
 
 public class ELC_CharacterManager : MonoBehaviour
 {
     public bool Together;
+    public PlayerInput inputs;
     public CinemachineVirtualCamera vCam;
     public AXD_CharacterMove followingCharacter;
-    public AXD_CharacterMove mia;
-    public AXD_CharacterMove spirit;
+    public AXD_CharacterMove miaMove;
+    public AXD_CharacterMove spiritMove;
 
-    public void ChangeCamFocus()
+    private void Start()
     {
-        if(followingCharacter == mia)
+        vCam.Follow = miaMove.transform;
+        followingCharacter = miaMove;
+        miaMove.currentCharacter = true;
+    }
+    public void ChangeCamFocus(InputAction.CallbackContext value)
+    {
+
+        if(followingCharacter == miaMove)
         {
-            followingCharacter = spirit;
-            vCam.Follow = spirit.transform;
-        }else if (followingCharacter == spirit)
+            followingCharacter = spiritMove;
+            miaMove.currentCharacter = false;
+            spiritMove.currentCharacter = true;
+            vCam.Follow = spiritMove.transform;
+        }else if (followingCharacter == spiritMove)
         {
-            followingCharacter = mia;
-            vCam.Follow = mia.transform;
+            followingCharacter = miaMove;
+            miaMove.currentCharacter = true;
+            spiritMove.currentCharacter = false;
+            vCam.Follow = miaMove.transform;
         }
     }
 
