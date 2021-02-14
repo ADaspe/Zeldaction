@@ -8,14 +8,15 @@ public class ELC_SpiritIdle : MonoBehaviour
     ELC_CharacterManager CharaManager;
     private bool PlayerIsImmobile;
     private float LastPlayerMove;
+    public float TimeToWaitForIdleState;
     
 
     
     void Update()
     {
-        //if()
+        if (CharaManager.miaMove.rawInputMovement.magnitude > 0.01f) LastPlayerMove = Time.deltaTime;
+
+        if (Time.deltaTime - LastPlayerMove > TimeToWaitForIdleState) PlayerIsImmobile = true;
+        else PlayerIsImmobile = false;
     }
-
-
-
 }
