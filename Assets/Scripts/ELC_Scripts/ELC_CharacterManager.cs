@@ -28,11 +28,13 @@ public class ELC_CharacterManager : MonoBehaviour
             miaMove.currentCharacter = false;
             spiritMove.currentCharacter = true;
             vCam.Follow = spiritMove.transform;
+            miaMove.rb.velocity = Vector2.zero;
         }else if (spiritMove != null && followingCharacter == spiritMove)
         {
             followingCharacter = miaMove;
             miaMove.currentCharacter = true;
             spiritMove.currentCharacter = false;
+            spiritMove.rb.velocity = Vector2.zero;
             vCam.Follow = miaMove.transform;
         }
     }

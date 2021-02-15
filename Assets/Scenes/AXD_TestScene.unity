@@ -1119,8 +1119,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
         type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 24f2b682-adf6-4d59-bd5c-01b1dcf64ec0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 336a92a2-ad60-4db9-bfe3-ccd1a7ff32fd
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 154c246f-85f4-4f91-938e-e2af84386a8c
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 8c731e11-7a0c-49d5-b23c-cc4989e3f735
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: PlayerControls/ChangeCam[/Keyboard/tab]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: PlayerControls/Action[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: PlayerControls/Spirit[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: PlayerControls/Pause[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
         type: 3}
@@ -1129,7 +1184,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
         type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 418177126}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
