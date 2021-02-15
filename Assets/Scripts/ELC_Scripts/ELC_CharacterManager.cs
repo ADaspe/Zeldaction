@@ -22,13 +22,13 @@ public class ELC_CharacterManager : MonoBehaviour
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
 
-        if(followingCharacter == miaMove)
+        if(miaMove != null && followingCharacter == miaMove)
         {
             followingCharacter = spiritMove;
             miaMove.currentCharacter = false;
             spiritMove.currentCharacter = true;
             vCam.Follow = spiritMove.transform;
-        }else if (followingCharacter == spiritMove)
+        }else if (spiritMove != null && followingCharacter == spiritMove)
         {
             followingCharacter = miaMove;
             miaMove.currentCharacter = true;
@@ -36,6 +36,4 @@ public class ELC_CharacterManager : MonoBehaviour
             vCam.Follow = miaMove.transform;
         }
     }
-
-
 }
