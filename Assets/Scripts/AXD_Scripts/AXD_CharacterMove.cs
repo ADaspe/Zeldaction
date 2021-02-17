@@ -9,6 +9,7 @@ public class AXD_CharacterMove : MonoBehaviour
     public PlayerInput inputs;
     public ELC_CharacterManager charaManager;
     public Vector2 rawInputMovement;
+    public Vector2 LastDirection;
     public bool canMove;
     public float speed;
     public bool currentCharacter;
@@ -23,6 +24,7 @@ public class AXD_CharacterMove : MonoBehaviour
         if (canMove && currentCharacter)
         {
             rb.velocity = rawInputMovement;
+            if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement; // Sauvegarder la dernière direction dans laquelle le joueur est tourné;
         }
     }
 
