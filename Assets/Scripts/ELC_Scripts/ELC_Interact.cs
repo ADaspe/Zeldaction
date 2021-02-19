@@ -22,7 +22,7 @@ public class ELC_Interact : MonoBehaviour
         if (playerHit.collider != null)
         {
             AXD_CharacterMove playerMovesScript = playerHit.collider.gameObject.GetComponent<AXD_CharacterMove>();
-            RaycastHit2D PlayerFaceDetection = Physics2D.Raycast(playerHit.transform.position, playerMovesScript.LastDirection.normalized, raycastLength, LayerMask.GetMask(this.gameObject.layer.ToString()));
+            RaycastHit2D PlayerFaceDetection = Physics2D.Raycast(playerHit.transform.position, playerMovesScript.LastDirection.normalized, raycastLength, LayerMask.GetMask(LayerMask.LayerToName(gameObject.layer)));
             
             Debug.DrawRay(playerHit.transform.position, playerMovesScript.LastDirection.normalized * raycastLength, Color.green);
 
@@ -33,10 +33,5 @@ public class ELC_Interact : MonoBehaviour
             else PlayerCanInteract = false;
         }
         else PlayerCanInteract = false;
-    }
-
-    public void Use()
-    {
-        Debug.Log("Interaction avec l'objet " + this.name);
     }
 }
