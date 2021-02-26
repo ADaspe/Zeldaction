@@ -13,6 +13,8 @@ TagManager:
   - Water
   - UI
   - Obstacle
+  - Player
+  - Interactible
   - ObstacleMia
   - ObstacleSpirit
   - PlayerMia

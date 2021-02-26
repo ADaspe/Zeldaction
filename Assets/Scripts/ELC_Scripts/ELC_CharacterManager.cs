@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class ELC_CharacterManager : MonoBehaviour
 {
     public bool Together;
+    public GameObject MiaGO;
+    public GameObject SpiritGO;
     public PlayerInput inputs;
     public CinemachineVirtualCamera vCam;
     public AXD_CharacterMove followingCharacter;
@@ -37,5 +39,22 @@ public class ELC_CharacterManager : MonoBehaviour
             spiritMove.rb.velocity = Vector2.zero;
             vCam.Follow = miaMove.transform;
         }
+    }
+
+    public void RegroupTogether()
+    {
+        Together = true;
+        followingCharacter = miaMove;
+        miaMove.currentCharacter = true;
+        vCam.Follow = miaMove.transform;
+        SpiritGO.GetComponent<Collider2D>().enabled = false;
+        SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
+    }
+
+    public void DetachSpirit()
+    {
+        Together = false;
+        SpiritGO.GetComponent<Collider2D>().enabled = true;
+        SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
     }
 }
