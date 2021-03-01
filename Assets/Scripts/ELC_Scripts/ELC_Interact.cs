@@ -5,32 +5,51 @@ using UnityEngine;
 public class ELC_Interact : MonoBehaviour
 {
     [SerializeField]
-    private Transform PlayerDetectorLength;
+    private List<Transform> PlayerDetectors = new List<Transform>();
     [SerializeField]
     private ELC_GameManager GameManagerScript;
     public bool PlayerCanInteract;
+    [SerializeField]
+    private int touchedSideIndex;
+    private bool playerIsTouchingSide;
 
-    
+    private void Start()
+    {
+        touchedSideIndex = -1;
+    }
     void Update()
     {
-        Vector3 dir = PlayerDetectorLength.position - this.transform.position;
-        float raycastLength = Vector2.Distance(this.transform.position, PlayerDetectorLength.position);
-
-        RaycastHit2D playerHit = Physics2D.Raycast(this.transform.position, dir, raycastLength, GameManagerScript.PlayerMask);
-        Debug.DrawRay(this.transform.position, dir.normalized * raycastLength, Color.red);
-
-        if (playerHit.collider != null)
+        for (int i = 0; i < PlayerDetectors.Count; i++)
         {
-            AXD_CharacterMove playerMovesScript = playerHit.collider.gameObject.GetComponent<AXD_CharacterMove>();
-            RaycastHit2D PlayerFaceDetection = Physics2D.Raycast(playerHit.transform.position, playerMovesScript.LastDirection.normalized, raycastLength, LayerMask.GetMask(LayerMask.LayerToName(gameObject.layer)));
-            
-            Debug.DrawRay(playerHit.transform.position, playerMovesScript.LastDirection.normalized * raycastLength, Color.green);
+            Vector3 dir = PlayerDetectors[i].position - this.transform.position;
+            float raycastLength = Vector2.Distance(this.transform.position, PlayerDetectors[i].position);
 
-            if(PlayerFaceDetection.collider != null)
+            RaycastHit2D playerHit = Physics2D.Raycast(this.transform.position, dir, raycastLength, GameManagerScript.PlayerMask);
+            Debug.DrawRay(this.transform.position, dir.normalized * raycastLength, Color.red);
+
+            if (playerHit.collider != null)
             {
-                PlayerCanInteract = true;
+                touchedSideIndex = i;
+                playerIsTouchingSide = true;
+                PlayerIsOnSide(playerHit.transform.gameObject, raycastLength);
             }
-            else PlayerCanInteract = false;
+            else if(i == touchedSideIndex) //Si ça touche pas et que le dernier coté à être touché est celui-là, alors ça veut dire que le joueur ne touche aucun coté
+            {
+                PlayerCanInteract = false;
+            }
+        }
+    }
+
+    void PlayerIsOnSide(GameObject player, float rayLength)
+    {
+        AXD_CharacterMove playerMovesScript = player.GetComponent<AXD_CharacterMove>();
+        RaycastHit2D PlayerFaceDetection = Physics2D.Raycast(player.transform.position, playerMovesScript.LastDirection.normalized, rayLength, LayerMask.GetMask(LayerMask.LayerToName(gameObject.layer)));
+
+        Debug.DrawRay(player.transform.position, playerMovesScript.LastDirection.normalized * rayLength, Color.green);
+
+        if (PlayerFaceDetection.collider != null)
+        {
+            PlayerCanInteract = true;
         }
         else PlayerCanInteract = false;
     }
