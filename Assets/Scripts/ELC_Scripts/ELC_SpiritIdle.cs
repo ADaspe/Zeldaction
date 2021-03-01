@@ -28,7 +28,7 @@ public class ELC_SpiritIdle : MonoBehaviour
         if(!PlayerIsImmobile) MiaAngle = Mathf.Atan2(CharaManager.miaMove.LastDirection.y, CharaManager.miaMove.LastDirection.x) * Mathf.Rad2Deg;
 
         targetPos = new Vector2( -(DistanceToStayWhenTogether * Mathf.Cos(MiaAngle)) + CharaManager.MiaGO.transform.position.x, -(DistanceToStayWhenTogether * Mathf.Sin(MiaAngle)) + CharaManager.MiaGO.transform.position.y); //Calculer une position en fonction de la longueur qu'on lui donne et d'un angle
-        Debug.DrawRay(CharaManager.MiaGO.transform.position, new Vector3(CharaManager.MiaGO.transform.position.x - targetPos.x, CharaManager.MiaGO.transform.position.y - targetPos.y).normalized, Color.red);
+        Debug.DrawRay(CharaManager.MiaGO.transform.position, new Vector3(targetPos.x - CharaManager.MiaGO.transform.position.x, targetPos.y - CharaManager.MiaGO.transform.position.y ).normalized, Color.red);
 
         if (CharaManager.Together)
         {
