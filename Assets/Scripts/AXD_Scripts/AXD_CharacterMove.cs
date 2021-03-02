@@ -13,10 +13,12 @@ public class AXD_CharacterMove : MonoBehaviour
     public bool canMove;
     public float speed;
     public bool currentCharacter;
+    public bool camSwapOn;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        camSwapOn = false;
     }
 
     private void Update()
@@ -24,7 +26,7 @@ public class AXD_CharacterMove : MonoBehaviour
         if (canMove && currentCharacter)
         {
             rb.velocity = rawInputMovement;
-            if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement.normalized; // Sauvegarder la dernière direction dans laquelle le joueur est tourné;
+            if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement.normalized; // Sauvegarder la derniï¿½re direction dans laquelle le joueur est tournï¿½;
         }
     }
 
