@@ -41,6 +41,13 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
+    public void RegroupOrDetach()
+    {
+        if (!Together) DetachSpirit();
+        else RegroupTogether();
+        
+    }
+
     public void RegroupTogether()
     {
         Together = true;

@@ -6,24 +6,39 @@ public class ELC_Attack : MonoBehaviour
 {
     [SerializeField]
     ELC_CharacterManager CharManager;
+    [SerializeField]
+    ELC_GameManager gameManager;
+    public float enemyDetectionRadius;
 
-    public void Attack()
+    public void PlayerAttack()
     {
         if (CharManager.Together) AttackTogether();
+        else MiaShield();
     }
 
     private void MiaShield()
     {
-
+        Debug.Log("MiaShield");
     }
 
-    private void SpiritDashAttack()
+    public void SpiritDashAttack()
     {
-
+        Debug.Log("Spirit Dash");
     }
 
     private void AttackTogether()
     {
         Debug.Log("Attack Together");
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, enemyDetectionRadius, gameManager.EnemiesMask);
+
+        GameObject nearestEnemy = null;
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if(nearestEnemy == null || Vector2.Distance(this.transform.position, enemies[i].transform.position) < Vector2.Distance(this.transform.position, nearestEnemy.transform.position))
+            {
+                nearestEnemy = enemies[i].gameObject;
+            }
+        }
+        Debug.Log("Mia attaque " + nearestEnemy);
     }
 }
