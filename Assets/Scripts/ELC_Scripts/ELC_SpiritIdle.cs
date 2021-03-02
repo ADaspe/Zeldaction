@@ -11,9 +11,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     public float MaxSpeed;
     public float TimeToWaitForIdleState;
     public float DistanceToStayWhenTogether;
-    [SerializeField]
     private float MiaAngle;
-    [SerializeField]
     private Vector2 targetPos;
     
 

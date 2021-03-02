@@ -105,7 +105,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        if (!Together) DetachSpirit();
+        if (Together) DetachSpirit();
         else RegroupTogether();
     }
 
