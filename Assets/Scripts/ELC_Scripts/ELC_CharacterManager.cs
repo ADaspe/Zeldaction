@@ -9,7 +9,6 @@ public class ELC_CharacterManager : MonoBehaviour
     public bool Together;
     public GameObject MiaGO;
     public GameObject SpiritGO;
-    public PlayerInput inputs;
     public CinemachineVirtualCamera vCam;
     public AXD_CharacterMove followingCharacter;
     public AXD_CharacterMove miaMove;
@@ -20,24 +19,48 @@ public class ELC_CharacterManager : MonoBehaviour
         vCam.Follow = miaMove.transform;
         followingCharacter = miaMove;
         miaMove.currentCharacter = true;
+        miaMove.inputs.enabled = true;
+        spiritMove.inputs.enabled = false;
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
+        if (value.started)
+        {
+            Debug.Log("CamSwap");
+            if (miaMove != null && followingCharacter == miaMove)
+            {
+                Debug.Log("CamSwapSpirit");
+                //Disabling Mia
+                miaMove.currentCharacter = false;
+                miaMove.inputs.enabled = false;
+                miaMove.rb.velocity = Vector2.zero;
 
-        if(miaMove != null && followingCharacter == miaMove)
-        {
-            followingCharacter = spiritMove;
-            miaMove.currentCharacter = false;
-            spiritMove.currentCharacter = true;
-            vCam.Follow = spiritMove.transform;
-            miaMove.rb.velocity = Vector2.zero;
-        }else if (spiritMove != null && followingCharacter == spiritMove)
-        {
-            followingCharacter = miaMove;
-            miaMove.currentCharacter = true;
-            spiritMove.currentCharacter = false;
-            spiritMove.rb.velocity = Vector2.zero;
-            vCam.Follow = miaMove.transform;
+                //Enabling Spirit
+                followingCharacter = spiritMove;
+                spiritMove.currentCharacter = true;
+                vCam.Follow = spiritMove.transform;
+                spiritMove.inputs.enabled = true;
+
+            }
+            else if (spiritMove != null && followingCharacter == spiritMove)
+            {
+                Debug.Log("CamSwapMia");
+                //Disabling Spirit
+                spiritMove.currentCharacter = false;
+                spiritMove.inputs.enabled = false;
+                spiritMove.rb.velocity = Vector2.zero;
+
+                //Enabling Mia
+                vCam.Follow = miaMove.transform;
+                followingCharacter = miaMove;
+                miaMove.currentCharacter = true;
+                miaMove.inputs.enabled = true;
+
+            }
+            else
+            {
+                Debug.Log("Nope");
+            }
         }
     }
 
