@@ -64,4 +64,10 @@ public class ELC_CharacterManager : MonoBehaviour
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
     }
+
+    public void Move(InputAction.CallbackContext value)
+    {
+        Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.speed;
+        followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
+    }
 }

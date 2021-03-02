@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Together: 0
+  MiaGO: {fileID: 0}
+  SpiritGO: {fileID: 0}
   inputs: {fileID: 0}
   vCam: {fileID: 0}
   followingCharacter: {fileID: 0}
@@ -81,7 +83,19 @@ MonoBehaviour:
     m_ActionId: 668eecfb-86ae-41fe-b34f-dc9ee1728b3d
     m_ActionName: PlayerControls/Attack[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 84c9b239-68b2-46dd-b16b-994298cfb8d4
     m_ActionName: PlayerControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
