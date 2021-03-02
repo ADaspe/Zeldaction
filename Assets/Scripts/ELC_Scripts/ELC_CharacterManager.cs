@@ -30,11 +30,13 @@ public class ELC_CharacterManager : MonoBehaviour
             miaMove.currentCharacter = false;
             spiritMove.currentCharacter = true;
             vCam.Follow = spiritMove.transform;
+            miaMove.rb.velocity = Vector2.zero;
         }else if (spiritMove != null && followingCharacter == spiritMove)
         {
             followingCharacter = miaMove;
             miaMove.currentCharacter = true;
             spiritMove.currentCharacter = false;
+            spiritMove.rb.velocity = Vector2.zero;
             vCam.Follow = miaMove.transform;
         }
     }
@@ -61,5 +63,11 @@ public class ELC_CharacterManager : MonoBehaviour
         Together = false;
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
+    }
+
+    public void Move(InputAction.CallbackContext value)
+    {
+        Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.speed;
+        followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
     }
 }

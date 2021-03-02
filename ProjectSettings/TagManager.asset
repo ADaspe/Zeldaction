@@ -15,7 +15,12 @@ TagManager:
   - Obstacle
   - Player
   - Interactible
+  - ObstacleMia
+  - ObstacleSpirit
+  - PlayerMia
+  - PlayerSpirit
   - Enemy
+  - 
   - 
   - 
   - 
