@@ -24,13 +24,9 @@ public class AXD_CharacterMove : MonoBehaviour
         if (canMove && currentCharacter)
         {
             rb.velocity = rawInputMovement;
-            if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement; // Sauvegarder la dernière direction dans laquelle le joueur est tourné;
+            if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement.normalized; // Sauvegarder la dernière direction dans laquelle le joueur est tourné;
         }
     }
 
-    public void Move(InputAction.CallbackContext value)
-    {
-        Vector2 inputMovement = value.ReadValue<Vector2>()*speed;
-        rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
-    }
+    
 }
