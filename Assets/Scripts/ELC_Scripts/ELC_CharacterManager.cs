@@ -19,8 +19,6 @@ public class ELC_CharacterManager : MonoBehaviour
         vCam.Follow = miaMove.transform;
         followingCharacter = miaMove;
         miaMove.currentCharacter = true;
-        miaMove.inputs.enabled = true;
-        spiritMove.inputs.enabled = false;
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
@@ -32,14 +30,12 @@ public class ELC_CharacterManager : MonoBehaviour
                 Debug.Log("CamSwapSpirit");
                 //Disabling Mia
                 miaMove.currentCharacter = false;
-                miaMove.inputs.enabled = false;
                 miaMove.rb.velocity = Vector2.zero;
 
                 //Enabling Spirit
                 followingCharacter = spiritMove;
                 spiritMove.currentCharacter = true;
                 vCam.Follow = spiritMove.transform;
-                spiritMove.inputs.enabled = true;
 
             }
             else if (spiritMove != null && followingCharacter == spiritMove)
@@ -47,14 +43,12 @@ public class ELC_CharacterManager : MonoBehaviour
                 Debug.Log("CamSwapMia");
                 //Disabling Spirit
                 spiritMove.currentCharacter = false;
-                spiritMove.inputs.enabled = false;
                 spiritMove.rb.velocity = Vector2.zero;
 
                 //Enabling Mia
                 vCam.Follow = miaMove.transform;
                 followingCharacter = miaMove;
                 miaMove.currentCharacter = true;
-                miaMove.inputs.enabled = true;
 
             }
             else
@@ -92,5 +86,29 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.speed;
         followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
+    }
+
+    public void Combat(InputAction.CallbackContext value)
+    {
+        //To define
+        Debug.Log("Combat yet to define");
+    }
+
+    public void Action(InputAction.CallbackContext value)
+    {
+        //To define
+        Debug.Log("Action yet to define");
+    }
+
+    public void Spirit(InputAction.CallbackContext value)
+    {
+        //To define
+        Debug.Log("Spirit yet to define");
+    }
+
+    public void Pause(InputAction.CallbackContext value)
+    {
+        //To define
+        Debug.Log("Pause yet to define");
     }
 }
