@@ -13,12 +13,19 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CharacterMove followingCharacter;
     public AXD_CharacterMove miaMove;
     public AXD_CharacterMove spiritMove;
+    public ELC_Interact DetectedInteraction;
+
+    //Variables locales
+    private ELC_Attack MiaAttack;
+    private ELC_Attack SpiritAttack;
 
     private void Start()
     {
         vCam.Follow = miaMove.transform;
         followingCharacter = miaMove;
         miaMove.currentCharacter = true;
+        MiaAttack = MiaGO.GetComponent<ELC_Attack>();
+        SpiritAttack = SpiritGO.GetComponent<ELC_Attack>();
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
@@ -58,13 +65,6 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
-    public void RegroupOrDetach()
-    {
-        if (!Together) DetachSpirit();
-        else RegroupTogether();
-        
-    }
-
     public void RegroupTogether()
     {
         Together = true;
@@ -90,20 +90,23 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Combat(InputAction.CallbackContext value)
     {
-        //To define
-        Debug.Log("Combat yet to define");
+        if (followingCharacter == miaMove)
+        {
+            if (Together) MiaAttack.AttackTogether();
+            else MiaAttack.MiaShield();
+        }
+        else SpiritAttack.SpiritDashAttack();
     }
 
     public void Action(InputAction.CallbackContext value)
     {
-        //To define
-        Debug.Log("Action yet to define");
+        if (DetectedInteraction != null || DetectedInteraction.PlayerCanInteract) DetectedInteraction.Interact.Invoke();
     }
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        //To define
-        Debug.Log("Spirit yet to define");
+        if (!Together) DetachSpirit();
+        else RegroupTogether();
     }
 
     public void Pause(InputAction.CallbackContext value)

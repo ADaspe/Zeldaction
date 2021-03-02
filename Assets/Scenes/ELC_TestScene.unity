@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 250754004}
   - component: {fileID: 250754003}
   - component: {fileID: 250754002}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,18 +397,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a2b634a4e1dcc44e91fe4c55d4a9019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &801680533 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1574921384}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949088598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &930564751
@@ -814,7 +802,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inputs
       value: 
-      objectReference: {fileID: 801680533}
+      objectReference: {fileID: 0}
     - target: {fileID: 8259352534369264057, guid: 54b76d71ed6354240a859f8c113954e8,
         type: 3}
       propertyPath: charaManager
@@ -1086,7 +1074,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inputs
       value: 
-      objectReference: {fileID: 2016651110}
+      objectReference: {fileID: 0}
     - target: {fileID: 8259352534369264057, guid: 54b76d71ed6354240a859f8c113954e8,
         type: 3}
       propertyPath: charaManager
@@ -1129,7 +1117,7 @@ GameObject:
   - component: {fileID: 1761462744}
   - component: {fileID: 1761462743}
   - component: {fileID: 1761462742}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Enemy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1278,18 +1266,6 @@ MonoBehaviour:
   DistanceToStayWhenTogether: 1
   MiaAngle: 0
   targetPos: {x: 0, y: 0}
---- !u!114 &2016651110 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7968706625101576435, guid: 54b76d71ed6354240a859f8c113954e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1657735518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926687906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &51745463960212256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1304,8 +1280,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
+      propertyPath: MiaMask.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: CharacterManager
+      value: 
+      objectReference: {fileID: 778000660}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: PlayerMask.m_Bits
+      value: 6272
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: SpiritMask.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
       propertyPath: EnemiesMask.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: SolidObstaclesMask.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: GlobalObstaclesMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: SpiritualObstaclesMask.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 51745464285039161, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
@@ -1501,6 +1512,21 @@ PrefabInstance:
       propertyPath: PlayerDetectors.Array.data[1]
       value: 
       objectReference: {fileID: 1575564840}
+    - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8176392400655159503, guid: 16673731a79871a459acf5da8ed9e501,
         type: 3}
       propertyPath: m_LocalPosition.y
