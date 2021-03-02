@@ -100,7 +100,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Action(InputAction.CallbackContext value)
     {
-        if (DetectedInteraction != null || DetectedInteraction.PlayerCanInteract) DetectedInteraction.Interact.Invoke();
+        if (DetectedInteraction != null) if(DetectedInteraction.PlayerCanInteract) DetectedInteraction.Interact.Invoke();
     }
 
     public void Spirit(InputAction.CallbackContext value)
