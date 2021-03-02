@@ -10,13 +10,7 @@ public class ELC_Attack : MonoBehaviour
     ELC_GameManager gameManager;
     public float enemyDetectionRadius;
 
-    public void PlayerAttack()
-    {
-        if (CharManager.Together) AttackTogether();
-        else MiaShield();
-    }
-
-    private void MiaShield()
+    public void MiaShield()
     {
         Debug.Log("MiaShield");
     }
@@ -26,9 +20,9 @@ public class ELC_Attack : MonoBehaviour
         Debug.Log("Spirit Dash");
     }
 
-    private void AttackTogether()
+    public void AttackTogether()
     {
-        Debug.Log("Attack Together");
+        //Debug.Log("Attack Together");
         Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, enemyDetectionRadius, gameManager.EnemiesMask);
 
         GameObject nearestEnemy = null;

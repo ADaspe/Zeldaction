@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ELC_Interact : MonoBehaviour
 {
-    [SerializeField]
-    private List<Transform> PlayerDetectors = new List<Transform>();
-    [SerializeField]
-    private ELC_GameManager GameManagerScript;
+    public List<Transform> PlayerDetectors = new List<Transform>();
+    public ELC_GameManager GameManagerScript;
     public bool PlayerCanInteract;
-    [SerializeField]
+    public UnityEvent Interact;
+
     private int touchedSideIndex;
     private bool playerIsTouchingSide;
 
@@ -50,6 +50,7 @@ public class ELC_Interact : MonoBehaviour
         if (PlayerFaceDetection.collider != null)
         {
             PlayerCanInteract = true;
+            GameManagerScript.CharacterManager.DetectedInteraction = this;
         }
         else PlayerCanInteract = false;
     }
