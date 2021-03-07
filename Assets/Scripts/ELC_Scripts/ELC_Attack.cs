@@ -30,7 +30,8 @@ public class ELC_Attack : MonoBehaviour
         {
             if(nearestEnemy == null || Vector2.Distance(this.transform.position, enemies[i].transform.position) < Vector2.Distance(this.transform.position, nearestEnemy.transform.position))
             {
-                nearestEnemy = enemies[i].gameObject;
+                RaycastHit2D wallHit = Physics2D.Raycast(this.transform.position, nearestEnemy.transform.position - this.transform.position, Vector2.Distance(this.transform.position, nearestEnemy.transform.position), gameManager.GlobalObstaclesMask);
+                if(wallHit.collider == null) nearestEnemy = enemies[i].gameObject;
             }
         }
         Debug.Log("Mia attaque " + nearestEnemy);
