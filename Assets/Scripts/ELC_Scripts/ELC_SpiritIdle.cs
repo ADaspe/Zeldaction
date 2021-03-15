@@ -9,8 +9,11 @@ public class ELC_SpiritIdle : MonoBehaviour
     private bool PlayerIsImmobile;
     private float LastPlayerMove;
     public float MaxSpeed;
+    public float NearSpeedMultiplicator;
     public float TimeToWaitForIdleState;
     public float DistanceToStayWhenTogether;
+    [SerializeField]
+    private Vector2 debug;
     private float MiaAngle;
     private Vector2 targetPos;
     
@@ -31,8 +34,14 @@ public class ELC_SpiritIdle : MonoBehaviour
         if (CharaManager.Together)
         {
             Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
-            if (Vector3.Distance(new Vector3(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed) CharaManager.spiritMove.rb.velocity = dir; //Si l'esprit commence à être proche du joueur on ralentit
-            else CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse à vitesse constante
+            if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
+            {
+                CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence à être proche du joueur on ralentit
+            }
+            else
+            {
+                CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse à vitesse constante
+            }
         }
     }
 }
