@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2097651159027833673}
   - component: {fileID: 8035345064547430159}
   m_Layer: 11
-  m_Name: Mia
-  m_TagString: Untagged
+  m_Name: Ryn
+  m_TagString: Ryn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,56 +7,39 @@ using UnityEngine.InputSystem;
 public class ELC_CharacterManager : MonoBehaviour
 {
     public bool Together;
-    public GameObject MiaGO;
+    public GameObject RynGO;
     public GameObject SpiritGO;
     public CinemachineVirtualCamera vCam;
     public AXD_CharacterMove followingCharacter;
-    public AXD_CharacterMove miaMove;
+    public AXD_CharacterMove RynMove;
     public AXD_CharacterMove spiritMove;
     public ELC_Interact DetectedInteraction;
+    public AXD_CharacterVariablesSO stats;
 
     //Variables locales
-    private ELC_Attack MiaAttack;
+    private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
 
     private void Start()
     {
-        vCam.Follow = miaMove.transform;
-        followingCharacter = miaMove;
-        miaMove.currentCharacter = true;
-        MiaAttack = MiaGO.GetComponent<ELC_Attack>();
+        vCam.Follow = RynMove.transform;
+        followingCharacter = RynMove;
+        RynMove.currentCharacter = true;
+        RynAttack = RynGO.GetComponent<ELC_Attack>();
         SpiritAttack = SpiritGO.GetComponent<ELC_Attack>();
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
         if (value.started)
         {
-            Debug.Log("CamSwap");
-            if (miaMove != null && followingCharacter == miaMove)
+            if (RynMove != null && followingCharacter == RynMove)
             {
-                Debug.Log("CamSwapSpirit");
-                //Disabling Mia
-                miaMove.currentCharacter = false;
-                miaMove.rb.velocity = Vector2.zero;
-
-                //Enabling Spirit
-                followingCharacter = spiritMove;
-                spiritMove.currentCharacter = true;
-                vCam.Follow = spiritMove.transform;
+                ChangeCamFocusSpirit();
 
             }
             else if (spiritMove != null && followingCharacter == spiritMove)
             {
-                Debug.Log("CamSwapMia");
-                //Disabling Spirit
-                spiritMove.currentCharacter = false;
-                spiritMove.rb.velocity = Vector2.zero;
-
-                //Enabling Mia
-                vCam.Follow = miaMove.transform;
-                followingCharacter = miaMove;
-                miaMove.currentCharacter = true;
-
+                ChangeCamFocusRyn();
             }
             else
             {
@@ -65,12 +48,38 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
+    public void ChangeCamFocusRyn()
+    {
+        Debug.Log("CamSwapRyn");
+        //Disabling Spirit
+        spiritMove.currentCharacter = false;
+        spiritMove.rb.velocity = Vector2.zero;
+
+        //Enabling Ryn
+        vCam.Follow = RynMove.transform;
+        followingCharacter = RynMove;
+        RynMove.currentCharacter = true;
+    }
+
+    public void ChangeCamFocusSpirit()
+    {
+        Debug.Log("CamSwapSpirit");
+        //Disabling Ryn
+        RynMove.currentCharacter = false;
+        RynMove.rb.velocity = Vector2.zero;
+
+        //Enabling Spirit
+        followingCharacter = spiritMove;
+        spiritMove.currentCharacter = true;
+        vCam.Follow = spiritMove.transform;
+    }
+
     public void RegroupTogether()
     {
         Together = true;
-        followingCharacter = miaMove;
-        miaMove.currentCharacter = true;
-        vCam.Follow = miaMove.transform;
+        followingCharacter = RynMove;
+        RynMove.currentCharacter = true;
+        vCam.Follow = RynMove.transform;
         SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
     }
@@ -90,23 +99,32 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Combat(InputAction.CallbackContext value)
     {
-        if (followingCharacter == miaMove)
+        Debug.Log("Combat");
+        if (followingCharacter == RynMove)
         {
-            if (Together) MiaAttack.AttackTogether();
-            else MiaAttack.MiaShield();
+            if (Together) RynAttack.AttackTogether();
+            else RynAttack.MiaShield();
         }
         else SpiritAttack.SpiritDashAttack();
     }
 
     public void Action(InputAction.CallbackContext value)
     {
+        Debug.Log("Action");
         if (DetectedInteraction != null) if(DetectedInteraction.PlayerCanInteract) DetectedInteraction.Interact.Invoke();
     }
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        if (Together) DetachSpirit();
-        else RegroupTogether();
+        Debug.Log("Spirit");
+        if (Together) { 
+            DetachSpirit();
+            ChangeCamFocusSpirit();
+        }
+        else {
+            RegroupTogether();
+            ChangeCamFocusRyn();
+        }
     }
 
     public void Pause(InputAction.CallbackContext value)

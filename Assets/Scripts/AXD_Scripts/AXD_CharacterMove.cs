@@ -28,7 +28,5 @@ public class AXD_CharacterMove : MonoBehaviour
             rb.velocity = rawInputMovement;
             if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
         }
-    }
-
-    
+    }    
 }

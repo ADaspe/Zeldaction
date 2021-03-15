@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6788487066792825592}
   m_Layer: 12
   m_Name: Spirit
-  m_TagString: Untagged
+  m_TagString: Spirit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,5 +176,3 @@ MonoBehaviour:
   MaxSpeed: 5
   TimeToWaitForIdleState: 1
   DistanceToStayWhenTogether: 1
-  MiaAngle: 0
-  targetPos: {x: 0, y: 0}
