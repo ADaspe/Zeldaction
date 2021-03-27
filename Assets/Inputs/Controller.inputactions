@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Combat",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "668eecfb-86ae-41fe-b34f-dc9ee1728b3d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
@@ -39,7 +39,7 @@
                 },
                 {
                     "name": "Spirit",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "154c246f-85f4-4f91-938e-e2af84386a8c",
                     "expectedControlType": "Button",
                     "processors": "",
