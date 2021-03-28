@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8ced9446cfdac4487176c99dec86c4, type: 3}
+  m_Name: CharacterVariables
+  m_EditorClassIdentifier: 
+  ShieldDuration: 2
+  SpiritProjection: 1
+  SpiritDecreaseSpeed: 0.2
+  DashDistance: 2.5
+  DashTime: 0.5
+  DashUpgradeDistance: 3.5
+  DashUpgradeTime: 0.7
+  DashCoolDown: 0.6
+  SeparationDistance: 25
+  initialHP: 3
+  TorchActivationDuration: 3
+  RynSpeed: 1.5
+  SpiritSpeed: 2.5
+  ShieldCooldown: 2.5
+  DashCooldown: 1.5
+  AttackCooldown: 1
+  StunTime: 4
+  SpiritRespawn: 1

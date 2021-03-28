@@ -9,10 +9,21 @@ public class ELC_Attack : MonoBehaviour
     [SerializeField]
     ELC_GameManager gameManager;
     public float enemyDetectionRadius;
+    public bool ShieldOn;
+    public float NextShield;
 
-    public void MiaShield()
+    public void RynShield()
     {
         Debug.Log("MiaShield");
+        if (CharManager.RynMove.canMove && !ShieldOn)
+        {
+            NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
+            StartCoroutine(ShieldCoroutine());
+        }
+        else if (!CharManager.RynMove.canMove && ShieldOn)
+        {
+            RynLoseShield();
+        }
     }
 
     public void SpiritDashAttack()
@@ -36,4 +47,23 @@ public class ELC_Attack : MonoBehaviour
         }
         Debug.Log("Mia attaque " + nearestEnemy);
     }
+
+    public void RynLoseShield()
+    {
+        StopCoroutine(ShieldCoroutine());
+        NextShield = Time.time + CharManager.stats.ShieldCooldown;
+        ShieldOn = false;
+        CharManager.RynMove.canMove = true;
+    }
+
+    public IEnumerator ShieldCoroutine()
+    {
+        CharManager.RynMove.canMove = false;
+        yield return new WaitForSeconds(CharManager.stats.ShieldDuration);
+        CharManager.RynMove.canMove = true;
+    }
 }
+
+
+
+

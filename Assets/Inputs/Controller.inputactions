@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Combat",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "668eecfb-86ae-41fe-b34f-dc9ee1728b3d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
@@ -39,7 +39,7 @@
                 },
                 {
                     "name": "Spirit",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "154c246f-85f4-4f91-938e-e2af84386a8c",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -72,7 +72,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -83,7 +83,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -94,7 +94,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -105,7 +105,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -116,7 +116,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -127,7 +127,7 @@
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "CamSwap",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -138,7 +138,7 @@
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "CamSwap",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -149,7 +149,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Combat",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -160,7 +160,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Combat",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -171,7 +171,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -182,7 +182,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -193,7 +193,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Spirit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -204,7 +204,7 @@
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Spirit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -215,7 +215,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -226,7 +226,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -234,28 +234,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Gamepad",
-            "bindingGroup": "Gamepad",
-            "devices": [
-                {
-                    "devicePath": "<Gamepad>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }

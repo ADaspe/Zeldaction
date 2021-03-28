@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2097651159027833673}
   - component: {fileID: 8035345064547430159}
   - component: {fileID: 4639730065206629212}
+  - component: {fileID: 2916041968317719070}
   m_Layer: 11
-  m_Name: Mia
-  m_TagString: Untagged
+  m_Name: Ryn
+  m_TagString: Ryn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  inputs: {fileID: 0}
   charaManager: {fileID: 0}
   rawInputMovement: {x: 0, y: 0}
   LastDirection: {x: 0, y: 0}
@@ -160,6 +160,7 @@ MonoBehaviour:
   CharManager: {fileID: 0}
   gameManager: {fileID: 0}
   enemyDetectionRadius: 5
+  ShieldOn: 0
 --- !u!95 &4639730065206629212
 Animator:
   serializedVersion: 3
@@ -179,3 +180,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2916041968317719070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323335383032556150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbff6c0b50e86934aa4800be00abffa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterManager: {fileID: 0}

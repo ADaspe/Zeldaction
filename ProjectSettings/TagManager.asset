@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Ryn
+  - Spirit
   layers:
   - Default
   - TransparentFX
@@ -13,18 +15,13 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - Player
+  - 
   - Interactible
   - ObstacleMia
   - ObstacleSpirit
   - PlayerMia
   - PlayerSpirit
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
