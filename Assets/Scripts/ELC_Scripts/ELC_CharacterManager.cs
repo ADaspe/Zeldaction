@@ -15,7 +15,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CharacterMove spiritMove;
     public ELC_Interact DetectedInteraction;
     public AXD_CharacterVariablesSO stats;
-
+    public int currentHP;
     //Variables locales
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
@@ -30,7 +30,7 @@ public class ELC_CharacterManager : MonoBehaviour
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !Together)
         {
             if (RynMove != null && followingCharacter == RynMove)
             {
@@ -103,7 +103,7 @@ public class ELC_CharacterManager : MonoBehaviour
         if (followingCharacter == RynMove)
         {
             if (Together) RynAttack.AttackTogether();
-            else RynAttack.MiaShield();
+            else RynAttack.RynShield();
         }
         else SpiritAttack.SpiritDashAttack();
     }
@@ -124,6 +124,24 @@ public class ELC_CharacterManager : MonoBehaviour
         else {
             RegroupTogether();
             ChangeCamFocusRyn();
+        }
+    }
+
+    public void TakeDamage(string tag)
+    {
+        if(tag == "Ryn")
+        {
+            if (!RynAttack.ShieldOn)
+            {
+                currentHP--;
+            }
+        }else if (tag == "Spirit")
+        {
+            currentHP--;
+        }
+        else
+        {
+            Debug.Log("Tag introuvable");
         }
     }
 

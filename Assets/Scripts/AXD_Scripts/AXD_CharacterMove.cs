@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class AXD_CharacterMove : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public PlayerInput inputs;
     public ELC_CharacterManager charaManager;
     public Vector2 rawInputMovement;
     public Vector2 LastDirection;
