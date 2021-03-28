@@ -119,7 +119,6 @@ public class ELC_CharacterManager : MonoBehaviour
         Debug.Log("Spirit");
         if (Together) { 
             DetachSpirit();
-            ChangeCamFocusSpirit();
         }
         else {
             RegroupTogether();
