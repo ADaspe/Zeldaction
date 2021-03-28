@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6110421393857322494}
   - component: {fileID: 5547120372911743439}
   - component: {fileID: 701354207612222063}
+  - component: {fileID: 8464918147117064711}
   m_Layer: 0
   m_Name: CharacterManager
   m_TagString: Untagged
@@ -45,12 +46,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Together: 0
-  MiaGO: {fileID: 0}
+  RynGO: {fileID: 0}
   SpiritGO: {fileID: 0}
   vCam: {fileID: 0}
   followingCharacter: {fileID: 0}
-  miaMove: {fileID: 0}
+  RynMove: {fileID: 0}
   spiritMove: {fileID: 0}
+  DetectedInteraction: {fileID: 0}
+  stats: {fileID: 0}
+  currentHP: 0
+  AnimationManager: {fileID: 0}
+  PlayerIdle: Player_Idle
+  PlayerWalk: Player_Walk
+  PlayerShield: Player_Shield
+  PlayerAttackTogether: Player_AttackTogether
+  PlayerHit: Player_Hit
 --- !u!114 &701354207612222063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +188,16 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8464918147117064711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540643570526949084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c62dd795a6261438d6e35e0497b4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharaManager: {fileID: 5547120372911743439}
