@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 7b9b4775222801c4ea335710f5c1170f
+guid: 1d00e0de8527f5045bd13e25ad166fdc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5629350223013839804
-    second: TilemapFalaise_1
+      213: 8214575524968419741
+    second: M_envoi_front_0
   - first:
-      213: 8472898550214147422
-    second: TilemapFalaise_2
+      213: 3162880619084678745
+    second: M_envoi_front_1
   - first:
-      213: 8279065408425416177
-    second: TilemapFalaise_5
+      213: 7542877782747704359
+    second: M_envoi_front_2
   - first:
-      213: -3989785260060574584
-    second: TilemapFalaise_7
+      213: 8156654228609938447
+    second: M_envoi_front_3
   - first:
-      213: 528722104625748180
-    second: TilemapFalaise_8
-  - first:
-      213: -4047405527620051190
-    second: TilemapFalaise_9
-  - first:
-      213: -5954748726341575911
-    second: TilemapFalaise_10
+      213: -6473919157399315672
+    second: M_envoi_front_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +83,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +95,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,7 +119,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +143,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -160,106 +154,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilemapFalaise_1
+      name: M_envoi_front_0
       rect:
         serializedVersion: 2
-        x: 500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb38107c3387f1e40800000000000000
-      internalID: 5629350223013839804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapFalaise_5
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f5db65ef1625e270800000000000000
-      internalID: 8279065408425416177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapFalaise_8
-      rect:
-        serializedVersion: 2
-        x: 500
+        x: 0
         y: 0
-        width: 500
-        height: 500
+        width: 400
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d85d1fe3f5665700800000000000000
-      internalID: 528722104625748180
+      spriteID: d915c52dae8000270800000000000000
+      internalID: 8214575524968419741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapFalaise_9
+      name: M_envoi_front_1
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 400
         y: 0
-        width: 500
-        height: 500
+        width: 400
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0f1140ed1ab4d7c0800000000000000
-      internalID: -4047405527620051190
+      spriteID: 95682875a2fc4eb20800000000000000
+      internalID: 3162880619084678745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapFalaise_10
+      name: M_envoi_front_2
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 800
         y: 0
-        width: 500
-        height: 500
+        width: 400
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91b53bf359b7c5da0800000000000000
-      internalID: -5954748726341575911
+      spriteID: 72cecd8216fada860800000000000000
+      internalID: 7542877782747704359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_envoi_front_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04bbfb1ec1423170800000000000000
+      internalID: 8156654228609938447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_envoi_front_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b1e9e93d40826a0800000000000000
+      internalID: -6473919157399315672
       vertices: []
       indices: 
       edges: []
@@ -267,7 +261,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4b9dc5161d3efc546b2531c8ff9d6e02
+    spriteID: d02428b280a20814f898553a426ddbb0
     internalID: 0
     vertices: []
     indices: 

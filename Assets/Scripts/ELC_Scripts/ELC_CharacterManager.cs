@@ -16,9 +16,16 @@ public class ELC_CharacterManager : MonoBehaviour
     public ELC_Interact DetectedInteraction;
     public AXD_CharacterVariablesSO stats;
     public int currentHP;
+    public ELC_CharacterAnimationsManager AnimationManager;
     //Variables locales
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
+    public string PlayerIdle;
+    public string PlayerWalk;
+    public string PlayerShield;
+    public string PlayerAttackTogether;
+    public string PlayerHit;
+
 
     private void Start()
     {
