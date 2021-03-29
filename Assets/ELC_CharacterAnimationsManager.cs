@@ -19,10 +19,12 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
 
     private void Update()
     {
+        
         RynAnimator.SetFloat("MovesX", RynMoves.LastDirection.x);
         RynAnimator.SetFloat("MovesY", RynMoves.LastDirection.y);
         if (RynMoves.LastDirection.x > 0) RynGO.GetComponent<SpriteRenderer>().flipX = true;
         else RynGO.GetComponent<SpriteRenderer>().flipX = false;
+        
     }
 
     public void UpdateAnimations(string AnimToPlay)

@@ -39,6 +39,7 @@ public class ELC_Attack : MonoBehaviour
         GameObject nearestEnemy = null;
         for (int i = 0; i < enemies.Length; i++)
         {
+            if (i == 0) nearestEnemy = enemies[i].gameObject;
             if(nearestEnemy == null || Vector2.Distance(this.transform.position, enemies[i].transform.position) < Vector2.Distance(this.transform.position, nearestEnemy.transform.position))
             {
                 RaycastHit2D wallHit = Physics2D.Raycast(this.transform.position, nearestEnemy.transform.position - this.transform.position, Vector2.Distance(this.transform.position, nearestEnemy.transform.position), gameManager.GlobalObstaclesMask);

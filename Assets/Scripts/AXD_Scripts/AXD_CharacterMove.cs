@@ -30,13 +30,24 @@ public class AXD_CharacterMove : MonoBehaviour
             if (rawInputMovement.magnitude >= 0.005f)
             {
                 LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
-                AnimManager.UpdateAnimations(charaManager.PlayerWalk);
+                
             }
-            else
+            if (charaManager.followingCharacter == charaManager.RynMove)
             {
-                AnimManager.UpdateAnimations(charaManager.PlayerIdle);
+                RynAnimatorUpdate();
             }
-
         }
-    }    
+    }
+
+    private void RynAnimatorUpdate()
+    {
+        if(rawInputMovement.magnitude >= 0.005f)
+        {
+            AnimManager.UpdateAnimations(charaManager.PlayerWalk);
+        }
+        else
+        {
+            AnimManager.UpdateAnimations(charaManager.PlayerIdle);
+        }
+    }
 }
