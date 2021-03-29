@@ -14,11 +14,13 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynShield()
     {
-        Debug.Log("MiaShield");
+        Debug.Log("Ryn'O'Shield");
         if (CharManager.RynMove.canMove && !ShieldOn)
         {
-            NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
-            StartCoroutine(ShieldCoroutine());
+            if(NextShield <= Time.time)
+            {
+                RynActivateShield();
+            }
         }
         else if (!CharManager.RynMove.canMove && ShieldOn)
         {
@@ -29,6 +31,7 @@ public class ELC_Attack : MonoBehaviour
     public void SpiritDashAttack()
     {
         Debug.Log("Spirit Dash");
+        StartCoroutine(DashCoroutine());
     }
 
     public void AttackTogether()
@@ -45,22 +48,34 @@ public class ELC_Attack : MonoBehaviour
                 if(wallHit.collider == null) nearestEnemy = enemies[i].gameObject;
             }
         }
-        Debug.Log("Mia attaque " + nearestEnemy);
+        Debug.Log("Ryn attaque " + nearestEnemy);
+    }
+
+    public void RynActivateShield()
+    {
+        CharManager.RynMove.canMove = false;
+        CharManager.RynMove.rawInputMovement = Vector2.zero;
+        NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
+        Invoke("RynLoseShield", CharManager.stats.ShieldDuration);
     }
 
     public void RynLoseShield()
     {
-        StopCoroutine(ShieldCoroutine());
-        NextShield = Time.time + CharManager.stats.ShieldCooldown;
-        ShieldOn = false;
-        CharManager.RynMove.canMove = true;
+        if (ShieldOn)
+        {
+            NextShield = Time.time + CharManager.stats.ShieldCooldown;
+            ShieldOn = false;
+            CharManager.RynMove.canMove = true;
+        }
     }
 
-    public IEnumerator ShieldCoroutine()
+    public IEnumerator DashCoroutine()
     {
-        CharManager.RynMove.canMove = false;
-        yield return new WaitForSeconds(CharManager.stats.ShieldDuration);
-        CharManager.RynMove.canMove = true;
+        CharManager.spiritMove.isDashing = true;
+        CharManager.spiritMove.rb.velocity = CharManager.spiritMove.LastDirection * (CharManager.stats.DashDistance / CharManager.stats.DashTime);
+        yield return new WaitForSeconds(CharManager.stats.DashTime);
+        CharManager.spiritMove.speed = CharManager.stats.SpiritSpeed;
+        CharManager.spiritMove.isDashing = false;
     }
 }
 
