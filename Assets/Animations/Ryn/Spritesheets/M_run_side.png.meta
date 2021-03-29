@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: 7b9b4775222801c4ea335710f5c1170f
+guid: 0780bf5a41aad4b47a963f4868b124d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5629350223013839804
-    second: TilemapFalaise_1
+      213: -6635730550226942287
+    second: M_run_side_0
   - first:
-      213: 8472898550214147422
-    second: TilemapFalaise_2
+      213: -1328089568573902255
+    second: M_run_side_1
   - first:
-      213: 8279065408425416177
-    second: TilemapFalaise_5
+      213: -3359255542210813026
+    second: M_run_side_2
   - first:
-      213: -3989785260060574584
-    second: TilemapFalaise_7
+      213: -550955321868342840
+    second: M_run_side_3
   - first:
-      213: 528722104625748180
-    second: TilemapFalaise_8
+      213: 7346610430484626573
+    second: M_run_side_4
   - first:
-      213: -4047405527620051190
-    second: TilemapFalaise_9
+      213: 111927870562650946
+    second: M_run_side_5
   - first:
-      213: -5954748726341575911
-    second: TilemapFalaise_10
+      213: -7438674520280019543
+    second: M_run_side_6
+  - first:
+      213: -5135042913625688893
+    second: M_run_side_7
+  - first:
+      213: 3520507228327592524
+    second: M_run_side_8
+  - first:
+      213: 6729174852975553467
+    second: M_run_side_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +98,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +110,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,7 +134,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +158,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -160,106 +169,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilemapFalaise_1
+      name: M_run_side_0
       rect:
         serializedVersion: 2
-        x: 500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb38107c3387f1e40800000000000000
-      internalID: 5629350223013839804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapFalaise_5
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f5db65ef1625e270800000000000000
-      internalID: 8279065408425416177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapFalaise_8
-      rect:
-        serializedVersion: 2
-        x: 500
+        x: 0
         y: 0
-        width: 500
-        height: 500
+        width: 400
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d85d1fe3f5665700800000000000000
-      internalID: 528722104625748180
+      spriteID: 1b60480e83629e3a0800000000000000
+      internalID: -6635730550226942287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapFalaise_9
+      name: M_run_side_1
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 400
         y: 0
-        width: 500
-        height: 500
+        width: 400
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0f1140ed1ab4d7c0800000000000000
-      internalID: -4047405527620051190
+      spriteID: 152304be29da19de0800000000000000
+      internalID: -1328089568573902255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapFalaise_10
+      name: M_run_side_2
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 800
         y: 0
-        width: 500
-        height: 500
+        width: 400
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91b53bf359b7c5da0800000000000000
-      internalID: -5954748726341575911
+      spriteID: e9323c8e1e68161d0800000000000000
+      internalID: -3359255542210813026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c92de8cd0d9a58f0800000000000000
+      internalID: -550955321868342840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c3734334764f560800000000000000
+      internalID: 7346610430484626573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b4a552ec5ad8100800000000000000
+      internalID: 111927870562650946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9adc5f28fe484c890800000000000000
+      internalID: -7438674520280019543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c434fa3da9acb8b0800000000000000
+      internalID: -5135042913625688893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4249a5fbaa5bd030800000000000000
+      internalID: 3520507228327592524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_run_side_9
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb691740e4d26d50800000000000000
+      internalID: 6729174852975553467
       vertices: []
       indices: 
       edges: []
@@ -267,7 +381,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4b9dc5161d3efc546b2531c8ff9d6e02
+    spriteID: 5ee13774f0cbd154092ff124a6117814
     internalID: 0
     vertices: []
     indices: 

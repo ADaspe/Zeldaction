@@ -7,6 +7,7 @@ public class AXD_CharacterMove : MonoBehaviour
 {
     public Rigidbody2D rb;
     public ELC_CharacterManager charaManager;
+    private ELC_CharacterAnimationsManager AnimManager;
     public Vector2 rawInputMovement;
     public Vector2 LastDirection;
     public bool canMove;
@@ -18,6 +19,7 @@ public class AXD_CharacterMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         camSwapOn = false;
+        AnimManager = charaManager.AnimationManager;
     }
 
     private void Update()
@@ -25,7 +27,16 @@ public class AXD_CharacterMove : MonoBehaviour
         if (canMove && currentCharacter)
         {
             rb.velocity = rawInputMovement;
-            if (rawInputMovement.magnitude >= 0.005f) LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
+            if (rawInputMovement.magnitude >= 0.005f)
+            {
+                LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
+                AnimManager.UpdateAnimations(charaManager.PlayerWalk);
+            }
+            else
+            {
+                AnimManager.UpdateAnimations(charaManager.PlayerIdle);
+            }
+
         }
     }    
 }
