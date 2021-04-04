@@ -95,7 +95,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public void DetachSpirit()
     {
         Together = false;
-        spiritMove.rawInputMovement = Vector2.zero;
+        spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son d�placement quand on le d�tache
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
     }
