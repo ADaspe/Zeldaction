@@ -17,6 +17,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CharacterVariablesSO stats;
     public int currentHP;
     public ELC_CharacterAnimationsManager AnimationManager;
+    public ELC_Interact ToPurify;
     //Variables locales
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
@@ -94,37 +95,54 @@ public class ELC_CharacterManager : MonoBehaviour
     public void DetachSpirit()
     {
         Together = false;
+        spiritMove.rawInputMovement = Vector2.zero;
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
     }
 
     public void Move(InputAction.CallbackContext value)
     {
-        Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.speed;
-        followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
+        if (followingCharacter.canMove)
+        {
+            Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.speed;
+            followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
+        }
     }
 
     public void Combat(InputAction.CallbackContext value)
     {
         Debug.Log("Combat");
-        if (followingCharacter == RynMove)
+        if (value.started)
         {
-            if (Together) RynAttack.AttackTogether();
-            else RynAttack.RynShield();
+            if (followingCharacter == RynMove)
+            {
+                if (Together) RynAttack.AttackTogether();
+                else RynAttack.RynShield();
+            }
+            else SpiritAttack.SpiritDashAttack();
         }
-        else SpiritAttack.SpiritDashAttack();
     }
 
     public void Action(InputAction.CallbackContext value)
     {
         Debug.Log("Action");
-        if (DetectedInteraction != null) if(DetectedInteraction.PlayerCanInteract) DetectedInteraction.Interact.Invoke();
+        if (DetectedInteraction != null && followingCharacter == RynMove)
+        {
+            if (DetectedInteraction.PlayerCanInteract)
+            {
+                DetectedInteraction.Interact.Invoke();
+            }
+        }else if(ToPurify != null && followingCharacter == spiritMove)
+        {
+            ToPurify.Purify();
+        }
     }
 
     public void Spirit(InputAction.CallbackContext value)
     {
         Debug.Log("Spirit");
-        if (Together) { 
+        if (Together) {
+            
             DetachSpirit();
         }
         else {

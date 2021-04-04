@@ -7,8 +7,10 @@ public class ELC_Interact : MonoBehaviour
 {
     public List<Transform> PlayerDetectors = new List<Transform>();
     public ELC_GameManager GameManagerScript;
+    public bool corrupted;
     public bool PlayerCanInteract;
     public UnityEvent Interact;
+
 
     private int touchedSideIndex;
     private bool playerIsTouchingSide;
@@ -19,24 +21,31 @@ public class ELC_Interact : MonoBehaviour
     }
     void Update()
     {
-        for (int i = 0; i < PlayerDetectors.Count; i++)
+        if (!corrupted)
         {
-            Vector3 dir = PlayerDetectors[i].position - this.transform.position;
-            float raycastLength = Vector2.Distance(this.transform.position, PlayerDetectors[i].position);
-
-            RaycastHit2D playerHit = Physics2D.Raycast(this.transform.position, dir, raycastLength, GameManagerScript.PlayerMask);
-            Debug.DrawRay(this.transform.position, dir.normalized * raycastLength, Color.red);
-
-            if (playerHit.collider != null)
+            for (int i = 0; i < PlayerDetectors.Count; i++)
             {
-                touchedSideIndex = i;
-                playerIsTouchingSide = true;
-                PlayerIsOnSide(playerHit.transform.gameObject, raycastLength);
+                Vector3 dir = PlayerDetectors[i].position - this.transform.position;
+                float raycastLength = Vector2.Distance(this.transform.position, PlayerDetectors[i].position);
+
+                RaycastHit2D playerHit = Physics2D.Raycast(this.transform.position, dir, raycastLength, GameManagerScript.PlayerMask);
+                Debug.DrawRay(this.transform.position, dir.normalized * raycastLength, Color.red);
+
+                if (playerHit.collider != null)
+                {
+                    touchedSideIndex = i;
+                    playerIsTouchingSide = true;
+                    PlayerIsOnSide(playerHit.transform.gameObject, raycastLength);
+                }
+                else if (i == touchedSideIndex) //Si ça touche pas et que le dernier coté à être touché est celui-là, alors ça veut dire que le joueur ne touche aucun coté
+                {
+                    PlayerCanInteract = false;
+                }
             }
-            else if(i == touchedSideIndex) //Si ça touche pas et que le dernier coté à être touché est celui-là, alors ça veut dire que le joueur ne touche aucun coté
-            {
-                PlayerCanInteract = false;
-            }
+        }
+        else
+        {
+            PlayerCanInteract = false;
         }
     }
 
@@ -53,5 +62,14 @@ public class ELC_Interact : MonoBehaviour
             GameManagerScript.CharacterManager.DetectedInteraction = this;
         }
         else PlayerCanInteract = false;
+    }
+
+    public void Purify()
+    {
+        if (corrupted)
+        {
+            Debug.Log("Purificado");
+            corrupted = !corrupted;
+        }
     }
 }
