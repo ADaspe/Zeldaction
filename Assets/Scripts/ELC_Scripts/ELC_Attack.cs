@@ -11,6 +11,22 @@ public class ELC_Attack : MonoBehaviour
     public float enemyDetectionRadius;
     public bool ShieldOn;
     public float NextShield;
+    private bool spiritAttack;
+    private GameObject nearestEnemy;
+    private ELC_Attack SpiritAttackScript;
+    public float attackTogetherCooldown;
+
+    private void Start()
+    {
+        SpiritAttackScript = CharManager.SpiritGO.GetComponent<ELC_Attack>();
+    }
+    private void FixedUpdate()
+    {
+        if(spiritAttack)
+        {
+            SpiritAttackScript.SpiritAttackTogether(nearestEnemy.transform.position, 0.05f);
+        }
+    }
 
     public void RynShield()
     {
@@ -36,19 +52,30 @@ public class ELC_Attack : MonoBehaviour
 
     public void AttackTogether()
     {
+        if (attackTogetherCooldown > Time.time) return;
+
+        attackTogetherCooldown = Time.time + CharManager.stats.AttackCooldown;
         //Debug.Log("Attack Together");
         Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, enemyDetectionRadius, gameManager.EnemiesMask);
 
-        GameObject nearestEnemy = null;
+        
         for (int i = 0; i < enemies.Length; i++)
         {
-            if(nearestEnemy == null || Vector2.Distance(this.transform.position, enemies[i].transform.position) < Vector2.Distance(this.transform.position, nearestEnemy.transform.position))
+            RaycastHit2D wallHit = Physics2D.Raycast(this.transform.position, enemies[i].transform.position - this.transform.position, Vector2.Distance(this.transform.position, enemies[i].transform.position), gameManager.GlobalObstaclesMask);
+
+            if (i == 0 && wallHit.collider == null) nearestEnemy = enemies[i].gameObject;
+            else if (wallHit.collider == null && nearestEnemy != null && Vector2.Distance(this.transform.position, enemies[i].transform.position) < Vector2.Distance(this.transform.position, nearestEnemy.transform.position))
             {
-                RaycastHit2D wallHit = Physics2D.Raycast(this.transform.position, nearestEnemy.transform.position - this.transform.position, Vector2.Distance(this.transform.position, nearestEnemy.transform.position), gameManager.GlobalObstaclesMask);
-                if(wallHit.collider == null) nearestEnemy = enemies[i].gameObject;
+                nearestEnemy = enemies[i].gameObject;
             }
         }
         Debug.Log("Ryn attaque " + nearestEnemy);
+        if (nearestEnemy != null)
+        {
+            spiritAttack = true;
+            StartCoroutine(ResetAfterSeconds(0.05f));
+            Debug.Log("Mia attaque " + nearestEnemy);
+        }
     }
 
     public void RynActivateShield()
@@ -76,6 +103,20 @@ public class ELC_Attack : MonoBehaviour
         yield return new WaitForSeconds(CharManager.stats.DashTime);
         CharManager.spiritMove.speed = CharManager.stats.SpiritSpeed;
         CharManager.spiritMove.isDashing = false;
+    }
+
+    public void SpiritAttackTogether(Vector3 targetPos, float duration)
+    {
+        Vector3 direction = targetPos - this.gameObject.transform.position;
+        direction = direction.normalized * (direction.magnitude / duration);
+        this.transform.Translate(direction * Time.deltaTime);
+    }
+
+    private IEnumerator ResetAfterSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
+        spiritAttack = false;
+        nearestEnemy = null;
     }
 }
 
