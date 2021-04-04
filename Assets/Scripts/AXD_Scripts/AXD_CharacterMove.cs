@@ -36,18 +36,31 @@ public class AXD_CharacterMove : MonoBehaviour
         if (canMove && currentCharacter && !isDashing)
         {
             rb.velocity = rawInputMovement;
-            if (rawInputMovement.magnitude >= 0.005f)
-            {
-                LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
-                
+            if (rawInputMovement.magnitude >= 0.005f)
+            {
+                LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
+
             }
-            if (charaManager.followingCharacter == charaManager.RynMove)
-            {
-                RynAnimatorUpdate();
-            }
+            if (charaManager.followingCharacter == charaManager.RynMove)
+            {
+                RynAnimatorUpdate();
+            }
+        }else if (!canMove)
+        {
+            rb.velocity = Vector2.zero;
+            RynAnimatorUpdate();
         }
     }
 
+    private void RynAnimatorUpdate()
+    {
+        if(rb.velocity.magnitude >= 0.005f)
+        {
+            AnimManager.UpdateAnimations(charaManager.PlayerWalk);
+        }
+        else
+        {
+            AnimManager.UpdateAnimations(charaManager.PlayerIdle);
         }
     }
 

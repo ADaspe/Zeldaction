@@ -80,6 +80,8 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynActivateShield()
     {
+        Debug.Log("Shield On !");
+        ShieldOn = true;
         CharManager.RynMove.canMove = false;
         CharManager.RynMove.rawInputMovement = Vector2.zero;
         NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
@@ -88,6 +90,7 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynLoseShield()
     {
+        Debug.Log("Lose Shield");
         if (ShieldOn)
         {
             NextShield = Time.time + CharManager.stats.ShieldCooldown;
