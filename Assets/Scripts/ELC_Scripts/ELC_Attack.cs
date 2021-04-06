@@ -30,11 +30,13 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynShield()
     {
-        Debug.Log("MiaShield");
+        Debug.Log("Ryn'O'Shield");
         if (CharManager.RynMove.canMove && !ShieldOn)
         {
-            NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
-            StartCoroutine(ShieldCoroutine());
+            if(NextShield <= Time.time)
+            {
+                RynActivateShield();
+            }
         }
         else if (!CharManager.RynMove.canMove && ShieldOn)
         {
@@ -45,6 +47,7 @@ public class ELC_Attack : MonoBehaviour
     public void SpiritDashAttack()
     {
         Debug.Log("Spirit Dash");
+        StartCoroutine(DashCoroutine());
     }
 
     public void AttackTogether()
@@ -66,6 +69,7 @@ public class ELC_Attack : MonoBehaviour
                 nearestEnemy = enemies[i].gameObject;
             }
         }
+        Debug.Log("Ryn attaque " + nearestEnemy);
         if (nearestEnemy != null)
         {
             spiritAttack = true;
@@ -74,19 +78,34 @@ public class ELC_Attack : MonoBehaviour
         }
     }
 
-    public void RynLoseShield()
+    public void RynActivateShield()
     {
-        StopCoroutine(ShieldCoroutine());
-        NextShield = Time.time + CharManager.stats.ShieldCooldown;
-        ShieldOn = false;
-        CharManager.RynMove.canMove = true;
+        Debug.Log("Shield On !");
+        ShieldOn = true;
+        CharManager.RynMove.canMove = false;
+        CharManager.RynMove.rawInputMovement = Vector2.zero;
+        NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
+        Invoke("RynLoseShield", CharManager.stats.ShieldDuration);
     }
 
-    public IEnumerator ShieldCoroutine()
+    public void RynLoseShield()
     {
-        CharManager.RynMove.canMove = false;
-        yield return new WaitForSeconds(CharManager.stats.ShieldDuration);
-        CharManager.RynMove.canMove = true;
+        Debug.Log("Lose Shield");
+        if (ShieldOn)
+        {
+            NextShield = Time.time + CharManager.stats.ShieldCooldown;
+            ShieldOn = false;
+            CharManager.RynMove.canMove = true;
+        }
+    }
+
+    public IEnumerator DashCoroutine()
+    {
+        CharManager.spiritMove.isDashing = true;
+        CharManager.spiritMove.rb.velocity = CharManager.spiritMove.LastDirection * (CharManager.stats.DashDistance / CharManager.stats.DashTime);
+        yield return new WaitForSeconds(CharManager.stats.DashTime);
+        CharManager.spiritMove.speed = CharManager.stats.SpiritSpeed;
+        CharManager.spiritMove.isDashing = false;
     }
 
     public void SpiritAttackTogether(Vector3 targetPos, float duration)
