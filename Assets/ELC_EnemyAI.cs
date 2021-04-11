@@ -6,6 +6,8 @@ using Pathfinding;
 public class ELC_EnemyAI : MonoBehaviour
 {
     public Transform Target;
+    public ELC_EnemySO EnemyStats;
+    public bool EnableDebug;
 
     public float Speed = 200f;
     public float NextWaypointDistance = 3f; //à quelle distance il doit être d'un checkpoint pour se diriger vers le suivant (pour éviter que ce soit à 0 de distance qui serait impossible à atteindre pile)
@@ -13,6 +15,8 @@ public class ELC_EnemyAI : MonoBehaviour
 
     public bool isPatrolling;
     public bool isFollowingPlayer;
+    public bool isPreparingAttack;
+    public bool isAttacking;
 
     Path path;
     int currentWaypoint = 0;
@@ -50,11 +54,14 @@ public class ELC_EnemyAI : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (path == null)
+        if (path == null || isPreparingAttack || isAttacking)
             return;
 
         if (isFollowingPlayer && Vector2.Distance(rb.position, Target.position) < StopDistanceToPlayer)
+        {
+            StartCoroutine(PrepareAttack(EnemyStats.prepareAttackTime));
             return;
+        }
         
         if (path.vectorPath.Count <= currentWaypoint)
         {
@@ -73,8 +80,27 @@ public class ELC_EnemyAI : MonoBehaviour
         float distanceToWaypoint = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         
         if (distanceToWaypoint < NextWaypointDistance) currentWaypoint++;
+    }
 
-        
+    IEnumerator PrepareAttack(float time)
+    {
+        isPreparingAttack = true;
+        if(EnableDebug) Debug.Log("prepare");
+        yield return new WaitForSeconds(time);
+        StartCoroutine(Attack(EnemyStats.attackTime));
+        isPreparingAttack = false;
+    }
+
+    IEnumerator Attack(float time)
+    {
+        if (EnableDebug) Debug.Log("attack");
+        isAttacking = true;
+        yield return new WaitForSeconds(time);
+        isAttacking = false;
+    }
+
+    private void Detection()
+    {
 
     }
 }

@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: CharacterVariables
   m_EditorClassIdentifier: 
   ShieldDuration: 2
-  SpiritProjection: 1
-  SpiritDecreaseSpeed: 0.2
+  SpiritProjection: 4
+  SpiritDecreaseSpeed: 1
   DashDistance: 2.5
-  DashTime: 0.5
+  DashTime: 0.2
   DashUpgradeDistance: 3.5
   DashUpgradeTime: 0.7
   DashCoolDown: 0.6
   SeparationDistance: 25
   initialHP: 3
   TorchActivationDuration: 3
-  RynSpeed: 1.5
-  SpiritSpeed: 2.5
+  RynSpeed: 2.75
+  SpiritSpeed: 3.5
   ShieldCooldown: 2.5
-  DashCooldown: 1.5
   AttackCooldown: 1
+  AttackTogetherRange: 3
   StunTime: 4
   SpiritRespawn: 1

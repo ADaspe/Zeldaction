@@ -111,9 +111,10 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Combat(InputAction.CallbackContext value)
     {
-        Debug.Log("Combat");
+        
         if (value.started)
         {
+            //Debug.Log("Combat");
             if (followingCharacter == RynMove)
             {
                 if (Together) RynAttack.AttackTogether();
