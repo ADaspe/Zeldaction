@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4563171734103896742}
   - component: {fileID: 7743115512952133261}
   - component: {fileID: 380557852099136961}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: CircleDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
