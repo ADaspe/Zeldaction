@@ -46,6 +46,7 @@ public class ELC_EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
+        Target = Detection();
         if(seeker.IsDone())
         {
             seeker.StartPath(rb.position, Target.position, OnPathCalculated);
@@ -99,8 +100,21 @@ public class ELC_EnemyAI : MonoBehaviour
         isAttacking = false;
     }
 
-    private void Detection()
+    private Transform Detection()
     {
+        Collider2D[] mainRadius = Physics2D.OverlapCircleAll(rb.position, EnemyStats.detectionRadius, EnemyStats.DetectionMask);
+        if (mainRadius.Length == 0) return this.transform;
+        //ici mettre un else if (pas dans la zone angulaire) return;
 
+        if (mainRadius.Length == 1) return mainRadius[0].transform;
+        else
+        {
+            foreach (Collider2D col in mainRadius)
+            {
+                if (col.gameObject.layer.ToString().Equals("PlayerRyn")) return col.transform;
+            }
+        }
+
+        return this.transform; //ça c'est vraiment si ça marche pas
     }
 }
