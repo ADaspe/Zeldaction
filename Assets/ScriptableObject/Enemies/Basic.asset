@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prepareAttackTime: 1
   attackTime: 2
-  detectionRadius: 0
+  detectionRadius: 4
   DetectionAngle: 0
+  DetectionMask:
+    serializedVersion: 2
+    m_Bits: 6144
+  trackingPlayerSpeed: 0
+  patrolSpeed: 0

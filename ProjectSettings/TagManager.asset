@@ -18,9 +18,9 @@ TagManager:
   - Obstacle
   - DetectorRadius
   - Interactible
-  - ObstacleMia
+  - ObstacleRyn
   - ObstacleSpirit
-  - PlayerMia
+  - PlayerRyn
   - PlayerSpirit
   - Enemy
   - 

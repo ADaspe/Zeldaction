@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37de0a031717dc04e8bee7ffbd86230a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 8035345064690998873}
+  Target: {fileID: 0}
   EnemyStats: {fileID: 11400000, guid: a7f3845904e01674987ce0b4b79bd164, type: 2}
   EnableDebug: 0
   Speed: 200

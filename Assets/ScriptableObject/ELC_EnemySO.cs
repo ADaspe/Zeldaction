@@ -9,4 +9,7 @@ public class ELC_EnemySO : ScriptableObject
     public float attackTime;
     public float detectionRadius;
     public float DetectionAngle;
+    public LayerMask DetectionMask;
+    public float trackingPlayerSpeed;
+    public float patrolSpeed;
 }
