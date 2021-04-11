@@ -23,10 +23,10 @@ MonoBehaviour:
   SeparationDistance: 25
   initialHP: 3
   TorchActivationDuration: 3
-  RynSpeed: 1.5
+  RynSpeed: 2.5
   SpiritSpeed: 2.5
   ShieldCooldown: 2.5
-  DashCooldown: 1.5
   AttackCooldown: 1
+  AttackTogetherRange: 3
   StunTime: 4
   SpiritRespawn: 1

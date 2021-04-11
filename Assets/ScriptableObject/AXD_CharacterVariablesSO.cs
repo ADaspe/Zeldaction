@@ -20,6 +20,7 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float SpiritSpeed;
     public float ShieldCooldown;
     public float AttackCooldown;
+    public float AttackTogetherRange;
     public float StunTime;
     public float SpiritRespawn;
 }
