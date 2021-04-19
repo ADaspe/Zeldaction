@@ -30,3 +30,4 @@ MonoBehaviour:
   AttackTogetherRange: 3
   StunTime: 4
   SpiritRespawn: 1
+  SpeedGrabbing: 1.5

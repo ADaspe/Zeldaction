@@ -23,4 +23,5 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float AttackTogetherRange;
     public float StunTime;
     public float SpiritRespawn;
+    public float SpeedGrabbing;
 }

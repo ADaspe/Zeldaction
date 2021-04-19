@@ -104,7 +104,7 @@ public class ELC_Attack : MonoBehaviour
         CharManager.spiritMove.isDashing = true;
         CharManager.spiritMove.rb.velocity = CharManager.spiritMove.LastDirection * (CharManager.stats.DashDistance / CharManager.stats.DashTime);
         yield return new WaitForSeconds(CharManager.stats.DashTime);
-        CharManager.spiritMove.speed = CharManager.stats.SpiritSpeed;
+        CharManager.spiritMove.currentSpeed = CharManager.stats.SpiritSpeed;
         CharManager.spiritMove.isDashing = false;
     }
 

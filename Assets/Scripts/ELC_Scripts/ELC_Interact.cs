@@ -10,7 +10,9 @@ public class ELC_Interact : MonoBehaviour
     public bool corrupted;
     public bool PlayerCanInteract;
     public UnityEvent Interact;
-
+    public bool isMobile;
+    public bool isGrabbed;
+    public Rigidbody2D rbInteractObject;
 
     private int touchedSideIndex;
     private bool playerIsTouchingSide;
@@ -18,6 +20,7 @@ public class ELC_Interact : MonoBehaviour
     private void Start()
     {
         touchedSideIndex = -1;
+        rbInteractObject = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
