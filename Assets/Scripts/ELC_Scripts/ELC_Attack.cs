@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ELC_Attack : MonoBehaviour
 {
+    public AXD_CharacterVariablesSO CharStats;
     [SerializeField]
     ELC_CharacterManager CharManager;
     [SerializeField]
     ELC_GameManager gameManager;
-    public float enemyDetectionRadius;
+    //public float enemyDetectionRadius;
     public bool ShieldOn;
     public float NextShield;
     private bool spiritAttack;
@@ -56,7 +57,7 @@ public class ELC_Attack : MonoBehaviour
 
         attackTogetherCooldown = Time.time + CharManager.stats.AttackCooldown;
         //Debug.Log("Attack Together");
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, enemyDetectionRadius, gameManager.EnemiesMask);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, CharStats.AttackTogetherRange, gameManager.EnemiesMask);
 
         
         for (int i = 0; i < enemies.Length; i++)
@@ -69,12 +70,11 @@ public class ELC_Attack : MonoBehaviour
                 nearestEnemy = enemies[i].gameObject;
             }
         }
-        Debug.Log("Ryn attaque " + nearestEnemy);
         if (nearestEnemy != null)
         {
             spiritAttack = true;
             StartCoroutine(ResetAfterSeconds(0.05f));
-            Debug.Log("Mia attaque " + nearestEnemy);
+            Debug.Log("Ryn attaque " + nearestEnemy);
         }
     }
 
