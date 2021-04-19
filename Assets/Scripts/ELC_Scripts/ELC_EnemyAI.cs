@@ -5,21 +5,27 @@ using Pathfinding;
 
 public class ELC_EnemyAI : MonoBehaviour
 {
-    public Transform Target;
+    public Vector3 Target;
     public ELC_EnemySO EnemyStats;
     public bool EnableDebug;
+    public bool isStunned;
 
     public float Speed = 200f;
-    public float NextWaypointDistance = 3f; //à quelle distance il doit être d'un checkpoint pour se diriger vers le suivant (pour éviter que ce soit à 0 de distance qui serait impossible à atteindre pile)
-    public float StopDistanceToPlayer = 5f; //à quelle distance il doit s'arrêter lorsqu'il est près du joueur
+    public float NextWaypointDistance = 0.3f; //à quelle distance il doit être d'un checkpoint pour se diriger vers le suivant (pour éviter que ce soit à 0 de distance qui serait impossible à atteindre pile)
+    public float StopDistanceToPlayer = 2f; //à quelle distance il doit s'arrêter lorsqu'il est près du joueur
 
+    public bool canPatrol;
     public bool isPatrolling;
     public bool isFollowingPlayer;
     public bool isPreparingAttack;
     public bool isAttacking;
+    public List<Transform> PatrolPath;
+
+    
 
     Path path;
     int currentWaypoint = 0;
+    int PatrolPathIndex = 0;
     bool reachedEndOfPath = false;
 
     Seeker seeker; //Le calculateur de chemin
@@ -30,9 +36,13 @@ public class ELC_EnemyAI : MonoBehaviour
         currentWaypoint = 0;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        foreach(Transform t in PatrolPath)
+        {
+            t.SetParent(null);
+        }
 
-        InvokeRepeating("UpdatePath", 0f, 1f);
-        seeker.StartPath(rb.position, Target.position, OnPathCalculated);
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        seeker.StartPath(rb.position, Target, OnPathCalculated);
     }
 
     void OnPathCalculated(Path p)
@@ -49,16 +59,24 @@ public class ELC_EnemyAI : MonoBehaviour
         Target = Detection();
         if(seeker.IsDone())
         {
-            seeker.StartPath(rb.position, Target.position, OnPathCalculated);
+            seeker.StartPath(rb.position, Target, OnPathCalculated);
         }
     }
     
     void FixedUpdate()
     {
+        if(isStunned)
+        {
+            isAttacking = false;
+            isPreparingAttack = false;
+            StopAllCoroutines();
+            return;
+        }
+
         if (path == null || isPreparingAttack || isAttacking)
             return;
 
-        if (isFollowingPlayer && Vector2.Distance(rb.position, Target.position) < StopDistanceToPlayer)
+        if (isFollowingPlayer && Vector2.Distance(rb.position, Target) < StopDistanceToPlayer)
         {
             StartCoroutine(PrepareAttack(EnemyStats.prepareAttackTime));
             return;
@@ -67,12 +85,19 @@ public class ELC_EnemyAI : MonoBehaviour
         if (path.vectorPath.Count <= currentWaypoint)
         {
             reachedEndOfPath = true;
+            if(isPatrolling)
+            {
+                if (PatrolPathIndex >= PatrolPath.Count - 1) PatrolPathIndex = 0;
+                else PatrolPathIndex++;
+            }
             return;
         }
         else
         {
             reachedEndOfPath = false;
         }
+
+        
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * Speed * Time.deltaTime;
@@ -100,21 +125,46 @@ public class ELC_EnemyAI : MonoBehaviour
         isAttacking = false;
     }
 
-    private Transform Detection()
+    private Vector3 Detection()
     {
         Collider2D[] mainRadius = Physics2D.OverlapCircleAll(rb.position, EnemyStats.detectionRadius, EnemyStats.DetectionMask);
-        if (mainRadius.Length == 0) return this.transform;
-        //ici mettre un else if (pas dans la zone angulaire) return;
-
-        if (mainRadius.Length == 1) return mainRadius[0].transform;
-        else
+        
+        if (mainRadius.Length == 0 )
         {
-            foreach (Collider2D col in mainRadius)
+            isFollowingPlayer = false;
+            if (reachedEndOfPath)
             {
-                if (col.gameObject.layer.ToString().Equals("PlayerRyn")) return col.transform;
+                if (canPatrol) //Fait patrouiller l'ennemi si personne est détecté
+                {
+                    isPatrolling = true;
+                    return PatrolPath[PatrolPathIndex].position;
+                }
             }
+            else return Target;
         }
 
-        return this.transform; //ça c'est vraiment si ça marche pas
+
+        //ici mettre un else if (pas dans la zone angulaire) return;
+        isPatrolling = false;
+        if (mainRadius.Length == 1)
+        {
+            isFollowingPlayer = true;
+            if(mainRadius[0].gameObject.CompareTag("Ryn") || !mainRadius[0].GetComponent<AXD_CharacterMove>().charaManager.Together) return mainRadius[0].transform.position;
+        }
+        else
+        {
+            isFollowingPlayer = true;
+            foreach (Collider2D col in mainRadius)
+            {
+                if (col.gameObject.CompareTag("Ryn")) return col.transform.position;
+            }
+        }
+        
+        return path.vectorPath[path.vectorPath.Count - 1]; //ça c'est vraiment si ça marche pas
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(this.transform.position, EnemyStats.detectionRadius);
     }
 }

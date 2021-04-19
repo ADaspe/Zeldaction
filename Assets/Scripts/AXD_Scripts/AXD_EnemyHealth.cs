@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class AXD_EnemyHealth : MonoBehaviour
 {
-    public AXD_EnemyMove enemyMove;
+    public ELC_EnemyAI enemyAI;
 
     public void GetHit(float timeToStun)
     {
-        if (!enemyMove.isStuned)
+        if (!enemyAI.isStunned)
         {
-            Debug.Log("Aïe, je suis stun");
-            enemyMove.isStuned = true;
-            enemyMove.Invoke("UnStun", timeToStun);
+            enemyAI.isStunned = true;
+            Invoke("CancelStun", timeToStun);
         }
     }
+
+    private void CancelStun()
+    {
+        enemyAI.isStunned = false;
+    }
+
+    
 }
