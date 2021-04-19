@@ -88,14 +88,14 @@ public class ELC_CharacterManager : MonoBehaviour
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
-        SpiritGO.GetComponent<Collider2D>().enabled = false;
+        //SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
     }
 
     public void DetachSpirit()
     {
         Together = false;
-        spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son dï¿½placement quand on le dï¿½tache
+        spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son déplacement quand on le détache
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
     }
