@@ -78,9 +78,5 @@ public class AXD_CharacterMove : MonoBehaviour
             Debug.Log("Ceci est un ennemi");
             collision.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(charaManager.stats.StunTime);
         }
-        else
-        {
-            Debug.Log("Collision non reconnue");
-        }
     }
 }
