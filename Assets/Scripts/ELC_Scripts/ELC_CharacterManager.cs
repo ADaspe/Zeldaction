@@ -26,6 +26,8 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerShield;
     public string PlayerAttackTogether;
     public string PlayerHit;
+    public bool xLocked;
+    public bool yLocked;
 
 
     private void Start()
@@ -104,8 +106,25 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (followingCharacter.canMove)
         {
-            Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.speed;
-            followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y);
+            Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
+            if (xLocked)
+            {
+                followingCharacter.rawInputMovement = new Vector2(0, inputMovement.y).normalized;
+            }
+            else if (yLocked)
+            {
+                followingCharacter.rawInputMovement = new Vector2(inputMovement.x, 0).normalized;
+            }
+            else
+            {
+                followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y).normalized;
+            }
+            
+
+        }
+        if (value.canceled)
+        {
+            followingCharacter.rawInputMovement = Vector2.zero;
         }
     }
 
@@ -126,16 +145,66 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Action(InputAction.CallbackContext value)
     {
-        Debug.Log("Action");
-        if (DetectedInteraction != null && followingCharacter == RynMove)
+        if (value.started)
         {
-            if (DetectedInteraction.PlayerCanInteract)
+            Debug.Log("Action");
+            if (DetectedInteraction != null && followingCharacter == RynMove)
             {
-                DetectedInteraction.Interact.Invoke();
+                if (DetectedInteraction.PlayerCanInteract && !DetectedInteraction.isMobile)
+                {
+                    DetectedInteraction.Interact.Invoke();
+                }else if(DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
+                {
+                    DetectedInteraction.isGrabbed = true;
+                    RynMove.isRynGrabbing = true;
+                    Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y-DetectedInteraction.transform.position.y);
+
+
+                    if (Mathf.Abs(vectorDiff.x) >=0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
+                    {
+                        //Animation à gauche
+                        yLocked = true;
+                    }else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
+                    {
+                        //Animation à droite
+                        yLocked = true;
+                    }
+                    else if (Mathf.Abs(vectorDiff.y) >= 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessus de la caisse
+                    {
+                        //Animation en bas
+                        xLocked = true;
+                    }else if (Mathf.Abs(vectorDiff.y) < 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessous de la caisse
+                    {
+                        //Animation en haut
+                        xLocked = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Kestuveu frr?");
+                    }
+
+                    RynMove.currentSpeed = stats.SpeedGrabbing;
+                    RynMove.grabbebObject = DetectedInteraction;
+                }
+
             }
-        }else if(ToPurify != null && followingCharacter == spiritMove)
+            else if (ToPurify != null && followingCharacter == spiritMove)
+            {
+                ToPurify.Purify();
+            }
+        }
+        if (value.canceled)
         {
-            ToPurify.Purify();
+            Debug.Log("Action stop");
+            if (DetectedInteraction != null && DetectedInteraction.isGrabbed)
+            {
+                DetectedInteraction.isGrabbed = false;
+                RynMove.isRynGrabbing = false;
+                xLocked = yLocked = false;
+                RynMove.currentSpeed = stats.RynSpeed;
+                RynMove.grabbebObject.rbInteractObject.velocity = Vector2.zero;
+                RynMove.grabbebObject = null;
+            }
         }
     }
 

@@ -11,10 +11,12 @@ public class AXD_CharacterMove : MonoBehaviour
     public Vector2 rawInputMovement;
     public Vector2 LastDirection;
     public bool canMove;
-    public float speed;
+    public float currentSpeed;
     public bool currentCharacter;
     public bool camSwapOn;
     public bool isDashing;
+    public bool isRynGrabbing;
+    public ELC_Interact grabbebObject;
 
     private void Start()
     {
@@ -23,11 +25,11 @@ public class AXD_CharacterMove : MonoBehaviour
         AnimManager = charaManager.AnimationManager;
         if(this.tag == "Ryn")
         {
-            speed = charaManager.stats.RynSpeed;
+            currentSpeed = charaManager.stats.RynSpeed;
         }
         else if (this.tag == "Spirit")
         {
-            speed = charaManager.stats.SpiritSpeed;
+            currentSpeed = charaManager.stats.SpiritSpeed;
         }
     }
 
@@ -35,11 +37,15 @@ public class AXD_CharacterMove : MonoBehaviour
     {
         if (canMove && currentCharacter && !isDashing)
         {
-            rb.velocity = rawInputMovement;
+            rb.velocity = rawInputMovement*currentSpeed;
             if (rawInputMovement.magnitude >= 0.005f)
             {
                 LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
-
+                
+            }
+            if (isRynGrabbing)
+            {
+                grabbebObject.rbInteractObject.velocity = rawInputMovement*charaManager.stats.SpeedGrabbing;
             }
             if (charaManager.followingCharacter == charaManager.RynMove)
             {
@@ -70,7 +76,7 @@ public class AXD_CharacterMove : MonoBehaviour
         {
             Debug.Log("Ceci est un mur");
             StopCoroutine(charaManager.SpiritGO.GetComponent<ELC_Attack>().DashCoroutine());
-            speed = charaManager.stats.SpiritSpeed;
+            currentSpeed = charaManager.stats.SpiritSpeed;
             isDashing = false;
         }
         else if(CompareTag("Spirit") && currentCharacter && isDashing && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
