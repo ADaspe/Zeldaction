@@ -10351,6 +10351,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 169941107}
     m_Modifications:
+    - target: {fileID: 4563171734103896742, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8176392399248210512, guid: 16673731a79871a459acf5da8ed9e501,
         type: 3}
       propertyPath: m_Name
@@ -10460,6 +10465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
+      propertyPath: corrupted
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
         type: 3}
