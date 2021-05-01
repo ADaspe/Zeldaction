@@ -9281,6 +9281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
+      propertyPath: ExplodingMushroomMask.m_Bits
+      value: 24832
+      objectReference: {fileID: 0}
+    - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
       propertyPath: SpiritualObstaclesMask.m_Bits
       value: 1024
       objectReference: {fileID: 0}
