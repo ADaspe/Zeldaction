@@ -153,8 +153,10 @@ public class ELC_CharacterManager : MonoBehaviour
                 if (DetectedInteraction.PlayerCanInteract && !DetectedInteraction.isMobile)
                 {
                     DetectedInteraction.Interact.Invoke();
-                }else if(DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
+                }
+                else if(DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
                 {
+                    DetectedInteraction.Interact.Invoke();
                     DetectedInteraction.isGrabbed = true;
                     RynMove.isRynGrabbing = true;
                     Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y-DetectedInteraction.transform.position.y);

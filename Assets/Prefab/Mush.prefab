@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e528c5961cdbb41b63071d4b472b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mushroom: {fileID: 0}
 --- !u!1 &7141853120928927710
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,13 +246,13 @@ MonoBehaviour:
   Interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7597673293554959343}
+        m_TargetAssemblyTypeName: AXD_Mushroom, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -370,9 +371,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6354430cd8a8644b9ebe9244b7afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: {fileID: 0}
   ExplodingTime: 5
   ProjectionDistance: 4
   ExplodingRadius: 1.5
+  ProjectionTime: 2
+  projected: 0
+  rb: {fileID: 0}
 --- !u!1 &7141853122106500170
 GameObject:
   m_ObjectHideFlags: 0
