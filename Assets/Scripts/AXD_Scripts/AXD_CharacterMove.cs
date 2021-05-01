@@ -17,6 +17,7 @@ public class AXD_CharacterMove : MonoBehaviour
     public bool isDashing;
     public bool isRynGrabbing;
     public ELC_Interact grabbebObject;
+    public bool wasDashingWhenColliding;
 
     private void Start()
     {
