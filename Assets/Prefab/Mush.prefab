@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2256749289953903594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4957780973541190399}
+  - component: {fileID: 4139563991351977299}
+  - component: {fileID: 2734123465957688221}
+  m_Layer: 6
+  m_Name: ExplosionDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4957780973541190399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256749289953903594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7141853122341792358}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4139563991351977299
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256749289953903594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
+--- !u!114 &2734123465957688221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256749289953903594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e528c5961cdbb41b63071d4b472b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7141853120928927710
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +218,7 @@ Transform:
   - {fileID: 7141853121528561223}
   - {fileID: 7141853120928927711}
   - {fileID: 7141853122106500171}
+  - {fileID: 4957780973541190399}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -309,9 +370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6354430cd8a8644b9ebe9244b7afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplodingTime: 0
-  ProjectionDistance: 0
-  ExplodingRadius: 0
+  ExplodingTime: 5
+  ProjectionDistance: 4
+  ExplodingRadius: 1.5
 --- !u!1 &7141853122106500170
 GameObject:
   m_ObjectHideFlags: 0

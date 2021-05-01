@@ -16,7 +16,6 @@ public class AXD_CorruptionDetection : MonoBehaviour
         
         if (collision.CompareTag("Spirit"))
         {
-            Debug.Log("L'esprit m'a trouvé");
             ToPurifyInCharManager =  collision.GetComponent<AXD_CharacterMove>().charaManager.ToPurify = objectToPurify;
         }
     }
@@ -25,7 +24,6 @@ public class AXD_CorruptionDetection : MonoBehaviour
     {
         if (collision.CompareTag("Spirit") && ToPurifyInCharManager != null && ToPurifyInCharManager == objectToPurify)
         {
-            Debug.Log("L'esprit m'a perdu");
             collision.GetComponent<AXD_CharacterMove>().charaManager.ToPurify = null;
         }
     }
