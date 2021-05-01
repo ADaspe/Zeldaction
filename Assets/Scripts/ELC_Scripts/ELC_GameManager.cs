@@ -14,4 +14,5 @@ public class ELC_GameManager : MonoBehaviour
     public LayerMask SolidObstaclesMask; //Les obstacles que Mia ne peut traverser
     public LayerMask SpiritualObstaclesMask; //Les obstacles que l'esprit peut traverser
     public LayerMask InteractionMask; //Les éléments avce lesquels le joueur pourra interagir
+    public LayerMask ExplodingMushroomMask; // éléments qui seront affectés par l'explosion du champi
 }
