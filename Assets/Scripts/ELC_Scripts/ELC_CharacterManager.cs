@@ -29,6 +29,9 @@ public class ELC_CharacterManager : MonoBehaviour
     public bool xLocked;
     public bool yLocked;
 
+    [Header ("Upgrades")]
+    public bool dashPlusUpgrade;
+
 
     private void Start()
     {
