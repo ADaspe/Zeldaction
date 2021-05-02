@@ -8,6 +8,7 @@ TagManager:
   - Ryn
   - Spirit
   - Enemy
+  - Crate
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - PlayerRyn
   - PlayerSpirit
   - Enemy
-  - 
-  - 
+  - ThinWalls
+  - IdenDash
   - 
   - 
   - 

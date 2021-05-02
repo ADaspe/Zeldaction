@@ -71,7 +71,6 @@ public class ELC_Interact : MonoBehaviour
     {
         if (corrupted)
         {
-            Debug.Log("Purificado");
             corrupted = !corrupted;
         }
     }
