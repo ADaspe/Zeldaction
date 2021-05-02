@@ -16,6 +16,9 @@ public class ELC_Attack : MonoBehaviour
     private GameObject nearestEnemy;
     private ELC_Attack SpiritAttackScript;
     public float attackTogetherCooldown;
+    public LayerMask defaultMask;
+    public LayerMask dashMask;
+
 
     private void Start()
     {
@@ -101,6 +104,7 @@ public class ELC_Attack : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
+        gameObject.layer = dashMask;
         CharManager.spiritMove.wasDashingWhenColliding = true;
         CharManager.spiritMove.isDashing = true;
         CharManager.spiritMove.rb.velocity = CharManager.spiritMove.LastDirection * (CharManager.stats.DashDistance / CharManager.stats.DashTime);
@@ -108,6 +112,7 @@ public class ELC_Attack : MonoBehaviour
         CharManager.spiritMove.currentSpeed = CharManager.stats.SpiritSpeed;
         CharManager.spiritMove.isDashing = false;
         CharManager.spiritMove.wasDashingWhenColliding = false;
+        gameObject.layer = defaultMask;
     }
 
     public void SpiritAttackTogether(Vector3 targetPos, float duration)
