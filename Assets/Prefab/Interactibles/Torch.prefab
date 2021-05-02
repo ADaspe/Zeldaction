@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9173012788802152864}
   - component: {fileID: 9173012788802152865}
   - component: {fileID: 9173012788802152866}
+  - component: {fileID: 6526799955626206081}
   m_Layer: 8
   m_Name: Torch
   m_TagString: Untagged
@@ -148,6 +149,29 @@ MonoBehaviour:
   type: 0
   isActivated: 0
   TorchDuration: 5
+  isCorrupted: 0
+--- !u!114 &6526799955626206081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173012788802152876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDetectors: []
+  GameManagerScript: {fileID: 0}
+  corrupted: 0
+  PlayerCanInteract: 0
+  Interact:
+    m_PersistentCalls:
+      m_Calls: []
+  isMobile: 0
+  isGrabbed: 0
+  rbInteractObject: {fileID: 0}
 --- !u!1 &9173012789157579294
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +211,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9173012789157579294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
