@@ -8,6 +8,7 @@ TagManager:
   - Ryn
   - Spirit
   - Enemy
+  - Crate
   layers:
   - Default
   - TransparentFX
