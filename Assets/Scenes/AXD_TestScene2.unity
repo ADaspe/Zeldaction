@@ -9641,6 +9641,16 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1868863768}
+    - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
+      propertyPath: dashMask.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
+      propertyPath: defaultMask.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_RootOrder
