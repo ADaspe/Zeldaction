@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  mushroomPrefab: {fileID: 7597673293554959343, guid: b9ab97844a091e24d9d75653fac3a88a,
+    type: 3}
+  ActiveMushroom: {fileID: 0}
+  MushroomNextrSpawn: 0
+  secondsToAddToExplodingTimeForSpawning: 1
 --- !u!1 &5614329211231504406
 GameObject:
   m_ObjectHideFlags: 0
