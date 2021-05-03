@@ -9,6 +9,8 @@ TagManager:
   - Spirit
   - Enemy
   - Crate
+  - ThinWall
+  - Torch
   layers:
   - Default
   - TransparentFX

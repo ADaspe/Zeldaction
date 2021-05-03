@@ -12,12 +12,16 @@ public class ELC_Activation : MonoBehaviour
     public bool isCorrupted;
     private ELC_Interact interactScript;
     public float detectionRadius;
-    public ELC_Door DoorToOpen;
+    public AXD_Activable[] objectsToActivate;
 
     private void Start()
     {
         interactScript = this.GetComponent<ELC_Interact>();
-        DoorToOpen.ActivationsNeeded.Add(this);
+        foreach (AXD_Activable item in objectsToActivate)
+        {
+            item.ActivationsNeeded.Add(this);
+        }
+        
     }
 
     private void Update()
@@ -29,10 +33,13 @@ public class ELC_Activation : MonoBehaviour
 
     public void ActivateObject()
     {
-        if (!isCorrupted && type == ActivatorType.PRESSUREPLATE)
+        if (!isCorrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
         {
             isActivated = !isActivated;
-            DoorToOpen.CheckActivations();
+            foreach (AXD_Activable item in objectsToActivate)
+            {
+                item.Activate();
+            }
         }
     }
 
@@ -45,7 +52,10 @@ public class ELC_Activation : MonoBehaviour
             if (type == ActivatorType.PRESSUREPLATE && col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn"))
             {
                 isActivated = true;
-                DoorToOpen.CheckActivations();
+                foreach (AXD_Activable item in objectsToActivate)
+                {
+                    item.Activate();
+                }
                 return;
             }
             else if(type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
@@ -53,7 +63,10 @@ public class ELC_Activation : MonoBehaviour
                 isActivated = true;
                 StopCoroutine("Countdown");
                 StartCoroutine("Countdown");
-                DoorToOpen.CheckActivations();
+                foreach (AXD_Activable item in objectsToActivate)
+                {
+                    item.Activate();
+                }
                 return;
             }
             else isActivated = false;

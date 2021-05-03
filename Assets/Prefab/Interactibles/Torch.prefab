@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6526799955626206081}
   m_Layer: 8
   m_Name: Torch
-  m_TagString: Untagged
+  m_TagString: Torch
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,6 +150,8 @@ MonoBehaviour:
   isActivated: 0
   TorchDuration: 5
   isCorrupted: 0
+  detectionRadius: 0
+  objectToActivate: {fileID: 0}
 --- !u!114 &6526799955626206081
 MonoBehaviour:
   m_ObjectHideFlags: 0
