@@ -183,10 +183,6 @@ public class ELC_CharacterManager : MonoBehaviour
                         //Animation en haut
                         xLocked = true;
                     }
-                    else
-                    {
-                        Debug.Log("Kestuveu frr?");
-                    }
 
                     RynMove.currentSpeed = stats.SpeedGrabbing;
                     RynMove.grabbebObject = DetectedInteraction;

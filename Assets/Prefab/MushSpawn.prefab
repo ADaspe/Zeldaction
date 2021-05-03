@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123fc07a712c6b3409a1b4b809880a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActivationsNeeded: []
+  gm: {fileID: 0}
   activated: 0
   mushroomPrefab: {fileID: 7597673293554959343, guid: b9ab97844a091e24d9d75653fac3a88a,
     type: 3}
@@ -75,9 +77,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5614329211231504406}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9100003, y: -0.99, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2568928446573367840}
   m_RootOrder: 0

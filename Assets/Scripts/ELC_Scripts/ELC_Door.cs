@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ELC_Door : MonoBehaviour
+public class ELC_Door : AXD_Activable
 {
     public bool open;
     [HideInInspector]
-    public List<ELC_Activation> ActivationsNeeded;
+    
     private Collider2D rb;
     private int currentNumberOfActivation;
 
@@ -35,5 +35,10 @@ public class ELC_Door : MonoBehaviour
             open = false;
             rb.enabled = true;
         }
+    }
+
+    public override void Activate()
+    {
+        CheckActivations();
     }
 }

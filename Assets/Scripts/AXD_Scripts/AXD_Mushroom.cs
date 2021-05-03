@@ -11,8 +11,8 @@ public class AXD_Mushroom : MonoBehaviour
     public float ProjectionTime;
     public bool projected;
     public Rigidbody2D rb;
-    public LayerMask defaultMask;
-    public LayerMask projectedMask;
+    public string defaultMask;
+    public string projectedMask;
     //public float timeDecreaseSpeed;
     private void Start()
     {
@@ -34,7 +34,7 @@ public class AXD_Mushroom : MonoBehaviour
         projected = true;
         if (dashUpgrade)
         {
-            gameObject.layer = projectedMask;
+            gameObject.layer = LayerMask.NameToLayer(projectedMask);
         }
         rb.velocity = direction.normalized * (ProjectionDistance / ProjectionTime);
         Invoke("StopChampi", ProjectionTime);
@@ -43,11 +43,11 @@ public class AXD_Mushroom : MonoBehaviour
     public void StopChampi()
     {
         rb.velocity = Vector2.zero;
-        gameObject.layer = defaultMask;
+        gameObject.layer = LayerMask.NameToLayer(defaultMask);
         projected = false;
-        if(gameObject.layer != defaultMask)
+        if(gameObject.layer != LayerMask.NameToLayer(defaultMask))
         {
-            gameObject.layer = defaultMask;
+            gameObject.layer = LayerMask.NameToLayer(defaultMask);
         }
     }
 
@@ -59,8 +59,13 @@ public class AXD_Mushroom : MonoBehaviour
     public void Explode()
     {
         Collider2D[] allObjectsDetected = Physics2D.OverlapCircleAll(transform.position, ExplodingRadius, interact.GameManagerScript.ExplodingMushroomMask);
+        if(allObjectsDetected != null)
+        {
+            
+        }
         foreach (Collider2D item in allObjectsDetected)
         {
+            Debug.Log("Tag : "+item.tag);
             if (item.CompareTag("Torch"))
             {
                 ELC_Activation interactible = item.GetComponent<ELC_Activation>();
@@ -71,12 +76,13 @@ public class AXD_Mushroom : MonoBehaviour
             }else if(item.CompareTag("Enemy"))
             {
                 item.GetComponent<AXD_EnemyHealth>().GetHit(interact.GameManagerScript.CharacterManager.stats.StunTime);
-            }else if(item.gameObject.layer == LayerMask.NameToLayer("ThinWall"))
+            }else if(item.CompareTag("ThinWall"))
             {
                 item.GetComponent<AXD_ThinWall>().CollapseWall();
             }
 
         }
+        Debug.Log("Kaboom");
         Destroy(this.gameObject);
     }
 
@@ -101,11 +107,10 @@ public class AXD_Mushroom : MonoBehaviour
         AXD_CharacterMove tempCharaMove = collision.gameObject.GetComponent<AXD_CharacterMove>();
         if (tempCharaMove.wasDashingWhenColliding)
         {
-            this.gameObject.layer = projectedMask;
+            this.gameObject.layer = LayerMask.NameToLayer(projectedMask);
             Vector2 direction = tempCharaMove.LastDirection;
             Projection(direction, tempCharaMove.charaManager.dashPlusUpgrade);
             tempCharaMove.wasDashingWhenColliding = false; ;
         }
     }
-
 }

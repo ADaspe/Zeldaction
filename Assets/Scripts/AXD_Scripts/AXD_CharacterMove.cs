@@ -46,7 +46,17 @@ public class AXD_CharacterMove : MonoBehaviour
             }
             if (isRynGrabbing)
             {
-                grabbebObject.rbInteractObject.velocity = rawInputMovement*charaManager.stats.SpeedGrabbing;
+                if (grabbebObject != null)
+                {
+                    grabbebObject.rbInteractObject.velocity = rawInputMovement * charaManager.stats.SpeedGrabbing;
+                }
+                else
+                {
+                    isRynGrabbing = false;
+                    charaManager.xLocked = false;
+                    charaManager.yLocked = false;
+                    currentSpeed = charaManager.stats.RynSpeed;
+                }
             }
             if (charaManager.followingCharacter == charaManager.RynMove)
             {

@@ -16,7 +16,7 @@ public class AXD_CorruptionDetection : MonoBehaviour
 
     private void Update()
     {
-        if (!objectToPurify.corrupted) circle.enabled = false;
+        if (objectToPurify !=null && !objectToPurify.corrupted) circle.enabled = false;
         else circle.enabled = true;
 
     }
