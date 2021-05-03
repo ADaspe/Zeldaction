@@ -31,3 +31,4 @@ MonoBehaviour:
   StunTime: 4
   SpiritRespawn: 1
   SpeedGrabbing: 1.5
+  TogetherAttackDetectionAngle: 60

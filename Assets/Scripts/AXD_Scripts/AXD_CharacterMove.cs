@@ -73,11 +73,11 @@ public class AXD_CharacterMove : MonoBehaviour
     {
         if(rb.velocity.magnitude >= 0.005f)
         {
-            AnimManager.UpdateAnimations(charaManager.PlayerWalk);
+            AnimManager.isMoving = true;
         }
         else
         {
-            AnimManager.UpdateAnimations(charaManager.PlayerIdle);
+            AnimManager.isMoving = false;
         }
     }
 
