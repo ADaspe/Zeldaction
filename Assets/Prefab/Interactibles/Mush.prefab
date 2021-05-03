@@ -347,7 +347,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -378,12 +378,8 @@ MonoBehaviour:
   ProjectionTime: 2
   projected: 0
   rb: {fileID: 0}
-  defaultMask:
-    serializedVersion: 2
-    m_Bits: 64
-  projectedMask:
-    serializedVersion: 2
-    m_Bits: 32768
+  defaultMask: Obstacle
+  projectedMask: IdenDash
 --- !u!1 &7141853122106500170
 GameObject:
   m_ObjectHideFlags: 0
