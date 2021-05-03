@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 467668910879602705}
   - component: {fileID: 467668910879602702}
   - component: {fileID: 467668910879602703}
+  - component: {fileID: 237884969641447571}
   m_Layer: 8
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -148,6 +149,29 @@ MonoBehaviour:
   type: 2
   isActivated: 0
   TorchDuration: 0
+  isCorrupted: 0
+--- !u!114 &237884969641447571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467668910879602701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDetectors: []
+  GameManagerScript: {fileID: 0}
+  corrupted: 0
+  PlayerCanInteract: 0
+  Interact:
+    m_PersistentCalls:
+      m_Calls: []
+  isMobile: 0
+  isGrabbed: 0
+  rbInteractObject: {fileID: 0}
 --- !u!1 &467668912517366723
 GameObject:
   m_ObjectHideFlags: 0
