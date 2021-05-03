@@ -1,0 +1,1044 @@
+fileFormatVersion: 2
+guid: 3c57b627fdbcc684abb9a1dd0079b33e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1045564802595725507
+    second: planche assets ruines 1_0
+  - first:
+      213: -1000140224148460862
+    second: planche assets ruines 1_1
+  - first:
+      213: 4131883923882822466
+    second: planche assets ruines 1_2
+  - first:
+      213: 2399816558393393728
+    second: planche assets ruines 1_3
+  - first:
+      213: 5672394887976704866
+    second: planche assets ruines 1_4
+  - first:
+      213: 440591832326176961
+    second: planche assets ruines 1_5
+  - first:
+      213: -2342560220839990039
+    second: planche assets ruines 1_6
+  - first:
+      213: 8954499166739209877
+    second: planche assets ruines 1_7
+  - first:
+      213: -2026020961343229154
+    second: planche assets ruines 1_8
+  - first:
+      213: -4349810553491150480
+    second: planche assets ruines 1_9
+  - first:
+      213: -2501037293680454852
+    second: planche assets ruines 1_10
+  - first:
+      213: -1037947756610310508
+    second: planche assets ruines 1_11
+  - first:
+      213: 649647403574268304
+    second: planche assets ruines 1_12
+  - first:
+      213: 83424906823841758
+    second: planche assets ruines 1_13
+  - first:
+      213: -1940128223779062644
+    second: planche assets ruines 1_14
+  - first:
+      213: -5530803863073756961
+    second: planche assets ruines 1_15
+  - first:
+      213: 515401027414441336
+    second: planche assets ruines 1_16
+  - first:
+      213: 3694510726754376430
+    second: planche assets ruines 1_17
+  - first:
+      213: 5887180796239225048
+    second: planche assets ruines 1_18
+  - first:
+      213: 5569685809527568581
+    second: planche assets ruines 1_19
+  - first:
+      213: -4270412902596347721
+    second: planche assets ruines 1_20
+  - first:
+      213: -6339577862678890375
+    second: planche assets ruines 1_21
+  - first:
+      213: 3967255164076205757
+    second: planche assets ruines 1_22
+  - first:
+      213: 3130363365262126158
+    second: planche assets ruines 1_23
+  - first:
+      213: 4435260738875531458
+    second: planche assets ruines 1_24
+  - first:
+      213: -379635137237086924
+    second: planche assets ruines 1_25
+  - first:
+      213: 7244056376110733607
+    second: planche assets ruines 1_26
+  - first:
+      213: 8583033097166900958
+    second: planche assets ruines 1_27
+  - first:
+      213: 8664039729167060120
+    second: planche assets ruines 1_28
+  - first:
+      213: 1176575421202585542
+    second: planche assets ruines 1_29
+  - first:
+      213: 2139803814774252955
+    second: planche assets ruines 1_30
+  - first:
+      213: 8194058943124247474
+    second: planche assets ruines 1_31
+  - first:
+      213: -3318745384340552835
+    second: planche assets ruines 1_32
+  - first:
+      213: 2096519741842251759
+    second: planche assets ruines 1_33
+  - first:
+      213: 1883054096929347826
+    second: planche assets ruines 1_34
+  - first:
+      213: -2968645994696434461
+    second: planche assets ruines 1_35
+  - first:
+      213: -4544139588204179334
+    second: planche assets ruines 1_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: planche assets ruines 1_0
+      rect:
+        serializedVersion: 2
+        x: 6211
+        y: 474
+        width: 365
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f51a70a586d71f0800000000000000
+      internalID: -1045564802595725507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_1
+      rect:
+        serializedVersion: 2
+        x: 5840
+        y: 635
+        width: 227
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca2d0ed3c9ce12f0800000000000000
+      internalID: -1000140224148460862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_2
+      rect:
+        serializedVersion: 2
+        x: 5818
+        y: 895
+        width: 321
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bce208986675930800000000000000
+      internalID: 4131883923882822466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_3
+      rect:
+        serializedVersion: 2
+        x: 6216
+        y: 1011
+        width: 349
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0428321f17cdd4120800000000000000
+      internalID: 2399816558393393728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_4
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 508
+        width: 509
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bd793d81568be40800000000000000
+      internalID: 5672394887976704866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_5
+      rect:
+        serializedVersion: 2
+        x: 4561
+        y: 303
+        width: 537
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c08db8efeb4d1600800000000000000
+      internalID: 440591832326176961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_6
+      rect:
+        serializedVersion: 2
+        x: 4672
+        y: 1355
+        width: 741
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec2fdbf3ed8d7fd0800000000000000
+      internalID: -2342560220839990039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_7
+      rect:
+        serializedVersion: 2
+        x: 5568
+        y: 1393
+        width: 565
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e95079c85c44c70800000000000000
+      internalID: 8954499166739209877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_8
+      rect:
+        serializedVersion: 2
+        x: 6183
+        y: 1493
+        width: 426
+        height: 736
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1334a38ba022e3e0800000000000000
+      internalID: -2026020961343229154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_9
+      rect:
+        serializedVersion: 2
+        x: 5663
+        y: 1958
+        width: 465
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0792aee095e52a3c0800000000000000
+      internalID: -4349810553491150480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_10
+      rect:
+        serializedVersion: 2
+        x: 5142
+        y: 2013
+        width: 437
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c331c2c15d78a4dd0800000000000000
+      internalID: -2501037293680454852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_11
+      rect:
+        serializedVersion: 2
+        x: 4384
+        y: 1974
+        width: 581
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e24dfb3087891f0800000000000000
+      internalID: -1037947756610310508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_12
+      rect:
+        serializedVersion: 2
+        x: 4190
+        y: 2589
+        width: 1473
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0919c4f1fd2040900800000000000000
+      internalID: 649647403574268304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_13
+      rect:
+        serializedVersion: 2
+        x: 5790
+        y: 2506
+        width: 1002
+        height: 1085
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7b7a0c282682100800000000000000
+      internalID: 83424906823841758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_14
+      rect:
+        serializedVersion: 2
+        x: 3077
+        y: 3065
+        width: 703
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c70f2e8a74315e0800000000000000
+      internalID: -1940128223779062644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_15
+      rect:
+        serializedVersion: 2
+        x: 3028
+        y: 2752
+        width: 724
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd86123a033ae33b0800000000000000
+      internalID: -5530803863073756961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_16
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 2388
+        width: 514
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87db8e3f082172700800000000000000
+      internalID: 515401027414441336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_17
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 2025
+        width: 384
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea901f7ee9854330800000000000000
+      internalID: 3694510726754376430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_18
+      rect:
+        serializedVersion: 2
+        x: 3891
+        y: 1495
+        width: 421
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d027581eb773b150800000000000000
+      internalID: 5887180796239225048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_19
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 254
+        width: 729
+        height: 743
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8bc6bfbbf7b4d40800000000000000
+      internalID: 5569685809527568581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_20
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 78
+        width: 465
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8ff7837127cb4c0800000000000000
+      internalID: -4270412902596347721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_21
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 813
+        width: 692
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978381db58b4508a0800000000000000
+      internalID: -6339577862678890375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_22
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1650
+        width: 614
+        height: 895
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6a8146d858e0730800000000000000
+      internalID: 3967255164076205757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_23
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 1431
+        width: 332
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c685435e8417b20800000000000000
+      internalID: 3130363365262126158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_24
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1769
+        width: 529
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0a9ea94263d8d30800000000000000
+      internalID: 4435260738875531458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_25
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1864
+        width: 439
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d0ab4aad34bbaf0800000000000000
+      internalID: -379635137237086924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_26
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 930
+        width: 586
+        height: 754
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729dbf6b4ee088460800000000000000
+      internalID: 7244056376110733607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_27
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 857
+        width: 686
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edecd04802f0d1770800000000000000
+      internalID: 8583033097166900958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_28
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 216
+        width: 1098
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ccfd8ca3adc3870800000000000000
+      internalID: 8664039729167060120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_29
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 2624
+        width: 529
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c75c30ac19045010800000000000000
+      internalID: 1176575421202585542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_30
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 2590
+        width: 428
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9525ac7b3c12bd10800000000000000
+      internalID: 2139803814774252955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_31
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 2607
+        width: 1232
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3988dd13527b170800000000000000
+      internalID: 8194058943124247474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_32
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 3226
+        width: 524
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d730a6a08a271f1d0800000000000000
+      internalID: -3318745384340552835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_33
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 3220
+        width: 237
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fefd91de895581d10800000000000000
+      internalID: 2096519741842251759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_34
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 3204
+        width: 619
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8515c69b3f12a10800000000000000
+      internalID: 1883054096929347826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_35
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 3209
+        width: 287
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec9b3642304dc6d0800000000000000
+      internalID: -2968645994696434461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche assets ruines 1_36
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 3164
+        width: 518
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70dc43de19ffe0c0800000000000000
+      internalID: -4544139588204179334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
