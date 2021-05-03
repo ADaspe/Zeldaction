@@ -5,7 +5,8 @@ using UnityEngine;
 public class ELC_Door : MonoBehaviour
 {
     public bool open;
-    public ELC_Activation[] ActivationsNeeded;
+    [HideInInspector]
+    public List<ELC_Activation> ActivationsNeeded;
     private Collider2D rb;
     private int currentNumberOfActivation;
 
@@ -14,7 +15,7 @@ public class ELC_Door : MonoBehaviour
         rb = this.GetComponent<Collider2D>();
     }
 
-    private void Update()
+    public void CheckActivations()
     {
         currentNumberOfActivation = 0;
 
@@ -23,12 +24,16 @@ public class ELC_Door : MonoBehaviour
             if(active.isActivated) currentNumberOfActivation++;
         }
 
-        if (currentNumberOfActivation == ActivationsNeeded.Length)
+        if (currentNumberOfActivation == ActivationsNeeded.Count)
         {
             open = true;
             rb.enabled = false;
             return;
         }
-        else open = false;
+        else
+        {
+            open = false;
+            rb.enabled = true;
+        }
     }
 }
