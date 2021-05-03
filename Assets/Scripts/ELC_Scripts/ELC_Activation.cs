@@ -12,10 +12,12 @@ public class ELC_Activation : MonoBehaviour
     public bool isCorrupted;
     private ELC_Interact interactScript;
     public float detectionRadius;
+    public ELC_Door DoorToOpen;
 
     private void Start()
     {
         interactScript = this.GetComponent<ELC_Interact>();
+        DoorToOpen.ActivationsNeeded.Add(this);
     }
 
     private void Update()
@@ -27,7 +29,11 @@ public class ELC_Activation : MonoBehaviour
 
     public void ActivateObject()
     {
-        if(!isCorrupted && type == ActivatorType.PRESSUREPLATE) isActivated = !isActivated;
+        if (!isCorrupted && type == ActivatorType.PRESSUREPLATE)
+        {
+            isActivated = !isActivated;
+            DoorToOpen.CheckActivations();
+        }
     }
 
     private void Detection()
@@ -39,6 +45,7 @@ public class ELC_Activation : MonoBehaviour
             if (type == ActivatorType.PRESSUREPLATE && col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn"))
             {
                 isActivated = true;
+                DoorToOpen.CheckActivations();
                 return;
             }
             else if(type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
@@ -46,14 +53,11 @@ public class ELC_Activation : MonoBehaviour
                 isActivated = true;
                 StopCoroutine("Countdown");
                 StartCoroutine("Countdown");
+                DoorToOpen.CheckActivations();
+                return;
             }
             else isActivated = false;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
     }
 
     IEnumerator Countdown()
