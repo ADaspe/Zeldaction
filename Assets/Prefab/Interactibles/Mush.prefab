@@ -246,7 +246,7 @@ MonoBehaviour:
   Interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7597673293554959343}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AXD_Mushroom, Assembly-CSharp
         m_MethodName: Activate
         m_Mode: 1
@@ -300,14 +300,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &7141853121840803207
 SpriteRenderer:
   m_ObjectHideFlags: 0

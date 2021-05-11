@@ -112,7 +112,7 @@ public class ELC_Attack : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
-        Debug.Log("Mask : "+LayerMask.NameToLayer(dashMask.ToString()));
+        Debug.Log("Mask : "+LayerMask.LayerToName(LayerMask.NameToLayer(dashMask.ToString())));
         gameObject.layer = LayerMask.NameToLayer(dashMask.ToString());
         CharManager.spiritMove.wasDashingWhenColliding = true;
         CharManager.spiritMove.isDashing = true;
