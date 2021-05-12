@@ -8,7 +8,7 @@ public class AXD_EnemyHealth : MonoBehaviour
 
     public void GetHit(float timeToStun)
     {
-        if (!enemyAI.isStunned)
+        if (!enemyAI.isStunned && !enemyAI.isProtected)
         {
             enemyAI.isStunned = true;
             Invoke("CancelStun", timeToStun);

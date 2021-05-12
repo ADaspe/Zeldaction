@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c8626ca633d314dbddad3f490575f5, type: 3}
   m_Name: Basic
   m_EditorClassIdentifier: 
-  prepareAttackTime: 0.5
+  prepareAttackTime: 1
   attackTime: 0.5
+  attackDistance: 2
   detectionRadius: 2.5
   DetectionAngle: 30
+  haveInsensibilityZone: 0
+  insensibilityRadius: 0.8
+  insensibilityAngle: 80
   DetectionMask:
     serializedVersion: 2
     m_Bits: 6144
+  ObstaclesMask:
+    serializedVersion: 2
+    m_Bits: 64
   trackingPlayerSpeed: 0
   patrolSpeed: 0
