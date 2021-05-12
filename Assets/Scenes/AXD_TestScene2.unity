@@ -185,6 +185,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3615710102491032833, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: GameManagerScript
+      value: 
+      objectReference: {fileID: 1868863768}
     - target: {fileID: 4794218971470581621, guid: ec62fce0676dd1f4289cec9412c84418,
         type: 3}
       propertyPath: m_Icon
@@ -195,6 +200,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MushSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1868863768}
+    - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: activated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: ActivationsNeeded.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: secondsToAddToExplodingTimeForSpawning
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec62fce0676dd1f4289cec9412c84418, type: 3}
@@ -9475,16 +9500,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 7141853121840803204, guid: b9ab97844a091e24d9d75653fac3a88a,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141853121840803204, guid: b9ab97844a091e24d9d75653fac3a88a,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803205, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
       propertyPath: m_Enabled
@@ -9503,11 +9518,16 @@ PrefabInstance:
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
       propertyPath: Interact.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
       propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
@@ -9517,7 +9537,17 @@ PrefabInstance:
       objectReference: {fileID: 155422819563086659}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 155422819563086659}
+    - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
       propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
@@ -9527,12 +9557,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MakeItMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
       propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AXD_Mushroom, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AXD_Mushroom, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
       propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
+      propertyPath: Interact.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7141853122106500170, guid: b9ab97844a091e24d9d75653fac3a88a,
