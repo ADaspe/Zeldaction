@@ -5,7 +5,6 @@ using UnityEngine;
 public class ELC_Door : AXD_Activable
 {
     public bool open;
-    [HideInInspector]
     
     private Collider2D rb;
     private int currentNumberOfActivation;
