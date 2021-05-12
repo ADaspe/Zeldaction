@@ -20,7 +20,7 @@ public class AXD_MushroomSpawner : AXD_Activable
     {
         if (activated)
         {
-            if(ActiveMushroom == null && MushroomNextrSpawn >= Time.time)
+            if(ActiveMushroom == null && MushroomNextrSpawn < Time.time)
             {
                 MushroomNextrSpawn = mushroomPrefab.ExplodingTime + secondsToAddToExplodingTimeForSpawning;
                 ActiveMushroom = Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
