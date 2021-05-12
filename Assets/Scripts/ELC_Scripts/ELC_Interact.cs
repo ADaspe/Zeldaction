@@ -12,6 +12,7 @@ public class ELC_Interact : MonoBehaviour
     public UnityEvent Interact;
     public bool isMobile;
     public bool isGrabbed;
+    public bool isTotem;
     public Rigidbody2D rbInteractObject;
 
     private int touchedSideIndex;
@@ -71,6 +72,7 @@ public class ELC_Interact : MonoBehaviour
     {
         if (corrupted)
         {
+            if (isTotem) this.GetComponent<ELC_Totem>().Purify();
             corrupted = !corrupted;
         }
     }

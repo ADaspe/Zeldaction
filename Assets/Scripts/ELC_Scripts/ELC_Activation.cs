@@ -9,6 +9,7 @@ public class ELC_Activation : MonoBehaviour
     public ActivatorType type;
     public bool isActivated;
     public float TorchDuration;
+    [HideInInspector]
     public bool isCorrupted;
     private ELC_Interact interactScript;
     public float detectionRadius;
