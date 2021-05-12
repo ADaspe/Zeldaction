@@ -6,7 +6,7 @@ public class ELC_Totem : MonoBehaviour
 {
     public ELC_EnemyAI[] EnemiesToProtect;
 
-    rivate void Start()
+    private void Start()
     {
         foreach (ELC_EnemyAI enemy in EnemiesToProtect)
         {
