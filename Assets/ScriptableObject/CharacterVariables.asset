@@ -28,7 +28,7 @@ MonoBehaviour:
   ShieldCooldown: 2.5
   AttackCooldown: 1
   AttackTogetherRange: 3
-  StunTime: 4
+  StunTime: 10
   SpiritRespawn: 1
   SpeedGrabbing: 1.5
   TogetherAttackDetectionAngle: 60
