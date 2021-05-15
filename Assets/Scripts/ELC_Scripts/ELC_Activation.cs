@@ -59,7 +59,7 @@ public class ELC_Activation : MonoBehaviour
                 }
                 return;
             }
-            else if(type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
+            else if (type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
             {
                 isActivated = true;
                 StopCoroutine("Countdown");
@@ -70,7 +70,10 @@ public class ELC_Activation : MonoBehaviour
                 }
                 return;
             }
-            else isActivated = false;
+            else
+            {
+                isActivated = false;
+            }
         }
     }
 
