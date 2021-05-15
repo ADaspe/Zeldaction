@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467668910879602701}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.88, y: 3.31, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
@@ -150,6 +150,20 @@ MonoBehaviour:
   isActivated: 0
   TorchDuration: 0
   isCorrupted: 0
+  detectionRadius: 0
+  objectsToActivate:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &237884969641447571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +185,7 @@ MonoBehaviour:
       m_Calls: []
   isMobile: 0
   isGrabbed: 0
+  isTotem: 0
   rbInteractObject: {fileID: 0}
 --- !u!1 &467668912517366723
 GameObject:
