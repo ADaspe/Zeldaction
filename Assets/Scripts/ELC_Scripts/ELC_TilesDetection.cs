@@ -7,6 +7,7 @@ public class ELC_TilesDetection : MonoBehaviour
 {
     public Tilemap TileMap;
     public Tile detectedTilecolor;
+    public Tile BasicTile;
     
 
     public List<Vector3Int> OverridedTiles(Transform objectTransform)
@@ -43,7 +44,7 @@ public class ELC_TilesDetection : MonoBehaviour
 
 
         //On enregistre ces tiles + ceux qui sont entre et on les return
-        Debug.Log("Nombre de tiles détectées sur le pont: " + detectedTiles.Count);
+        //Debug.Log("Nombre de tiles détectées sur le pont: " + detectedTiles.Count);
         return detectedTiles;
     }
 
