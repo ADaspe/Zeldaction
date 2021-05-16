@@ -12,9 +12,10 @@ public class ELC_SpiritIdle : MonoBehaviour
     public float NearSpeedMultiplicator;
     public float TimeToWaitForIdleState;
     public float DistanceToStayWhenTogether;
+    public bool closeToRyn;
     [SerializeField]
     private Vector2 debug;
-    private float MiaAngle;
+    private float RynAngle;
     private Vector2 targetPos;
     
 
@@ -26,9 +27,9 @@ public class ELC_SpiritIdle : MonoBehaviour
         if (Time.deltaTime - LastPlayerMove > TimeToWaitForIdleState) PlayerIsImmobile = true;
         else PlayerIsImmobile = false;
         
-        if(!PlayerIsImmobile) MiaAngle = Mathf.Atan2(CharaManager.RynMove.LastDirection.y, CharaManager.RynMove.LastDirection.x) * Mathf.Rad2Deg;
+        if(!PlayerIsImmobile) RynAngle = Mathf.Atan2(CharaManager.RynMove.LastDirection.y, CharaManager.RynMove.LastDirection.x) * Mathf.Rad2Deg;
 
-        targetPos = new Vector2( -(DistanceToStayWhenTogether * Mathf.Cos(MiaAngle)) + CharaManager.RynGO.transform.position.x, -(DistanceToStayWhenTogether * Mathf.Sin(MiaAngle)) + CharaManager.RynGO.transform.position.y); //Calculer une position en fonction de la longueur qu'on lui donne et d'un angle
+        targetPos = new Vector2( -(DistanceToStayWhenTogether * Mathf.Cos(RynAngle)) + CharaManager.RynGO.transform.position.x, -(DistanceToStayWhenTogether * Mathf.Sin(RynAngle)) + CharaManager.RynGO.transform.position.y); //Calculer une position en fonction de la longueur qu'on lui donne et d'un angle
         Debug.DrawRay(CharaManager.RynGO.transform.position, new Vector3(targetPos.x - CharaManager.RynGO.transform.position.x, targetPos.y - CharaManager.RynGO.transform.position.y ).normalized, Color.red);
 
         if (CharaManager.Together)
@@ -44,4 +45,23 @@ public class ELC_SpiritIdle : MonoBehaviour
             }
         }
     }
+
+    public void Teleport(Vector2 targetLocation)
+    {
+        transform.Translate(targetLocation);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision : " + collision.gameObject.layer);
+        if (CharaManager.followingCharacter == CharaManager.RynMove)
+        {
+            if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn"))
+            {
+                Teleport(targetPos);
+            }
+        }
+    }
+
+
 }
