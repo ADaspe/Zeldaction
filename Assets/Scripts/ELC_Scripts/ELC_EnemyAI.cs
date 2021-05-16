@@ -7,12 +7,14 @@ public class ELC_EnemyAI : MonoBehaviour
 {
     public Vector3 Target;
     public ELC_EnemySO EnemyStats;
+    public ELC_GameManager gameMana;
     public bool EnableDebug;
     public bool isStunned;
+    public bool isProtected;
 
     public float Speed = 200f;
     public float NextWaypointDistance = 0.3f; //à quelle distance il doit être d'un checkpoint pour se diriger vers le suivant (pour éviter que ce soit à 0 de distance qui serait impossible à atteindre pile)
-    public float StopDistanceToPlayer = 2f; //à quelle distance il doit s'arrêter lorsqu'il est près du joueur
+    
 
     public bool canPatrol;
     public bool isPatrolling;
@@ -21,8 +23,8 @@ public class ELC_EnemyAI : MonoBehaviour
     public bool isAttacking;
     public List<Transform> PatrolPath;
 
-    
 
+    Vector2 direction;
     Path path;
     int currentWaypoint = 0;
     int PatrolPathIndex = 0;
@@ -73,13 +75,18 @@ public class ELC_EnemyAI : MonoBehaviour
             return;
         }
 
+        if(isProtected || EnemyStats.haveInsensibilityZone) InsensibilityZone(EnemyStats.insensibilityRadius, EnemyStats.insensibilityAngle);
+
         if (path == null || isPreparingAttack || isAttacking)
             return;
 
-        if (isFollowingPlayer && Vector2.Distance(rb.position, Target) < StopDistanceToPlayer)
+        if (isFollowingPlayer && Vector2.Distance(rb.position, Target) < EnemyStats.attackDistance)
         {
-            StartCoroutine(PrepareAttack(EnemyStats.prepareAttackTime));
-            return;
+            if (!IsThereWallBetweenTarget(Target))
+            {
+                StartCoroutine(PrepareAttack(EnemyStats.prepareAttackTime));
+                return;
+            }
         }
         
         if (path.vectorPath.Count <= currentWaypoint)
@@ -97,10 +104,10 @@ public class ELC_EnemyAI : MonoBehaviour
             reachedEndOfPath = false;
         }
 
-        
-
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * Speed * Time.deltaTime;
+
+
         rb.AddForce(force);
 
         float distanceToWaypoint = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -163,8 +170,41 @@ public class ELC_EnemyAI : MonoBehaviour
         return path.vectorPath[path.vectorPath.Count - 1]; //ça c'est vraiment si ça marche pas
     }
 
+    private bool IsThereWallBetweenTarget(Vector3 target)
+    {
+        Vector2 dir = target - this.transform.position;
+
+        RaycastHit2D wallCollides = Physics2D.Raycast(this.transform.position, dir, Vector2.Distance(target, this.transform.position), EnemyStats.ObstaclesMask);
+        if (wallCollides.collider == null) return false;
+        else return true;
+    }
+
+    private void InsensibilityZone(float radius, float angle)
+    {
+        if (isProtected)
+        {
+            radius = 0.8f;
+            angle = 180;
+        }
+        Collider2D[] col = Physics2D.OverlapCircleAll(this.transform.position, radius);
+
+        foreach (Collider2D collider in col)
+        {
+            float currentAngle = Vector2.Angle(direction, collider.transform.position - this.transform.position);
+            if (collider.gameObject.CompareTag("Spirit"))
+            {
+                if (gameMana.CharacterManager.spiritMove.isDashing && currentAngle <= angle && currentAngle >= - angle)
+                {
+                    gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
+                }
+            }
+        }
+
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(this.transform.position, EnemyStats.detectionRadius);
+        Gizmos.DrawRay(new Ray(this.transform.position, direction));
     }
 }

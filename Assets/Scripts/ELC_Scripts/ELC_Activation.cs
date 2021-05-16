@@ -9,6 +9,7 @@ public class ELC_Activation : MonoBehaviour
     public ActivatorType type;
     public bool isActivated;
     public float TorchDuration;
+    [HideInInspector]
     public bool isCorrupted;
     private ELC_Interact interactScript;
     public float detectionRadius;
@@ -58,7 +59,7 @@ public class ELC_Activation : MonoBehaviour
                 }
                 return;
             }
-            else if(type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
+            else if (type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
             {
                 isActivated = true;
                 StopCoroutine("Countdown");
@@ -69,7 +70,10 @@ public class ELC_Activation : MonoBehaviour
                 }
                 return;
             }
-            else isActivated = false;
+            else
+            {
+                isActivated = false;
+            }
         }
     }
 

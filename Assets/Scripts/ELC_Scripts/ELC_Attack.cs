@@ -118,10 +118,18 @@ public class ELC_Attack : MonoBehaviour
         CharManager.spiritMove.isDashing = true;
         CharManager.spiritMove.rb.velocity = CharManager.spiritMove.LastDirection * (CharManager.stats.DashDistance / CharManager.stats.DashTime);
         yield return new WaitForSeconds(CharManager.stats.DashTime);
+        StopDashCoroutine();
+    }
+
+    public void StopDashCoroutine()
+    {
+        Debug.Log("oui");
+        StopCoroutine("DashCoroutine");
         CharManager.spiritMove.currentSpeed = CharManager.stats.SpiritSpeed;
         CharManager.spiritMove.isDashing = false;
         CharManager.spiritMove.wasDashingWhenColliding = false;
-        gameObject.layer = LayerMask.NameToLayer(defaultMask.ToString());
+        gameObject.layer = LayerMask.NameToLayer(defaultMask);
+        CharManager.spiritMove.rb.velocity = Vector2.zero;
     }
 
     public void SpiritAttackTogether(Vector3 targetPos, float duration)
@@ -138,6 +146,9 @@ public class ELC_Attack : MonoBehaviour
         spiritAttack = false;
         nearestEnemy = null;
     }
+
+    
+
 }
 
 
