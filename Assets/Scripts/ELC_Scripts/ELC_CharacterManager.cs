@@ -29,6 +29,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerHit;
     public string PlayerDetachSpirit;
     public float SpiritReleaseDuration;
+    public float nextDash;
 
 
     public bool xLocked;
@@ -85,6 +86,8 @@ public class ELC_CharacterManager : MonoBehaviour
         //Disabling Ryn
         RynMove.currentCharacter = false;
         RynMove.rb.velocity = Vector2.zero;
+        AnimationManager.isMoving = false;
+        RynMove.rawInputMovement = Vector2.zero;
 
         //Enabling Spirit
         followingCharacter = spiritMove;
@@ -147,7 +150,9 @@ public class ELC_CharacterManager : MonoBehaviour
                 if (Together) RynAttack.AttackTogether();
                 else RynAttack.RynShield();
             }
-            else SpiritAttack.SpiritDashAttack();
+            else if (Time.time >= nextDash) {
+                SpiritAttack.SpiritDashAttack();
+            }
         }
     }
 
