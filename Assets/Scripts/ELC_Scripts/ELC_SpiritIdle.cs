@@ -15,6 +15,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     [SerializeField]
     private Vector2 debug;
     private float MiaAngle;
+    [SerializeField]
     private Vector2 targetPos;
     
 
