@@ -73,11 +73,11 @@ public class AXD_CharacterMove : MonoBehaviour
     {
         if(rb.velocity.magnitude >= 0.005f)
         {
-            AnimManager.UpdateAnimations(charaManager.PlayerWalk);
+            AnimManager.isMoving = true;
         }
         else
         {
-            AnimManager.UpdateAnimations(charaManager.PlayerIdle);
+            AnimManager.isMoving = false;
         }
     }
 
@@ -86,9 +86,7 @@ public class AXD_CharacterMove : MonoBehaviour
         if(CompareTag("Spirit") && currentCharacter && isDashing && (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle") || collision.gameObject.layer == LayerMask.NameToLayer("ObstacleSpirit")))
         {
             Debug.Log("Ceci est un mur");
-            StopCoroutine(charaManager.SpiritGO.GetComponent<ELC_Attack>().DashCoroutine());
-            currentSpeed = charaManager.stats.SpiritSpeed;
-            isDashing = false;
+            charaManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
         }
         else if(CompareTag("Spirit") && currentCharacter && isDashing && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {

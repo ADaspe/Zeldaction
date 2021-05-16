@@ -21,11 +21,16 @@ public class ELC_CharacterManager : MonoBehaviour
     //Variables locales
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
+    [Header("Animations")]
     public string PlayerIdle;
     public string PlayerWalk;
     public string PlayerShield;
     public string PlayerAttackTogether;
     public string PlayerHit;
+    public string PlayerDetachSpirit;
+    public float SpiritReleaseDuration;
+
+
     public bool xLocked;
     public bool yLocked;
 

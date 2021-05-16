@@ -9,15 +9,20 @@ public class ELC_Activation : MonoBehaviour
     public ActivatorType type;
     public bool isActivated;
     public float TorchDuration;
+    [HideInInspector]
     public bool isCorrupted;
     private ELC_Interact interactScript;
     public float detectionRadius;
-    public AXD_Activable objectToActivate;
+    public AXD_Activable[] objectsToActivate;
 
     private void Start()
     {
         interactScript = this.GetComponent<ELC_Interact>();
-        objectToActivate.ActivationsNeeded.Add(this);
+        foreach (AXD_Activable item in objectsToActivate)
+        {
+            item.ActivationsNeeded.Add(this);
+        }
+        
     }
 
     private void Update()
@@ -32,7 +37,10 @@ public class ELC_Activation : MonoBehaviour
         if (!isCorrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
         {
             isActivated = !isActivated;
-            objectToActivate.Activate();
+            foreach (AXD_Activable item in objectsToActivate)
+            {
+                item.Activate();
+            }
         }
     }
 
@@ -45,18 +53,27 @@ public class ELC_Activation : MonoBehaviour
             if (type == ActivatorType.PRESSUREPLATE && col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn"))
             {
                 isActivated = true;
-                objectToActivate.Activate();
+                foreach (AXD_Activable item in objectsToActivate)
+                {
+                    item.Activate();
+                }
                 return;
             }
-            else if(type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
+            else if (type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
             {
                 isActivated = true;
                 StopCoroutine("Countdown");
                 StartCoroutine("Countdown");
-                objectToActivate.Activate();
+                foreach (AXD_Activable item in objectsToActivate)
+                {
+                    item.Activate();
+                }
                 return;
             }
-            else isActivated = false;
+            else
+            {
+                isActivated = false;
+            }
         }
     }
 

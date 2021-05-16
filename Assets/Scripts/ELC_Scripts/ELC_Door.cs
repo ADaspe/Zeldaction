@@ -5,7 +5,7 @@ using UnityEngine;
 public class ELC_Door : AXD_Activable
 {
     public bool open;
-    [HideInInspector]
+    public bool ActivateOnDisable;
     
     private Collider2D rb;
     private int currentNumberOfActivation;
@@ -13,6 +13,12 @@ public class ELC_Door : AXD_Activable
     private void Start()
     {
         rb = this.GetComponent<Collider2D>();
+        CheckActivations();
+    }
+
+    private void Update()
+    {
+        CheckActivations();
     }
 
     public void CheckActivations()
@@ -21,13 +27,16 @@ public class ELC_Door : AXD_Activable
 
         foreach (ELC_Activation active in ActivationsNeeded)
         {
-            if(active.isActivated) currentNumberOfActivation++;
+            if((!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
         }
 
         if (currentNumberOfActivation == ActivationsNeeded.Count)
         {
-            open = true;
-            rb.enabled = false;
+            if (!open)
+            {
+                open = true;
+                rb.enabled = false;
+            }
             return;
         }
         else

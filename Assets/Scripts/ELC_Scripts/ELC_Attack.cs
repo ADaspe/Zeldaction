@@ -67,7 +67,14 @@ public class ELC_Attack : MonoBehaviour
         {
             RaycastHit2D wallHit = Physics2D.Raycast(this.transform.position, enemies[i].transform.position - this.transform.position, Vector2.Distance(this.transform.position, enemies[i].transform.position), gameManager.GlobalObstaclesMask);
 
-            if (i == 0 && wallHit.collider == null) nearestEnemy = enemies[i].gameObject;
+            float angle = Vector3.Angle(CharManager.RynMove.LastDirection, enemies[i].gameObject.transform.position - this.gameObject.transform.position);
+            Debug.Log(angle);
+            if (angle > CharStats.TogetherAttackDetectionAngle) return;
+
+            if (i == 0 && wallHit.collider == null)
+            {
+                nearestEnemy = enemies[i].gameObject;
+            }
             else if (wallHit.collider == null && nearestEnemy != null && Vector2.Distance(this.transform.position, enemies[i].transform.position) < Vector2.Distance(this.transform.position, nearestEnemy.transform.position))
             {
                 nearestEnemy = enemies[i].gameObject;
@@ -84,6 +91,7 @@ public class ELC_Attack : MonoBehaviour
     public void RynActivateShield()
     {
         Debug.Log("Shield On !");
+        CharManager.AnimationManager.isAttacking = true;
         ShieldOn = true;
         CharManager.RynMove.canMove = false;
         CharManager.RynMove.rawInputMovement = Vector2.zero;
@@ -104,20 +112,29 @@ public class ELC_Attack : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
-        Debug.Log("Mask : "+LayerMask.NameToLayer(dashMask.ToString()));
+        Debug.Log("Mask : "+LayerMask.LayerToName(LayerMask.NameToLayer(dashMask.ToString())));
         gameObject.layer = LayerMask.NameToLayer(dashMask.ToString());
         CharManager.spiritMove.wasDashingWhenColliding = true;
         CharManager.spiritMove.isDashing = true;
         CharManager.spiritMove.rb.velocity = CharManager.spiritMove.LastDirection * (CharManager.stats.DashDistance / CharManager.stats.DashTime);
         yield return new WaitForSeconds(CharManager.stats.DashTime);
+        StopDashCoroutine();
+    }
+
+    public void StopDashCoroutine()
+    {
+        Debug.Log("oui");
+        StopCoroutine("DashCoroutine");
         CharManager.spiritMove.currentSpeed = CharManager.stats.SpiritSpeed;
         CharManager.spiritMove.isDashing = false;
         CharManager.spiritMove.wasDashingWhenColliding = false;
-        gameObject.layer = LayerMask.NameToLayer(defaultMask.ToString());
+        gameObject.layer = LayerMask.NameToLayer(defaultMask);
+        CharManager.spiritMove.rb.velocity = Vector2.zero;
     }
 
     public void SpiritAttackTogether(Vector3 targetPos, float duration)
     {
+        CharManager.AnimationManager.isAttacking = true;
         Vector3 direction = targetPos - this.gameObject.transform.position;
         direction = direction.normalized * (direction.magnitude / duration);
         this.transform.Translate(direction * Time.deltaTime);
@@ -129,6 +146,9 @@ public class ELC_Attack : MonoBehaviour
         spiritAttack = false;
         nearestEnemy = null;
     }
+
+    
+
 }
 
 
