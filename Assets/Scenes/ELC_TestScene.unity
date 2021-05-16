@@ -18352,24 +18352,9 @@ PrefabInstance:
       objectReference: {fileID: 778000660}
     - target: {fileID: 6788487066792825592, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
-      propertyPath: MaxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788487066792825592, guid: df41e291436ece548a035c45239d0e9d,
-        type: 3}
       propertyPath: CharaManager
       value: 
       objectReference: {fileID: 778000660}
-    - target: {fileID: 6788487066792825592, guid: df41e291436ece548a035c45239d0e9d,
-        type: 3}
-      propertyPath: NearSpeedMultiplicator
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788487066792825592, guid: df41e291436ece548a035c45239d0e9d,
-        type: 3}
-      propertyPath: DistanceToStayWhenTogether
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: dashMask
