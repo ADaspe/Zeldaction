@@ -11,6 +11,8 @@ public class ELC_Activation : MonoBehaviour
     public float TorchDuration;
     [HideInInspector]
     public bool isCorrupted;
+    [SerializeField]
+    private bool ConditionsEnabled;
     private ELC_Interact interactScript;
     public float detectionRadius;
     public AXD_Activable[] objectsToActivate;
@@ -47,34 +49,50 @@ public class ELC_Activation : MonoBehaviour
     private void Detection()
     {
         Collider2D[] detected = Physics2D.OverlapCircleAll(this.transform.position, detectionRadius);
+        
+        ConditionsEnabled = false;
 
         foreach (Collider2D col in detected)
         {
-            if (type == ActivatorType.PRESSUREPLATE && col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn"))
+            if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
             {
-                isActivated = true;
-                foreach (AXD_Activable item in objectsToActivate)
+                if (!isActivated)
                 {
-                    item.Activate();
+                    isActivated = true;
+                    foreach (AXD_Activable item in objectsToActivate)
+                    {
+                        item.Activate();
+                    }
                 }
-                return;
+                ConditionsEnabled = true;
+                //return;
             }
             else if (type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
             {
-                isActivated = true;
-                StopCoroutine("Countdown");
-                StartCoroutine("Countdown");
-                foreach (AXD_Activable item in objectsToActivate)
+                if (!isActivated)
                 {
-                    item.Activate();
+                    isActivated = true;
+                    StopCoroutine("Countdown");
+                    StartCoroutine("Countdown");
+                    foreach (AXD_Activable item in objectsToActivate)
+                    {
+                        item.Activate();
+                    }
+                    ConditionsEnabled = true;
+                    //return;
                 }
-                return;
-            }
-            else
-            {
-                isActivated = false;
             }
         }
+
+        if (ConditionsEnabled == false && isActivated)
+        {
+            isActivated = false;
+            foreach (AXD_Activable item in objectsToActivate)
+            {
+                item.Activate();
+            }
+        }
+        
     }
 
     IEnumerator Countdown()

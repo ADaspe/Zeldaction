@@ -20,7 +20,7 @@ public class ELC_Bridge : AXD_Activable
 
     private void Update()
     {
-        CheckActivations();
+        //CheckActivations();
     }
 
 
@@ -39,7 +39,6 @@ public class ELC_Bridge : AXD_Activable
 
     public void CloseBridge()
     {
-        Debug.Log("stop");
         this.GetComponent<SpriteRenderer>().enabled = false;
         detectedTiles = tilesScript.OverridedTiles(this.transform);
         isOpen = false;
@@ -57,7 +56,7 @@ public class ELC_Bridge : AXD_Activable
         {
             if ( (!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
         }
-        Debug.Log(currentNumberOfActivation);
+        //Debug.Log(currentNumberOfActivation);
 
         if (currentNumberOfActivation == ActivationsNeeded.Count)
         {
@@ -76,7 +75,7 @@ public class ELC_Bridge : AXD_Activable
 
     public override void Activate()
     {
-        if(!isOpen) CheckActivations();
+        CheckActivations();
     }
     
 }

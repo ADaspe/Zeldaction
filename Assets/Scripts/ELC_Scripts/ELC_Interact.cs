@@ -13,6 +13,7 @@ public class ELC_Interact : MonoBehaviour
     public bool isMobile;
     public bool isGrabbed;
     public bool isTotem;
+    public bool isBrambles;
     public Rigidbody2D rbInteractObject;
 
     private int touchedSideIndex;
@@ -73,6 +74,7 @@ public class ELC_Interact : MonoBehaviour
         if (corrupted)
         {
             if (isTotem) this.GetComponent<ELC_Totem>().Purify();
+            if (isBrambles) this.GetComponent<AXD_Brambles>().Purify();
             corrupted = !corrupted;
         }
     }
