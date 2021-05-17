@@ -5,7 +5,6 @@ using UnityEngine;
 public class AXD_MushroomSpawner : AXD_Activable
 {
     public ELC_GameManager gm;
-    public bool activated;
     public AXD_Mushroom mushroomPrefab;
     public AXD_Mushroom ActiveMushroom;
     public float MushroomNextrSpawn;
@@ -13,12 +12,13 @@ public class AXD_MushroomSpawner : AXD_Activable
 
     public override void Activate()
     {
-        activated = true;
+        LockTorches();
+        isActivated = true;
     }
 
     private void FixedUpdate()
     {
-        if (activated)
+        if (isActivated)
         {
             if(ActiveMushroom == null && MushroomNextrSpawn < Time.time)
             {

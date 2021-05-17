@@ -38,6 +38,7 @@ public class ELC_SpiritIdle : MonoBehaviour
             Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
             if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
             {
+                closeToRyn = true;
                 CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence � �tre proche du joueur on ralentit
             }
             else
@@ -50,13 +51,14 @@ public class ELC_SpiritIdle : MonoBehaviour
     public void Teleport(Vector2 targetLocation)
     {
         transform.position = targetLocation;
+        closeToRyn = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (CharaManager.followingCharacter == CharaManager.RynMove)
         {
-            if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn"))
+            if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn") && !closeToRyn)
             {
                 Teleport(targetPos);
             }

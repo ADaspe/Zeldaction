@@ -231,7 +231,6 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        Debug.Log("Spirit");
         if (Together) {
             
             DetachSpirit();
