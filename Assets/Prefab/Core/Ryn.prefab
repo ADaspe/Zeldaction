@@ -143,10 +143,13 @@ MonoBehaviour:
   rawInputMovement: {x: 0, y: 0}
   LastDirection: {x: 0, y: 0}
   canMove: 1
-  speed: 6
+  currentSpeed: 0
   currentCharacter: 0
   camSwapOn: 0
   isDashing: 0
+  isRynGrabbing: 0
+  grabbebObject: {fileID: 0}
+  wasDashingWhenColliding: 0
 --- !u!114 &8035345064547430159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,12 +162,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6592e57bfb4076540a6a3149853e45b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharStats: {fileID: 11400000, guid: 9f402210f14bc3e44a8c68ea2e39b242, type: 2}
   CharManager: {fileID: 0}
   gameManager: {fileID: 0}
-  enemyDetectionRadius: 5
   ShieldOn: 0
   NextShield: 0
   attackTogetherCooldown: 0
+  defaultMask: 
+  dashMask: 
 --- !u!95 &4639730065206629212
 Animator:
   serializedVersion: 3
