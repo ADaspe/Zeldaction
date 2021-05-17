@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//[ExecuteInEditMode]
 public class ELC_TilemapSwitch : MonoBehaviour
 {
     public Tilemap TilemapsToSwitch;
@@ -11,23 +12,31 @@ public class ELC_TilemapSwitch : MonoBehaviour
     List<TileInfos> allTilesInfos = new List<TileInfos>();
     public Tile TestTile;
 
-    void Start()
+    
+    private void Update()
     {
-            BoundsInt size = TilemapsToSwitch.cellBounds;
+        allTilesInfos.Clear();
+        DetectTiles();
+        Debug.Log("update tiles");
+    }
 
-            foreach (var pos in TilemapsToSwitch.cellBounds.allPositionsWithin)
+    private void DetectTiles()
+    {
+        BoundsInt size = TilemapsToSwitch.cellBounds;
+
+        foreach (var pos in TilemapsToSwitch.cellBounds.allPositionsWithin)
+        {
+
+            if (TilemapsToSwitch.HasTile(pos))
             {
-
-                if (TilemapsToSwitch.HasTile(pos))
-                {
-                    Vector3 cellLocalPos = TilemapsToSwitch.CellToWorld(pos);
-                    TileInfos infos = new TileInfos();
-                    infos.tile = TilemapsToSwitch.GetTile(pos);
-                    infos.WorldCoordinates = cellLocalPos;
-                    allTilesInfos.Add(infos);
-                }
+                Vector3 cellLocalPos = TilemapsToSwitch.CellToWorld(pos);
+                TileInfos infos = new TileInfos();
+                infos.tile = TilemapsToSwitch.GetTile(pos);
+                infos.WorldCoordinates = cellLocalPos;
+                allTilesInfos.Add(infos);
             }
-            SwitchTilemap();
+        }
+        SwitchTilemap();
         TilemapsToSwitch.ClearAllTiles();
     }
 
