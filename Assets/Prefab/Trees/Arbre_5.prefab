@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3084839336079468114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8587894, y: 1.1823969, z: -1.199373}
+  m_LocalPosition: {x: -6.8587894, y: 1.1823969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3408680756493038531}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8211306471917668961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.055229187, y: -1.4912443, z: 1.199373}
+  m_LocalPosition: {x: -0.055229187, y: -1.4912443, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1455440002812286350}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8954804088712845410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10257244, y: 0.23670578, z: 1.199373}
+  m_LocalPosition: {x: 0.10257244, y: 0.23670578, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1455440002812286350}
@@ -204,6 +204,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1455440002812286350}
     m_Modifications:
+    - target: {fileID: 3181924622964258578, guid: e3519a5eb4ca94b46a25c11d2e002c1a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7359189331735033423, guid: e3519a5eb4ca94b46a25c11d2e002c1a,
         type: 3}
       propertyPath: m_RootOrder
@@ -257,6 +262,11 @@ PrefabInstance:
     - target: {fileID: 7359189331735033423, guid: e3519a5eb4ca94b46a25c11d2e002c1a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476254823736087510, guid: e3519a5eb4ca94b46a25c11d2e002c1a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940511237561251049, guid: e3519a5eb4ca94b46a25c11d2e002c1a,
