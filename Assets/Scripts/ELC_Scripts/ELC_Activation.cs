@@ -13,6 +13,7 @@ public class ELC_Activation : MonoBehaviour
     private bool ConditionsEnabled;
     private ELC_Interact interactScript;
     public float detectionRadius;
+    public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
 
     private void Start()
@@ -44,6 +45,7 @@ public class ELC_Activation : MonoBehaviour
 
         foreach (Collider2D col in detected)
         {
+            Debug.Log(this.gameObject.name +" a détecté : " + col.name);
             if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
             {
                 if (!isActivated)
@@ -61,9 +63,9 @@ public class ELC_Activation : MonoBehaviour
             {
                 if (!isActivated)
                 {
-                    isActivated = true;
                     StopCoroutine("Countdown");
                     StartCoroutine("Countdown");
+                    isActivated = true;
                     foreach (AXD_Activable item in objectsToActivate)
                     {
                         item.Activate();
@@ -93,9 +95,7 @@ public class ELC_Activation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("IdenDash"))
-        {
-            Detection();
-        }
+        Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
+        Detection();
     }
 }
