@@ -54,7 +54,6 @@ public class ELC_SpiritIdle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision : " + collision.gameObject.layer);
         if (CharaManager.followingCharacter == CharaManager.RynMove)
         {
             if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn"))

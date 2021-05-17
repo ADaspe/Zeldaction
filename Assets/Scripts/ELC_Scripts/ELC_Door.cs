@@ -16,11 +16,6 @@ public class ELC_Door : AXD_Activable
         CheckActivations();
     }
 
-    private void Update()
-    {
-        //CheckActivations();
-    }
-
     public void CheckActivations()
     {
         if (ActivationsNeeded.Count != 0)
@@ -51,6 +46,7 @@ public class ELC_Door : AXD_Activable
 
     public override void Activate()
     {
+        
         CheckActivations();
     }
 }

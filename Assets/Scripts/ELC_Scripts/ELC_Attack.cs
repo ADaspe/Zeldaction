@@ -34,7 +34,6 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynShield()
     {
-        Debug.Log("Ryn'O'Shield");
         if (CharManager.RynMove.canMove && !ShieldOn)
         {
             if(NextShield <= Time.time)
@@ -50,7 +49,6 @@ public class ELC_Attack : MonoBehaviour
 
     public void SpiritDashAttack()
     {
-        Debug.Log("Spirit Dash");
         CharManager.nextDash = Time.time + CharManager.stats.DashCoolDown;
         StartCoroutine(DashCoroutine());
     }
@@ -85,13 +83,11 @@ public class ELC_Attack : MonoBehaviour
         {
             spiritAttack = true;
             StartCoroutine(ResetAfterSeconds(0.05f));
-            Debug.Log("Ryn attaque " + nearestEnemy);
         }
     }
 
     public void RynActivateShield()
     {
-        Debug.Log("Shield On !");
         CharManager.AnimationManager.isAttacking = true;
         ShieldOn = true;
         CharManager.RynMove.canMove = false;
@@ -102,7 +98,6 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynLoseShield()
     {
-        Debug.Log("Lose Shield");
         if (ShieldOn)
         {
             NextShield = Time.time + CharManager.stats.ShieldCooldown;
@@ -113,7 +108,6 @@ public class ELC_Attack : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
-        Debug.Log("Mask : "+LayerMask.LayerToName(LayerMask.NameToLayer(dashMask.ToString())));
         gameObject.layer = LayerMask.NameToLayer(dashMask.ToString());
         CharManager.spiritMove.wasDashingWhenColliding = true;
         CharManager.spiritMove.isDashing = true;
@@ -124,7 +118,6 @@ public class ELC_Attack : MonoBehaviour
 
     public void StopDashCoroutine()
     {
-        Debug.Log("oui");
         StopCoroutine("DashCoroutine");
         CharManager.spiritMove.currentSpeed = CharManager.stats.SpiritSpeed;
         CharManager.spiritMove.isDashing = false;
