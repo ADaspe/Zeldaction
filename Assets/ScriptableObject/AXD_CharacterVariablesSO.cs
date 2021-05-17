@@ -25,4 +25,7 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float SpiritRespawn;
     public float SpeedGrabbing;
     public float TogetherAttackDetectionAngle;
+    public float IdenProjectionDistance;
+    public float IdenProjectionTime;
+    public float IdenSlowDownTime;
 }

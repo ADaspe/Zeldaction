@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AXD_CorruptionDetection : MonoBehaviour
 {
+    [HideInInspector]
     public ELC_Interact objectToPurify;
     private ELC_Interact ToPurifyInCharManager;
     private CircleCollider2D circle;
