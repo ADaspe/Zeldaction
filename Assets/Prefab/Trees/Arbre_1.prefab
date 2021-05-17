@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250344531415643273}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3058214, y: -0.15397799, z: 92.16387}
+  m_LocalPosition: {x: -2.3058214, y: -0.15397799, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6978145770623437717}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250344531587998809}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2504706, y: -1.0594049, z: 92.16387}
+  m_LocalPosition: {x: -2.2504706, y: -1.0594049, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6978145770623437717}
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6427336509723320724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.451, y: -0.766, z: -92.16387}
+  m_LocalPosition: {x: 4.451, y: -0.766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533594610424081611}
@@ -209,6 +209,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronc_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5123067326335645470, guid: 520bd7a81c1aeef40856bfe760b4f51c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123067327899552810, guid: 520bd7a81c1aeef40856bfe760b4f51c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848418610637829784, guid: 520bd7a81c1aeef40856bfe760b4f51c,
         type: 3}
       propertyPath: m_RootOrder
@@ -227,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 5848418610637829784, guid: 520bd7a81c1aeef40856bfe760b4f51c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.6450424
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5848418610637829784, guid: 520bd7a81c1aeef40856bfe760b4f51c,
         type: 3}

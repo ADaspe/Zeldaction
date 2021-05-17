@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527782363147115656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7130355, y: -1.6876887, z: -94.177895}
+  m_LocalPosition: {x: 1.7130355, y: -1.6876887, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1273790973578998389}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8313563380682771772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2724237, y: -0.41210902, z: 94.177895}
+  m_LocalPosition: {x: -1.2724237, y: -0.41210902, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5672413835470198941}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9043345215848666219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3930354, y: 1.3206887, z: 94.177895}
+  m_LocalPosition: {x: -1.3930354, y: 1.3206887, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5672413835470198941}
@@ -204,6 +204,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5672413835470198941}
     m_Modifications:
+    - target: {fileID: 1200770631036385817, guid: b27d8ead6f14853408a0e58dad729a15,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3172267280536692648, guid: b27d8ead6f14853408a0e58dad729a15,
         type: 3}
       propertyPath: m_RootOrder
@@ -222,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 3172267280536692648, guid: b27d8ead6f14853408a0e58dad729a15,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6310196
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3172267280536692648, guid: b27d8ead6f14853408a0e58dad729a15,
         type: 3}
@@ -263,6 +268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tronc_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182040979350143309, guid: b27d8ead6f14853408a0e58dad729a15,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27d8ead6f14853408a0e58dad729a15, type: 3}
