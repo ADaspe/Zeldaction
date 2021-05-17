@@ -36,6 +36,7 @@ public class ELC_Interact : MonoBehaviour
                 RaycastHit2D playerHit = Physics2D.Raycast(this.transform.position, dir, raycastLength, GameManagerScript.PlayerMask);
                 Debug.DrawRay(this.transform.position, dir.normalized * raycastLength, Color.red);
 
+
                 if (playerHit.collider != null)
                 {
                     touchedSideIndex = i;
