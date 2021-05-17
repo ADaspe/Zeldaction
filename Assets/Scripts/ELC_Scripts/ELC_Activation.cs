@@ -13,22 +13,17 @@ public class ELC_Activation : MonoBehaviour
     private bool ConditionsEnabled;
     private ELC_Interact interactScript;
     public float detectionRadius;
+    public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
 
     private void Start()
     {
-        interactScript = this.GetComponent<ELC_Interact>(); 
+        interactScript = this.GetComponent<ELC_Interact>();
         foreach (AXD_Activable item in objectsToActivate)
-        {
+        {        
             item.ActivationsNeeded.Add(this);
         }
     }
-
-    private void Update()
-    {
-        if (!interactScript.corrupted) Detection();
-    }
-
     public void ActivateObject()
     {
         if (!interactScript.corrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
@@ -36,7 +31,7 @@ public class ELC_Activation : MonoBehaviour
             isActivated = !isActivated;
             foreach (AXD_Activable item in objectsToActivate)
             {
-                Debug.Log(gameObject.name + "Activate " + item.gameObject.name);
+                Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
                 item.Activate();
             }
         }
@@ -50,6 +45,7 @@ public class ELC_Activation : MonoBehaviour
 
         foreach (Collider2D col in detected)
         {
+            Debug.Log(this.gameObject.name +" a détecté : " + col.name);
             if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
             {
                 if (!isActivated)
@@ -67,9 +63,9 @@ public class ELC_Activation : MonoBehaviour
             {
                 if (!isActivated)
                 {
-                    isActivated = true;
                     StopCoroutine("Countdown");
                     StartCoroutine("Countdown");
+                    isActivated = true;
                     foreach (AXD_Activable item in objectsToActivate)
                     {
                         item.Activate();
@@ -99,12 +95,7 @@ public class ELC_Activation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("IdenDash"))
-        {
-            foreach (AXD_Activable item in objectsToActivate)
-            {
-                item.Activate();
-            }
-        }
+        Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
+        Detection();
     }
 }

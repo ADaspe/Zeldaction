@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ELC_Door : AXD_Activable
 {
-    public bool open;
     public bool ActivateOnDisable;
     
     private Collider2D rb;
@@ -26,19 +25,19 @@ public class ELC_Door : AXD_Activable
             {
                 if ((!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
             }
-
             if (currentNumberOfActivation == ActivationsNeeded.Count)
             {
-                if (!open)
+                if (!isActivated)
                 {
-                    open = true;
+                    isActivated = true;
+                    LockTorches();
                     rb.enabled = false;
                 }
                 return;
             }
             else
             {
-                open = false;
+                isActivated = false;
                 rb.enabled = true;
             }
         }
