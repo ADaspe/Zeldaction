@@ -17,18 +17,12 @@ public class ELC_Activation : MonoBehaviour
 
     private void Start()
     {
-        interactScript = this.GetComponent<ELC_Interact>(); 
+        interactScript = this.GetComponent<ELC_Interact>();
         foreach (AXD_Activable item in objectsToActivate)
-        {
+        {        
             item.ActivationsNeeded.Add(this);
         }
     }
-
-    private void Update()
-    {
-        if (!interactScript.corrupted) Detection();
-    }
-
     public void ActivateObject()
     {
         if (!interactScript.corrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
@@ -36,7 +30,7 @@ public class ELC_Activation : MonoBehaviour
             isActivated = !isActivated;
             foreach (AXD_Activable item in objectsToActivate)
             {
-                Debug.Log(gameObject.name + "Activate " + item.gameObject.name);
+                Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
                 item.Activate();
             }
         }
@@ -101,10 +95,7 @@ public class ELC_Activation : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("IdenDash"))
         {
-            foreach (AXD_Activable item in objectsToActivate)
-            {
-                item.Activate();
-            }
+            Detection();
         }
     }
 }

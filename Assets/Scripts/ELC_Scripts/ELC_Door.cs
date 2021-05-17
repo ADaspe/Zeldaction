@@ -26,7 +26,6 @@ public class ELC_Door : AXD_Activable
             {
                 if ((!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
             }
-
             if (currentNumberOfActivation == ActivationsNeeded.Count)
             {
                 if (!open)

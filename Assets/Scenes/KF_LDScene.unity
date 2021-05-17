@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -163,12 +163,12 @@ PrefabInstance:
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.8
+      value: 20.13
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35
+      value: 25.56
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
@@ -339,6 +339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
+      propertyPath: dashMask
+      value: IdenDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
       propertyPath: CharStats
       value: 
       objectReference: {fileID: 11400000, guid: 9f402210f14bc3e44a8c68ea2e39b242,
@@ -348,6 +353,11 @@ PrefabInstance:
       propertyPath: CharManager
       value: 
       objectReference: {fileID: 1228215036}
+    - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
+      propertyPath: defaultMask
+      value: PlayerSpirit
+      objectReference: {fileID: 0}
     - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: gameManager
@@ -361,12 +371,12 @@ PrefabInstance:
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.03
+      value: 21.359999
       objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.059998
+      value: 25.619997
       objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
@@ -949,6 +959,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776eb60a9d942854191078cad129bb32, type: 3}
+--- !u!114 &1770567404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7334168549208492928, guid: cba78176bc4f0c74eac9eeccc95e8611,
+    type: 3}
+  m_PrefabInstance: {fileID: 4368012770735797588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7145f094c1ab39a4e896f41848367ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2027535207 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
@@ -1043,6 +1065,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zone Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887350072130923584, guid: cba78176bc4f0c74eac9eeccc95e8611,
+        type: 3}
+      propertyPath: objectsToActivate.Array.data[0]
+      value: 
+      objectReference: {fileID: 1770567404}
+    - target: {fileID: 4887350072135677674, guid: cba78176bc4f0c74eac9eeccc95e8611,
+        type: 3}
+      propertyPath: detectionRadius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887350072135677679, guid: cba78176bc4f0c74eac9eeccc95e8611,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8824833275141026347, guid: cba78176bc4f0c74eac9eeccc95e8611,
         type: 3}
