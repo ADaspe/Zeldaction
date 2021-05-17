@@ -18,31 +18,34 @@ public class ELC_Door : AXD_Activable
 
     private void Update()
     {
-        CheckActivations();
+        //CheckActivations();
     }
 
     public void CheckActivations()
     {
-        currentNumberOfActivation = 0;
-
-        foreach (ELC_Activation active in ActivationsNeeded)
+        if (ActivationsNeeded.Count != 0)
         {
-            if((!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
-        }
+            currentNumberOfActivation = 0;
 
-        if (currentNumberOfActivation == ActivationsNeeded.Count)
-        {
-            if (!open)
+            foreach (ELC_Activation active in ActivationsNeeded)
             {
-                open = true;
-                rb.enabled = false;
+                if ((!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
             }
-            return;
-        }
-        else
-        {
-            open = false;
-            rb.enabled = true;
+
+            if (currentNumberOfActivation == ActivationsNeeded.Count)
+            {
+                if (!open)
+                {
+                    open = true;
+                    rb.enabled = false;
+                }
+                return;
+            }
+            else
+            {
+                open = false;
+                rb.enabled = true;
+            }
         }
     }
 
