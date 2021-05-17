@@ -51,6 +51,7 @@ public class ELC_Attack : MonoBehaviour
     public void SpiritDashAttack()
     {
         Debug.Log("Spirit Dash");
+        CharManager.nextDash = Time.time + CharManager.stats.DashCoolDown;
         StartCoroutine(DashCoroutine());
     }
 
