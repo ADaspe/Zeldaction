@@ -49,7 +49,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -60,7 +60,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14497656, y: 0.1423209}
+  m_Size: {x: 1, y: 0.6}
   m_EdgeRadius: 0
 --- !u!50 &467668910879602705
 Rigidbody2D:
@@ -150,22 +150,9 @@ MonoBehaviour:
   type: 2
   isActivated: 0
   TorchDuration: 0
-  isCorrupted: 0
   ConditionsEnabled: 0
   detectionRadius: 0
-  objectsToActivate:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  objectsToActivate: []
 --- !u!114 &237884969641447571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +224,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.5
 --- !u!114 &467668912517366725
 MonoBehaviour:
   m_ObjectHideFlags: 0
