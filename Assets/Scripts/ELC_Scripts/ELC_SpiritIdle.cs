@@ -16,6 +16,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     [SerializeField]
     private Vector2 debug;
     private float RynAngle;
+    [SerializeField]
     private Vector2 targetPos;
     
 
@@ -48,7 +49,7 @@ public class ELC_SpiritIdle : MonoBehaviour
 
     public void Teleport(Vector2 targetLocation)
     {
-        transform.Translate(targetLocation);
+        transform.position = targetLocation;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
