@@ -274,7 +274,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronc_4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2398070482811263938, guid: d91d64c6667605e44a24b66a5d4291b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d91d64c6667605e44a24b66a5d4291b7, type: 3}
 --- !u!4 &1938870353018268906 stripped
 Transform:
