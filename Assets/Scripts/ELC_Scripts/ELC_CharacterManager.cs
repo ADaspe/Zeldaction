@@ -110,7 +110,9 @@ public class ELC_CharacterManager : MonoBehaviour
         Together = false;
         spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son déplacement quand on le détache
         SpiritGO.GetComponent<Collider2D>().enabled = true;
-        SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = false;
+        ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
+        tmpIdle.closeToRyn = false;
+        tmpIdle.enabled = false;
     }
 
     public void Move(InputAction.CallbackContext value)
