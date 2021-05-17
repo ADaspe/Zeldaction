@@ -69,7 +69,6 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void ChangeCamFocusRyn()
     {
-        Debug.Log("CamSwapRyn");
         //Disabling Spirit
         spiritMove.currentCharacter = false;
         spiritMove.rb.velocity = Vector2.zero;
@@ -82,7 +81,6 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void ChangeCamFocusSpirit()
     {
-        Debug.Log("CamSwapSpirit");
         //Disabling Ryn
         RynMove.currentCharacter = false;
         RynMove.rb.velocity = Vector2.zero;
@@ -113,6 +111,16 @@ public class ELC_CharacterManager : MonoBehaviour
         ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
         tmpIdle.closeToRyn = false;
         tmpIdle.enabled = false;
+    }
+
+    public void GoToRyn()
+    {
+
+    }
+
+    public void ProjectSpirit()
+    {
+
     }
 
     public void Move(InputAction.CallbackContext value)

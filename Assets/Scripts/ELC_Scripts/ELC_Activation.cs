@@ -9,8 +9,6 @@ public class ELC_Activation : MonoBehaviour
     public ActivatorType type;
     public bool isActivated;
     public float TorchDuration;
-    [HideInInspector]
-    public bool isCorrupted;
     [SerializeField]
     private bool ConditionsEnabled;
     private ELC_Interact interactScript;
@@ -19,28 +17,26 @@ public class ELC_Activation : MonoBehaviour
 
     private void Start()
     {
-        interactScript = this.GetComponent<ELC_Interact>();
+        interactScript = this.GetComponent<ELC_Interact>(); 
         foreach (AXD_Activable item in objectsToActivate)
         {
             item.ActivationsNeeded.Add(this);
         }
-        
     }
 
     private void Update()
     {
-        isCorrupted = interactScript.corrupted;
-
-        if (!isCorrupted) Detection();
+        if (!interactScript.corrupted) Detection();
     }
 
     public void ActivateObject()
     {
-        if (!isCorrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
+        if (!interactScript.corrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
         {
             isActivated = !isActivated;
             foreach (AXD_Activable item in objectsToActivate)
             {
+                Debug.Log(gameObject.name + "Activate " + item.gameObject.name);
                 item.Activate();
             }
         }
@@ -99,5 +95,16 @@ public class ELC_Activation : MonoBehaviour
     {
         yield return new WaitForSeconds(TorchDuration);
         isActivated = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("IdenDash"))
+        {
+            foreach (AXD_Activable item in objectsToActivate)
+            {
+                item.Activate();
+            }
+        }
     }
 }
