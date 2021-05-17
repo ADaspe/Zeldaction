@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 467668910879602701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.88, y: 3.31, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467668912517366722}
   m_Father: {fileID: 0}
@@ -49,18 +49,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1.888, y: 1.462}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14497656, y: 0.1423209}
+  m_Size: {x: 1, y: 0.6}
   m_EdgeRadius: 0
 --- !u!50 &467668910879602705
 Rigidbody2D:
@@ -123,8 +123,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.09411766, g: 0.16078432, b: 0.20784315, a: 1}
+  m_Sprite: {fileID: 9209392106208258255, guid: 317e935af0b005c4996f9cfe5daff59e,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,21 +150,9 @@ MonoBehaviour:
   type: 2
   isActivated: 0
   TorchDuration: 0
-  isCorrupted: 0
+  ConditionsEnabled: 0
   detectionRadius: 0
-  objectsToActivate:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  objectsToActivate: []
 --- !u!114 &237884969641447571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +175,7 @@ MonoBehaviour:
   isMobile: 0
   isGrabbed: 0
   isTotem: 0
+  isBrambles: 0
   rbInteractObject: {fileID: 0}
 --- !u!1 &467668912517366723
 GameObject:
@@ -234,7 +224,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.5
 --- !u!114 &467668912517366725
 MonoBehaviour:
   m_ObjectHideFlags: 0

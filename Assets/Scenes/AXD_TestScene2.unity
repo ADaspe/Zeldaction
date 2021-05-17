@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MushSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794218971470581621, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
         type: 3}
@@ -800,12 +805,6 @@ Transform:
   m_Father: {fileID: 1344592471}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1592529609 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8176392400655159503, guid: 16673731a79871a459acf5da8ed9e501,
-    type: 3}
-  m_PrefabInstance: {fileID: 8176392398983134865}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593240135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4284139490151260777, guid: dc0be140dd19c464986ad6c15bb48dab,
@@ -9510,6 +9509,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mush
       objectReference: {fileID: 0}
+    - target: {fileID: 7141853121840803206, guid: b9ab97844a091e24d9d75653fac3a88a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7141853121840803258, guid: b9ab97844a091e24d9d75653fac3a88a,
         type: 3}
       propertyPath: GameManagerScript
@@ -9688,6 +9692,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobileObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6305697899567951150, guid: e3e8287e2806e9949be75a05dd75742d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6305697900073265870, guid: e3e8287e2806e9949be75a05dd75742d,
         type: 3}
       propertyPath: m_RootOrder
@@ -9815,12 +9824,12 @@ PrefabInstance:
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2899601
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3890662
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
@@ -9911,12 +9920,12 @@ PrefabInstance:
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.058
+      value: -1.8400002
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.26
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
@@ -9972,6 +9981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Interactible Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176392399248210512, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8176392399248210514, guid: 16673731a79871a459acf5da8ed9e501,
         type: 3}
@@ -10097,7 +10111,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerDetectors.Array.data[0]
       value: 
-      objectReference: {fileID: 1592529609}
+      objectReference: {fileID: 0}
     - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
         type: 3}
       propertyPath: PlayerDetectors.Array.data[1]
