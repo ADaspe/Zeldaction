@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 6791261cbd886934f88e9a9185734285
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4189779705451117319
+    second: murs fins profil_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -137,7 +140,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: murs fins profil_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 417
+        width: 293
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df122dc0f78942c0800000000000000
+      internalID: -4446873688748187691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: murs fins profil_1
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 570
+        width: 186
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b33099a5bd13f50800000000000000
+      internalID: 6859504889622641429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: murs fins profil_2
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 83
+        width: 240
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f8a4117f9ad4ba0800000000000000
+      internalID: -6103035041405038716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: murs fins profil_3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 646
+        width: 180
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2a8e118813b2df0800000000000000
+      internalID: -204014897629453575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: murs fins profil_4
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 172
+        width: 234
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8296c82182467a0800000000000000
+      internalID: -6384934311574296344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: murs fins profil_5
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 766
+        width: 83
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f402796e89ead5c0800000000000000
+      internalID: -4189779705451117319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
