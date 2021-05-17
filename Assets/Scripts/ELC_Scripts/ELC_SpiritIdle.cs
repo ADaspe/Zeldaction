@@ -37,11 +37,11 @@ public class ELC_SpiritIdle : MonoBehaviour
             Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
             if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
             {
-                CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence à être proche du joueur on ralentit
+                CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence ï¿½ ï¿½tre proche du joueur on ralentit
             }
             else
             {
-                CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse à vitesse constante
+                CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse ï¿½ vitesse constante
             }
         }
     }
