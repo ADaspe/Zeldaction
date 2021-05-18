@@ -31,7 +31,7 @@ public class ELC_Activation : MonoBehaviour
             isActivated = !isActivated;
             foreach (AXD_Activable item in objectsToActivate)
             {
-                Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
+                //Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
                 item.Activate();
             }
         }
@@ -96,6 +96,11 @@ public class ELC_Activation : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
+        Detection();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
         Detection();
     }
 }
