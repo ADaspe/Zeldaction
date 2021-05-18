@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 467668910879602702}
   - component: {fileID: 467668910879602703}
   - component: {fileID: 237884969641447571}
+  - component: {fileID: 313733451567473667}
   m_Layer: 8
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -152,6 +153,9 @@ MonoBehaviour:
   TorchDuration: 0
   ConditionsEnabled: 0
   detectionRadius: 0
+  LayersToDetect:
+    serializedVersion: 2
+    m_Bits: 0
   objectsToActivate: []
 --- !u!114 &237884969641447571
 MonoBehaviour:
@@ -177,6 +181,25 @@ MonoBehaviour:
   isTotem: 0
   isBrambles: 0
   rbInteractObject: {fileID: 0}
+--- !u!95 &313733451567473667
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467668910879602701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbcecb1827a589340a10c3c875b82b9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &467668912517366723
 GameObject:
   m_ObjectHideFlags: 0
