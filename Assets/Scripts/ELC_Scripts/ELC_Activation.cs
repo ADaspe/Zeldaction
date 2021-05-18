@@ -34,7 +34,7 @@ public class ELC_Activation : MonoBehaviour
             AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)
             {
-                Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
+                //Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
                 item.Activate();
             }
         }
@@ -48,7 +48,7 @@ public class ELC_Activation : MonoBehaviour
 
         foreach (Collider2D col in detected)
         {
-            Debug.Log(this.gameObject.name +" a détecté : " + col.name);
+            Debug.Log(this.gameObject.name +" a dï¿½tectï¿½ : " + col.name);
             if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
             {
                 if (!isActivated)
@@ -109,5 +109,10 @@ public class ELC_Activation : MonoBehaviour
     private void AnimatorUpdate()
     {
         animator.SetBool("Activated", isActivated);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Detection();
     }
 }
