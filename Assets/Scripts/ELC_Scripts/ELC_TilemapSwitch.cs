@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
 //[ExecuteInEditMode]
 public class ELC_TilemapSwitch : MonoBehaviour
 {
@@ -10,14 +11,23 @@ public class ELC_TilemapSwitch : MonoBehaviour
     public Tilemap TargetTilemap;
     [SerializeField]
     List<TileInfos> allTilesInfos = new List<TileInfos>();
-    public Tile TestTile;
 
-    
-    private void Update()
+    public void EngageSwitchProcess()
     {
         allTilesInfos.Clear();
         DetectTiles();
         Debug.Log("update tiles");
+    }
+
+    public void RevertSwitch()
+    {
+        foreach (var item in allTilesInfos)
+        {
+            Vector3Int ancientTargetTM = TargetTilemap.WorldToCell(item.WorldCoordinates);
+            TargetTilemap.SetTile(ancientTargetTM, null);
+            Vector3Int ancientCoord = TilemapsToSwitch.WorldToCell(item.WorldCoordinates);
+            TilemapsToSwitch.SetTile(ancientCoord, item.tile);
+        }
     }
 
     private void DetectTiles()
@@ -43,8 +53,6 @@ public class ELC_TilemapSwitch : MonoBehaviour
 
     private void SwitchTilemap()
     {
-        
-
         foreach (var item in allTilesInfos)
         {
             Vector3Int cellCoord = TargetTilemap.WorldToCell(item.WorldCoordinates);
@@ -53,10 +61,10 @@ public class ELC_TilemapSwitch : MonoBehaviour
     }
 }
 
+
 [System.Serializable]
 public class TileInfos
 {
-    
     public TileBase tile;
     public Vector3 WorldCoordinates;
 }
