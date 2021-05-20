@@ -48,7 +48,7 @@ public class ELC_Activation : MonoBehaviour
 
         foreach (Collider2D col in detected)
         {
-            Debug.Log(this.gameObject.name +" a d�tect� : " + col.name);
+            //Debug.Log(this.gameObject.name +" a d�tect� : " + col.name);
             if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
             {
                 if (!isActivated)
@@ -102,7 +102,7 @@ public class ELC_Activation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
+        //Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
         Detection();
     }
 

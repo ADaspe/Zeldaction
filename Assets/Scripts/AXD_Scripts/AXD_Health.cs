@@ -8,5 +8,6 @@ public class AXD_Health : MonoBehaviour
     public void GetHit()
     {
         CharacterManager.TakeDamage(this.tag);
+        Debug.Log("oh le hit");
     }
 }

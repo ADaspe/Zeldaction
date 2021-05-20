@@ -32,5 +32,5 @@ MonoBehaviour:
   SpeedGrabbing: 1.5
   TogetherAttackDetectionAngle: 60
   IdenProjectionDistance: 4
-  IdenProjectionTime: 0.5
-  IdenSlowDownTime: 0.5
+  IdenProjectionTime: 0.4
+  IdenSlowDownTime: 0.4
