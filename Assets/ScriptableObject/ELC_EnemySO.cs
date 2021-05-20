@@ -7,7 +7,9 @@ public class ELC_EnemySO : ScriptableObject
 {
     public float prepareAttackTime;
     public float attackTime;
-    public float attackDistance;
+    public float attackAreaPositionFromEnemy; //EN gros si on veut faire partir le cercle de collision plus loin que la position de l'entité
+    public float attackAreaRadius;
+    public float attackAreaAngle;
     public float detectionRadius;
     public float DetectionAngle;
     public bool haveInsensibilityZone;
@@ -17,4 +19,5 @@ public class ELC_EnemySO : ScriptableObject
     public LayerMask ObstaclesMask;
     public float trackingPlayerSpeed;
     public float patrolSpeed;
+    public float distanceToStopNearTarget;
 }

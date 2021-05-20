@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17776,11 +17776,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3751649488854153295, guid: 6ab27886158bbbf4a82164cffde25037,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -19.22289
-      objectReference: {fileID: 0}
-    - target: {fileID: 3751649488854153295, guid: 6ab27886158bbbf4a82164cffde25037,
-        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -18259,6 +18254,12 @@ PrefabInstance:
       propertyPath: gameMana
       value: 
       objectReference: {fileID: 1868863768}
+    - target: {fileID: 8000372401053560549, guid: cfacee7bebb756b4cb8fc8eb60d8ccf9,
+        type: 3}
+      propertyPath: EnemyStats
+      value: 
+      objectReference: {fileID: 11400000, guid: e8b3ab82e25598741ae3195c53d755ab,
+        type: 2}
     - target: {fileID: 8000372401053560549, guid: cfacee7bebb756b4cb8fc8eb60d8ccf9,
         type: 3}
       propertyPath: EnableDebug
