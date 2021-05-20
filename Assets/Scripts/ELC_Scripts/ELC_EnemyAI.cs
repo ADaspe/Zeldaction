@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class ELC_EnemyAI : MonoBehaviour
 {
+    [HideInInspector]
     public Vector3 Target;
     public ELC_EnemySO EnemyStats;
     public ELC_GameManager gameMana;
@@ -75,12 +76,15 @@ public class ELC_EnemyAI : MonoBehaviour
             return;
         }
 
-        if(isProtected || EnemyStats.haveInsensibilityZone) InsensibilityZone(EnemyStats.insensibilityRadius, EnemyStats.insensibilityAngle);
+        if (isProtected || EnemyStats.haveInsensibilityZone)
+        {
+            Shield();
+        }
 
         if (path == null || isPreparingAttack || isAttacking)
             return;
 
-        if (isFollowingPlayer && Vector2.Distance(rb.position, Target) < EnemyStats.attackDistance)
+        if (isFollowingPlayer && Vector2.Distance(rb.position, Target) < EnemyStats.distanceToStopNearTarget)
         {
             if (!IsThereWallBetweenTarget(Target))
             {
@@ -128,6 +132,24 @@ public class ELC_EnemyAI : MonoBehaviour
     {
         if (EnableDebug) Debug.Log("attack");
         isAttacking = true;
+        
+        List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy));
+        
+        GameObject target = null;
+
+        foreach (GameObject GO in col)
+        {
+            if(GO.CompareTag("Ryn"))
+            {
+                target = GO;
+            }
+            else if(GO.CompareTag("Spirit") && target == null)
+            {
+                target = GO;
+            }
+        }
+        if(target != null) target.GetComponent<AXD_Health>().GetHit();
+
         yield return new WaitForSeconds(time);
         isAttacking = false;
     }
@@ -179,32 +201,44 @@ public class ELC_EnemyAI : MonoBehaviour
         else return true;
     }
 
-    private void InsensibilityZone(float radius, float angle)
+    private List<GameObject> DetectionZone(float radius, float angle, Vector3 origin)
     {
         if (isProtected)
         {
             radius = 0.8f;
             angle = 180;
         }
-        Collider2D[] col = Physics2D.OverlapCircleAll(this.transform.position, radius);
+        Collider2D[] col = Physics2D.OverlapCircleAll(origin, radius);
 
-        foreach (Collider2D collider in col)
+        List<GameObject> collidersInsideArea = new List<GameObject>();
+        foreach (var collider in col)
         {
-            float currentAngle = Vector2.Angle(direction, collider.transform.position - this.transform.position);
-            if (collider.gameObject.CompareTag("Spirit"))
+            float currentAngle = Vector2.Angle(direction, collider.transform.position - origin);
+            if (currentAngle <= angle && currentAngle >= -angle)
             {
-                if (gameMana.CharacterManager.spiritMove.isDashing && currentAngle <= angle && currentAngle >= - angle)
-                {
-                    gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
-                }
+                collidersInsideArea.Add(collider.gameObject);
             }
         }
+        
+        return collidersInsideArea;
+    }
 
+    private void Shield()
+    {
+        List<GameObject> col = DetectionZone(EnemyStats.insensibilityRadius, EnemyStats.insensibilityAngle, this.transform.position);
+        foreach (GameObject GO in col)
+        {
+            if (GO.gameObject.CompareTag("Spirit") && gameMana.CharacterManager.spiritMove.isDashing)
+            {
+                gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
+            }
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(this.transform.position, EnemyStats.detectionRadius);
         Gizmos.DrawRay(new Ray(this.transform.position, direction));
+        Gizmos.DrawWireSphere(this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy), EnemyStats.attackAreaRadius);
     }
 }
