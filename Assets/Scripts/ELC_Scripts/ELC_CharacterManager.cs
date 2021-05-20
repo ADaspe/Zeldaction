@@ -47,6 +47,7 @@ public class ELC_CharacterManager : MonoBehaviour
         RynMove.currentCharacter = true;
         RynAttack = RynGO.GetComponent<ELC_Attack>();
         SpiritAttack = SpiritGO.GetComponent<ELC_Attack>();
+        currentHP = stats.initialHP;
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
@@ -122,7 +123,6 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritProjected = true;
         Vector2 tempDirection = new Vector2(RynGO.transform.position.x - SpiritGO.transform.position.x, RynGO.transform.position.y - SpiritGO.transform.position.y);
         spiritMove.rb.velocity = tempDirection*spiritMove.currentSpeed;
-        Debug.Log("Time : " + ((Mathf.Sqrt(Mathf.Pow(tempDirection.x, 2) + (Mathf.Pow(tempDirection.y, 2))) / spiritMove.currentSpeed)));
         Invoke("ProjectSpirit",((Mathf.Sqrt(Mathf.Pow(tempDirection.x,2)+ (Mathf.Pow(tempDirection.y, 2))) / spiritMove.currentSpeed)));
     }
 
