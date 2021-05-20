@@ -27,7 +27,6 @@ public class ELC_Bridge : AXD_Activable
 
     public void OpenBridge()
     {
-        this.GetComponent<SpriteRenderer>().enabled = true;
         isOpen = true;
         Tile detectedTilesColor = tilesScript.detectedTilecolor;
         detectedTiles = tilesScript.OverridedTiles(this.transform);
@@ -35,17 +34,18 @@ public class ELC_Bridge : AXD_Activable
         {
             tilesScript.TileMap.SetTile(tilePos, detectedTilesColor);
         }
+        ObjectAnimator.SetBool("Activated", true);
     }
 
     public void CloseBridge()
     {
-        this.GetComponent<SpriteRenderer>().enabled = false;
         detectedTiles = tilesScript.OverridedTiles(this.transform);
         isOpen = false;
         foreach (Vector3Int tilePos in detectedTiles)
         {
             tilesScript.TileMap.SetTile(tilePos, BasicTile);
         }
+        ObjectAnimator.SetBool("Activated", false);
     }
 
     public void CheckActivations()
