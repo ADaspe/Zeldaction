@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class ELC_EnemyAI : MonoBehaviour
 {
+    [HideInInspector]
     public Vector3 Target;
     public ELC_EnemySO EnemyStats;
     public ELC_GameManager gameMana;
@@ -132,20 +133,19 @@ public class ELC_EnemyAI : MonoBehaviour
         if (EnableDebug) Debug.Log("attack");
         isAttacking = true;
         
-        List<Collider2D> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy));
+        List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy));
         
-        Collider2D target = null;
+        GameObject target = null;
 
-        foreach (Collider2D collider in col)
+        foreach (GameObject GO in col)
         {
-            if(collider.CompareTag("Ryn"))
+            if(GO.CompareTag("Ryn"))
             {
-                target = collider;
-                Debug.Log("oui");
+                target = GO;
             }
-            else if(collider.CompareTag("Spirit") && target == null)
+            else if(GO.CompareTag("Spirit") && target == null)
             {
-                target = collider;
+                target = GO;
             }
         }
         if(target != null) target.GetComponent<AXD_Health>().GetHit();
@@ -201,34 +201,34 @@ public class ELC_EnemyAI : MonoBehaviour
         else return true;
     }
 
-    private List<Collider2D> DetectionZone(float radius, float angle, Vector3 origin)
+    private List<GameObject> DetectionZone(float radius, float angle, Vector3 origin)
     {
         if (isProtected)
         {
             radius = 0.8f;
             angle = 180;
         }
-        Collider2D[] col = Physics2D.OverlapCircleAll(this.transform.position, radius);
+        Collider2D[] col = Physics2D.OverlapCircleAll(origin, radius);
 
-        List<Collider2D> collidersInsideArea = new List<Collider2D>();
+        List<GameObject> collidersInsideArea = new List<GameObject>();
         foreach (var collider in col)
         {
             float currentAngle = Vector2.Angle(direction, collider.transform.position - origin);
             if (currentAngle <= angle && currentAngle >= -angle)
             {
-                collidersInsideArea.Add(collider);
-                
+                collidersInsideArea.Add(collider.gameObject);
             }
         }
+        
         return collidersInsideArea;
     }
 
     private void Shield()
     {
-        List<Collider2D> col = DetectionZone(EnemyStats.insensibilityRadius, EnemyStats.insensibilityAngle, this.transform.position);
-        foreach (Collider2D collider in col)
+        List<GameObject> col = DetectionZone(EnemyStats.insensibilityRadius, EnemyStats.insensibilityAngle, this.transform.position);
+        foreach (GameObject GO in col)
         {
-            if (collider.gameObject.CompareTag("Spirit") && gameMana.CharacterManager.spiritMove.isDashing)
+            if (GO.gameObject.CompareTag("Spirit") && gameMana.CharacterManager.spiritMove.isDashing)
             {
                 gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
             }

@@ -15,7 +15,7 @@ MonoBehaviour:
   prepareAttackTime: 1
   attackTime: 0.5
   attackAreaPositionFromEnemy: 0
-  attackAreaRadius: 2
+  attackAreaRadius: 1.19
   attackAreaAngle: 30
   detectionRadius: 2.5
   DetectionAngle: 30
@@ -30,4 +30,4 @@ MonoBehaviour:
     m_Bits: 64
   trackingPlayerSpeed: 0
   patrolSpeed: 0
-  distanceToStopNearTarget: 1
+  distanceToStopNearTarget: 0.8

@@ -20,7 +20,7 @@ MonoBehaviour:
   detectionRadius: 2.5
   DetectionAngle: 40
   haveInsensibilityZone: 1
-  insensibilityRadius: 0.8
+  insensibilityRadius: 1.5
   insensibilityAngle: 80
   DetectionMask:
     serializedVersion: 2
