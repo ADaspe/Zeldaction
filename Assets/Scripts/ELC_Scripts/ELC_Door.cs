@@ -32,6 +32,7 @@ public class ELC_Door : AXD_Activable
                     isActivated = true;
                     LockTorches();
                     rb.enabled = false;
+                    ObjectAnimator.SetBool("Activated", isActivated);
                 }
                 return;
             }
@@ -39,8 +40,10 @@ public class ELC_Door : AXD_Activable
             {
                 isActivated = false;
                 rb.enabled = true;
+                ObjectAnimator.SetBool("Activated", isActivated);
             }
         }
+        
     }
 
     public override void Activate()
