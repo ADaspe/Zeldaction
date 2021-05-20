@@ -9682,6 +9682,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brambles
       objectReference: {fileID: 0}
+    - target: {fileID: 8843035624213004792, guid: bbde329e77cb5d745b494ad1351a9178,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
         type: 3}
       propertyPath: m_RootOrder
@@ -9857,6 +9862,11 @@ PrefabInstance:
       propertyPath: charaManager
       value: 
       objectReference: {fileID: 778000660}
+    - target: {fileID: 4240017184603606429, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6788487066792825592, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: MaxSpeed

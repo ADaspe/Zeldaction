@@ -30,6 +30,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerDetachSpirit;
     public float SpiritReleaseDuration;
     public float nextDash;
+    public bool spiritProjected;
 
 
     public bool xLocked;
@@ -101,12 +102,14 @@ public class ELC_CharacterManager : MonoBehaviour
         vCam.Follow = RynMove.transform;
         //SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
+        ResetProjection();
     }
 
     public void DetachSpirit()
     {
         Together = false;
-        spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son déplacement quand on le détache
+        //spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son déplacement quand on le détache
+        GoToRyn();
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
         tmpIdle.closeToRyn = false;
@@ -115,12 +118,25 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void GoToRyn()
     {
-
+        RynMove.canMove = false;
+        spiritProjected = true;
+        Vector2 tempDirection = new Vector2(RynGO.transform.position.x - SpiritGO.transform.position.x, RynGO.transform.position.y - SpiritGO.transform.position.y);
+        spiritMove.rb.velocity = tempDirection*spiritMove.currentSpeed;
+        Debug.Log("Time : " + ((Mathf.Sqrt(Mathf.Pow(tempDirection.x, 2) + (Mathf.Pow(tempDirection.y, 2))) / spiritMove.currentSpeed)));
+        Invoke("ProjectSpirit",((Mathf.Sqrt(Mathf.Pow(tempDirection.x,2)+ (Mathf.Pow(tempDirection.y, 2))) / spiritMove.currentSpeed)));
     }
 
     public void ProjectSpirit()
     {
+        RynMove.canMove = true;
+        spiritMove.rb.velocity = RynMove.LastDirection.normalized * (stats.IdenProjectionDistance/stats.IdenProjectionTime);
+        Invoke("SlowDownSpirit", stats.IdenProjectionTime);
+        
+    }
 
+    public void SlowDownSpirit()
+    {
+        StartCoroutine(ProjectionSlowdown());
     }
 
     public void Move(InputAction.CallbackContext value)
@@ -231,14 +247,28 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        if (Together) {
-            
-            DetachSpirit();
+        if (value.started)
+        {
+            if (Together)
+            {
+
+                DetachSpirit();
+            }
+            else
+            {
+                RegroupTogether();
+                ChangeCamFocusRyn();
+            }
         }
-        else {
-            RegroupTogether();
-            ChangeCamFocusRyn();
-        }
+    }
+
+    public void ResetProjection()
+    {
+        CancelInvoke("ProjectSpirit");
+        StopCoroutine(ProjectionSlowdown());
+        RynMove.canMove = true;
+        spiritProjected = false;
+        spiritMove.currentSpeed = stats.SpiritSpeed;
     }
 
     public void TakeDamage(string tag)
@@ -263,5 +293,20 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         //To define
         Debug.Log("Pause yet to define");
+    }
+
+    public IEnumerator ProjectionSlowdown()
+    {
+        
+        float tmpTimeToReach = Time.time + stats.IdenSlowDownTime;
+        while(Time.time <= tmpTimeToReach)
+        {
+            spiritMove.currentSpeed -= spiritMove.currentSpeed/6 ;
+            spiritMove.rb.velocity = spiritMove.rb.velocity.normalized * spiritMove.currentSpeed;
+            yield return new WaitForSeconds(stats.IdenSlowDownTime/20);
+        }
+
+        spiritMove.rb.velocity = Vector2.zero;
+        ResetProjection();
     }
 }
