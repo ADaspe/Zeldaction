@@ -7,6 +7,7 @@ public abstract class AXD_Activable : MonoBehaviour
     
     public List<ELC_Activation> ActivationsNeeded;
     public bool isActivated;
+    public Animator ObjectAnimator;
     public abstract void Activate();
     public void LockTorches()
     {
