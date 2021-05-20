@@ -16,6 +16,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public ELC_Interact DetectedInteraction;
     public AXD_CharacterVariablesSO stats;
     public int currentHP;
+    public int maxHP;
     public ELC_CharacterAnimationsManager AnimationManager;
     public ELC_Interact ToPurify;
     //Variables locales
@@ -47,7 +48,7 @@ public class ELC_CharacterManager : MonoBehaviour
         RynMove.currentCharacter = true;
         RynAttack = RynGO.GetComponent<ELC_Attack>();
         SpiritAttack = SpiritGO.GetComponent<ELC_Attack>();
-        currentHP = stats.initialHP;
+        currentHP = maxHP = stats.initialHP;
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
