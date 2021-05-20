@@ -15,9 +15,11 @@ public class ELC_Activation : MonoBehaviour
     public float detectionRadius;
     public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
+    private Animator animator;
 
     private void Start()
     {
+        animator = this.GetComponent<Animator>();
         interactScript = this.GetComponent<ELC_Interact>();
         foreach (AXD_Activable item in objectsToActivate)
         {        
@@ -29,6 +31,7 @@ public class ELC_Activation : MonoBehaviour
         if (!interactScript.corrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
         {
             isActivated = !isActivated;
+            AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)
             {
                 //Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
@@ -45,12 +48,13 @@ public class ELC_Activation : MonoBehaviour
 
         foreach (Collider2D col in detected)
         {
-            Debug.Log(this.gameObject.name +" a détecté : " + col.name);
+            Debug.Log(this.gameObject.name +" a dï¿½tectï¿½ : " + col.name);
             if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
             {
                 if (!isActivated)
                 {
                     isActivated = true;
+                    AnimatorUpdate();
                     foreach (AXD_Activable item in objectsToActivate)
                     {
                         item.Activate();
@@ -66,6 +70,7 @@ public class ELC_Activation : MonoBehaviour
                     StopCoroutine("Countdown");
                     StartCoroutine("Countdown");
                     isActivated = true;
+                    AnimatorUpdate();
                     foreach (AXD_Activable item in objectsToActivate)
                     {
                         item.Activate();
@@ -79,6 +84,7 @@ public class ELC_Activation : MonoBehaviour
         if (ConditionsEnabled == false && isActivated)
         {
             isActivated = false;
+            AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)
             {
                 item.Activate();
@@ -91,12 +97,18 @@ public class ELC_Activation : MonoBehaviour
     {
         yield return new WaitForSeconds(TorchDuration);
         isActivated = false;
+        AnimatorUpdate();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
         Detection();
+    }
+
+    private void AnimatorUpdate()
+    {
+        animator.SetBool("Activated", isActivated);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
