@@ -140,7 +140,6 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Move(InputAction.CallbackContext value)
     {
-        Debug.Log("Bloup");
         if (followingCharacter.canMove)
         {
             Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
@@ -186,7 +185,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started)
         {
-            Debug.Log("Action");
+            
             if (DetectedInteraction != null && followingCharacter == RynMove)
             {
                 if (DetectedInteraction.PlayerCanInteract && !DetectedInteraction.isMobile)
@@ -232,7 +231,6 @@ public class ELC_CharacterManager : MonoBehaviour
         }
         if (value.canceled)
         {
-            Debug.Log("Action stop");
             if (DetectedInteraction != null && DetectedInteraction.isGrabbed)
             {
                 DetectedInteraction.isGrabbed = false;
