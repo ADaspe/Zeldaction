@@ -40,7 +40,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public bool dashPlusUpgrade;
 
 
-    private void Start()
+    private void Awake()
     {
         vCam.Follow = RynMove.transform;
         followingCharacter = RynMove;
@@ -109,7 +109,6 @@ public class ELC_CharacterManager : MonoBehaviour
     public void DetachSpirit()
     {
         Together = false;
-        //spiritMove.rb.velocity = Vector2.zero; //En attendant d'avoir la projection de l'esprit, on bloque son déplacement quand on le détache
         GoToRyn();
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
@@ -128,7 +127,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void ProjectSpirit()
     {
-        RynMove.canMove = true;
+        vCam.Follow = SpiritGO.transform;
         spiritMove.rb.velocity = RynMove.LastDirection.normalized * (stats.IdenProjectionDistance/stats.IdenProjectionTime);
         Invoke("SlowDownSpirit", stats.IdenProjectionTime);
         
@@ -141,6 +140,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Move(InputAction.CallbackContext value)
     {
+        Debug.Log("Bloup");
         if (followingCharacter.canMove)
         {
             Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
@@ -269,6 +269,7 @@ public class ELC_CharacterManager : MonoBehaviour
         RynMove.canMove = true;
         spiritProjected = false;
         spiritMove.currentSpeed = stats.SpiritSpeed;
+
     }
 
     public void TakeDamage(string tag)
@@ -307,6 +308,7 @@ public class ELC_CharacterManager : MonoBehaviour
         }
 
         spiritMove.rb.velocity = Vector2.zero;
+        ChangeCamFocusSpirit();
         ResetProjection();
     }
 }
