@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 837270328356672766}
   - component: {fileID: 837270328356672767}
   - component: {fileID: 837270328356672764}
+  - component: {fileID: 4641078757239906776}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -116,9 +117,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivationsNeeded: []
+  isActivated: 0
   tilesScript: {fileID: 837270328356672767}
   isOpen: 0
   ActivateOnDisable: 0
+--- !u!95 &4641078757239906776
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837270328356672736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c971d90868ccb6f4c8be37302ec02d90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2629642051333034702
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247080410724572039}
   - component: {fileID: 4593007038893748549}
+  - component: {fileID: 2323688015908823213}
   m_Layer: 0
   m_Name: VisualLily
   m_TagString: Untagged
@@ -369,6 +391,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2323688015908823213
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049462695125057499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c971d90868ccb6f4c8be37302ec02d90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7980155516256214476
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3621075865640848874}
   - component: {fileID: 1387731241942066351}
+  - component: {fileID: 1569229637475726850}
   m_Layer: 0
   m_Name: VisualLily (1)
   m_TagString: Untagged
@@ -453,6 +495,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1569229637475726850
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980155516256214476}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c971d90868ccb6f4c8be37302ec02d90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8103773634872757462
 GameObject:
   m_ObjectHideFlags: 0

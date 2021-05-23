@@ -12,7 +12,7 @@ public class ELC_Attack : MonoBehaviour
     //public float enemyDetectionRadius;
     public bool ShieldOn;
     public float NextShield;
-    private bool spiritAttack;
+    public bool spiritAttack;
     private GameObject nearestEnemy;
     private ELC_Attack SpiritAttackScript;
     public float attackTogetherCooldown;
@@ -67,7 +67,7 @@ public class ELC_Attack : MonoBehaviour
             RaycastHit2D wallHit = Physics2D.Raycast(this.transform.position, enemies[i].transform.position - this.transform.position, Vector2.Distance(this.transform.position, enemies[i].transform.position), gameManager.GlobalObstaclesMask);
 
             float angle = Vector3.Angle(CharManager.RynMove.LastDirection, enemies[i].gameObject.transform.position - this.gameObject.transform.position);
-            Debug.Log(angle);
+            //Debug.Log(angle);
             if (angle > CharStats.TogetherAttackDetectionAngle) return;
 
             if (i == 0 && wallHit.collider == null)

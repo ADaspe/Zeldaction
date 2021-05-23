@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5968846882998885300}
   - component: {fileID: 5968846882998885302}
   - component: {fileID: 5968846882998885301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Border_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,18 +97,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010113955, y: 0.09338313}
+  m_Offset: {x: 0.010113955, y: -0.11797655}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.372, y: 0.918}
+    oldSize: {x: 0.32, y: 0.892}
     newSize: {x: 0.468, y: 0.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29931974, y: 0.70685756}
+  m_Size: {x: 0.29931974, y: 0.2841382}
   m_EdgeRadius: 0
 --- !u!1 &5968846883189399109
 GameObject:
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5968846884012600718}
   m_Layer: 0
-  m_Name: WallBroken_Side
+  m_Name: "Murs_Fin_Cot\xE9Cass\xE9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 5968846884117120721}
   - component: {fileID: 5968846884117120723}
   - component: {fileID: 5968846884117120722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall_Border_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,16 +350,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010113955, y: -0.018859565}
+  m_Offset: {x: -0.010113955, y: -0.18403977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.942}
+    oldSize: {x: 0.378, y: 0.812}
     newSize: {x: 0.468, y: 0.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31023073, y: 0.74338543}
+  m_Size: {x: 0.31023073, y: 0.32066607}
   m_EdgeRadius: 0

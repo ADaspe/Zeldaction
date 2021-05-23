@@ -58,9 +58,12 @@ public class ELC_SpiritIdle : MonoBehaviour
     {
         if (CharaManager.followingCharacter == CharaManager.RynMove)
         {
-            if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn") && !closeToRyn)
+            if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn") && !closeToRyn && !CharaManager.spiritProjected)
             {
                 Teleport(targetPos);
+            }else if(CharaManager.spiritProjected == true)
+            {
+                CharaManager.ResetProjection();
             }
         }
     }
