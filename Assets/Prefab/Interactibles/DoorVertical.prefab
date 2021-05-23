@@ -103,5 +103,21 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2858453801201929167, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: ObjectAnimator
+      value: 
+      objectReference: {fileID: 2264019273355220889}
+    - target: {fileID: 6073511561315566862, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2ddd24870fed87945b010f1c8c89b347, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06921b1f49855a249b241f1df674815a, type: 3}
+--- !u!95 &2264019273355220889 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6073511561315566862, guid: 06921b1f49855a249b241f1df674815a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5413919520526471831}
+  m_PrefabAsset: {fileID: 0}
