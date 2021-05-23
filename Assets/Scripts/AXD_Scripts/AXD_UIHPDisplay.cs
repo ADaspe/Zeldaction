@@ -21,7 +21,8 @@ public class AXD_UIHPDisplay : MonoBehaviour
     }
     public void LoseLife()
     {
-        allHPs[charaManager.currentHP - 1].EmptyHP();
+        if (charaManager.currentHP > 0) allHPs[charaManager.currentHP - 1].EmptyHP();
+        else Debug.Log("HP à 0");
     }
 
     public void HealLife()

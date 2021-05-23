@@ -217,6 +217,7 @@ public class ELC_EnemyAI : MonoBehaviour
             if (currentAngle <= angle && currentAngle >= -angle)
             {
                 collidersInsideArea.Add(collider.gameObject);
+                
             }
         }
         
@@ -226,11 +227,22 @@ public class ELC_EnemyAI : MonoBehaviour
     private void Shield()
     {
         List<GameObject> col = DetectionZone(EnemyStats.insensibilityRadius, EnemyStats.insensibilityAngle, this.transform.position);
+        
         foreach (GameObject GO in col)
         {
-            if (GO.gameObject.CompareTag("Spirit") && gameMana.CharacterManager.spiritMove.isDashing)
+            
+            if (GO.gameObject.CompareTag("Spirit"))
             {
-                gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
+                if (gameMana.CharacterManager.spiritMove.isDashing)
+                {
+                    gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
+                    Debug.Log("bloqué");
+                }
+                else if (gameMana.CharacterManager.RynGO.GetComponent<ELC_Attack>().spiritAttack)
+                {
+                    gameMana.CharacterManager.RynGO.GetComponent<ELC_Attack>().spiritAttack = false;
+                    Debug.Log("bloqué");
+                }
             }
         }
     }
