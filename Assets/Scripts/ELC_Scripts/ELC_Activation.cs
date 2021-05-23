@@ -13,7 +13,8 @@ public class ELC_Activation : MonoBehaviour
     private bool ConditionsEnabled;
     private ELC_Interact interactScript;
     public float detectionRadius;
-    public LayerMask LayersToDetect;
+    private BoxCollider2D collider;
+    //public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
     private Animator animator;
 
@@ -21,6 +22,7 @@ public class ELC_Activation : MonoBehaviour
     {
         animator = this.GetComponent<Animator>();
         interactScript = this.GetComponent<ELC_Interact>();
+        collider = GetComponent<BoxCollider2D>();
         foreach (AXD_Activable item in objectsToActivate)
         {        
             item.ActivationsNeeded.Add(this);
@@ -42,11 +44,18 @@ public class ELC_Activation : MonoBehaviour
 
     private void Detection(Collider2D collision, bool isEntering = true)
     {
-
-        
         ConditionsEnabled = false;
         if (type == ActivatorType.PRESSUREPLATE && (collision.gameObject.CompareTag("Crate") || collision.gameObject.CompareTag("Ryn")))
         {
+            bool itemOnPlate = false;
+            Collider2D[] detected = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + collider.offset.x, transform.position.y + collider.offset.y), detectionRadius);
+            foreach (Collider2D item in detected)
+            {
+                if(item.CompareTag("Crate") || item.CompareTag("Ryn"))
+                {
+                    itemOnPlate = true;
+                }
+            }
             if (!isActivated)
             {
                 isActivated = true;
@@ -56,7 +65,7 @@ public class ELC_Activation : MonoBehaviour
                     item.Activate();
                 }
             }
-            ConditionsEnabled = isEntering;
+            ConditionsEnabled = (isEntering||itemOnPlate);
             //return;
         }
         else if (type == ActivatorType.TORCH && collision.gameObject.CompareTag("Spirit") && collision.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
@@ -96,20 +105,19 @@ public class ELC_Activation : MonoBehaviour
         AnimatorUpdate();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        Detection(collision);
-    }
 
     private void AnimatorUpdate()
     {
         animator.SetBool("Activated", isActivated);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Detection(collision);
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-
         Detection(collision , false);
     }
 }
