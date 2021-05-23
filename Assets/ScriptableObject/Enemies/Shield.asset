@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prepareAttackTime: 2
   attackTime: 1
-  attackDistance: 1
+  attackAreaPositionFromEnemy: 1
+  attackAreaRadius: 0.5
+  attackAreaAngle: 180
   detectionRadius: 2.5
   DetectionAngle: 40
   haveInsensibilityZone: 1
-  insensibilityRadius: 0.8
+  insensibilityRadius: 1.5
   insensibilityAngle: 80
   DetectionMask:
     serializedVersion: 2
@@ -28,3 +30,4 @@ MonoBehaviour:
     m_Bits: 64
   trackingPlayerSpeed: 0
   patrolSpeed: 0
+  distanceToStopNearTarget: 1
