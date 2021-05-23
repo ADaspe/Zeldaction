@@ -11,6 +11,7 @@ public class ELC_Door : AXD_Activable
 
     private void Start()
     {
+        ObjectAnimator = GetComponent<Animator>();
         rb = this.GetComponent<Collider2D>();
         CheckActivations();
     }
