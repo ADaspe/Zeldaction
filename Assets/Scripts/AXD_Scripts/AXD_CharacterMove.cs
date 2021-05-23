@@ -88,10 +88,14 @@ public class AXD_CharacterMove : MonoBehaviour
             Debug.Log("Ceci est un mur");
             charaManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
         }
-        else if(CompareTag("Spirit") && currentCharacter && isDashing && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        else if(CompareTag("Spirit") && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Debug.Log("Ceci est un ennemi");
-            collision.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(charaManager.stats.StunTime);
+            if((currentCharacter && isDashing) || (!currentCharacter && charaManager.RynGO.GetComponent<ELC_Attack>().spiritAttack))
+            {
+                Debug.Log("Ceci est un ennemi");
+                collision.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(charaManager.stats.StunTime);
+            }
+            
         }
     }
 }
