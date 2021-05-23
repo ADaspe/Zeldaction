@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7860861666203331405}
   - component: {fileID: 3330988535078117249}
   - component: {fileID: 8528639721539411878}
-  m_Layer: 0
-  m_Name: Murs_Fin
+  m_Layer: 14
+  m_Name: Murs_Fin_Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

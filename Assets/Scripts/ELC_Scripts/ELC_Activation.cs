@@ -15,9 +15,11 @@ public class ELC_Activation : MonoBehaviour
     public float detectionRadius;
     public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
+    private Animator animator;
 
     private void Start()
     {
+        animator = this.GetComponent<Animator>();
         interactScript = this.GetComponent<ELC_Interact>();
         foreach (AXD_Activable item in objectsToActivate)
         {        
@@ -29,56 +31,56 @@ public class ELC_Activation : MonoBehaviour
         if (!interactScript.corrupted && (type == ActivatorType.PRESSUREPLATE || type == ActivatorType.LEVER))
         {
             isActivated = !isActivated;
+            AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)
             {
-                Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
+                //Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
                 item.Activate();
             }
         }
     }
 
-    private void Detection()
+    private void Detection(Collider2D collision, bool isEntering = true)
     {
-        Collider2D[] detected = Physics2D.OverlapCircleAll(this.transform.position, detectionRadius);
+
         
         ConditionsEnabled = false;
-
-        foreach (Collider2D col in detected)
+        if (type == ActivatorType.PRESSUREPLATE && (collision.gameObject.CompareTag("Crate") || collision.gameObject.CompareTag("Ryn")))
         {
-            Debug.Log(this.gameObject.name +" a détecté : " + col.name);
-            if (type == ActivatorType.PRESSUREPLATE && (col.gameObject.CompareTag("Crate") || col.gameObject.CompareTag("Ryn")))
+            if (!isActivated)
             {
-                if (!isActivated)
+                isActivated = true;
+                AnimatorUpdate();
+                foreach (AXD_Activable item in objectsToActivate)
                 {
-                    isActivated = true;
-                    foreach (AXD_Activable item in objectsToActivate)
-                    {
-                        item.Activate();
-                    }
+                    item.Activate();
                 }
-                ConditionsEnabled = true;
+            }
+            ConditionsEnabled = isEntering;
+            //return;
+        }
+        else if (type == ActivatorType.TORCH && collision.gameObject.CompareTag("Spirit") && collision.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
+        {
+            if (!isActivated)
+            {
+                StopCoroutine("Countdown");
+                StartCoroutine("Countdown");
+                isActivated = true;
+                AnimatorUpdate();
+                foreach (AXD_Activable item in objectsToActivate)
+                {
+                    item.Activate();
+                }
+                ConditionsEnabled = isEntering;
                 //return;
             }
-            else if (type == ActivatorType.TORCH && col.gameObject.CompareTag("Spirit") && col.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
-            {
-                if (!isActivated)
-                {
-                    StopCoroutine("Countdown");
-                    StartCoroutine("Countdown");
-                    isActivated = true;
-                    foreach (AXD_Activable item in objectsToActivate)
-                    {
-                        item.Activate();
-                    }
-                    ConditionsEnabled = true;
-                    //return;
-                }
-            }
         }
+        
 
         if (ConditionsEnabled == false && isActivated)
         {
             isActivated = false;
+            AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)
             {
                 item.Activate();
@@ -91,11 +93,23 @@ public class ELC_Activation : MonoBehaviour
     {
         yield return new WaitForSeconds(TorchDuration);
         isActivated = false;
+        AnimatorUpdate();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(gameObject.name + " entre en collision avec "+collision.gameObject.name);
-        Detection();
+
+        Detection(collision);
+    }
+
+    private void AnimatorUpdate()
+    {
+        animator.SetBool("Activated", isActivated);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        Detection(collision , false);
     }
 }

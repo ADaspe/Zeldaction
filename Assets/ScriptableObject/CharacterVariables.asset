@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: CharacterVariables
   m_EditorClassIdentifier: 
   ShieldDuration: 2
-  SpiritProjection: 4
   SpiritDecreaseSpeed: 1
   DashDistance: 2.5
   DashTime: 0.2
@@ -33,5 +32,5 @@ MonoBehaviour:
   SpeedGrabbing: 1.5
   TogetherAttackDetectionAngle: 60
   IdenProjectionDistance: 4
-  IdenProjectionTime: 1
-  IdenSlowDownTime: 0.2
+  IdenProjectionTime: 0.4
+  IdenSlowDownTime: 0.4

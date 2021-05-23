@@ -6,7 +6,6 @@ using UnityEngine;
 public class AXD_CharacterVariablesSO : ScriptableObject
 {
     public float ShieldDuration;
-    public float SpiritProjection;
     public float SpiritDecreaseSpeed;
     public float DashDistance;
     public float DashTime;

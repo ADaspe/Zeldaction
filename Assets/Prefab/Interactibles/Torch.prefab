@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 9173012788802152865}
   - component: {fileID: 9173012788802152866}
   - component: {fileID: 6526799955626206081}
+  - component: {fileID: 6991680417519403595}
   m_Layer: 8
   m_Name: Torch
   m_TagString: Torch
@@ -238,6 +239,25 @@ MonoBehaviour:
   isTotem: 0
   isBrambles: 0
   rbInteractObject: {fileID: 0}
+--- !u!95 &6991680417519403595
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173012788802152876}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b8ca4ab883ce2240a3d9da4f108f962, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9173012789157579294
 GameObject:
   m_ObjectHideFlags: 0
