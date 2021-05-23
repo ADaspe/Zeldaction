@@ -98,7 +98,7 @@ public class ELC_Activation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Detection entrée");
+
         Detection(collision);
     }
 
@@ -109,7 +109,7 @@ public class ELC_Activation : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Detection sortie");
+
         Detection(collision , false);
     }
 }
