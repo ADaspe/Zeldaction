@@ -178,6 +178,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
+            Debug.Log("Spiritus");
             if (Together)
             {
                 DetachSpirit();
@@ -192,22 +193,25 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext value)
     {
-        if (!toggleMenu)
-        {
+        if (value.started) { 
+            Debug.Log("Triggered by : "+value.control);
+            if (!toggleMenu)
+            {
             
-            EnableMenu();
+                EnableMenu();
+            }
+            else
+            {
+                DisableMenu();
+            }
         }
-        else
-        {
-            DisableMenu();
-        }
-
     }
 
     public void IdenAttack(InputAction.CallbackContext value)
     {
-        if (value.started && !toggleMenu && !toggleMenu)
+        if (value.started && !toggleMenu)
         {
+            Debug.Log("Iden Attack");
             if (Together)
             {
                 RynAttack.AttackTogether();
@@ -268,6 +272,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void RegroupTogether()
     {
+        Debug.Log("Regroup");
         Together = true;
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
