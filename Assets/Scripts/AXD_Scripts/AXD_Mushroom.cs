@@ -64,26 +64,26 @@ public class AXD_Mushroom : MonoBehaviour
         Collider2D[] allObjectsDetected = Physics2D.OverlapCircleAll(transform.position, ExplodingRadius, interact.GameManagerScript.ExplodingMushroomMask);
         if(allObjectsDetected != null)
         {
-            
-        }
-        foreach (Collider2D item in allObjectsDetected)
-        {
-            Debug.Log("Tag : "+item.tag);
-            if (item.CompareTag("Torch"))
+            foreach (Collider2D item in allObjectsDetected)
             {
-                ELC_Activation interactible = item.GetComponent<ELC_Activation>();
-                if(interactible.type == ELC_Activation.ActivatorType.TORCH && !interactible.isActivated)
+                Debug.Log("Tag : " + item.tag);
+                if (item.CompareTag("Torch"))
                 {
-                    interactible.ActivateObject();
+                    ELC_Activation interactible = item.GetComponent<ELC_Activation>();
+                    if (interactible.type == ELC_Activation.ActivatorType.TORCH && !interactible.isActivated)
+                    {
+                        interactible.ActivateObject();
+                    }
                 }
-            }else if(item.CompareTag("Enemy"))
-            {
-                item.GetComponent<AXD_EnemyHealth>().GetHit(interact.GameManagerScript.CharacterManager.stats.StunTime);
-            }else if(item.CompareTag("ThinWall"))
-            {
-                item.GetComponent<AXD_ThinWall>().CollapseWall();
+                else if (item.CompareTag("Enemy"))
+                {
+                    item.GetComponent<AXD_EnemyHealth>().GetHit(interact.GameManagerScript.CharacterManager.stats.StunTime);
+                }
+                else if (item.CompareTag("ThinWall"))
+                {
+                    item.GetComponent<AXD_ThinWall>().CollapseWall();
+                }
             }
-
         }
         Debug.Log("Kaboom");
         Destroy(this.gameObject);
