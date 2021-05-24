@@ -152,10 +152,7 @@ MonoBehaviour:
   isActivated: 0
   TorchDuration: 0
   ConditionsEnabled: 0
-  detectionRadius: 0.7
-  LayersToDetect:
-    serializedVersion: 2
-    m_Bits: 0
+  detectionRadius: 0.1
   objectsToActivate: []
 --- !u!114 &237884969641447571
 MonoBehaviour:
