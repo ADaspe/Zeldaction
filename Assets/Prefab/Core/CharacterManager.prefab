@@ -53,10 +53,10 @@ MonoBehaviour:
   RynMove: {fileID: 0}
   spiritMove: {fileID: 0}
   DetectedInteraction: {fileID: 0}
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 9f402210f14bc3e44a8c68ea2e39b242, type: 2}
   currentHP: 0
   maxHP: 0
-  AnimationManager: {fileID: 0}
+  AnimationManager: {fileID: 8464918147117064711}
   ToPurify: {fileID: 0}
   PlayerIdle: Player_Idle
   PlayerWalk: Player_Walk
@@ -67,6 +67,8 @@ MonoBehaviour:
   SpiritReleaseDuration: 0
   nextDash: 0
   spiritProjected: 0
+  PauseMenu: {fileID: 0}
+  toggleMenu: 0
   xLocked: 0
   yLocked: 0
   dashPlusUpgrade: 0
@@ -158,8 +160,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 8c731e11-7a0c-49d5-b23c-cc4989e3f735
-    m_ActionName: PlayerControls/Pause[/Keyboard/escape]
+    m_ActionId: 336a92a2-ad60-4db9-bfe3-ccd1a7ff32fd
+    m_ActionName: PlayerControls/Action[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -174,8 +176,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: 154c246f-85f4-4f91-938e-e2af84386a8c
+    m_ActionName: PlayerControls/Spirit[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8c731e11-7a0c-49d5-b23c-cc4989e3f735
+    m_ActionName: PlayerControls/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamRyn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 564ee36f-3ae2-4a60-8884-363bec6eaf58
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/Shield Ryn[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -191,12 +225,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: faf8ddf3-4b9e-4b6c-a067-74d79d6f16ee
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/Combat Iden[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
         m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
-        m_MethodName: ChangeCamRyn
+        m_MethodName: ChangeCamFocus
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -207,7 +241,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 0a417897-ec0a-450a-a1e2-e5d4703590d4
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/CamSwap Ryn
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -223,7 +257,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 8b5373b7-85c6-4bd8-878d-15f1ec0bbed7
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/CamSwap Iden
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -239,7 +273,167 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: ff959931-daff-4843-88d6-4cba468fb16c
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/CamSwap[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 32a58e37-b385-4467-9e2a-dd03b5771ba5
+    m_ActionName: MenuNav/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 187b91e7-9925-4936-9184-8f9b514e449d
+    m_ActionName: MenuNav/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c38a4c98-6ecc-425d-b3e2-e9407f1d7c12
+    m_ActionName: MenuNav/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 10c33260-1f05-41f4-900f-b96e5cded6c3
+    m_ActionName: MenuNav/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c42e6821-0cef-4aa8-9c88-c6874059b132
+    m_ActionName: MenuNav/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5a5ee6d9-185a-4653-93da-ee7092a7ec2f
+    m_ActionName: MenuNav/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2c55cb19-18d5-4d21-83bb-e276fa145acb
+    m_ActionName: MenuNav/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 88fe98d3-bbda-4cd1-acf3-34e90099c5b0
+    m_ActionName: MenuNav/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ddcc1ae5-1887-4ae0-a3f4-b8a43c038b1b
+    m_ActionName: MenuNav/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4b56ddac-e9a6-4a0a-87a8-0e770d47160c
+    m_ActionName: MenuNav/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
