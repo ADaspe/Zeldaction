@@ -178,7 +178,6 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
-            Debug.Log("Spiritus");
             if (Together)
             {
                 DetachSpirit();
@@ -194,7 +193,6 @@ public class ELC_CharacterManager : MonoBehaviour
     public void Pause(InputAction.CallbackContext value)
     {
         if (value.started) { 
-            Debug.Log("Triggered by : "+value.control);
             if (!toggleMenu)
             {
             
@@ -211,7 +209,6 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
-            Debug.Log("Iden Attack");
             if (Together)
             {
                 RynAttack.AttackTogether();

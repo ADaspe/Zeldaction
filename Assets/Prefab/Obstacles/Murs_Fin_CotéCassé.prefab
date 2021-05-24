@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5968846882998885300}
   - component: {fileID: 5968846882998885302}
   - component: {fileID: 5968846882998885301}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Wall_Border_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5968846883189399110}
   - component: {fileID: 5968846883189399112}
   - component: {fileID: 5968846883189399111}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,9 +229,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5968846884012600718}
-  m_Layer: 0
+  - component: {fileID: 1275642984276585280}
+  m_Layer: 14
   m_Name: "Murs_Fin_Cot\xE9Cass\xE9"
-  m_TagString: Untagged
+  m_TagString: ThinWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +254,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275642984276585280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5968846884012600717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21b3a901296cfe4793c76ce550212ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5968846884117120720
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +277,7 @@ GameObject:
   - component: {fileID: 5968846884117120721}
   - component: {fileID: 5968846884117120723}
   - component: {fileID: 5968846884117120722}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Wall_Border_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
