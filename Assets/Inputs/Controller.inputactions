@@ -6,26 +6,10 @@
             "id": "27409bcd-6474-4f94-b048-a8f01c82f0e8",
             "actions": [
                 {
-                    "name": "Combat",
-                    "type": "Value",
-                    "id": "668eecfb-86ae-41fe-b34f-dc9ee1728b3d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "84c9b239-68b2-46dd-b16b-994298cfb8d4",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "CamSwap",
-                    "type": "Button",
-                    "id": "24f2b682-adf6-4d59-bd5c-01b1dcf64ec0",
-                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -46,15 +30,143 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Shield Ryn",
+                    "type": "Button",
+                    "id": "564ee36f-3ae2-4a60-8884-363bec6eaf58",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Combat Iden",
+                    "type": "Button",
+                    "id": "faf8ddf3-4b9e-4b6c-a067-74d79d6f16ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CamSwap Ryn",
+                    "type": "Button",
+                    "id": "0a417897-ec0a-450a-a1e2-e5d4703590d4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CamSwap Iden",
+                    "type": "Button",
+                    "id": "8b5373b7-85c6-4bd8-878d-15f1ec0bbed7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "8c731e11-7a0c-49d5-b23c-cc4989e3f735",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "CamSwap",
+                    "type": "Button",
+                    "id": "ff959931-daff-4843-88d6-4cba468fb16c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "d38da9b3-1c15-4223-ab11-ddd9b51f65d6",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spirit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c40861c9-5183-4f01-b01b-930b5c3b4dd7",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spirit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4322b4b-c8ad-4516-bc6a-e57819d4da0b",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shield Ryn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d825327a-e03d-4d27-88c9-32f19a60e7e7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shield Ryn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad38b3e0-b9eb-4b5b-916d-f193afc2f5c6",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Combat Iden",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5e00a34-a1b4-446f-84cf-2e91aeeaa336",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Combat Iden",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "adc9e812-00e9-4da7-874f-736dfc06563b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamSwap Ryn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54e0e07e-ae16-4107-bcd8-c0dd6e9ddc99",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamSwap Iden",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "ZQSD",
                     "id": "0da7e1da-f237-49b0-8895-62f0140469d3",
@@ -123,50 +235,6 @@
                 },
                 {
                     "name": "",
-                    "id": "3223189b-1c32-4f77-8a28-c3d8c651c410",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CamSwap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "13ca71e0-e3b7-4285-9e9b-fcd98692f99a",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CamSwap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b5b481c8-366c-4480-936f-10ab06ea360f",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Combat",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "12e02bc4-0fe9-471c-b9c0-3d7fa43bec64",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Combat",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "e3e3bd11-bce9-4b99-b846-e22bd3c8ecf6",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -189,28 +257,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d38da9b3-1c15-4223-ab11-ddd9b51f65d6",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Spirit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c40861c9-5183-4f01-b01b-930b5c3b4dd7",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Spirit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "011c868a-87b4-4cb0-a0ac-d54f920a029c",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -228,6 +274,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbc0b1cf-ce2c-4bf3-908d-0a9cefe9110a",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamSwap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

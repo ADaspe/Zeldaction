@@ -11,7 +11,10 @@ public class ELC_Door : AXD_Activable
 
     private void Start()
     {
-        ObjectAnimator = GetComponent<Animator>();
+        if (gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit")) // sert à ne pas faire buguer sur le pollen qui n'a pas d'animator
+        {
+            ObjectAnimator = GetComponent<Animator>();
+        }
         rb = this.GetComponent<Collider2D>();
         CheckActivations();
     }
@@ -33,7 +36,10 @@ public class ELC_Door : AXD_Activable
                     isActivated = true;
                     LockTorches();
                     rb.enabled = false;
-                    ObjectAnimator.SetBool("Activated", isActivated);
+                    if (ObjectAnimator != null) // Pas de null pointer exception :)
+                    {
+                        ObjectAnimator.SetBool("Activated", isActivated);
+                    }
                 }
                 return;
             }
@@ -41,7 +47,10 @@ public class ELC_Door : AXD_Activable
             {
                 isActivated = false;
                 rb.enabled = true;
-                ObjectAnimator.SetBool("Activated", isActivated);
+                if (ObjectAnimator != null) // Pas de null pointer exception :)
+                {
+                    ObjectAnimator.SetBool("Activated", isActivated);
+                }
             }
         }
         
