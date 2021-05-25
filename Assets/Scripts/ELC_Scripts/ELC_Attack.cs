@@ -59,7 +59,7 @@ public class ELC_Attack : MonoBehaviour
         if (attackTogetherCooldown > Time.time) return;
 
         attackTogetherCooldown = Time.time + CharManager.stats.AttackCooldown;
-        Debug.Log("Attack Together");
+        //Debug.Log("Attack Together");
         Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, CharStats.AttackTogetherRange, gameManager.EnemiesMask);
 
         
