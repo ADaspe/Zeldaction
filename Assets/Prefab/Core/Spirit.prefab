@@ -166,6 +166,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   ShieldOn: 0
   NextShield: 0
+  spiritAttack: 0
   attackTogetherCooldown: 0
   defaultMask: PlayerSpirit
   dashMask: IdenDash
@@ -187,6 +188,8 @@ MonoBehaviour:
   TimeToWaitForIdleState: 1
   DistanceToStayWhenTogether: 0.5
   closeToRyn: 0
+  minDistToTeleport: 0
+  disabled: 0
   debug: {x: 0, y: 0}
   targetPos: {x: 0, y: 0}
 --- !u!114 &300175652701714387
@@ -202,3 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterManager: {fileID: 0}
+  hpDisplay: {fileID: 0}
+  Invincible: 0
+  InvincibilityTime: 0

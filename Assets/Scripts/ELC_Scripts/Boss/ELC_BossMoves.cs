@@ -18,7 +18,7 @@ public class ELC_BossMoves : MonoBehaviour
 
     Vector2 direction;
     public Vector2 LastDirection;
-    public LayerMask ObstaclesMask;
+    private LayerMask ObstaclesMask;
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath;
@@ -29,6 +29,7 @@ public class ELC_BossMoves : MonoBehaviour
     private void Awake()
     {
         BossMana = this.GetComponent<ELC_BossManager>();
+        ObstaclesMask = BossMana.ObstaclesMask;
     }
 
     void Start()

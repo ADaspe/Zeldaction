@@ -269,24 +269,26 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void RegroupTogether()
     {
-        Debug.Log("Regroup");
+        //Debug.Log("Regroup");
         Together = true;
+
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
         //SpiritGO.GetComponent<Collider2D>().enabled = false;
-        SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
+        SpiritGO.GetComponent<ELC_SpiritIdle>().disabled = false;
         ResetProjection();
     }
 
     public void DetachSpirit()
     {
         Together = false;
+        RynMove.currentCharacter = false;
         GoToRyn();
         SpiritGO.GetComponent<Collider2D>().enabled = true;
         ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
-        tmpIdle.closeToRyn = false;
-        tmpIdle.enabled = false;
+        //tmpIdle.closeToRyn = false;
+        tmpIdle.disabled = true;
     }
 
     public void GoToRyn()
