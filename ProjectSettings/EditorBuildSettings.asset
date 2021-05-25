@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/AXD_TestScene.unity
-    guid: 999f73af93c9f4145883cbbdede022f0
+    path: Assets/Scenes/KF_LDMain.unity
+    guid: 2df568048e8387a4a882ae9195c6c974
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5bbc00899c351ed46a433b7652754c96,
       type: 2}

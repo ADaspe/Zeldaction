@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class ELC_CharacterManager : MonoBehaviour
 {
@@ -33,13 +34,18 @@ public class ELC_CharacterManager : MonoBehaviour
     public float nextDash;
     public bool spiritProjected;
 
+    public UnityEvent enableMenu;
+    public UnityEvent disableMenu;
+    public GameObject PauseMenu;
+    public bool toggleMenu;
+
 
     public bool xLocked;
     public bool yLocked;
 
     [Header ("Upgrades")]
     public bool dashPlusUpgrade;
-
+    
 
     private void Awake()
     {
@@ -52,7 +58,7 @@ public class ELC_CharacterManager : MonoBehaviour
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
-        if (value.started && !Together)
+        if (value.started && !Together && !toggleMenu)
         {
             if (RynMove != null && followingCharacter == RynMove)
             {
@@ -63,85 +69,26 @@ public class ELC_CharacterManager : MonoBehaviour
             {
                 ChangeCamFocusRyn();
             }
-            else
-            {
-                Debug.Log("Nope");
-            }
         }
     }
-
-    public void ChangeCamFocusRyn()
+    public void ChangeCamRyn(InputAction.CallbackContext value)
     {
-        //Disabling Spirit
-        spiritMove.currentCharacter = false;
-        spiritMove.rb.velocity = Vector2.zero;
-
-        //Enabling Ryn
-        vCam.Follow = RynMove.transform;
-        followingCharacter = RynMove;
-        RynMove.currentCharacter = true;
+        if (value.started && !Together && !toggleMenu)
+        {
+            ChangeCamFocusRyn();
+        }
     }
-
-    public void ChangeCamFocusSpirit()
+    public void ChangeCamIden(InputAction.CallbackContext value)
     {
-        //Disabling Ryn
-        RynMove.currentCharacter = false;
-        RynMove.rb.velocity = Vector2.zero;
-        AnimationManager.isMoving = false;
-        RynMove.rawInputMovement = Vector2.zero;
-
-        //Enabling Spirit
-        followingCharacter = spiritMove;
-        spiritMove.currentCharacter = true;
-        vCam.Follow = spiritMove.transform;
-    }
-
-    public void RegroupTogether()
-    {
-        Together = true;
-        followingCharacter = RynMove;
-        RynMove.currentCharacter = true;
-        vCam.Follow = RynMove.transform;
-        //SpiritGO.GetComponent<Collider2D>().enabled = false;
-        SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
-        ResetProjection();
-    }
-
-    public void DetachSpirit()
-    {
-        Together = false;
-        GoToRyn();
-        SpiritGO.GetComponent<Collider2D>().enabled = true;
-        ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
-        tmpIdle.closeToRyn = false;
-        tmpIdle.enabled = false;
-    }
-
-    public void GoToRyn()
-    {
-        RynMove.canMove = false;
-        spiritProjected = true;
-        Vector2 tempDirection = new Vector2(RynGO.transform.position.x - SpiritGO.transform.position.x, RynGO.transform.position.y - SpiritGO.transform.position.y);
-        spiritMove.rb.velocity = tempDirection*spiritMove.currentSpeed;
-        Invoke("ProjectSpirit",((Mathf.Sqrt(Mathf.Pow(tempDirection.x,2)+ (Mathf.Pow(tempDirection.y, 2))) / spiritMove.currentSpeed)));
-    }
-
-    public void ProjectSpirit()
-    {
-        vCam.Follow = SpiritGO.transform;
-        spiritMove.rb.velocity = RynMove.LastDirection.normalized * (stats.IdenProjectionDistance/stats.IdenProjectionTime);
-        Invoke("SlowDownSpirit", stats.IdenProjectionTime);
-        
-    }
-
-    public void SlowDownSpirit()
-    {
-        StartCoroutine(ProjectionSlowdown());
+        if (value.started && !Together && !toggleMenu)
+        {
+            ChangeCamFocusSpirit();
+        }
     }
 
     public void Move(InputAction.CallbackContext value)
     {
-        if (followingCharacter.canMove)
+        if (followingCharacter.canMove && !toggleMenu)
         {
             Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
             if (xLocked)
@@ -159,32 +106,15 @@ public class ELC_CharacterManager : MonoBehaviour
             
 
         }
-        if (value.canceled)
+        if (value.canceled && !toggleMenu)
         {
             followingCharacter.rawInputMovement = Vector2.zero;
         }
     }
 
-    public void Combat(InputAction.CallbackContext value)
-    {
-        
-        if (value.started)
-        {
-            //Debug.Log("Combat");
-            if (followingCharacter == RynMove)
-            {
-                if (Together) RynAttack.AttackTogether();
-                else RynAttack.RynShield();
-            }
-            else if (Time.time >= nextDash) {
-                SpiritAttack.SpiritDashAttack();
-            }
-        }
-    }
-
     public void Action(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !toggleMenu)
         {
             
             if (DetectedInteraction != null && followingCharacter == RynMove)
@@ -230,7 +160,7 @@ public class ELC_CharacterManager : MonoBehaviour
                 ToPurify.Purify();
             }
         }
-        if (value.canceled)
+        if (value.canceled && !toggleMenu)
         {
             if (DetectedInteraction != null && DetectedInteraction.isGrabbed)
             {
@@ -246,11 +176,10 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !toggleMenu)
         {
             if (Together)
             {
-
                 DetachSpirit();
             }
             else
@@ -261,6 +190,126 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
+    public void Pause(InputAction.CallbackContext value)
+    {
+        if (value.started) { 
+            if (!toggleMenu)
+            {
+            
+                EnableMenu();
+            }
+            else
+            {
+                DisableMenu();
+            }
+        }
+    }
+
+    public void IdenAttack(InputAction.CallbackContext value)
+    {
+        if (value.started && !toggleMenu)
+        {
+            if (Together)
+            {
+                RynAttack.AttackTogether();
+            }
+            else if(Time.time >= nextDash)
+            {
+                SpiritAttack.SpiritDashAttack();
+            }
+        }
+    }
+    
+    public void RynShield(InputAction.CallbackContext value)
+    {
+        if (value.started && !toggleMenu && !Together)
+        {
+            RynAttack.RynShield();
+        }
+    }
+
+
+    public void EnableMenu() 
+    {
+        toggleMenu = true;
+        enableMenu.Invoke();
+    }
+
+    public void DisableMenu()
+    {
+        toggleMenu = false;
+        disableMenu.Invoke();
+
+    }
+    public void ChangeCamFocusRyn()
+    {
+        //Disabling Spirit
+        spiritMove.currentCharacter = false;
+        spiritMove.rb.velocity = Vector2.zero;
+
+        //Enabling Ryn
+        vCam.Follow = RynMove.transform;
+        followingCharacter = RynMove;
+        RynMove.currentCharacter = true;
+    }
+
+    public void ChangeCamFocusSpirit()
+    {
+        //Disabling Ryn
+        RynMove.currentCharacter = false;
+        RynMove.rb.velocity = Vector2.zero;
+        AnimationManager.isMoving = false;
+        RynMove.rawInputMovement = Vector2.zero;
+
+        //Enabling Spirit
+        followingCharacter = spiritMove;
+        spiritMove.currentCharacter = true;
+        vCam.Follow = spiritMove.transform;
+    }
+
+    public void RegroupTogether()
+    {
+        Debug.Log("Regroup");
+        Together = true;
+        followingCharacter = RynMove;
+        RynMove.currentCharacter = true;
+        vCam.Follow = RynMove.transform;
+        //SpiritGO.GetComponent<Collider2D>().enabled = false;
+        SpiritGO.GetComponent<ELC_SpiritIdle>().enabled = true;
+        ResetProjection();
+    }
+
+    public void DetachSpirit()
+    {
+        Together = false;
+        GoToRyn();
+        SpiritGO.GetComponent<Collider2D>().enabled = true;
+        ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
+        tmpIdle.closeToRyn = false;
+        tmpIdle.enabled = false;
+    }
+
+    public void GoToRyn()
+    {
+        RynMove.canMove = false;
+        spiritProjected = true;
+        Vector2 tempDirection = new Vector2(RynGO.transform.position.x - SpiritGO.transform.position.x, RynGO.transform.position.y - SpiritGO.transform.position.y);
+        spiritMove.rb.velocity = tempDirection * spiritMove.currentSpeed;
+        Invoke("ProjectSpirit", ((Mathf.Sqrt(Mathf.Pow(tempDirection.x, 2) + (Mathf.Pow(tempDirection.y, 2))) / spiritMove.currentSpeed)));
+    }
+
+    public void ProjectSpirit()
+    {
+        vCam.Follow = SpiritGO.transform;
+        spiritMove.rb.velocity = RynMove.LastDirection.normalized * (stats.IdenProjectionDistance / stats.IdenProjectionTime);
+        Invoke("SlowDownSpirit", stats.IdenProjectionTime);
+
+    }
+
+    public void SlowDownSpirit()
+    {
+        StartCoroutine(ProjectionSlowdown());
+    }
     public void ResetProjection()
     {
         CancelInvoke("ProjectSpirit");
@@ -273,13 +322,14 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void TakeDamage(string tag)
     {
-        if(tag == "Ryn")
+        if (tag == "Ryn")
         {
             if (!RynAttack.ShieldOn)
             {
                 currentHP--;
             }
-        }else if (tag == "Spirit")
+        }
+        else if (tag == "Spirit")
         {
             currentHP--;
         }
@@ -289,11 +339,6 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
-    public void Pause(InputAction.CallbackContext value)
-    {
-        //To define
-        Debug.Log("Pause yet to define");
-    }
 
     public IEnumerator ProjectionSlowdown()
     {

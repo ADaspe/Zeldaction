@@ -45,6 +45,7 @@ public class ELC_EnemyAI : MonoBehaviour
         }
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+        Target = Detection();
         seeker.StartPath(rb.position, Target, OnPathCalculated);
     }
 

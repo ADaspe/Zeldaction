@@ -53,14 +53,31 @@ MonoBehaviour:
   RynMove: {fileID: 0}
   spiritMove: {fileID: 0}
   DetectedInteraction: {fileID: 0}
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 9f402210f14bc3e44a8c68ea2e39b242, type: 2}
   currentHP: 0
-  AnimationManager: {fileID: 0}
+  maxHP: 0
+  AnimationManager: {fileID: 8464918147117064711}
+  ToPurify: {fileID: 0}
   PlayerIdle: Player_Idle
   PlayerWalk: Player_Walk
   PlayerShield: Player_Shield
   PlayerAttackTogether: Player_AttackTogether
   PlayerHit: Player_Hit
+  PlayerDetachSpirit: 
+  SpiritReleaseDuration: 0
+  nextDash: 0
+  spiritProjected: 0
+  enableMenu:
+    m_PersistentCalls:
+      m_Calls: []
+  disableMenu:
+    m_PersistentCalls:
+      m_Calls: []
+  PauseMenu: {fileID: 0}
+  toggleMenu: 0
+  xLocked: 0
+  yLocked: 0
+  dashPlusUpgrade: 0
 --- !u!114 &701354207612222063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,22 +108,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
         m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
-        m_MethodName: Combat
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 668eecfb-86ae-41fe-b34f-dc9ee1728b3d
-    m_ActionName: PlayerControls/Attack[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5547120372911743439}
-        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -119,22 +120,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 84c9b239-68b2-46dd-b16b-994298cfb8d4
     m_ActionName: PlayerControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5547120372911743439}
-        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
-        m_MethodName: ChangeCamFocus
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 24f2b682-adf6-4d59-bd5c-01b1dcf64ec0
-    m_ActionName: PlayerControls/ChangeCam[/Keyboard/tab]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -168,6 +153,14 @@ MonoBehaviour:
     m_ActionId: 154c246f-85f4-4f91-938e-e2af84386a8c
     m_ActionName: PlayerControls/Spirit[/Mouse/rightButton]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 336a92a2-ad60-4db9-bfe3-ccd1a7ff32fd
+    m_ActionName: PlayerControls/Action[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 154c246f-85f4-4f91-938e-e2af84386a8c
+    m_ActionName: PlayerControls/Spirit[/Mouse/rightButton]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
         m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
@@ -183,6 +176,86 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8c731e11-7a0c-49d5-b23c-cc4989e3f735
     m_ActionName: PlayerControls/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: RynShield
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 564ee36f-3ae2-4a60-8884-363bec6eaf58
+    m_ActionName: PlayerControls/Shield Ryn[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: IdenAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: faf8ddf3-4b9e-4b6c-a067-74d79d6f16ee
+    m_ActionName: PlayerControls/Combat Iden[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamRyn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0a417897-ec0a-450a-a1e2-e5d4703590d4
+    m_ActionName: PlayerControls/CamSwap Ryn
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamIden
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8b5373b7-85c6-4bd8-878d-15f1ec0bbed7
+    m_ActionName: PlayerControls/CamSwap Iden
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ff959931-daff-4843-88d6-4cba468fb16c
+    m_ActionName: PlayerControls/CamSwap[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -201,3 +274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharaManager: {fileID: 5547120372911743439}
+  isMoving: 0
+  isAttacking: 0
+  shielding: 0
