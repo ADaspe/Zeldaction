@@ -222,7 +222,7 @@ public class ELC_CharacterManager : MonoBehaviour
     
     public void RynShield(InputAction.CallbackContext value)
     {
-        if (value.started && !toggleMenu)
+        if (value.started && !toggleMenu && !Together)
         {
             RynAttack.RynShield();
         }
