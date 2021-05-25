@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class ELC_BossAttacks : MonoBehaviour
 {
-    public bool DashAttack;
+    [HideInInspector]
     public ELC_BossManager BossMana;
-    public float PrepareAttackDuration;
-    public float AttackDuration;
+    private float PrepareAttackDuration;
+    private float AttackDuration;
+    private float Cooldown;
+    private float AttackRadius;
+    private float AttackAngle;
+    public float OriginDistOfAttackDetector;
     public Vector3 TargetDirection;
+
+    [Header("Phase 1")]
+    public float BasicAttackPreparationTime;
+    public float BasicAttackDuration;
+    public float BasicAttackCooldown;
+    public float BasicAttackRadius;
+    public float BasicAttackAngle;
+
+    [Header("Phase 2")]
+    public float DashPreparationTime;
+    public float DashDistance;
+    public float DashDuration;
+    public float DashCooldown;
+    public float DashDetectionRadius;
+    public float DashDetectionAngle;
+
+
+    [Header("Phase 3")]
+    public float RayPreparationTime;
 
     bool isPreparingAttack;
     bool isAttacking;
@@ -20,7 +43,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isAttacking && DashAttack) //Attaque Dash
+        if(isAttacking && BossMana.CurrentPhase == 2) //Attaque Dash
         {
             Dash();
         }
@@ -35,17 +58,51 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void Attack()
     {
+        switch (BossMana.CurrentPhase)
+        {
+            case 1:
+                PrepareAttackDuration = BasicAttackPreparationTime;
+                AttackDuration = BasicAttackDuration;
+                Cooldown = BasicAttackCooldown;
+                AttackRadius = BasicAttackRadius;
+                AttackAngle = BasicAttackAngle;
+                break;
+            case 2:
+                PrepareAttackDuration = DashPreparationTime;
+                AttackDuration = DashDuration;
+                Cooldown = DashCooldown;
+                AttackRadius = DashDetectionRadius;
+                AttackAngle = DashDetectionAngle;
+                break;
+            case 3:
+                PrepareAttackDuration = RayPreparationTime;
+                break;
+            default:
+                break;
+        }
+
         isAttacking = true;
         //Attaque basique
         //Activation rayons
         //L'attaque Dash se fait dans le FixedUpdate
-
+        BossMana.canAttack = false;
+        StartCoroutine("CooldownsAttack");
         Invoke("EndAttack", AttackDuration);
     }
 
     void Dash()
     {
-        //Dash code
+        Vector3 origin = this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector;
+
+        this.GetComponent<Rigidbody2D>().velocity = BossMana.LastDir * (DashDistance / DashDuration);
+        List<GameObject> detected = DetectionZone(AttackRadius, AttackAngle, origin);
+        foreach (GameObject DetectedGO in detected)
+        {
+            if(DetectedGO.CompareTag("Ryn"))
+            {
+                DetectedGO.GetComponent<AXD_Health>().GetHit();
+            }
+        }
     }
 
     void EndAttack()
@@ -71,5 +128,11 @@ public class ELC_BossAttacks : MonoBehaviour
         }
 
         return collidersInsideArea;
+    }
+
+    IEnumerator CooldownsAttack()
+    {
+        yield return new WaitForSeconds(Cooldown);
+        BossMana.canAttack = true;
     }
 }
