@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7860861666203331405}
   - component: {fileID: 3330988535078117249}
   - component: {fileID: 8528639721539411878}
+  - component: {fileID: 1949145395221856801}
   m_Layer: 14
   m_Name: Murs_Fin_Face
-  m_TagString: Untagged
+  m_TagString: ThinWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.035032213, y: -0.040033087}
   m_SpriteTilingProperty:
-    border: {x: 0.86, y: 0, z: 0.34, w: 0}
+    border: {x: 0.41400003, y: 0, z: 0.38000003, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.222, y: 1.116}
     newSize: {x: 1.892, y: 1.638}
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0334138, y: 0.8860769}
   m_EdgeRadius: 0
+--- !u!114 &1949145395221856801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8624198697960073836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21b3a901296cfe4793c76ce550212ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
