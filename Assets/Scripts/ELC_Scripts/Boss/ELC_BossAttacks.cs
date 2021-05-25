@@ -31,7 +31,14 @@ public class ELC_BossAttacks : MonoBehaviour
 
 
     [Header("Phase 3")]
-    public float RayPreparationTime;
+    public float RayAttackPreparationTime;
+    public float RayAttackCooldown;
+    [Range(0f, 3f)]
+    public float RaySpawnTime;
+    [Range(0f,5f)]
+    public float RayDespawnTime;
+    [HideInInspector]
+    public ELC_BossRay[] Rays;
 
     bool isPreparingAttack;
     bool isAttacking;
@@ -39,6 +46,21 @@ public class ELC_BossAttacks : MonoBehaviour
     private void Awake()
     {
         BossMana = this.GetComponent<ELC_BossManager>();
+
+        PrepareAttackDuration = BasicAttackPreparationTime;
+        AttackDuration = BasicAttackDuration;
+        Cooldown = BasicAttackCooldown;
+        AttackRadius = BasicAttackRadius;
+        AttackAngle = BasicAttackAngle;
+    }
+
+    private void Start()
+    {
+        foreach (ELC_BossRay BossRay in Rays)
+        {
+            BossRay.timeBeforeSpawn = RaySpawnTime * BossRay.Index;
+            BossRay.timeBeforeDespawn = RayDespawnTime;
+        }
     }
 
     void FixedUpdate()
@@ -53,11 +75,6 @@ public class ELC_BossAttacks : MonoBehaviour
     {
         BossMana.isAttacking = true;
         isPreparingAttack = true;
-        Invoke("Attack", PrepareAttackDuration);
-    }
-
-    void Attack()
-    {
         switch (BossMana.CurrentPhase)
         {
             case 1:
@@ -66,6 +83,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = BasicAttackCooldown;
                 AttackRadius = BasicAttackRadius;
                 AttackAngle = BasicAttackAngle;
+
                 break;
             case 2:
                 PrepareAttackDuration = DashPreparationTime;
@@ -73,27 +91,51 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = DashCooldown;
                 AttackRadius = DashDetectionRadius;
                 AttackAngle = DashDetectionAngle;
+                
                 break;
             case 3:
-                PrepareAttackDuration = RayPreparationTime;
+                PrepareAttackDuration = RayAttackPreparationTime;
+                Cooldown = RayAttackCooldown;
                 break;
             default:
                 break;
         }
+        Invoke("Attack", PrepareAttackDuration);
+    }
+
+    void Attack()
+    {
+        switch (BossMana.CurrentPhase)
+        {
+            case 1:
+                BasicAttack();
+                break;
+            case 2:
+            //L'attaque Dash se fait dans le FixedUpdate
+            case 3:
+                Ray();
+                break;
+            default:
+                break;
+        }
+        
 
         isAttacking = true;
-        //Attaque basique
-        //Activation rayons
-        //L'attaque Dash se fait dans le FixedUpdate
         BossMana.canAttack = false;
-        StartCoroutine("CooldownsAttack");
+        
         Invoke("EndAttack", AttackDuration);
     }
 
     void Dash()
     {
-        Vector3 origin = this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector;
+        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 2f, BossMana.ObstaclesMask);
+        if(WallDetector.collider != null)
+        {
+            DashCrashOnWall();
+            return;
+        }
 
+        Vector3 origin = this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector;
         this.GetComponent<Rigidbody2D>().velocity = BossMana.LastDir * (DashDistance / DashDuration);
         List<GameObject> detected = DetectionZone(AttackRadius, AttackAngle, origin);
         foreach (GameObject DetectedGO in detected)
@@ -107,9 +149,30 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void EndAttack()
     {
+        StartCoroutine("CooldownsAttack");
         isAttacking = false;
         BossMana.isAttacking = false;
         BossMana.BossMoves.CanMove = true;
+    }
+
+    void BasicAttack()
+    {
+        Vector3 origin = this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector;
+        List<GameObject> detected = DetectionZone(AttackRadius, AttackAngle, origin);
+        foreach (GameObject DetectedGO in detected)
+        {
+            if (DetectedGO.CompareTag("Ryn"))
+            {
+                DetectedGO.GetComponent<AXD_Health>().GetHit();
+            }
+        }
+    }
+
+    void DashCrashOnWall()
+    {
+        CancelInvoke("EndAttack");
+        EndAttack();
+        Debug.Log("Le boss s'est crash contre un mur : il est raplapla");
     }
 
 
@@ -130,9 +193,23 @@ public class ELC_BossAttacks : MonoBehaviour
         return collidersInsideArea;
     }
 
+    
+    private void Ray()
+    {
+        foreach (ELC_BossRay BossRay in Rays)
+        {
+            BossRay.StartCoroutine("Spawn");
+        }
+    }
+
     IEnumerator CooldownsAttack()
     {
         yield return new WaitForSeconds(Cooldown);
         BossMana.canAttack = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawWireSphere(this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector, AttackRadius);
     }
 }
