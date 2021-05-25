@@ -31,6 +31,6 @@ MonoBehaviour:
   SpiritRespawn: 1
   SpeedGrabbing: 1.5
   TogetherAttackDetectionAngle: 60
-  IdenProjectionDistance: 4
-  IdenProjectionTime: 0.4
+  IdenProjectionDistance: 2
+  IdenProjectionTime: 0.3
   IdenSlowDownTime: 0.4

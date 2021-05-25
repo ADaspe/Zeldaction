@@ -13,37 +13,49 @@ public class ELC_SpiritIdle : MonoBehaviour
     public float TimeToWaitForIdleState;
     public float DistanceToStayWhenTogether;
     public bool closeToRyn;
+    public float minDistToTeleport;
+    public bool disabled;
     [SerializeField]
     private Vector2 debug;
     private float RynAngle;
     [SerializeField]
     private Vector2 targetPos;
     
-
-    
-    void Update()
+    void FixedUpdate()
     {
-        if (CharaManager.RynMove.rawInputMovement.magnitude > 0.01f) LastPlayerMove = Time.deltaTime;
-
-        if (Time.deltaTime - LastPlayerMove > TimeToWaitForIdleState) PlayerIsImmobile = true;
-        else PlayerIsImmobile = false;
-        
-        if(!PlayerIsImmobile) RynAngle = Mathf.Atan2(CharaManager.RynMove.LastDirection.y, CharaManager.RynMove.LastDirection.x) * Mathf.Rad2Deg;
-
-        targetPos = new Vector2( -(DistanceToStayWhenTogether * Mathf.Cos(RynAngle)) + CharaManager.RynGO.transform.position.x, -(DistanceToStayWhenTogether * Mathf.Sin(RynAngle)) + CharaManager.RynGO.transform.position.y); //Calculer une position en fonction de la longueur qu'on lui donne et d'un angle
-        Debug.DrawRay(CharaManager.RynGO.transform.position, new Vector3(targetPos.x - CharaManager.RynGO.transform.position.x, targetPos.y - CharaManager.RynGO.transform.position.y ).normalized, Color.red);
-
-        if (CharaManager.Together)
+        if (!disabled)
         {
-            Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
-            if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
+            if (CharaManager.RynMove.rawInputMovement.magnitude > 0.01f) LastPlayerMove = Time.deltaTime;
+
+            if (Time.deltaTime - LastPlayerMove > TimeToWaitForIdleState) PlayerIsImmobile = true;
+            else PlayerIsImmobile = false;
+
+            if (!PlayerIsImmobile) RynAngle = Mathf.Atan2(CharaManager.RynMove.LastDirection.y, CharaManager.RynMove.LastDirection.x) * Mathf.Rad2Deg;
+
+            targetPos = new Vector2(-(DistanceToStayWhenTogether * Mathf.Cos(RynAngle)) + CharaManager.RynGO.transform.position.x, -(DistanceToStayWhenTogether * Mathf.Sin(RynAngle)) + CharaManager.RynGO.transform.position.y); //Calculer une position en fonction de la longueur qu'on lui donne et d'un angle
+            Debug.DrawRay(CharaManager.RynGO.transform.position, new Vector3(targetPos.x - CharaManager.RynGO.transform.position.x, targetPos.y - CharaManager.RynGO.transform.position.y).normalized, Color.red);
+
+            if (CharaManager.Together)
             {
-                closeToRyn = true;
-                CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence � �tre proche du joueur on ralentit
+                Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
+                if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
+                {
+                    closeToRyn = true;
+                    CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence � �tre proche du joueur on ralentit
+                }
+                else
+                {
+                    CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse � vitesse constante
+                }
             }
-            else
+            
+        }
+        if (!CharaManager.Together)
+        {
+            float tempDist = Mathf.Abs(Mathf.Sqrt(Mathf.Pow((CharaManager.RynGO.transform.position.x - CharaManager.SpiritGO.transform.position.x), 2) + Mathf.Pow((CharaManager.RynGO.transform.position.y - CharaManager.SpiritGO.transform.position.y), 2)));    
+            if (tempDist >= minDistToTeleport)
             {
-                CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse � vitesse constante
+                closeToRyn = false;
             }
         }
     }
@@ -54,10 +66,11 @@ public class ELC_SpiritIdle : MonoBehaviour
         closeToRyn = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (CharaManager.followingCharacter == CharaManager.RynMove)
         {
+
             if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn") && !closeToRyn && !CharaManager.spiritProjected)
             {
                 Teleport(targetPos);
