@@ -53,10 +53,10 @@ MonoBehaviour:
   RynMove: {fileID: 0}
   spiritMove: {fileID: 0}
   DetectedInteraction: {fileID: 0}
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 9f402210f14bc3e44a8c68ea2e39b242, type: 2}
   currentHP: 0
   maxHP: 0
-  AnimationManager: {fileID: 0}
+  AnimationManager: {fileID: 8464918147117064711}
   ToPurify: {fileID: 0}
   PlayerIdle: Player_Idle
   PlayerWalk: Player_Walk
@@ -67,6 +67,14 @@ MonoBehaviour:
   SpiritReleaseDuration: 0
   nextDash: 0
   spiritProjected: 0
+  enableMenu:
+    m_PersistentCalls:
+      m_Calls: []
+  disableMenu:
+    m_PersistentCalls:
+      m_Calls: []
+  PauseMenu: {fileID: 0}
+  toggleMenu: 0
   xLocked: 0
   yLocked: 0
   dashPlusUpgrade: 0
@@ -145,6 +153,14 @@ MonoBehaviour:
     m_ActionId: 154c246f-85f4-4f91-938e-e2af84386a8c
     m_ActionName: PlayerControls/Spirit[/Mouse/rightButton]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 336a92a2-ad60-4db9-bfe3-ccd1a7ff32fd
+    m_ActionName: PlayerControls/Action[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 154c246f-85f4-4f91-938e-e2af84386a8c
+    m_ActionName: PlayerControls/Spirit[/Mouse/rightButton]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
         m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
@@ -175,7 +191,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 564ee36f-3ae2-4a60-8884-363bec6eaf58
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/Shield Ryn[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -191,7 +207,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: faf8ddf3-4b9e-4b6c-a067-74d79d6f16ee
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/Combat Iden[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -207,7 +223,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 0a417897-ec0a-450a-a1e2-e5d4703590d4
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/CamSwap Ryn
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -223,7 +239,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 8b5373b7-85c6-4bd8-878d-15f1ec0bbed7
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/CamSwap Iden
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -239,7 +255,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: ff959931-daff-4843-88d6-4cba468fb16c
-    m_ActionName: PlayerControls/New action
+    m_ActionName: PlayerControls/CamSwap[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls

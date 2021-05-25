@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class ELC_CharacterManager : MonoBehaviour
 {
@@ -33,6 +34,11 @@ public class ELC_CharacterManager : MonoBehaviour
     public float nextDash;
     public bool spiritProjected;
 
+    public UnityEvent enableMenu;
+    public UnityEvent disableMenu;
+    public GameObject PauseMenu;
+    public bool toggleMenu;
+
 
     public bool xLocked;
     public bool yLocked;
@@ -52,7 +58,7 @@ public class ELC_CharacterManager : MonoBehaviour
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
-        if (value.started && !Together)
+        if (value.started && !Together && !toggleMenu)
         {
             if (RynMove != null && followingCharacter == RynMove)
             {
@@ -67,14 +73,14 @@ public class ELC_CharacterManager : MonoBehaviour
     }
     public void ChangeCamRyn(InputAction.CallbackContext value)
     {
-        if (value.started && !Together)
+        if (value.started && !Together && !toggleMenu)
         {
             ChangeCamFocusRyn();
         }
     }
     public void ChangeCamIden(InputAction.CallbackContext value)
     {
-        if (value.started && !Together)
+        if (value.started && !Together && !toggleMenu)
         {
             ChangeCamFocusSpirit();
         }
@@ -82,7 +88,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Move(InputAction.CallbackContext value)
     {
-        if (followingCharacter.canMove)
+        if (followingCharacter.canMove && !toggleMenu)
         {
             Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
             if (xLocked)
@@ -100,7 +106,7 @@ public class ELC_CharacterManager : MonoBehaviour
             
 
         }
-        if (value.canceled)
+        if (value.canceled && !toggleMenu)
         {
             followingCharacter.rawInputMovement = Vector2.zero;
         }
@@ -108,7 +114,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Action(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !toggleMenu)
         {
             
             if (DetectedInteraction != null && followingCharacter == RynMove)
@@ -154,7 +160,7 @@ public class ELC_CharacterManager : MonoBehaviour
                 ToPurify.Purify();
             }
         }
-        if (value.canceled)
+        if (value.canceled && !toggleMenu)
         {
             if (DetectedInteraction != null && DetectedInteraction.isGrabbed)
             {
@@ -170,7 +176,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Spirit(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !toggleMenu)
         {
             if (Together)
             {
@@ -186,13 +192,22 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext value)
     {
-        //To define
-        Debug.Log("Pause yet to define");
+        if (value.started) { 
+            if (!toggleMenu)
+            {
+            
+                EnableMenu();
+            }
+            else
+            {
+                DisableMenu();
+            }
+        }
     }
 
     public void IdenAttack(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !toggleMenu)
         {
             if (Together)
             {
@@ -207,12 +222,25 @@ public class ELC_CharacterManager : MonoBehaviour
     
     public void RynShield(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && !toggleMenu)
         {
             RynAttack.RynShield();
         }
     }
 
+
+    public void EnableMenu() 
+    {
+        toggleMenu = true;
+        enableMenu.Invoke();
+    }
+
+    public void DisableMenu()
+    {
+        toggleMenu = false;
+        disableMenu.Invoke();
+
+    }
     public void ChangeCamFocusRyn()
     {
         //Disabling Spirit
@@ -241,6 +269,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void RegroupTogether()
     {
+        Debug.Log("Regroup");
         Together = true;
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
