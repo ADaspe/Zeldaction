@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2939,7 +2939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1176425433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3064,7 +3064,9 @@ MonoBehaviour:
   BossAttacks: {fileID: 0}
   RynGO: {fileID: 5745857533048271918}
   isAttacking: 0
+  canAttack: 1
   LastDir: {x: 0, y: 0, z: 0}
+  CurrentPhase: 0
 --- !u!114 &1176425438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3121,11 +3123,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a674dc3cc21238942adc69af01fb98bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DashAttack: 0
   BossMana: {fileID: 0}
-  PrepareAttackDuration: 1
-  AttackDuration: 1
+  OriginDistOfAttackDetector: 0
   TargetDirection: {x: 0, y: 0, z: 0}
+  BasicAttackPreparationTime: 1
+  BasicAttackDuration: 1
+  BasicAttackCooldown: 3
+  BasicAttackRadius: 1.5
+  BasicAttackAngle: 30
+  DashPreparationTime: 1
+  DashDistance: 3
+  DashDuration: 0.5
+  DashCooldown: 3
+  DashDetectionRadius: 2
+  DashDetectionAngle: 20
+  RayPreparationTime: 0
 --- !u!1 &1248697508
 GameObject:
   m_ObjectHideFlags: 0
@@ -13440,6 +13452,11 @@ PrefabInstance:
       propertyPath: CharacterManager
       value: 
       objectReference: {fileID: 778000660}
+    - target: {fileID: 2916041968317719070, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+        type: 3}
+      propertyPath: InvincibilityTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_RootOrder

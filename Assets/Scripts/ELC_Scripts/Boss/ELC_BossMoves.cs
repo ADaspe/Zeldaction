@@ -5,9 +5,11 @@ using Pathfinding;
 
 public class ELC_BossMoves : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject TargetGO;
     [HideInInspector]
     public Vector3 Target;
+    [HideInInspector]
     ELC_BossManager BossMana;
     public float NextWaypointDist = 0.3f;
     public float distToStopNearTarget;
@@ -63,13 +65,12 @@ public class ELC_BossMoves : MonoBehaviour
 
         if(Vector2.Distance(rb.position, Target) < distToStopNearTarget)
         {
-            if(!IsThereWallBetweenTarget(Target))
+            if(!IsThereWallBetweenTarget(Target) && BossMana.canAttack)
             {
-                Debug.Log("Se prépare à attaquer");
                 BossMana.Attack(LastDirection);
                 return;
             }
-            Debug.Log("est à distance mais ne peut attaquer");
+            //Debug.Log("est à distance mais ne peut attaquer");
             return;
         }
 
