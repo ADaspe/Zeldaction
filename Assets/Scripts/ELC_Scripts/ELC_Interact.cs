@@ -18,7 +18,7 @@ public class ELC_Interact : MonoBehaviour
     public Rigidbody2D rbInteractObject;
     
     private int touchedSideIndex;
-    private bool playerIsTouchingSide;
+    //private bool playerIsTouchingSide;
 
     private void Start()
     {
@@ -41,7 +41,7 @@ public class ELC_Interact : MonoBehaviour
                 if (playerHit.collider != null)
                 {
                     touchedSideIndex = i;
-                    playerIsTouchingSide = true;
+                    //playerIsTouchingSide = true;
                     PlayerIsOnSide(playerHit.transform.gameObject, raycastLength);
                 }
                 else if (i == touchedSideIndex) //Si ça touche pas et que le dernier coté à être touché est celui-là, alors ça veut dire que le joueur ne touche aucun coté
