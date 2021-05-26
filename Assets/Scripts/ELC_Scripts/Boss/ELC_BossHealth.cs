@@ -5,6 +5,7 @@ using UnityEngine;
 public class ELC_BossHealth : MonoBehaviour
 {
     public int Alexandre;
+    [HideInInspector]
     public ELC_BossManager BossMana;
 
     public int FirstPhaseHealth;
@@ -13,13 +14,17 @@ public class ELC_BossHealth : MonoBehaviour
 
     public int CurrentHealth;
 
+    
+
     void Awake()
     {
         CurrentHealth = FirstPhaseHealth;
+        BossMana = this.GetComponent<ELC_BossManager>();
     }
 
     public void BossGetHit()
     {
+        Debug.Log("tapé");
         if (CurrentHealth - 1 > 0) CurrentHealth--;
         else BossMana.SwitchPhase();
     }
