@@ -11,6 +11,7 @@ TagManager:
   - Crate
   - ThinWall
   - Torch
+  - Perspective
   layers:
   - Default
   - TransparentFX
