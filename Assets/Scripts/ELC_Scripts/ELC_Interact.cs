@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ELC_Interact : MonoBehaviour
 {
+    public bool leftLock, rightLock, upLock, downLock;
     public List<Transform> PlayerDetectors = new List<Transform>();
     public ELC_GameManager GameManagerScript;
     public bool corrupted;
@@ -15,7 +16,7 @@ public class ELC_Interact : MonoBehaviour
     public bool isTotem;
     public bool isBrambles;
     public Rigidbody2D rbInteractObject;
-
+    
     private int touchedSideIndex;
     private bool playerIsTouchingSide;
 
@@ -77,6 +78,43 @@ public class ELC_Interact : MonoBehaviour
             if (isTotem) this.GetComponent<ELC_Totem>().Purify();
             if (isBrambles) this.GetComponent<AXD_Brambles>().Purify();
             corrupted = !corrupted;
+        }
+    }
+
+    public void ResetLocks()
+    {
+        rightLock = leftLock = upLock = downLock = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if((collision.gameObject.layer == LayerMask.NameToLayer("PlayerRyn") || collision.gameObject.layer == LayerMask.NameToLayer("Obstacle")) && isGrabbed )
+        {
+            Vector2 averageContactPoint = Vector2.zero;
+            ContactPoint2D[] allContactPoints = new ContactPoint2D[2];
+            collision.collider.GetContacts(allContactPoints);
+            foreach (ContactPoint2D contactPoint in allContactPoints)
+            {
+                averageContactPoint += contactPoint.point;
+            }
+            averageContactPoint /= allContactPoints.Length;
+            if (averageContactPoint.x - GameManagerScript.CharacterManager.RynGO.transform.position.x > 0) // Si la caisse est à droite de Ryn
+            {
+                leftLock = true;
+            }
+            if(averageContactPoint.x - GameManagerScript.CharacterManager.RynGO.transform.position.x <= 0) // Si la caisse est à gauche de Ryn
+            {
+                rightLock = true;
+            }
+            if(averageContactPoint.y - GameManagerScript.CharacterManager.RynGO.transform.position.y > 0) // Si la caisse est au dessus de Ryn
+            {
+                downLock = true;
+            }
+            if(averageContactPoint.y - GameManagerScript.CharacterManager.RynGO.transform.position.x <=0) // Si la caisse est en dessous de Ryn
+            {
+                upLock = true;
+            }
         }
     }
 }
