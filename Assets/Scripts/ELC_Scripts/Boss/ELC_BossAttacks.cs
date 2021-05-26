@@ -40,7 +40,7 @@ public class ELC_BossAttacks : MonoBehaviour
     [HideInInspector]
     public ELC_BossRay[] Rays;
 
-    bool isPreparingAttack;
+    //bool isPreparingAttack;
     bool isAttacking;
 
     private void Awake()
@@ -74,7 +74,6 @@ public class ELC_BossAttacks : MonoBehaviour
     public void PrepareAttack()
     {
         BossMana.isAttacking = true;
-        isPreparingAttack = true;
         switch (BossMana.CurrentPhase)
         {
             case 1:
@@ -111,7 +110,8 @@ public class ELC_BossAttacks : MonoBehaviour
                 BasicAttack();
                 break;
             case 2:
-            //L'attaque Dash se fait dans le FixedUpdate
+                //L'attaque Dash se fait dans le FixedUpdate
+                break;
             case 3:
                 Ray();
                 break;
@@ -152,7 +152,7 @@ public class ELC_BossAttacks : MonoBehaviour
         StartCoroutine("CooldownsAttack");
         isAttacking = false;
         BossMana.isAttacking = false;
-        BossMana.BossMoves.CanMove = true;
+        if(BossMana.CurrentPhase != 3) BossMana.BossMoves.CanMove = true;
     }
 
     void BasicAttack()
@@ -166,6 +166,17 @@ public class ELC_BossAttacks : MonoBehaviour
                 DetectedGO.GetComponent<AXD_Health>().GetHit();
             }
         }
+    }
+
+    public IEnumerator RayPhase()
+    {
+        yield return new WaitForSeconds(RayAttackCooldown);
+
+        PrepareAttack();
+
+        yield return new WaitForSeconds(RayAttackPreparationTime + RaySpawnTime + RayDespawnTime);
+
+        StartCoroutine(RayPhase());
     }
 
     void DashCrashOnWall()
