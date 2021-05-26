@@ -16,8 +16,9 @@ public class AXD_CharacterMove : MonoBehaviour
     public bool camSwapOn;
     public bool isDashing;
     public bool isRynGrabbing;
-    public ELC_Interact grabbebObject;
+    public ELC_Interact grabbedObject;
     public bool wasDashingWhenColliding;
+    private Vector2 tempDirMultiplier;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class AXD_CharacterMove : MonoBehaviour
     {
         if (canMove && currentCharacter && !isDashing)
         {
+            
             rb.velocity = rawInputMovement*currentSpeed;
             if (rawInputMovement.magnitude >= 0.005f)
             {
@@ -46,9 +48,43 @@ public class AXD_CharacterMove : MonoBehaviour
             }
             if (isRynGrabbing)
             {
-                if (grabbebObject != null)
+                if (grabbedObject != null)
                 {
-                    grabbebObject.rbInteractObject.velocity = rawInputMovement * charaManager.stats.SpeedGrabbing;
+                    
+                    tempDirMultiplier.x = tempDirMultiplier.y = 1;
+                    if ((grabbedObject.rightLock && rawInputMovement.x > 0) || rb.velocity.x == 0)
+                    {
+                        tempDirMultiplier.x = 0;
+                    }else if(grabbedObject.rightLock && rawInputMovement.x < 0)
+                    {
+                        grabbedObject.rightLock = false;
+                    }
+                    if (grabbedObject.leftLock && rawInputMovement.x < 0 || rb.velocity.x == 0)
+                    {
+                        tempDirMultiplier.x = 0;
+                    }else if (grabbedObject.leftLock && rawInputMovement.x > 0)
+                    {
+                        grabbedObject.leftLock = false;
+                    }
+
+                    if (grabbedObject.upLock && rawInputMovement.y > 0 || rb.velocity.y == 0)
+                    {
+                        tempDirMultiplier.y = 0;
+                    }
+                    else if (grabbedObject.upLock && rawInputMovement.y < 0)
+                    {
+                        grabbedObject.upLock = false;
+                    }
+                    if (grabbedObject.downLock && rawInputMovement.y < 0 || rb.velocity.y == 0)
+                    {
+                        tempDirMultiplier.y = 0;
+                    }
+                    else if (grabbedObject.downLock && rawInputMovement.y > 0)
+                    {
+                        grabbedObject.downLock = false;
+                    }
+                    
+                    grabbedObject.rbInteractObject.velocity = rb.velocity * tempDirMultiplier;
                 }
                 else
                 {
@@ -96,6 +132,35 @@ public class AXD_CharacterMove : MonoBehaviour
                 collision.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(charaManager.stats.StunTime);
             }
             
+        }else if (CompareTag("Ryn") && currentCharacter && grabbedObject != null)
+        {
+            Debug.Log("Kwa ?");
+            Vector2 averageContactPoint = Vector2.zero;
+            ContactPoint2D[] allContactPoints = new ContactPoint2D[2];
+            collision.collider.GetContacts(allContactPoints);
+            foreach (ContactPoint2D contactPoint in allContactPoints)
+            {
+                averageContactPoint += contactPoint.point;
+            }
+            averageContactPoint /= allContactPoints.Length;
+            if (averageContactPoint.x - charaManager.RynGO.transform.position.x > 0) // Si la caisse est à droite de Ryn
+            {
+                grabbedObject.rightLock = true;
+            }
+            if (averageContactPoint.x - charaManager.RynGO.transform.position.x <= 0) // Si la caisse est à gauche de Ryn
+            {
+                grabbedObject.leftLock = true;
+            }
+            if (averageContactPoint.y - charaManager.RynGO.transform.position.y > 0) // Si la caisse est au dessus de Ryn
+            {
+                grabbedObject.upLock = true;
+            }
+            if (averageContactPoint.y - charaManager.RynGO.transform.position.x <= 0) // Si la caisse est en dessous de Ryn
+            {
+                grabbedObject.downLock = true;
+            }
+
         }
+
     }
 }
