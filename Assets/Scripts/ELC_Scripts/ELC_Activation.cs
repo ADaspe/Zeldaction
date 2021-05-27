@@ -13,7 +13,7 @@ public class ELC_Activation : MonoBehaviour
     private bool ConditionsEnabled;
     private ELC_Interact interactScript;
     public float detectionRadius;
-    private BoxCollider2D collider;
+    private BoxCollider2D objectCollider;
     //public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
     private Animator animator;
@@ -22,7 +22,7 @@ public class ELC_Activation : MonoBehaviour
     {
         animator = this.GetComponent<Animator>();
         interactScript = this.GetComponent<ELC_Interact>();
-        collider = GetComponent<BoxCollider2D>();
+        objectCollider = GetComponent<BoxCollider2D>();
         foreach (AXD_Activable item in objectsToActivate)
         {        
             item.ActivationsNeeded.Add(this);
@@ -48,7 +48,7 @@ public class ELC_Activation : MonoBehaviour
         if (type == ActivatorType.PRESSUREPLATE && (collision.gameObject.CompareTag("Crate") || collision.gameObject.CompareTag("Ryn")))
         {
             bool itemOnPlate = false;
-            Collider2D[] detected = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + collider.offset.x, transform.position.y + collider.offset.y), detectionRadius);
+            Collider2D[] detected = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + objectCollider.offset.x, transform.position.y + objectCollider.offset.y), detectionRadius);
             foreach (Collider2D item in detected)
             {
                 if(item.CompareTag("Crate") || item.CompareTag("Ryn"))

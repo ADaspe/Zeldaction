@@ -83,6 +83,10 @@ public class AXD_Mushroom : MonoBehaviour
                 {
                     item.GetComponent<AXD_ThinWall>().CollapseWall();
                 }
+                else if(item.CompareTag("Boss"))
+                {
+                    item.GetComponent<ELC_BossHealth>().BossGetHit();
+                }
             }
         }
         Debug.Log("Kaboom");
