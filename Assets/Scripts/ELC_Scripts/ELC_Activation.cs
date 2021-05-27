@@ -51,7 +51,7 @@ public class ELC_Activation : MonoBehaviour
             Collider2D[] detected = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + objectCollider.offset.x, transform.position.y + objectCollider.offset.y), detectionRadius);
             foreach (Collider2D item in detected)
             {
-                if(item.CompareTag("Crate") || item.CompareTag("Ryn"))
+                if (item.CompareTag("Crate") || item.CompareTag("Ryn"))
                 {
                     itemOnPlate = true;
                 }
@@ -65,29 +65,28 @@ public class ELC_Activation : MonoBehaviour
                     item.Activate();
                 }
             }
-            ConditionsEnabled = (isEntering||itemOnPlate);
+            ConditionsEnabled = (isEntering || itemOnPlate);
             //return;
         }
         else if (type == ActivatorType.TORCH && collision.gameObject.CompareTag("Spirit") && collision.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
         {
-            if (!isActivated)
+            StopCoroutine("Countdown");
+            StartCoroutine("Countdown");
+            isActivated = true;
+            AnimatorUpdate();
+            foreach (AXD_Activable item in objectsToActivate)
             {
-                StopCoroutine("Countdown");
-                StartCoroutine("Countdown");
-                isActivated = true;
-                AnimatorUpdate();
-                foreach (AXD_Activable item in objectsToActivate)
-                {
-                    item.Activate();
-                }
-                ConditionsEnabled = isEntering;
-                //return;
+                item.Activate();
             }
+            ConditionsEnabled = true;
+            return;
         }
+        else if (type == ActivatorType.TORCH) return;
         
 
         if (ConditionsEnabled == false && isActivated)
         {
+            Debug.Log("oui");
             isActivated = false;
             AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)
