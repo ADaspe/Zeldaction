@@ -13,6 +13,7 @@ public class ELC_BossAttacks : MonoBehaviour
     private float AttackAngle;
     public float OriginDistOfAttackDetector;
     public Vector3 TargetDirection;
+    private SpriteRenderer SpriteRend;
 
     [Header("Phase 1")]
     public float BasicAttackPreparationTime;
@@ -46,7 +47,7 @@ public class ELC_BossAttacks : MonoBehaviour
     private void Awake()
     {
         BossMana = this.GetComponent<ELC_BossManager>();
-
+        SpriteRend = this.GetComponent<SpriteRenderer>();
         PrepareAttackDuration = BasicAttackPreparationTime;
         AttackDuration = BasicAttackDuration;
         Cooldown = BasicAttackCooldown;
@@ -82,7 +83,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = BasicAttackCooldown;
                 AttackRadius = BasicAttackRadius;
                 AttackAngle = BasicAttackAngle;
-
+                SpriteRend.enabled = true;
                 break;
             case 2:
                 PrepareAttackDuration = DashPreparationTime;
@@ -90,6 +91,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = DashCooldown;
                 AttackRadius = DashDetectionRadius;
                 AttackAngle = DashDetectionAngle;
+                
                 
                 break;
             case 3:
@@ -128,7 +130,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void Dash()
     {
-        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 2f, BossMana.ObstaclesMask);
+        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 0.8f, BossMana.ObstaclesMask);
         if(WallDetector.collider != null)
         {
             DashCrashOnWall();
@@ -152,6 +154,7 @@ public class ELC_BossAttacks : MonoBehaviour
         StartCoroutine("CooldownsAttack");
         isAttacking = false;
         BossMana.isAttacking = false;
+        if (BossMana.CurrentPhase == 1) SpriteRend.enabled = false;
         if(BossMana.CurrentPhase != 3) BossMana.BossMoves.CanMove = true;
     }
 
