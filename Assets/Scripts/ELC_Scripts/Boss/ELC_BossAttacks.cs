@@ -13,6 +13,7 @@ public class ELC_BossAttacks : MonoBehaviour
     private float AttackAngle;
     public float OriginDistOfAttackDetector;
     public Vector3 TargetDirection;
+    private SpriteRenderer SpriteRend;
 
     [Header("Phase 1")]
     public float BasicAttackPreparationTime;
@@ -40,13 +41,13 @@ public class ELC_BossAttacks : MonoBehaviour
     [HideInInspector]
     public ELC_BossRay[] Rays;
 
-    bool isPreparingAttack;
+    //bool isPreparingAttack;
     bool isAttacking;
 
     private void Awake()
     {
         BossMana = this.GetComponent<ELC_BossManager>();
-
+        SpriteRend = this.GetComponent<SpriteRenderer>();
         PrepareAttackDuration = BasicAttackPreparationTime;
         AttackDuration = BasicAttackDuration;
         Cooldown = BasicAttackCooldown;
@@ -74,7 +75,6 @@ public class ELC_BossAttacks : MonoBehaviour
     public void PrepareAttack()
     {
         BossMana.isAttacking = true;
-        isPreparingAttack = true;
         switch (BossMana.CurrentPhase)
         {
             case 1:
@@ -83,7 +83,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = BasicAttackCooldown;
                 AttackRadius = BasicAttackRadius;
                 AttackAngle = BasicAttackAngle;
-
+                SpriteRend.enabled = true;
                 break;
             case 2:
                 PrepareAttackDuration = DashPreparationTime;
@@ -91,6 +91,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = DashCooldown;
                 AttackRadius = DashDetectionRadius;
                 AttackAngle = DashDetectionAngle;
+                
                 
                 break;
             case 3:
@@ -111,7 +112,8 @@ public class ELC_BossAttacks : MonoBehaviour
                 BasicAttack();
                 break;
             case 2:
-            //L'attaque Dash se fait dans le FixedUpdate
+                //L'attaque Dash se fait dans le FixedUpdate
+                break;
             case 3:
                 Ray();
                 break;
@@ -128,7 +130,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void Dash()
     {
-        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 2f, BossMana.ObstaclesMask);
+        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 0.8f, BossMana.ObstaclesMask);
         if(WallDetector.collider != null)
         {
             DashCrashOnWall();
@@ -152,7 +154,8 @@ public class ELC_BossAttacks : MonoBehaviour
         StartCoroutine("CooldownsAttack");
         isAttacking = false;
         BossMana.isAttacking = false;
-        BossMana.BossMoves.CanMove = true;
+        if (BossMana.CurrentPhase == 1) SpriteRend.enabled = false;
+        if(BossMana.CurrentPhase != 3) BossMana.BossMoves.CanMove = true;
     }
 
     void BasicAttack()
@@ -166,6 +169,17 @@ public class ELC_BossAttacks : MonoBehaviour
                 DetectedGO.GetComponent<AXD_Health>().GetHit();
             }
         }
+    }
+
+    public IEnumerator RayPhase()
+    {
+        yield return new WaitForSeconds(RayAttackCooldown);
+
+        PrepareAttack();
+
+        yield return new WaitForSeconds(RayAttackPreparationTime + RaySpawnTime + RayDespawnTime);
+
+        StartCoroutine(RayPhase());
     }
 
     void DashCrashOnWall()

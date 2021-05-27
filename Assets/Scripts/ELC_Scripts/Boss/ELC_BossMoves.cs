@@ -15,6 +15,9 @@ public class ELC_BossMoves : MonoBehaviour
     public float distToStopNearTarget;
     public float speed;
     public bool CanMove;
+    public bool FollowPlayer;
+    public bool isGoingToPreciseLocation;
+    public bool ReachedThePreciseLocation;
 
     Vector2 direction;
     public Vector2 LastDirection;
@@ -40,6 +43,7 @@ public class ELC_BossMoves : MonoBehaviour
 
         InvokeRepeating("UpdatePath",0f, 0.3f);
         seeker.StartPath(rb.position, Target, OnPathCalculated);
+        FollowPlayer = true;
     }
 
     void OnPathCalculated(Path p)
@@ -53,8 +57,8 @@ public class ELC_BossMoves : MonoBehaviour
 
     void UpdatePath()
     {
-        Target = TargetGO.transform.position;
-        if(seeker.IsDone())
+        if (FollowPlayer) Target = TargetGO.transform.position;
+        if (seeker.IsDone())
         {
             seeker.StartPath(rb.position, Target, OnPathCalculated);
         }
@@ -64,7 +68,7 @@ public class ELC_BossMoves : MonoBehaviour
     {
         if (path == null || !CanMove) return;
 
-        if(Vector2.Distance(rb.position, Target) < distToStopNearTarget)
+        if(Vector2.Distance(rb.position, Target) < distToStopNearTarget && !BossMana.IsInSwitchPhase)
         {
             if(!IsThereWallBetweenTarget(Target) && BossMana.canAttack)
             {
@@ -87,7 +91,16 @@ public class ELC_BossMoves : MonoBehaviour
         }
 
         float distanceToWaypoint = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]); //On vérifie à quelle distance on est du prochain waypoint
-        if (distanceToWaypoint < NextWaypointDist) currentWaypoint++;//Si on est assez proche, on passe au prochain waypoint
+        if (distanceToWaypoint < NextWaypointDist)
+        {
+            if (isGoingToPreciseLocation && currentWaypoint == path.vectorPath.Count - 1) //Si on est en train de suivre un chemin précis et qu'on a atteint le bout
+            {
+                BossMana.ReachedLocation();
+                isGoingToPreciseLocation = false;
+            }
+
+            if(currentWaypoint != path.vectorPath.Count - 1) currentWaypoint++;//Si on est assez proche, on passe au prochain waypoint
+        }
     }
 
     private bool IsThereWallBetweenTarget(Vector3 target)

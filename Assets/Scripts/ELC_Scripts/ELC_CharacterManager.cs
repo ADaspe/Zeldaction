@@ -151,7 +151,7 @@ public class ELC_CharacterManager : MonoBehaviour
                     }
 
                     RynMove.currentSpeed = stats.SpeedGrabbing;
-                    RynMove.grabbebObject = DetectedInteraction;
+                    RynMove.grabbedObject = DetectedInteraction;
                 }
 
             }
@@ -168,8 +168,9 @@ public class ELC_CharacterManager : MonoBehaviour
                 RynMove.isRynGrabbing = false;
                 xLocked = yLocked = false;
                 RynMove.currentSpeed = stats.RynSpeed;
-                RynMove.grabbebObject.rbInteractObject.velocity = Vector2.zero;
-                RynMove.grabbebObject = null;
+                RynMove.grabbedObject.rbInteractObject.velocity = Vector2.zero;
+                RynMove.grabbedObject.ResetLocks();
+                RynMove.grabbedObject = null;
             }
         }
     }
