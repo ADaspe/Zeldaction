@@ -10,7 +10,10 @@ public class ELC_BossManager : MonoBehaviour
     public ELC_BossAttacks BossAttacks;
     [HideInInspector]
     public ELC_BossHealth BossHealth;
+    [HideInInspector]
+    public ELC_SwitchCamFocus CamScript;
     public GameObject RynGO;
+    public GameObject MushSpawner;
     public Transform Spawn;
     public Transform MapCenter;
     public bool isAttacking;
@@ -21,9 +24,13 @@ public class ELC_BossManager : MonoBehaviour
     public ELC_BossRay[] RaysList;
     public bool IsInSwitchPhase;
     public float GrowlAnimationTime;
+    public float InvisibilityShaderTime;
+    private SpriteRenderer SpriteRend;
 
     private void Awake()
     {
+        SpriteRend = this.gameObject.GetComponent<SpriteRenderer>();
+        CamScript = this.GetComponent<ELC_SwitchCamFocus>();
         BossMoves = this.GetComponent<ELC_BossMoves>();
         BossAttacks = this.GetComponent<ELC_BossAttacks>();
         BossHealth = this.GetComponent<ELC_BossHealth>();
@@ -31,7 +38,7 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.TargetGO = RynGO;
         BossAttacks.Rays = RaysList;
         canAttack = true;
-        CurrentPhase = 1;
+        CurrentPhase = 0;
     }
 
     public void Attack(Vector3 TargetDir)
@@ -46,6 +53,9 @@ public class ELC_BossManager : MonoBehaviour
         CurrentPhase++;
         switch (CurrentPhase)
         {
+            case 1:
+                StartCoroutine(Intro());
+                break;
             case 2:
                 StartCoroutine(SecondPhaseSwitch());
                 break;
@@ -57,21 +67,39 @@ public class ELC_BossManager : MonoBehaviour
         }
     }
 
+    public IEnumerator Intro()
+    {
+        IsInSwitchPhase = true;
+        BossMoves.CanMove = false;
+        BossHealth.CurrentHealth = BossHealth.FirstPhaseHealth;
+        CamScript.SwitchCamFocus(this.transform, false);
+        yield return new WaitForSeconds(1);
+        Debug.Log("Agrou");
+        yield return new WaitForSeconds(GrowlAnimationTime);
+        Debug.Log("Invisibilité");
+        yield return new WaitForSeconds(InvisibilityShaderTime);
+        Debug.Log("début phase 1");
+        IsInSwitchPhase = false;
+        BossMoves.CanMove = true;
+        CamScript.CancelCamFocus();
+
+    }
+
     public IEnumerator SecondPhaseSwitch()
     {
         IsInSwitchPhase = true;
         BossHealth.CurrentHealth = BossHealth.SecondPhaseHealth;
         BossMoves.FollowPlayer = false;
+        CamScript.SwitchCamFocus(this.transform, false);
 
-        //La caméra se centre sur le boss
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(1);
-        BossMoves.CanMove = true;
+        
 
         //Joue l'animation de grognement
         Debug.Log("Graou");
         yield return new WaitForSeconds(GrowlAnimationTime);
-
+        BossMoves.CanMove = true;
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = MapCenter.position;
     }
@@ -87,23 +115,23 @@ public class ELC_BossManager : MonoBehaviour
         if (CurrentPhase == 3) BossAttacks.StartCoroutine("RayPhase");
         IsInSwitchPhase = false;
         BossMoves.FollowPlayer = true;
+        CamScript.CancelCamFocus();
     }
 
     public IEnumerator ThirdPhaseSwitch()
     {
+        CamScript.SwitchCamFocus(this.transform, false);
         IsInSwitchPhase = true;
         BossHealth.CurrentHealth = BossHealth.ThirdPhaseHealth;
         BossMoves.FollowPlayer = false;
-
-        //La caméra se centre sur le boss
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(1);
-        BossMoves.CanMove = true;
+        
 
         //Joue l'animation de grognement
         Debug.Log("Graou");
         yield return new WaitForSeconds(GrowlAnimationTime);
-
+        BossMoves.CanMove = true;
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = Spawn.position;
     }
