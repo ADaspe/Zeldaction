@@ -44,7 +44,7 @@ public class ELC_Activation : MonoBehaviour
 
     private void Detection(Collider2D collision, bool isEntering = true)
     {
-        ConditionsEnabled = false;
+        //ConditionsEnabled = false;
         if (type == ActivatorType.PRESSUREPLATE && (collision.gameObject.CompareTag("Crate") || collision.gameObject.CompareTag("Ryn")))
         {
             bool itemOnPlate = false;
@@ -112,7 +112,7 @@ public class ELC_Activation : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    { 
         Detection(collision);
     }
 

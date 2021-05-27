@@ -15,6 +15,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     public bool closeToRyn;
     public float minDistToTeleport;
     public bool disabled;
+    public bool stuck;
     [SerializeField]
     private Vector2 debug;
     private float RynAngle;
@@ -50,9 +51,10 @@ public class ELC_SpiritIdle : MonoBehaviour
             }
             
         }
-        if (!CharaManager.Together)
+
+        if (!stuck)
         {
-            float tempDist = Mathf.Abs(Mathf.Sqrt(Mathf.Pow((CharaManager.RynGO.transform.position.x - CharaManager.SpiritGO.transform.position.x), 2) + Mathf.Pow((CharaManager.RynGO.transform.position.y - CharaManager.SpiritGO.transform.position.y), 2)));    
+            float tempDist = Mathf.Abs(Mathf.Sqrt(Mathf.Pow((CharaManager.RynGO.transform.position.x - CharaManager.SpiritGO.transform.position.x), 2) + Mathf.Pow((CharaManager.RynGO.transform.position.y - CharaManager.SpiritGO.transform.position.y), 2)));
             if (tempDist >= minDistToTeleport)
             {
                 closeToRyn = false;
@@ -69,8 +71,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (CharaManager.followingCharacter == CharaManager.RynMove)
-        {
-
+        { 
             if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn") && !closeToRyn && !CharaManager.spiritProjected)
             {
                 Teleport(targetPos);
@@ -78,8 +79,19 @@ public class ELC_SpiritIdle : MonoBehaviour
             {
                 CharaManager.ResetProjection();
             }
+            else if (collision.gameObject.layer == LayerMask.NameToLayer("ObstacleSpirit"))
+            {
+                stuck = true;
+            }
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("ObstacleSpirit"))
+        {
+            stuck = false;
+        }
+    }
 
 }
