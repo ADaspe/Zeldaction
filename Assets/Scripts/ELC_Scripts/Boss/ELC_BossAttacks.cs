@@ -43,9 +43,11 @@ public class ELC_BossAttacks : MonoBehaviour
 
     //bool isPreparingAttack;
     bool isAttacking;
+    Animator anims;
 
     private void Awake()
     {
+        anims = this.GetComponent<Animator>();
         BossMana = this.GetComponent<ELC_BossManager>();
         SpriteRend = this.GetComponent<SpriteRenderer>();
         PrepareAttackDuration = BasicAttackPreparationTime;
@@ -106,6 +108,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void Attack()
     {
+        anims.SetBool("Growl", false);
         switch (BossMana.CurrentPhase)
         {
             case 1:
@@ -151,6 +154,8 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void EndAttack()
     {
+        anims.SetBool("Bite", false);
+        anims.SetBool("AttackPhase", false);
         StartCoroutine("CooldownsAttack");
         isAttacking = false;
         BossMana.isAttacking = false;
@@ -160,6 +165,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void BasicAttack()
     {
+        anims.SetBool("Bite", true);
         Vector3 origin = this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector;
         List<GameObject> detected = DetectionZone(AttackRadius, AttackAngle, origin);
         foreach (GameObject DetectedGO in detected)
@@ -169,6 +175,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 DetectedGO.GetComponent<AXD_Health>().GetHit();
             }
         }
+        
     }
 
     public IEnumerator RayPhase()
