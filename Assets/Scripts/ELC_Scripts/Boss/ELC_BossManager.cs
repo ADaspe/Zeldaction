@@ -26,9 +26,11 @@ public class ELC_BossManager : MonoBehaviour
     public float GrowlAnimationTime;
     public float InvisibilityShaderTime;
     private SpriteRenderer SpriteRend;
+    private Animator anims;
 
     private void Awake()
     {
+        anims = this.GetComponent<Animator>();
         SpriteRend = this.gameObject.GetComponent<SpriteRenderer>();
         CamScript = this.GetComponent<ELC_SwitchCamFocus>();
         BossMoves = this.GetComponent<ELC_BossMoves>();
@@ -43,6 +45,8 @@ public class ELC_BossManager : MonoBehaviour
 
     public void Attack(Vector3 TargetDir)
     {
+        anims.SetBool("Growl", true);
+        anims.SetBool("AttackPhase", true);
         BossMoves.CanMove = false;
         BossAttacks.TargetDirection = TargetDir;
         BossAttacks.PrepareAttack();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3712,13 +3712,14 @@ GameObject:
   - component: {fileID: 1176425433}
   - component: {fileID: 1176425438}
   - component: {fileID: 1176425439}
+  - component: {fileID: 1176425443}
   m_Layer: 16
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1176425433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3808,7 +3809,7 @@ MonoBehaviour:
   Target: {x: 0, y: 0, z: 0}
   NextWaypointDist: 0.3
   distToStopNearTarget: 2
-  speed: 400
+  speed: 200
   CanMove: 1
   FollowPlayer: 0
   isGoingToPreciseLocation: 0
@@ -3922,7 +3923,7 @@ MonoBehaviour:
   OriginDistOfAttackDetector: 0
   TargetDirection: {x: 0, y: 0, z: 0}
   BasicAttackPreparationTime: 1
-  BasicAttackDuration: 1
+  BasicAttackDuration: 0.25
   BasicAttackCooldown: 3
   BasicAttackRadius: 2
   BasicAttackAngle: 30
@@ -3970,6 +3971,25 @@ MonoBehaviour:
   SecondPhaseHealth: 1
   ThirdPhaseHealth: 1
   CurrentHealth: 0
+--- !u!95 &1176425443
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176425432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04dbaeaf95a029047b53e5f2ca855bb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1248697508
 GameObject:
   m_ObjectHideFlags: 0
