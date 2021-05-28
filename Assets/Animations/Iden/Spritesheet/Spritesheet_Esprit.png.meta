@@ -1,0 +1,948 @@
+fileFormatVersion: 2
+guid: 0968cddf8976ee34dab5824c1526f23c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -525521739584401265
+    second: Spritesheet_Esprit_0
+  - first:
+      213: 2658171602548773991
+    second: Spritesheet_Esprit_1
+  - first:
+      213: -139479085585709548
+    second: Spritesheet_Esprit_2
+  - first:
+      213: -2420527845668086870
+    second: Spritesheet_Esprit_3
+  - first:
+      213: 4622125697029620529
+    second: Spritesheet_Esprit_4
+  - first:
+      213: -1146232675697545582
+    second: Spritesheet_Esprit_5
+  - first:
+      213: 5966326845264700437
+    second: Spritesheet_Esprit_6
+  - first:
+      213: -2714813905025324430
+    second: Spritesheet_Esprit_7
+  - first:
+      213: -5415505629261632465
+    second: Spritesheet_Esprit_8
+  - first:
+      213: -6752609582514749759
+    second: Spritesheet_Esprit_9
+  - first:
+      213: 7015906188843570487
+    second: Spritesheet_Esprit_10
+  - first:
+      213: 7241143244786421023
+    second: Spritesheet_Esprit_11
+  - first:
+      213: -8210535292563873052
+    second: Spritesheet_Esprit_12
+  - first:
+      213: -7260493847039337382
+    second: Spritesheet_Esprit_13
+  - first:
+      213: -916754880375299695
+    second: Spritesheet_Esprit_14
+  - first:
+      213: 1281472065129648670
+    second: Spritesheet_Esprit_15
+  - first:
+      213: 2043391410067781693
+    second: Spritesheet_Esprit_16
+  - first:
+      213: 7124127889678392916
+    second: Spritesheet_Esprit_17
+  - first:
+      213: 6195384503206272484
+    second: Spritesheet_Esprit_18
+  - first:
+      213: -4182065407866511400
+    second: Spritesheet_Esprit_19
+  - first:
+      213: 7163385774025202618
+    second: Spritesheet_Esprit_20
+  - first:
+      213: 448882904819383017
+    second: Spritesheet_Esprit_21
+  - first:
+      213: -1974644559191852809
+    second: Spritesheet_Esprit_22
+  - first:
+      213: -4598090252593740913
+    second: Spritesheet_Esprit_23
+  - first:
+      213: -3328617221431476744
+    second: Spritesheet_Esprit_24
+  - first:
+      213: -5222788019484150390
+    second: Spritesheet_Esprit_25
+  - first:
+      213: 5164306919330070837
+    second: Spritesheet_Esprit_26
+  - first:
+      213: 110658942465814859
+    second: Spritesheet_Esprit_27
+  - first:
+      213: 5850960784904834629
+    second: Spritesheet_Esprit_28
+  - first:
+      213: -5652812788495129006
+    second: Spritesheet_Esprit_29
+  - first:
+      213: -1241621016616347308
+    second: Spritesheet_Esprit_30
+  - first:
+      213: -9031061680969817120
+    second: Spritesheet_Esprit_31
+  - first:
+      213: -1454678278922341308
+    second: Spritesheet_Esprit_32
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 7147
+        width: 533
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80935e13c8f4b8f0800000000000000
+      internalID: -525521739584401265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_1
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 7105
+        width: 317
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76453f92df8b3e420800000000000000
+      internalID: 2658171602548773991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_2
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 7019
+        width: 317
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416411ab288701ef0800000000000000
+      internalID: -139479085585709548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 6447
+        width: 532
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab1306bfbe886ed0800000000000000
+      internalID: -2420527845668086870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_4
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 6405
+        width: 318
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133c7a615d6152040800000000000000
+      internalID: 4622125697029620529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_5
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 6320
+        width: 317
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e2a175473c710f0800000000000000
+      internalID: -1146232675697545582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_6
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 5747
+        width: 531
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51421e1a7a6acc250800000000000000
+      internalID: 5966326845264700437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_7
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 5705
+        width: 320
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27aaca7132b035ad0800000000000000
+      internalID: -2714813905025324430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_8
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 5619
+        width: 321
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c6bb0a25248d4b0800000000000000
+      internalID: -5415505629261632465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_9
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 5047
+        width: 528
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce3f4f8c59e942a0800000000000000
+      internalID: -6752609582514749759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_10
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 5005
+        width: 320
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7355c73c1818d5160800000000000000
+      internalID: 7015906188843570487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_11
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 4919
+        width: 319
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1dc6397a65bd7460800000000000000
+      internalID: 7241143244786421023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_12
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 4347
+        width: 527
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e22ce617a15e0e80800000000000000
+      internalID: -8210535292563873052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_13
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 4305
+        width: 327
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c9f49505b8d3b90800000000000000
+      internalID: -7260493847039337382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_14
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 4220
+        width: 323
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191ef112b480743f0800000000000000
+      internalID: -916754880375299695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_15
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 3647
+        width: 528
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1293afbd04b8c110800000000000000
+      internalID: 1281472065129648670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_16
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 3605
+        width: 320
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38bc2e39a59b5c10800000000000000
+      internalID: 2043391410067781693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_17
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3519
+        width: 319
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45edbb6029cfdd260800000000000000
+      internalID: 7124127889678392916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_18
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 2947
+        width: 531
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edd190916d6af550800000000000000
+      internalID: 6195384503206272484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_19
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 2905
+        width: 320
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfdaa84ba156f5c0800000000000000
+      internalID: -4182065407866511400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_20
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 2819
+        width: 317
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbdbd18865796360800000000000000
+      internalID: 7163385774025202618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_21
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 2247
+        width: 532
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea3187af90ca3600800000000000000
+      internalID: 448882904819383017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_22
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 2205
+        width: 314
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f836bb4c37a894e0800000000000000
+      internalID: -1974644559191852809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_23
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 2119
+        width: 317
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83c6f8e64d4030c0800000000000000
+      internalID: -4598090252593740913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_24
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1689
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd345bd5406ec1d0800000000000000
+      internalID: -3328617221431476744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_25
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1016
+        width: 557
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a853b71c7fde487b0800000000000000
+      internalID: -5222788019484150390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_26
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 798
+        width: 105
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531c2cd08cd4ba740800000000000000
+      internalID: 5164306919330070837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_27
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 744
+        width: 105
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4135ecc8b3298100800000000000000
+      internalID: 110658942465814859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_28
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 180
+        width: 460
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e4efa85d9c23150800000000000000
+      internalID: 5850960784904834629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_29
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 275
+        width: 10
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25666fff7bc2d81b0800000000000000
+      internalID: -5652812788495129006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_30
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 120
+        width: 273
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4595ce68340e4cee0800000000000000
+      internalID: -1241621016616347308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_31
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 274
+        width: 10
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3e621ff393ba280800000000000000
+      internalID: -9031061680969817120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Esprit_32
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 87
+        width: 269
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4447b5200d1ffcbe0800000000000000
+      internalID: -1454678278922341308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0242ad0558f280d43b9dae7f59aa0ad6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
