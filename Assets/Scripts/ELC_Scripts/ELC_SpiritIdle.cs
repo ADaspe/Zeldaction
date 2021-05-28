@@ -19,8 +19,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     [SerializeField]
     private Vector2 debug;
     private float RynAngle;
-    [SerializeField]
-    private Vector2 targetPos;
+    public Vector2 targetPos;
     
     void FixedUpdate()
     {

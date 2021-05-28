@@ -22,6 +22,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public ELC_CharacterAnimationsManager AnimationManager;
     public ELC_Interact ToPurify;
     //Variables locales
+    public bool isDead;
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
     [Header("Animations")]
@@ -31,6 +32,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerAttackTogether;
     public string PlayerHit;
     public string PlayerDetachSpirit;
+    public string PlayerDeath;
     public float SpiritReleaseDuration;
     public float nextDash;
     public bool spiritProjected;
@@ -340,10 +342,12 @@ public class ELC_CharacterManager : MonoBehaviour
         else if (tag == "Spirit")
         {
             currentHP--;
+            spiritIdle.Teleport(spiritIdle.targetPos);
         }
-        else
+        if(currentHP <= 0)
         {
-            Debug.Log("Tag introuvable");
+            isDead = true;
+            RynMove.canMove = false;
         }
     }
 
