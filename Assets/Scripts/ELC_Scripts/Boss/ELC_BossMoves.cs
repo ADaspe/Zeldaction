@@ -28,9 +28,13 @@ public class ELC_BossMoves : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+    Animator anims;
+    SpriteRenderer SpriteRend;
 
     private void Awake()
     {
+        SpriteRend = this.GetComponent<SpriteRenderer>();
+        anims = this.GetComponent<Animator>();
         BossMana = this.GetComponent<ELC_BossManager>();
         ObstaclesMask = BossMana.ObstaclesMask;
     }
@@ -44,6 +48,7 @@ public class ELC_BossMoves : MonoBehaviour
         InvokeRepeating("UpdatePath",0f, 0.3f);
         seeker.StartPath(rb.position, Target, OnPathCalculated);
         FollowPlayer = true;
+        InvokeRepeating("UpdateAnimator", 0.5f, 0.3f);
     }
 
     void OnPathCalculated(Path p)
@@ -66,12 +71,17 @@ public class ELC_BossMoves : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (path == null || !CanMove) return;
+        if (path == null || !CanMove)
+        {
+            anims.SetBool("isMoving", false);
+            return;
+        }
 
         if(Vector2.Distance(rb.position, Target) < distToStopNearTarget && !BossMana.IsInSwitchPhase)
         {
             if(!IsThereWallBetweenTarget(Target) && BossMana.canAttack)
             {
+                anims.SetBool("isMoving", false);
                 BossMana.Attack(LastDirection);
                 return;
             }
@@ -84,10 +94,12 @@ public class ELC_BossMoves : MonoBehaviour
 
         rb.AddForce(force); //On déplace l'objet dans la direction
 
-        if (direction.magnitude > 0.05f)
+        if (direction.magnitude > 0.4f)
         {
             LastDirection = direction;
             BossMana.LastDir = LastDirection;
+
+            anims.SetBool("isMoving", true);
         }
 
         float distanceToWaypoint = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]); //On vérifie à quelle distance on est du prochain waypoint
@@ -110,5 +122,13 @@ public class ELC_BossMoves : MonoBehaviour
         RaycastHit2D wallCollides = Physics2D.Raycast(this.transform.position, dir, Vector2.Distance(target, this.transform.position), ObstaclesMask);
         if (wallCollides.collider == null) return false;
         else return true;
+    }
+
+    private void UpdateAnimator()
+    {
+        if (LastDirection.x <= -0.3f || LastDirection.x >= 0.3f) anims.SetFloat("MovesX", LastDirection.x);
+        if (LastDirection.y <= -0.3f || LastDirection.y >= 0.3f) anims.SetFloat("MovesY", LastDirection.y);
+        if (LastDirection.x > 0 && LastDirection.x != 0) SpriteRend.flipX = true;
+        else SpriteRend.flipX = false;
     }
 }
