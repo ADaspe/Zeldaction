@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 182131266951932454}
   - component: {fileID: 3791538292397828417}
   - component: {fileID: 3814403301680697206}
+  - component: {fileID: -8933298776439308312}
+  - component: {fileID: 3578489577943413611}
+  - component: {fileID: 8713753116955495063}
   m_Layer: 0
   m_Name: Ombre_1
   m_TagString: Untagged
@@ -120,3 +123,80 @@ CapsuleCollider2D:
   m_Offset: {x: 0.08656424, y: -0.014427364}
   m_Size: {x: 0.62687147, y: 0.9018339}
   m_Direction: 0
+--- !u!50 &-8933298776439308312
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8398044086142219358}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3578489577943413611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8398044086142219358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLock: 0
+  rightLock: 0
+  upLock: 0
+  downLock: 0
+  PlayerDetectors: []
+  GameManagerScript: {fileID: 0}
+  corrupted: 0
+  PlayerCanInteract: 0
+  Interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3843520076961904312, guid: fc390dba47f830745a3c6a27c17076d1,
+          type: 3}
+        m_TargetAssemblyTypeName: ELC_Dialog, Assembly-CSharp
+        m_MethodName: Dialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isMobile: 0
+  isGrabbed: 0
+  isTotem: 0
+  isBrambles: 0
+  rbInteractObject: {fileID: 0}
+--- !u!114 &8713753116955495063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8398044086142219358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28462e8633e4b345ac8b310c2937336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue: {fileID: 0}
+  DialMana: {fileID: 0}
+  HasAlreadyTalk: 0
