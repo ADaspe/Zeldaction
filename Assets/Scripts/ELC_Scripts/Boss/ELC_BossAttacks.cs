@@ -85,7 +85,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 Cooldown = BasicAttackCooldown;
                 AttackRadius = BasicAttackRadius;
                 AttackAngle = BasicAttackAngle;
-                SpriteRend.enabled = true;
+                //SpriteRend.enabled = true;
                 break;
             case 2:
                 PrepareAttackDuration = DashPreparationTime;
@@ -159,7 +159,7 @@ public class ELC_BossAttacks : MonoBehaviour
         StartCoroutine("CooldownsAttack");
         isAttacking = false;
         BossMana.isAttacking = false;
-        if (BossMana.CurrentPhase == 1) SpriteRend.enabled = false;
+        if (BossMana.CurrentPhase == 1) //SpriteRend.enabled = false;
         if(BossMana.CurrentPhase != 3) BossMana.BossMoves.CanMove = true;
     }
 

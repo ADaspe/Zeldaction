@@ -92,17 +92,20 @@ public class ELC_BossManager : MonoBehaviour
     public IEnumerator SecondPhaseSwitch()
     {
         IsInSwitchPhase = true;
+        //SpriteRend.enabled = true;
         BossHealth.CurrentHealth = BossHealth.SecondPhaseHealth;
         BossMoves.FollowPlayer = false;
         CamScript.SwitchCamFocus(this.transform, false);
 
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(1);
-        
+
 
         //Joue l'animation de grognement
+        anims.SetBool("Growl", true);
         Debug.Log("Graou");
         yield return new WaitForSeconds(GrowlAnimationTime);
+        anims.SetBool("isGrowling", false);
         BossMoves.CanMove = true;
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = MapCenter.position;
@@ -111,10 +114,12 @@ public class ELC_BossManager : MonoBehaviour
     public IEnumerator SecondAndThirdPhaseSwitch2()
     {
         //Apparition bouclier + grognement
+        anims.SetBool("Growl", true);
         Debug.Log("Graou + shield");
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(GrowlAnimationTime);
-        if(CurrentPhase == 2) BossMoves.CanMove = true;
+        anims.SetBool("isGrowling", false);
+        if (CurrentPhase == 2) BossMoves.CanMove = true;
         Debug.Log("Phase " + CurrentPhase);
         if (CurrentPhase == 3) BossAttacks.StartCoroutine("RayPhase");
         IsInSwitchPhase = false;
@@ -130,11 +135,12 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.FollowPlayer = false;
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(1);
-        
 
+        anims.SetBool("Growl", true);
         //Joue l'animation de grognement
         Debug.Log("Graou");
         yield return new WaitForSeconds(GrowlAnimationTime);
+        anims.SetBool("isGrowling", false);
         BossMoves.CanMove = true;
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = Spawn.position;
