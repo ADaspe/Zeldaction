@@ -15,22 +15,26 @@ MonoBehaviour:
   Name: 
   MiniaturePerso: {fileID: 0}
   Dialog:
-  - DialLine: 
+  - DialLine: "1\xE8re ligne"
     RynSentence: 0
-  - DialLine: 
+  - DialLine: "2\xE8me ligne"
+    RynSentence: 0
+  - DialLine: "3\xE8me ligne"
+    RynSentence: 0
+  - DialLine: "Denri\xE8re ligne"
     RynSentence: 0
   RandomDialog:
   - Dialogs:
-    - DialLine: 
+    - DialLine: oui
       RynSentence: 0
-    - DialLine: 
+    - DialLine: 2
       RynSentence: 0
-    - DialLine: 
+    - DialLine: 'oui encore '
       RynSentence: 0
   - Dialogs:
-    - DialLine: 
+    - DialLine: aha
       RynSentence: 0
-    - DialLine: 
+    - DialLine: 3
       RynSentence: 0
-    - DialLine: 
+    - DialLine: d'abord
       RynSentence: 0
