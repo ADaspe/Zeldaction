@@ -30,7 +30,13 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
     private void ManageAnimations()
     {
         together = CharaManager.Together;
-        if(isAttacking)
+        if (CharaManager.currentHP <= 0)
+        {
+            
+            StartCoroutine(RynDeathAnim());
+            return;
+        }
+        if (isAttacking)
         {
             if (!together)
             {
@@ -53,6 +59,7 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
         {
             UpdateAnimations(CharaManager.PlayerIdle);
         }
+        
     }
 
     private void UpdateTurns()
@@ -75,6 +82,13 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
         UpdateAnimations(CharaManager.PlayerDetachSpirit);
         yield return new WaitForSeconds(CharaManager.SpiritReleaseDuration);
         isAttacking = false;
+    }
+
+    IEnumerator RynDeathAnim()
+    {
+        Debug.Log("Lol t mor");
+        UpdateAnimations(CharaManager.PlayerDeath);
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void UpdateAnimations(string AnimToPlay)

@@ -147,7 +147,7 @@ MonoBehaviour:
   camSwapOn: 0
   isDashing: 0
   isRynGrabbing: 0
-  grabbebObject: {fileID: 0}
+  grabbedObject: {fileID: 0}
   wasDashingWhenColliding: 0
 --- !u!114 &6788487066792825596
 MonoBehaviour:
@@ -188,8 +188,9 @@ MonoBehaviour:
   TimeToWaitForIdleState: 1
   DistanceToStayWhenTogether: 0.5
   closeToRyn: 0
-  minDistToTeleport: 0
+  minDistToTeleport: 4
   disabled: 0
+  stuck: 0
   debug: {x: 0, y: 0}
   targetPos: {x: 0, y: 0}
 --- !u!114 &300175652701714387

@@ -16,11 +16,13 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CharacterMove spiritMove;
     public ELC_Interact DetectedInteraction;
     public AXD_CharacterVariablesSO stats;
+    private ELC_SpiritIdle spiritIdle;
     public int currentHP;
     public int maxHP;
     public ELC_CharacterAnimationsManager AnimationManager;
     public ELC_Interact ToPurify;
     //Variables locales
+    public bool isDead;
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
     [Header("Animations")]
@@ -30,6 +32,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerAttackTogether;
     public string PlayerHit;
     public string PlayerDetachSpirit;
+    public string PlayerDeath;
     public float SpiritReleaseDuration;
     public float nextDash;
     public bool spiritProjected;
@@ -54,6 +57,7 @@ public class ELC_CharacterManager : MonoBehaviour
         RynMove.currentCharacter = true;
         RynAttack = RynGO.GetComponent<ELC_Attack>();
         SpiritAttack = SpiritGO.GetComponent<ELC_Attack>();
+        spiritIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
         currentHP = maxHP = stats.initialHP;
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
@@ -283,13 +287,16 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void DetachSpirit()
     {
-        Together = false;
-        RynMove.currentCharacter = false;
-        GoToRyn();
-        SpiritGO.GetComponent<Collider2D>().enabled = true;
-        ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
-        //tmpIdle.closeToRyn = false;
-        tmpIdle.disabled = true;
+        if (!spiritIdle.stuck)
+        {
+            Together = false;
+            RynMove.currentCharacter = false;
+            GoToRyn();
+            SpiritGO.GetComponent<Collider2D>().enabled = true;
+            ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
+            //tmpIdle.closeToRyn = false;
+            tmpIdle.disabled = true;
+        }
     }
 
     public void GoToRyn()
@@ -335,10 +342,12 @@ public class ELC_CharacterManager : MonoBehaviour
         else if (tag == "Spirit")
         {
             currentHP--;
+            spiritIdle.Teleport(spiritIdle.targetPos);
         }
-        else
+        if(currentHP <= 0)
         {
-            Debug.Log("Tag introuvable");
+            isDead = true;
+            RynMove.canMove = false;
         }
     }
 
