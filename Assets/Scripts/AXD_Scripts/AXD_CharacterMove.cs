@@ -39,9 +39,11 @@ public class AXD_CharacterMove : MonoBehaviour
     {
         if (canMove && currentCharacter && !isDashing)
         {
-            
-            rb.velocity = rawInputMovement*currentSpeed;
-            if (rawInputMovement.magnitude >= 0.005f)
+
+            if (rawInputMovement.magnitude >= 0.05f) rb.velocity = rawInputMovement * currentSpeed;
+            else rb.velocity = Vector2.zero;
+
+            if (rawInputMovement.magnitude >= 0.05f)
             {
                 LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
                 

@@ -63,6 +63,9 @@ public class ELC_SpiritIdle : MonoBehaviour
 
     public void Teleport(Vector2 targetLocation)
     {
+        CharaManager.IdenAnimator.SetBool("Ball", true);
+        CharaManager.IdenAnimator.SetBool("Idle", true);
+        CharaManager.IdenAnimator.SetBool("Dash", false);
         transform.position = targetLocation;
         closeToRyn = true;
     }

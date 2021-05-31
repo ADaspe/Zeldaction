@@ -26,6 +26,8 @@ public class ELC_CharacterManager : MonoBehaviour
     private ELC_Attack RynAttack;
     private ELC_Attack SpiritAttack;
     [Header("Animations")]
+    public Animator RynAnimator;
+    public Animator IdenAnimator;
     public string PlayerIdle;
     public string PlayerWalk;
     public string PlayerShield;
@@ -58,6 +60,8 @@ public class ELC_CharacterManager : MonoBehaviour
         RynAttack = RynGO.GetComponent<ELC_Attack>();
         SpiritAttack = SpiritGO.GetComponent<ELC_Attack>();
         spiritIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
+        RynAnimator = RynGO.GetComponent<Animator>();
+        IdenAnimator = SpiritGO.GetComponent<Animator>();
         currentHP = maxHP = stats.initialHP;
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
@@ -294,7 +298,6 @@ public class ELC_CharacterManager : MonoBehaviour
             GoToRyn();
             SpiritGO.GetComponent<Collider2D>().enabled = true;
             ELC_SpiritIdle tmpIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
-            //tmpIdle.closeToRyn = false;
             tmpIdle.disabled = true;
         }
     }
@@ -311,6 +314,8 @@ public class ELC_CharacterManager : MonoBehaviour
     public void ProjectSpirit()
     {
         vCam.Follow = SpiritGO.transform;
+        IdenAnimator.SetBool("Ball", false);
+        IdenAnimator.SetBool("Dash", true);
         spiritMove.rb.velocity = RynMove.LastDirection.normalized * (stats.IdenProjectionDistance / stats.IdenProjectionTime);
         Invoke("SlowDownSpirit", stats.IdenProjectionTime);
 
@@ -324,6 +329,8 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         CancelInvoke("ProjectSpirit");
         StopCoroutine(ProjectionSlowdown());
+        IdenAnimator.SetBool("Idle", true);
+        IdenAnimator.SetBool("Ball", true);
         RynMove.canMove = true;
         spiritProjected = false;
         spiritMove.currentSpeed = stats.SpiritSpeed;
