@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arbre_2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4678142842937630299, guid: c61e8bf9618a0c74590ebe9245d763a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2355da1fe5b9e4a46b1b67833137b693, type: 2}
+    - target: {fileID: 5088164194483887266, guid: c61e8bf9618a0c74590ebe9245d763a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2355da1fe5b9e4a46b1b67833137b693, type: 2}
     - target: {fileID: 5672413835470198941, guid: c61e8bf9618a0c74590ebe9245d763a4,
         type: 3}
       propertyPath: m_RootOrder

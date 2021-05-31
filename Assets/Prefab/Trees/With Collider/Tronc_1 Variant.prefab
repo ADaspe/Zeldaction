@@ -38,6 +38,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tronc_1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5123067326335645471, guid: 520bd7a81c1aeef40856bfe760b4f51c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18f13cfabfb1603408d9829659480b51,
+        type: 3}
     - target: {fileID: 5848418610637829784, guid: 520bd7a81c1aeef40856bfe760b4f51c,
         type: 3}
       propertyPath: m_RootOrder
