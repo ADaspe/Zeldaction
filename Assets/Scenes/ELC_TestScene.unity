@@ -14836,12 +14836,12 @@ PrefabInstance:
     - target: {fileID: 5697138928547135052, guid: 56610b7bc4528f4479ba00252006dd28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.699
+      value: 10.81
       objectReference: {fileID: 0}
     - target: {fileID: 5697138928547135052, guid: 56610b7bc4528f4479ba00252006dd28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.166
+      value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 5697138928547135052, guid: 56610b7bc4528f4479ba00252006dd28,
         type: 3}
@@ -14935,6 +14935,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spirit
       objectReference: {fileID: 0}
+    - target: {fileID: 2401617064656263152, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3328617221431476744, guid: 0968cddf8976ee34dab5824c1526f23c,
+        type: 3}
     - target: {fileID: 3218543606898988728, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: charaManager
