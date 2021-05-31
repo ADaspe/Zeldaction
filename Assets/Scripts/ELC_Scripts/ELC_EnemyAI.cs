@@ -30,21 +30,27 @@ public class ELC_EnemyAI : MonoBehaviour
     int currentWaypoint = 0;
     int PatrolPathIndex = 0;
     bool reachedEndOfPath = false;
+    Animator anims;
 
     Seeker seeker; //Le calculateur de chemin
     Rigidbody2D rb;
+    SpriteRenderer spriteRend;
     
     void Start()
     {
+        spriteRend = this.GetComponent<SpriteRenderer>();
+        anims = this.GetComponent<Animator>();
         currentWaypoint = 0;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        InvokeRepeating("UpdateAnimations", 0.5f, 0.4f);
         foreach(Transform t in PatrolPath)
         {
             t.SetParent(null);
         }
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+        
         Target = Detection();
         seeker.StartPath(rb.position, Target, OnPathCalculated);
     }
@@ -113,6 +119,9 @@ public class ELC_EnemyAI : MonoBehaviour
         Vector2 force = direction * Speed * Time.deltaTime;
 
 
+
+
+
         rb.AddForce(force);
 
         float distanceToWaypoint = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -120,8 +129,27 @@ public class ELC_EnemyAI : MonoBehaviour
         if (distanceToWaypoint < NextWaypointDistance) currentWaypoint++;
     }
 
+    private void UpdateAnimations()
+    {
+        if (!isAttacking || !isPreparingAttack)
+        {
+            anims.SetFloat("MoveX", direction.x);
+            anims.SetFloat("MoveY", direction.y);
+
+            anims.SetBool("isMoving", true);
+        }
+        else anims.SetBool("isMoving", false);
+
+        if (direction.x < 0.05f)
+        {
+            spriteRend.flipX = true;
+        }
+        else spriteRend.flipX = false;
+    }
+
     IEnumerator PrepareAttack(float time)
     {
+        anims.SetBool("PrepareAttack", true);
         isPreparingAttack = true;
         if(EnableDebug) Debug.Log("prepare");
         yield return new WaitForSeconds(time);
@@ -133,6 +161,7 @@ public class ELC_EnemyAI : MonoBehaviour
     {
         if (EnableDebug) Debug.Log("attack");
         isAttacking = true;
+        anims.SetBool("isAttacking", true);
         
         List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy));
         
