@@ -136,11 +136,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arbre_3 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3696219547361333843, guid: dfcf42dbbaa5209489fe8eeae268e339,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2355da1fe5b9e4a46b1b67833137b693, type: 2}
     - target: {fileID: 4825637054039673208, guid: dfcf42dbbaa5209489fe8eeae268e339,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5299571518475957391, guid: dfcf42dbbaa5209489fe8eeae268e339,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2355da1fe5b9e4a46b1b67833137b693, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfcf42dbbaa5209489fe8eeae268e339, type: 3}
 --- !u!4 &8646330867533839140 stripped

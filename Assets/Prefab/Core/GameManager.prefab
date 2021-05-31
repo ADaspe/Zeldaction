@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 51745464285039161}
   - component: {fileID: 51745464285039160}
+  - component: {fileID: 9095271264741744285}
+  - component: {fileID: 1433995465090938384}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -43,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2232706919ee6e644b7051c35c284951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterManager: {fileID: 0}
   PlayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -67,3 +70,41 @@ MonoBehaviour:
   InteractionMask:
     serializedVersion: 2
     m_Bits: 256
+  ExplodingMushroomMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &9095271264741744285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51745464285039159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de2e2fe5a008da42a2da3ac770cdfc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentDialSO: {fileID: 11400000, guid: b5c0fb869e3cb22448e7891efe70f10d, type: 2}
+  CharacterGO: {fileID: 0}
+  textZone: {fileID: 0}
+  DialogGameObject: {fileID: 0}
+  ContinueButton: {fileID: 0}
+  isRandomDialog: 0
+  CurrentRandomIndex: 0
+  timeToWaitForeachCharInSentence: 0.2
+--- !u!114 &1433995465090938384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51745464285039159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aeb0e22e4ffbb458ccd785b71a0d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharaMana: {fileID: 0}
+  vCam: {fileID: 0}
+  Inputs: {fileID: 0}
