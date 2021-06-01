@@ -35,6 +35,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerHit;
     public string PlayerDetachSpirit;
     public string PlayerDeath;
+    public string PlayerPushObject;
     public float SpiritReleaseDuration;
     public float nextDash;
     public bool spiritProjected;

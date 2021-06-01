@@ -132,6 +132,25 @@ public class ELC_Attack : MonoBehaviour
         Vector3 direction = targetPos - this.gameObject.transform.position;
         direction = direction.normalized * (direction.magnitude / duration);
         this.transform.Translate(direction * Time.deltaTime);
+        bool canTouch = true;
+        Collider2D[] col = Physics2D.OverlapCircleAll(CharManager.SpiritGO.transform.position, 1f, CharManager.stats.EnemiesLayerMask);
+
+        foreach (var item in col)
+        {
+            ELC_EnemyAI enemyScript = item.GetComponent<ELC_EnemyAI>();
+            List<GameObject> GO = item.GetComponent<ELC_EnemyAI>().DetectionZone(enemyScript.EnemyStats.attackAreaRadius, enemyScript.EnemyStats.attackAreaAngle, item.transform.position + (Vector3)(direction.normalized * enemyScript.EnemyStats.attackAreaPositionFromEnemy));
+            foreach (var GameO in GO)
+            {
+                if(GameO.CompareTag("Spirit"))
+                {
+                    canTouch = false;
+                }
+                else if(canTouch && GameO.CompareTag("Spirit"))
+                {
+                    item.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(CharManager.stats.StunTime);
+                }
+            }
+        }
     }
 
     private IEnumerator ResetAfterSeconds(float time)
