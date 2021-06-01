@@ -10,6 +10,9 @@ public class AXD_Health : MonoBehaviour
     public float InvincibilityTime;
     public void GetHit()
     {
+
+        //TODO : réadapter en fonction de Ryn et de Iden
+
         if (!Invincible)
         {
             Invincible = true;

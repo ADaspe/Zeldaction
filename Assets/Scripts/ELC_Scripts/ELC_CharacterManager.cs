@@ -124,26 +124,26 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
-            
+
             if (DetectedInteraction != null && followingCharacter == RynMove)
             {
                 if (DetectedInteraction.PlayerCanInteract && !DetectedInteraction.isMobile)
                 {
                     DetectedInteraction.Interact.Invoke();
                 }
-                else if(DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
+                else if (DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
                 {
                     DetectedInteraction.Interact.Invoke();
                     DetectedInteraction.isGrabbed = true;
                     RynMove.isRynGrabbing = true;
-                    Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y-DetectedInteraction.transform.position.y);
+                    Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y - DetectedInteraction.transform.position.y);
 
 
-                    if (Mathf.Abs(vectorDiff.x) >=0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
+                    if (Mathf.Abs(vectorDiff.x) >= 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
                     {
                         //Animation à gauche
                         yLocked = true;
-                    }else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
+                    } else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
                     {
                         //Animation à droite
                         yLocked = true;
@@ -152,7 +152,7 @@ public class ELC_CharacterManager : MonoBehaviour
                     {
                         //Animation en bas
                         xLocked = true;
-                    }else if (Mathf.Abs(vectorDiff.y) < 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessous de la caisse
+                    } else if (Mathf.Abs(vectorDiff.y) < 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessous de la caisse
                     {
                         //Animation en haut
                         xLocked = true;
@@ -166,6 +166,19 @@ public class ELC_CharacterManager : MonoBehaviour
             else if (ToPurify != null && followingCharacter == spiritMove)
             {
                 ToPurify.Purify();
+            } else if (DetectedInteraction == null && followingCharacter == RynMove)
+            {
+                // Pourquoi ça marche pas ?
+
+                Collider2D[] tempColliders = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.NameToLayer("Enemy"));
+                Debug.Log("Enemies detected : " + tempColliders.Length);
+                foreach (Collider2D item in tempColliders)
+                {
+                    if (item.CompareTag("Enemy"))
+                    {
+                        item.GetComponent<AXD_EnemyHealth>().Pacificate();
+                    }
+                }
             }
         }
         if (value.canceled && !toggleMenu)
