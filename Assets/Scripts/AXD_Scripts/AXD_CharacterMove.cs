@@ -19,9 +19,13 @@ public class AXD_CharacterMove : MonoBehaviour
     public ELC_Interact grabbedObject;
     public bool wasDashingWhenColliding;
     private Vector2 tempDirMultiplier;
+    Animator animsIden;
+    SpriteRenderer spriteRend;
 
     private void Start()
     {
+        spriteRend = this.GetComponent<SpriteRenderer>();
+        if(this.gameObject.CompareTag("Spirit")) animsIden = this.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         camSwapOn = false;
         AnimManager = charaManager.AnimationManager;
@@ -42,6 +46,7 @@ public class AXD_CharacterMove : MonoBehaviour
 
             if (rawInputMovement.magnitude >= 0.05f) rb.velocity = rawInputMovement * currentSpeed;
             else rb.velocity = Vector2.zero;
+
 
             if (rawInputMovement.magnitude >= 0.05f)
             {
@@ -96,15 +101,50 @@ public class AXD_CharacterMove : MonoBehaviour
                     currentSpeed = charaManager.stats.RynSpeed;
                 }
             }
-            if (charaManager.followingCharacter == charaManager.RynMove)
+            if (this.gameObject.CompareTag("Ryn"))
             {
                 RynAnimatorUpdate();
+            }
+            if(this.gameObject.CompareTag("Spirit"))
+            {
+                IdenAnimationsUpdates();
             }
         }else if (!canMove)
         {
             rb.velocity = Vector2.zero;
-            RynAnimatorUpdate();
+            if(this.gameObject.CompareTag("Ryn")) RynAnimatorUpdate();
         }
+
+        if(this.gameObject.CompareTag("Spirit"))
+        {
+            if (isDashing)
+            {
+                animsIden.SetBool("Dash", true);
+            }
+            else
+            {
+                animsIden.SetBool("Dash", false);
+            }
+
+            if (charaManager.Together)
+            {
+                animsIden.SetBool("Ball", true);
+            }
+            else animsIden.SetBool("Ball", false);
+        }
+
+        
+    }
+
+    private void IdenAnimationsUpdates()
+    {
+        animsIden.SetFloat("MovesX", LastDirection.x);
+        animsIden.SetFloat("MovesY", LastDirection.y);
+        if (LastDirection.x > 0)
+        {
+            spriteRend.flipX = true;
+        }
+        else spriteRend.flipX = false;
     }
 
     private void RynAnimatorUpdate()
