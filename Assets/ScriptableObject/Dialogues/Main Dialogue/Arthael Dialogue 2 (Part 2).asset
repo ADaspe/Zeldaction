@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Arthael Dialogue 2 (Part 2)
+  m_EditorClassIdentifier: 
+  Name: Arthael
+  MiniaturePerso: {fileID: 21300000, guid: 94f81642b439f4e47a4fc0a383a6e201, type: 3}
+  Dialog:
+  - DialLine: "You have met with Gwynedd I see\u2026"
+    RynSentence: 0
+  - DialLine: From the looks of you, I imagine she could not help...
+    RynSentence: 0
+  - DialLine: I feared this would happen.
+    RynSentence: 0
+  - DialLine: But do not worry child.. I know of someone else.
+    RynSentence: 0
+  - DialLine: Although I must warn you, this one is a dangerous spirit.
+    RynSentence: 0
+  - DialLine: You are best off not meeting with him.. but I sense a great potential
+      in you.
+    RynSentence: 0
+  - DialLine: The Great Serpent.
+    RynSentence: 0
+  - DialLine: Head west, you will find his lair sealed in the Ruins of the Deep.
+    RynSentence: 0
+  - DialLine: But be careful, his motives are unclear but maybe...
+    RynSentence: 0
+  - DialLine: Just maybe he will help you.
+    RynSentence: 0
+  - DialLine: May there always be a light within you.
+    RynSentence: 0
+  RandomDialog:
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
