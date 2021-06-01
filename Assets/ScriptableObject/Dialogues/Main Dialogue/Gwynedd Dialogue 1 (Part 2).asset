@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Gwynedd Dialogue 1 (Part 2)
+  m_EditorClassIdentifier: 
+  Name: Gwynedd
+  MiniaturePerso: {fileID: 0}
+  Dialog:
+  - DialLine: 'I sense a strong link between you and this spirit of yours. '
+    RynSentence: 0
+  - DialLine: Something very uncommon here.
+    RynSentence: 0
+  - DialLine: I can also feel something very dark in you.
+    RynSentence: 0
+  - DialLine: Draining away your lifeforce. A curse of sorts.
+    RynSentence: 0
+  - DialLine: "I can tell you\u2019ve faced him."
+    RynSentence: 0
+  - DialLine: "The betrayer\u2026"
+    RynSentence: 0
+  - DialLine: There is nothing I can do.
+    RynSentence: 0
+  RandomDialog:
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
