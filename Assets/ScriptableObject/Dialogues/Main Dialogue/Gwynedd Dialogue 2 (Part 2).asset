@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Gwynedd Dialogue 2 (Part 2)
+  m_EditorClassIdentifier: 
+  Name: Gwynedd
+  MiniaturePerso: {fileID: 0}
+  Dialog:
+  - DialLine: "She\u2019s not."
+    RynSentence: 0
+  - DialLine: The grove has been decimated, none are left.
+    RynSentence: 0
+  - DialLine: He wants you Ryn.
+    RynSentence: 0
+  - DialLine: I need to face him.
+    RynSentence: 1
+  - DialLine: And who told you that? Serunos?
+    RynSentence: 0
+  - DialLine: "That snake\u2026"
+    RynSentence: 0
+  - DialLine: Although he speaks true.
+    RynSentence: 0
+  - DialLine: It is time.
+    RynSentence: 0
+  - DialLine: Although I cannot aid you.
+    RynSentence: 0
+  - DialLine: The forest forbids we fight among us.
+    RynSentence: 0
+  - DialLine: That said..
+    RynSentence: 0
+  - DialLine: I can bring you to him.
+    RynSentence: 0
+  - DialLine: Follow the path North. Meet me at the Shrine.
+    RynSentence: 0
+  - DialLine: "It will not be easy\u2026 but if she has chosen you I cannot stop
+      you."
+    RynSentence: 0
+  RandomDialog:
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
