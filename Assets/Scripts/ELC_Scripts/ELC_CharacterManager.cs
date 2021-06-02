@@ -40,6 +40,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public float nextDash;
     public bool spiritProjected;
 
+    public Collider2D[] allDetected;
     public UnityEvent enableMenu;
     public UnityEvent disableMenu;
     public GameObject PauseMenu;
@@ -169,15 +170,14 @@ public class ELC_CharacterManager : MonoBehaviour
                 ToPurify.Purify();
             } else if (DetectedInteraction == null && followingCharacter == RynMove)
             {
-                // Pourquoi ça marche pas ?
-
-                Collider2D[] tempColliders = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.NameToLayer("Enemy"));
-                Debug.Log("Enemies detected : " + tempColliders.Length);
-                foreach (Collider2D item in tempColliders)
+                int tempEnemyNumber = 0;
+                allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius); // Si on met le layermask enemy on détecte rien pour aucune raison
+                foreach (Collider2D item in allDetected)
                 {
-                    if (item.CompareTag("Enemy"))
+                    if (item.CompareTag("Enemy") && tempEnemyNumber<stats.maxEnemyPacification)
                     {
-                        item.GetComponent<AXD_EnemyHealth>().Pacificate();
+                        tempEnemyNumber++;
+                        item.gameObject.GetComponent<AXD_EnemyHealth>().Pacificate();
                     }
                 }
             }
@@ -387,5 +387,10 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritMove.rb.velocity = Vector2.zero;
         ChangeCamFocusSpirit();
         ResetProjection();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(RynGO.transform.position, stats.pacificationRadius);
     }
 }

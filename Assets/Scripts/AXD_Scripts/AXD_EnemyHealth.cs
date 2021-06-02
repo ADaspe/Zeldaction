@@ -30,7 +30,7 @@ public class AXD_EnemyHealth : MonoBehaviour
 
     public void Pacificate()
     {
-
+        Debug.Log("Tentative de pacification");
         // Mettre shader de dissolution
         if (enemyAI.isStunned)
         {
