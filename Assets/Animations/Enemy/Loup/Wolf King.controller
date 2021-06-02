@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18a93353c232a4f8bcc932972340c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CallAt: 0
   BooleansNamesToSwitch:
   - Growl
   - isGrowling
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18a93353c232a4f8bcc932972340c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CallAt: 0
   BooleansNamesToSwitch:
   - isGrowling
   StateOfEach: 00
@@ -433,6 +435,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isGrowling
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dash
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3529876190543439507}
   m_Solo: 0
@@ -464,19 +469,19 @@ AnimatorStateMachine:
     m_Position: {x: 120, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7786417672637070263}
-    m_Position: {x: 470, y: 70, z: 0}
+    m_Position: {x: 360, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1602037224599058197}
-    m_Position: {x: 650, y: 0, z: 0}
+    m_Position: {x: 590, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5897906369230470828}
-    m_Position: {x: 580, y: -270, z: 0}
+    m_Position: {x: 580, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1084600289733764504}
-    m_Position: {x: 840, y: -270, z: 0}
+    m_Position: {x: 840, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5629620346331690250}
-    m_Position: {x: 360, y: -270, z: 0}
+    m_Position: {x: 360, y: -220, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -6482031879406849254}
@@ -489,7 +494,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 380, y: -90, z: 0}
-  m_EntryPosition: {x: 150, y: 110, z: 0}
+  m_EntryPosition: {x: 140, y: 110, z: 0}
   m_ExitPosition: {x: -70, y: 360, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -1051093138951595609}
@@ -632,7 +637,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 2437376220379816021}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -689,55 +695,55 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: MovesY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Growl
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Bite
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dash
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: GetHit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: AttackPhase
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isGrowling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -804,6 +810,22 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &2437376220379816021
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f18a93353c232a4f8bcc932972340c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CallAt: 0
+  BooleansNamesToSwitch:
+  - isGrowling
+  StateOfEach: 00
 --- !u!206 &2793067625058336387
 BlendTree:
   m_ObjectHideFlags: 1
@@ -862,7 +884,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 6369980384307383741}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -962,6 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f18a93353c232a4f8bcc932972340c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CallAt: 0
   BooleansNamesToSwitch:
   - isGrowling
   StateOfEach: 00
@@ -1018,6 +1042,22 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &6369980384307383741
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f18a93353c232a4f8bcc932972340c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CallAt: 0
+  BooleansNamesToSwitch:
+  - isGrowling
+  StateOfEach: 00
 --- !u!206 &8749599930588924086
 BlendTree:
   m_ObjectHideFlags: 1
@@ -1029,7 +1069,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 9acbdd59b5787e84e878cbfbddeba1e1, type: 2}
     m_Threshold: 0
-    m_Position: {x: 0, y: 1}
+    m_Position: {x: 0, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: MovesX
@@ -1037,7 +1077,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: fac6b5937c1167a49a29093760a2f65e, type: 2}
     m_Threshold: 0.33333334
-    m_Position: {x: 0, y: -1}
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: MovesX

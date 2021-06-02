@@ -13,6 +13,7 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
     public bool isAttacking;
     public bool shielding;
     private bool together;
+    public bool isPushingObjects;
 
     private void Start()
     {
@@ -23,12 +24,13 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateTurns();
+        if(!isPushingObjects) UpdateTurns();
         ManageAnimations();
     }
 
     private void ManageAnimations()
     {
+        isPushingObjects = RynMoves.isRynGrabbing;
         together = CharaManager.Together;
         if (CharaManager.currentHP <= 0)
         {
@@ -46,6 +48,12 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
             {
                 StartCoroutine("SpiritReleaseAnim");
             }
+            return;
+        }
+
+        if(isPushingObjects)
+        {
+            UpdateAnimations(CharaManager.PlayerPushObject);
             return;
         }
 
@@ -89,6 +97,12 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
         Debug.Log("Lol t mor");
         UpdateAnimations(CharaManager.PlayerDeath);
         yield return new WaitForSeconds(0.5f);
+    }
+
+    private void  PushObjects()
+    {
+        UpdateAnimations(CharaManager.PlayerPushObject);
+
     }
 
     public void UpdateAnimations(string AnimToPlay)

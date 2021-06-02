@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Arthael Dialogue 3 (Part 1)
+  m_EditorClassIdentifier: 
+  Name: Arthael
+  MiniaturePerso: {fileID: 21300000, guid: 94f81642b439f4e47a4fc0a383a6e201, type: 3}
+  Dialog:
+  - DialLine: Arthael!
+    RynSentence: 1
+  - DialLine: Arthael?
+    RynSentence: 1
+  - DialLine: "My child\u2026"
+    RynSentence: 0
+  - DialLine: "This time, it is me who is dying\u2026"
+    RynSentence: 0
+  - DialLine: "Please do not worry, I do not mean much to these lands\u2026"
+    RynSentence: 0
+  - DialLine: "You have liberated it\u2026"
+    RynSentence: 0
+  - DialLine: I can feel it already
+    RynSentence: 0
+  - DialLine: Life is returning to the forest.
+    RynSentence: 0
+  - DialLine: You have done us a great deed
+    RynSentence: 0
+  - DialLine: Please.. child.. return to the grove..
+    RynSentence: 0
+  - DialLine: I will create a shrine for you to go back.
+    RynSentence: 0
+  - DialLine: "Please pray at the tree\u2026"
+    RynSentence: 0
+  - DialLine: For me, for everyone...
+    RynSentence: 0
+  RandomDialog:
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0

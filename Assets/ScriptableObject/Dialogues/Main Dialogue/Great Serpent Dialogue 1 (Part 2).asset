@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Great Serpent Dialogue 1 (Part 2)
+  m_EditorClassIdentifier: 
+  Name: Great Serpent
+  MiniaturePerso: {fileID: 0}
+  Dialog:
+  - DialLine: How does a little child like you gain the powers of a goddess I wonder?
+    RynSentence: 0
+  - DialLine: Tell me...
+    RynSentence: 0
+  - DialLine: Does death care you Ryn?
+    RynSentence: 0
+  - DialLine: 'I know why you are here child. '
+    RynSentence: 0
+  - DialLine: You wish to cleanse yourself of this curse.
+    RynSentence: 0
+  - DialLine: Imagine your soul separating from your body.
+    RynSentence: 0
+  - DialLine: All your memories, your feelings..
+    RynSentence: 0
+  - DialLine: Gone
+    RynSentence: 0
+  - DialLine: 'You become an empty husk of your former self '
+    RynSentence: 0
+  - DialLine: A wandering spirit, trying to latch on to anything it can.
+    RynSentence: 0
+  - DialLine: But also all your fears, your worries. Gone.
+    RynSentence: 0
+  - DialLine: No more needless struggle, no more pain.
+    RynSentence: 0
+  - DialLine: "It isn\u2019t so bad now is it?"
+    RynSentence: 0
+  - DialLine: "Why don\u2019t you just give up?"
+    RynSentence: 0
+  RandomDialog:
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
+    - DialLine: 
+      RynSentence: 0
