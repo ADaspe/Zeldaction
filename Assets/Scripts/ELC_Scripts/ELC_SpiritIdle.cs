@@ -48,7 +48,6 @@ public class ELC_SpiritIdle : MonoBehaviour
                     CharaManager.spiritMove.rb.velocity = dir.normalized * MaxSpeed; //Sinon on le laisse � vitesse constante
                 }
             }
-            
         }
 
         if (!stuck)
@@ -61,6 +60,14 @@ public class ELC_SpiritIdle : MonoBehaviour
         }
     }
 
+    public void Teleport()
+    {
+        CharaManager.IdenAnimator.SetBool("Ball", true);
+        CharaManager.IdenAnimator.SetBool("Idle", true);
+        CharaManager.IdenAnimator.SetBool("Dash", false);
+        transform.position = targetPos;
+        closeToRyn = true;
+    }
     public void Teleport(Vector2 targetLocation)
     {
         CharaManager.IdenAnimator.SetBool("Ball", true);
