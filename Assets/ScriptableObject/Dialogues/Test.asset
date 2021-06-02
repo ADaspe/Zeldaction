@@ -15,14 +15,30 @@ MonoBehaviour:
   Name: 
   MiniaturePerso: {fileID: 0}
   Dialog:
-  - DialLine: "1\xE8re ligne"
-    RynSentence: 0
-  - DialLine: "2\xE8me ligne"
-    RynSentence: 0
-  - DialLine: "3\xE8me ligne"
-    RynSentence: 0
-  - DialLine: "Denri\xE8re ligne"
-    RynSentence: 0
+  - Dialogs:
+    - DialLine: "\xE7a c'est la premi\xE8re phrase"
+      RynSentence: 0
+    - DialLine: "l\xE0 c'est la 2 faites pas trop attention"
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: "\xE9ooo"
+      RynSentence: 0
+    - DialLine: "l\xE0 c'est le second"
+      RynSentence: 0
+    - DialLine: "c'est qu'\xE7a commence \xE0 marcher ehe"
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: aaaaaaaaa
+      RynSentence: 0
+    - DialLine: 'on '
+      RynSentence: 0
+    - DialLine: 'y '
+      RynSentence: 0
+    - DialLine: eeeeeeeest
+      RynSentence: 0
+    ThereIsEvent: 0
   RandomDialog:
   - Dialogs:
     - DialLine: oui
@@ -31,6 +47,7 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 'oui encore '
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
     - DialLine: aha
       RynSentence: 0
@@ -38,3 +55,4 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: d'abord
       RynSentence: 0
+    ThereIsEvent: 0

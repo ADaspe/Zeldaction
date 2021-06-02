@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8ced9446cfdac4487176c99dec86c4, type: 3}
   m_Name: CharacterVariables
   m_EditorClassIdentifier: 
-  ShieldDuration: 2
+  ShieldDuration: 6
   SpiritDecreaseSpeed: 1
   DashDistance: 2.5
   DashTime: 0.2

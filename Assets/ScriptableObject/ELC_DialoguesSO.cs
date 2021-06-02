@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Objects", menuName = "ScriptableObjects/DialoguesSO", order = 1)]
 public class ELC_DialoguesSO : ScriptableObject
 {
     public string Name;
     public Sprite MiniaturePerso;
-    public DialStruct[] Dialog;
-    public List<RandomDial> RandomDialog;
+    public List<MultiDialogs> Dialog;
+    public List<MultiDialogs> RandomDialog;
 }
 
 [System.Serializable]
@@ -19,7 +20,10 @@ public class DialStruct
 }
 
 [System.Serializable]
-public class RandomDial
+public class MultiDialogs
 {
     public DialStruct[] Dialogs;
+    public bool ThereIsEvent;
 }
+
+

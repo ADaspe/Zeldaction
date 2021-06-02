@@ -5,15 +5,20 @@ using UnityEngine.Events;
 
 public class ELC_Interact : MonoBehaviour
 {
+    [HideInInspector]
     public bool leftLock, rightLock, upLock, downLock;
     public List<Transform> PlayerDetectors = new List<Transform>();
     public ELC_GameManager GameManagerScript;
     public bool corrupted;
     public bool PlayerCanInteract;
     public UnityEvent Interact;
+    [HideInInspector]
     public bool isMobile;
+    [HideInInspector]
     public bool isGrabbed;
+    [HideInInspector]
     public bool isTotem;
+    [HideInInspector]
     public bool isBrambles;
     public Rigidbody2D rbInteractObject;
     
