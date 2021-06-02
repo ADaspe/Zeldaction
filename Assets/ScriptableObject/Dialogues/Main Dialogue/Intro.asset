@@ -15,21 +15,23 @@ MonoBehaviour:
   Name: ???
   MiniaturePerso: {fileID: 0}
   Dialog:
-  - DialLine: Ryn...
-    RynSentence: 0
-  - DialLine: Ryn
-    RynSentence: 0
-  - DialLine: Ryn!
-    RynSentence: 0
-  - DialLine: Do not give up, child
-    RynSentence: 0
-  - DialLine: You are not alone
-    RynSentence: 0
-  - DialLine: Iden will watch over you.
-    RynSentence: 0
-  - DialLine: 'Although it looks as if all the light is gone.. there will always
-      be light within you '
-    RynSentence: 0
+  - Dialogs:
+    - DialLine: Ryn...
+      RynSentence: 0
+    - DialLine: Ryn
+      RynSentence: 0
+    - DialLine: Ryn!
+      RynSentence: 0
+    - DialLine: Don't give up, child
+      RynSentence: 0
+    - DialLine: You are not alone.
+      RynSentence: 0
+    - DialLine: Iden will watch over you.
+      RynSentence: 0
+    - DialLine: Although it looks as if all the light is gone.. there will always
+        be light within you
+      RynSentence: 0
+    ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
@@ -38,6 +40,7 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
       RynSentence: 0
@@ -45,3 +48,4 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0

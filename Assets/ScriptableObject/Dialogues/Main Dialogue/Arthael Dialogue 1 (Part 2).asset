@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Arthael Dialogue 1 (Part 2)
+  m_EditorClassIdentifier: 
+  Name: Arthael
+  MiniaturePerso: {fileID: 21300000, guid: 94f81642b439f4e47a4fc0a383a6e201, type: 3}
+  Dialog:
+  - Dialogs:
+    - DialLine: This grove that holds at its center the Tree of the Divine.
+      RynSentence: 0
+    - DialLine: ..And all these sweet children you see around you.
+      RynSentence: 0
+    - DialLine: 'Do not worry, I will take care of you.. please follow me.. '
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: "You must be confused\u2026 like many before you."
+      RynSentence: 0
+    - DialLine: Yet you survived.
+      RynSentence: 0
+    - DialLine: But you are dying.. I can feel it.
+      RynSentence: 0
+    - DialLine: 'Although, your time has not yet come. '
+      RynSentence: 0
+    - DialLine: There may yet still be hope.
+      RynSentence: 0
+    - DialLine: I fear I am not entirely sure how to cure you..
+      RynSentence: 0
+    - DialLine: But there is someone who might.
+      RynSentence: 0
+    - DialLine: Please.. find the Pale Spirit, she might know.
+      RynSentence: 0
+    - DialLine: She is a great spirit with long white hair.
+      RynSentence: 0
+    - DialLine: She lives to the west of here, follow the sound of the flute and
+        you may find her..
+      RynSentence: 0
+    - DialLine: Tell her I've sent you.
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: Wait
+      RynSentence: 0
+    - DialLine: Before you go, please take this.
+      RynSentence: 0
+    - DialLine: That is a beautiful yet powerful spirit you have with you.
+      RynSentence: 0
+    - DialLine: And he looks as if he wants to help you.
+      RynSentence: 0
+    - DialLine: Perhaps this may strengthen your bond.
+      RynSentence: 0
+    - DialLine: May there always be a light within you.
+      RynSentence: 0
+    ThereIsEvent: 1
+  RandomDialog:
+  - Dialogs:
+    - DialLine: Who was the Wolf creature?
+      RynSentence: 1
+    - DialLine: The Wolf creature?
+      RynSentence: 0
+    - DialLine: A plague to these lands.
+      RynSentence: 0
+    - DialLine: A dark spirit wanting only to quench his thirst.
+      RynSentence: 0
+    - DialLine: But I am not the one who can tell you more about him...
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: Will you not come with me?
+      RynSentence: 1
+    - DialLine: I cannot come with you...
+      RynSentence: 0
+    - DialLine: I cannot leave the grove and my children
+      RynSentence: 0
+    - DialLine: These are dark times
+      RynSentence: 0
+    - DialLine: But I will pray for your safe return
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: You're a Guardian?
+      RynSentence: 1
+    - DialLine: Yes child
+      RynSentence: 0
+    - DialLine: I guard the grove and all who stay here
+      RynSentence: 0
+    - DialLine: I take care of them as if they were my own
+      RynSentence: 0
+    - DialLine: Many of them have had a troubled past
+      RynSentence: 0
+    - DialLine: Many were once in your place, coming here to seek help and guidance
+      RynSentence: 0
+    - DialLine: But alas, I couldn't help any of them.
+      RynSentence: 0
+    - DialLine: So I watch them, nurse them
+      RynSentence: 0
+    - DialLine: It is all they have left
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: Head eastwards to find the Pale Spirit
+      RynSentence: 0
+    - DialLine: I have opened a path for you
+      RynSentence: 0
+    ThereIsEvent: 0
