@@ -10,26 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
-  m_Name: Intro
+  m_Name: Boss Dialogue 2
   m_EditorClassIdentifier: 
-  Name: ???
-  MiniaturePerso: {fileID: 0}
+  Name: The Wolf King
+  MiniaturePerso: {fileID: 21300000, guid: 7cb4a24a563f1914a998bd8e682302a9, type: 3}
   Dialog:
   - Dialogs:
     - DialLine: Ryn...
       RynSentence: 0
-    - DialLine: Ryn
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: Back so soon?
       RynSentence: 0
-    - DialLine: Ryn!
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: Have you come to give yourself up to me?
       RynSentence: 0
-    - DialLine: Don't give up, child
+    - DialLine: Have you accepted your fate?
       RynSentence: 0
-    - DialLine: You are not alone.
+    - DialLine: WILL YOU DIE?
       RynSentence: 0
-    - DialLine: Iden will watch over you.
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: Silence?
       RynSentence: 0
-    - DialLine: Although it looks as if all the light is gone.. there will always
-        be light within you
+    - DialLine: Well then child, I will devour you like I did all those children
+      RynSentence: 0
+    - DialLine: I care not if she has made you her champion.
+      RynSentence: 0
+    - DialLine: I will only get the honour of killing her a second time.
+      RynSentence: 0
+    - DialLine: I WILL RIP YOUR SOUL FROM YOUR BODY
+      RynSentence: 0
+    - DialLine: AND TAKE WHAT IS MINE.
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:

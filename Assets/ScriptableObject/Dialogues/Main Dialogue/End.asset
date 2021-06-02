@@ -10,25 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
-  m_Name: Gwynedd Dialogue 1 (Part 1)
+  m_Name: End
   m_EditorClassIdentifier: 
   Name: ???
-  MiniaturePerso: {fileID: 21300000, guid: af944cdc6afa366468302f2c485478d0, type: 3}
+  MiniaturePerso: {fileID: 0}
   Dialog:
   - Dialogs:
-    - DialLine: You dare disturb my song?
-      RynSentence: 0
-    - DialLine: Who are you?
-      RynSentence: 0
-    - DialLine: 'My name is Ryn.. I am looking for the Pale Spirit.. '
+    - DialLine: "Tree of the Divine\u2026"
       RynSentence: 1
-    - DialLine: Yes and?
-      RynSentence: 0
-    - DialLine: Arthael sent me.. she said you could help me?
+    - DialLine: I pray to you.
       RynSentence: 1
-    - DialLine: Arthael? Perhaps yes.
+    - DialLine: For all these lost souls
+      RynSentence: 1
+    - DialLine: That you may comfort them in the world beyond.
+      RynSentence: 1
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: You have done well child.
       RynSentence: 0
-    - DialLine: I am Gwynedd, the Pale Spirit.
+    - DialLine: You and Iden have both proven yourselves.
+      RynSentence: 0
+    - DialLine: You have ushered a new age for this forest and the spirits living
+        within.
+      RynSentence: 0
+    - DialLine: I will now bestow upon you something even greater.
+      RynSentence: 0
+    - DialLine: You deserve this.
+      RynSentence: 0
+    - DialLine: For there will always be a light within you.
+      RynSentence: 0
+    - DialLine: Rise now,
+      RynSentence: 0
+    - DialLine: Goddess.
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:
