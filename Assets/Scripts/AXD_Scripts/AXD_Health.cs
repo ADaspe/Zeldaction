@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class AXD_Health : MonoBehaviour
 {
@@ -8,17 +9,26 @@ public class AXD_Health : MonoBehaviour
     public AXD_UIHPDisplay hpDisplay;
     public bool Invincible;
     public float InvincibilityTime;
+
+    [Button]
     public void GetHit()
     {
-
-        //TODO : réadapter en fonction de Ryn et de Iden
-
-        if (!Invincible)
+        if (this.CompareTag("Ryn"))
         {
-            Invincible = true;
-            hpDisplay.LoseLife();
-            CharacterManager.TakeDamage(this.tag);
-            Invoke("Vulnerable", InvincibilityTime);
+            if (!Invincible)
+            {
+                Invincible = true;
+                if (CharacterManager.TakeDamage(this.tag))
+                {
+                    hpDisplay.LoseLife();
+                }
+                Invoke("Vulnerable", InvincibilityTime);
+            }
+        }else if (this.CompareTag("Spirit"))
+        {
+            //Appliquer feedback
+            GetComponent<ELC_SpiritIdle>().Teleport();
+
         }
     }
 

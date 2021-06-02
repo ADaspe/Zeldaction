@@ -94,7 +94,6 @@ public class ELC_CharacterAnimationsManager : MonoBehaviour
 
     IEnumerator RynDeathAnim()
     {
-        Debug.Log("Lol t mor");
         UpdateAnimations(CharaManager.PlayerDeath);
         yield return new WaitForSeconds(0.5f);
     }
