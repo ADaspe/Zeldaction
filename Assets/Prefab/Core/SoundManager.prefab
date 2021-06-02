@@ -1,0 +1,447 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7805689310011672333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9188282837002156777}
+  - component: {fileID: 4134849747144275605}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9188282837002156777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805689310011672333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4134849747144275605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805689310011672333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1959d4ecedb3067489cb4183612bd13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 06a4b23d8a09d6d41bab649a6b2abea0, type: 2}
+  sounds:
+  - name: Autel
+    clip: {fileID: 8300000, guid: 00f3b3a55b955f946a613a38ded5a523, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: CamSwap
+    clip: {fileID: 8300000, guid: d5f8b732f4e67fc409b11f0daaf8598f, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Pacification
+    clip: {fileID: 8300000, guid: a3a025daeffb6184f97642d68cfa72ca, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: DS_Move
+    clip: {fileID: 8300000, guid: 0ae9d8f8a19ca8040bd05eada3f13f19, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: DS_Atk
+    clip: {fileID: 8300000, guid: c78a65316a7ae74469e422a2b518bb01, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: DS_SpiritDefense
+    clip: {fileID: 8300000, guid: 2baa871946b9a2a459442d35f3070487, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: DS_Paralyzed
+    clip: {fileID: 8300000, guid: aef5e00d7c3824c4990fe68f323c52aa, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: DS_Pacification
+    clip: {fileID: 8300000, guid: 81940a4e4e505ac428db9e20f21b7eb9, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Totem_Pacification
+    clip: {fileID: 8300000, guid: 1823fcec307053a48b63d4ddaf341eed, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: ShieldDown
+    clip: {fileID: 8300000, guid: 891c49903de9ed94db0302789b0aff6e, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Basic_Atk
+    clip: {fileID: 8300000, guid: 30c3f4adad9a2b646bcd8d64198bad6d, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Basic_Paralyzed
+    clip: {fileID: 8300000, guid: 5f93d453cc136f044a107e3e3e939a15, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Spirit_Dash
+    clip: {fileID: 8300000, guid: 784f53701f334344e81ecd6a8609aff3, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Spirit_Return
+    clip: {fileID: 8300000, guid: c7351a67e1ddeda4c84f15485b98a37a, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Spirit_Paralyze
+    clip: {fileID: 8300000, guid: ce60098c792116d4c938742994509f54, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Spirit_Disappear
+    clip: {fileID: 8300000, guid: 69c329203eff89342a30c668fb30985a, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Spirit_Purification
+    clip: {fileID: 8300000, guid: 618c4c158f67fa3429b5392fafd58047, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Lever
+    clip: {fileID: 8300000, guid: d9ca82c4b7874f449a3b4b2105646303, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Box_Drag
+    clip: {fileID: 8300000, guid: 71077a1cc5cf82948af7f6b389442e6b, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: PressurePlate_On
+    clip: {fileID: 8300000, guid: 1c4a64ee700d80447942374087db9de2, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: PressurePlate_Off
+    clip: {fileID: 8300000, guid: 58719ccf813160847b11b8423647888e, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Torch_On
+    clip: {fileID: 8300000, guid: 8fe8d928e0527bd42a1059319cee607d, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Door_Open
+    clip: {fileID: 8300000, guid: fa3cc37fe7136694a8f03f236904d2d4, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Ryn_Move
+    clip: {fileID: 8300000, guid: 3105b5a1ff41ed04c85d953b26497d9f, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Ryn_ShieldOn
+    clip: {fileID: 8300000, guid: 36b0f833b127df4449706978cd1bf910, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Shield_Impact
+    clip: {fileID: 8300000, guid: aae47404bfe4ba449bd0c9e13897dd7b, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Jingle_Ryn
+    clip: {fileID: 8300000, guid: 1c73df6bdfac3e9488075210d8b22f21, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Jingle_Spirit
+    clip: {fileID: 8300000, guid: 38d2f5799a00e8e4da2f752e7366fa27, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Capacity_Cooldown
+    clip: {fileID: 8300000, guid: 156f53f3c0df628428ce30f592ed7423, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: TicTac
+    clip: {fileID: 8300000, guid: ec2fd06cef164ef4bbd87607f519ea44, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Boss_Atk
+    clip: {fileID: 8300000, guid: 02db2136f2d00e5479d2646cb2ba752a, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Boss_Growl
+    clip: {fileID: 8300000, guid: 4f016cb34a5b82e4db123f2d576d5234, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Boss_Paralyzed
+    clip: {fileID: 8300000, guid: 24cc364c0c609f348a3f34d6cee81071, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: TP_Departure
+    clip: {fileID: 8300000, guid: 58476611d7eed1e48b342f04c1c3ca7d, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: TP_Arrival
+    clip: {fileID: 8300000, guid: 62ffd0384265c97409a2843c6c87d05b, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Music_MainMenu
+    clip: {fileID: 8300000, guid: abc8f0a0620fde646a1db2d43174e568, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -6093680887978482081, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Music_Boss1
+    clip: {fileID: 8300000, guid: dcef5c7e997d30f479739620902baec2, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -6093680887978482081, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Music_Boss2
+    clip: {fileID: 8300000, guid: 7726a22f23fcd6145babfef27b3894cd, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -6093680887978482081, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Music_Boss3
+    clip: {fileID: 8300000, guid: 735bcbec2e380fd4990a758ba3e10c9b, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -6093680887978482081, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Music_BossTransition
+    clip: {fileID: 8300000, guid: dfae989bed9f19d49b318228dce5e98e, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 1
+    mixerGroup: {fileID: -6093680887978482081, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}

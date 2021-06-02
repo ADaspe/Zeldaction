@@ -91,6 +91,7 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator SecondPhaseSwitch()
     {
+        canAttack = false;
         IsInSwitchPhase = true;
         //SpriteRend.enabled = true;
         BossHealth.CurrentHealth = BossHealth.SecondPhaseHealth;
@@ -111,24 +112,9 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.Target = MapCenter.position;
     }
 
-    public IEnumerator SecondAndThirdPhaseSwitch2()
-    {
-        //Apparition bouclier + grognement
-        anims.SetBool("Growl", true);
-        Debug.Log("Graou + shield");
-        BossMoves.CanMove = false;
-        yield return new WaitForSeconds(GrowlAnimationTime);
-        anims.SetBool("isGrowling", false);
-        if (CurrentPhase == 2) BossMoves.CanMove = true;
-        Debug.Log("Phase " + CurrentPhase);
-        if (CurrentPhase == 3) BossAttacks.StartCoroutine("RayPhase");
-        IsInSwitchPhase = false;
-        BossMoves.FollowPlayer = true;
-        CamScript.CancelCamFocus();
-    }
-
     public IEnumerator ThirdPhaseSwitch()
     {
+        canAttack = false;
         CamScript.SwitchCamFocus(this.transform, false);
         IsInSwitchPhase = true;
         BossHealth.CurrentHealth = BossHealth.ThirdPhaseHealth;
@@ -145,6 +131,25 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = Spawn.position;
     }
+
+    public IEnumerator SecondAndThirdPhaseSwitch2()
+    {
+        //Apparition bouclier + grognement
+        anims.SetBool("Growl", true);
+        Debug.Log("Graou + shield");
+        BossMoves.CanMove = false;
+        yield return new WaitForSeconds(GrowlAnimationTime);
+        anims.SetBool("isGrowling", false);
+        if (CurrentPhase == 2) BossMoves.CanMove = true;
+        Debug.Log("Phase " + CurrentPhase);
+        if (CurrentPhase == 3) BossAttacks.StartCoroutine("RayPhase");
+        IsInSwitchPhase = false;
+        BossMoves.FollowPlayer = true;
+        CamScript.CancelCamFocus();
+        canAttack = true;
+    }
+
+    
 
 
 

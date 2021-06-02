@@ -35,10 +35,12 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerHit;
     public string PlayerDetachSpirit;
     public string PlayerDeath;
+    public string PlayerPushObject;
     public float SpiritReleaseDuration;
     public float nextDash;
     public bool spiritProjected;
-
+    public AXD_CheckPoint lastCheckPoint;
+    public Collider2D[] allDetected;
     public UnityEvent enableMenu;
     public UnityEvent disableMenu;
     public GameObject PauseMenu;
@@ -48,8 +50,10 @@ public class ELC_CharacterManager : MonoBehaviour
     public bool xLocked;
     public bool yLocked;
 
-    [Header ("Upgrades")]
+    [Header("Upgrades")]
+    public bool returnUpgrade;
     public bool dashPlusUpgrade;
+    public bool purificationUpgrade;
     
 
     private void Awake()
@@ -124,26 +128,24 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
-            
+
             if (DetectedInteraction != null && followingCharacter == RynMove)
             {
                 if (DetectedInteraction.PlayerCanInteract && !DetectedInteraction.isMobile)
                 {
                     DetectedInteraction.Interact.Invoke();
                 }
-                else if(DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
+                else if (DetectedInteraction.PlayerCanInteract && DetectedInteraction.isMobile && !DetectedInteraction.isGrabbed)
                 {
                     DetectedInteraction.Interact.Invoke();
                     DetectedInteraction.isGrabbed = true;
                     RynMove.isRynGrabbing = true;
-                    Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y-DetectedInteraction.transform.position.y);
-
-
-                    if (Mathf.Abs(vectorDiff.x) >=0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
+                    Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y - DetectedInteraction.transform.position.y);
+                    if (Mathf.Abs(vectorDiff.x) >= 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
                     {
                         //Animation à gauche
                         yLocked = true;
-                    }else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
+                    } else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
                     {
                         //Animation à droite
                         yLocked = true;
@@ -152,7 +154,7 @@ public class ELC_CharacterManager : MonoBehaviour
                     {
                         //Animation en bas
                         xLocked = true;
-                    }else if (Mathf.Abs(vectorDiff.y) < 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessous de la caisse
+                    } else if (Mathf.Abs(vectorDiff.y) < 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessous de la caisse
                     {
                         //Animation en haut
                         xLocked = true;
@@ -163,9 +165,21 @@ public class ELC_CharacterManager : MonoBehaviour
                 }
 
             }
-            else if (ToPurify != null && followingCharacter == spiritMove)
+            else if (ToPurify != null && followingCharacter == spiritMove && purificationUpgrade)
             {
                 ToPurify.Purify();
+            } else if (DetectedInteraction == null && followingCharacter == RynMove)
+            {
+                int tempEnemyNumber = 0;
+                allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy"));
+                foreach (Collider2D item in allDetected)
+                {
+                    if (item.CompareTag("Enemy") && tempEnemyNumber<stats.maxEnemyPacification)
+                    {
+                        tempEnemyNumber++;
+                        item.gameObject.GetComponent<AXD_EnemyHealth>().Pacificate();
+                    }
+                }
             }
         }
         if (value.canceled && !toggleMenu)
@@ -193,8 +207,12 @@ public class ELC_CharacterManager : MonoBehaviour
             }
             else
             {
-                RegroupTogether();
-                ChangeCamFocusRyn();
+                if (returnUpgrade)
+                {
+                    RegroupTogether();
+                    ChangeCamFocusRyn();
+                }
+                
             }
         }
     }
@@ -222,7 +240,7 @@ public class ELC_CharacterManager : MonoBehaviour
             {
                 RynAttack.AttackTogether();
             }
-            else if(Time.time >= nextDash)
+            else if(Time.time >= nextDash && followingCharacter == spiritMove)
             {
                 SpiritAttack.SpiritDashAttack();
             }
@@ -337,25 +355,43 @@ public class ELC_CharacterManager : MonoBehaviour
 
     }
 
-    public void TakeDamage(string tag)
+    public bool TakeDamage(string tag)
     {
         if (tag == "Ryn")
         {
             if (!RynAttack.ShieldOn)
             {
                 currentHP--;
+                if (currentHP <= 0)
+                {
+                    Die();
+                }
+                return true;
             }
         }
         else if (tag == "Spirit")
         {
-            currentHP--;
+            //currentHP--;
             spiritIdle.Teleport(spiritIdle.targetPos);
+            return false;
         }
-        if(currentHP <= 0)
-        {
-            isDead = true;
-            RynMove.canMove = false;
-        }
+        return false;
+        
+    }
+
+    public void Die()
+    {
+        Debug.Log("Die");
+        isDead = true;
+        RynMove.canMove = false;
+        Invoke("TeleportToLastCheckPoint", 1f);
+    }
+
+    public void TeleportToLastCheckPoint()
+    {
+        RynGO.transform.position = lastCheckPoint.GetSpawnPosition();
+        RynMove.canMove = true;
+        spiritIdle.Teleport();
     }
 
 
@@ -373,5 +409,10 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritMove.rb.velocity = Vector2.zero;
         ChangeCamFocusSpirit();
         ResetProjection();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(RynGO.transform.position, stats.pacificationRadius);
     }
 }

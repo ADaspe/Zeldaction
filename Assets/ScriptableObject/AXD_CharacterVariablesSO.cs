@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Objects",menuName = "ScriptableObjects/CharacterVariablesSO", order =1)]
 public class AXD_CharacterVariablesSO : ScriptableObject
 {
+    public float pacificationRadius;
+    public int maxEnemyPacification;
     public float ShieldDuration;
     public float SpiritDecreaseSpeed;
     public float DashDistance;
@@ -27,4 +29,5 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float IdenProjectionDistance;
     public float IdenProjectionTime;
     public float IdenSlowDownTime;
+    public LayerMask EnemiesLayerMask;
 }

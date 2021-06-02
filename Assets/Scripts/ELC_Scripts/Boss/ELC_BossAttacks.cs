@@ -41,7 +41,6 @@ public class ELC_BossAttacks : MonoBehaviour
     [HideInInspector]
     public ELC_BossRay[] Rays;
 
-    //bool isPreparingAttack;
     bool isAttacking;
     Animator anims;
 
@@ -133,33 +132,42 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void Dash()
     {
-        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 0.8f, BossMana.ObstaclesMask);
-        if(WallDetector.collider != null)
+        anims.SetBool("Dash", true);
+        
+        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 1f, BossMana.ObstaclesMask);
+        if (WallDetector.collider != null)
         {
             DashCrashOnWall();
-            return;
         }
-
+        
         Vector3 origin = this.transform.position + BossMana.LastDir * OriginDistOfAttackDetector;
         this.GetComponent<Rigidbody2D>().velocity = BossMana.LastDir * (DashDistance / DashDuration);
         List<GameObject> detected = DetectionZone(AttackRadius, AttackAngle, origin);
+
         foreach (GameObject DetectedGO in detected)
         {
-            if(DetectedGO.CompareTag("Ryn"))
+            if (DetectedGO.CompareTag("Ryn"))
             {
                 DetectedGO.GetComponent<AXD_Health>().GetHit();
             }
+            //else if (DetectedGO.CompareTag("Obstacle"))
+            //{
+            //    DashCrashOnWall();
+            //}
         }
     }
 
     void EndAttack()
     {
+        isAttacking = false;
         anims.SetBool("Bite", false);
         anims.SetBool("AttackPhase", false);
+        anims.SetBool("isGrowling", false);
         StartCoroutine("CooldownsAttack");
-        isAttacking = false;
+        
+        anims.SetBool("Dash", false);
         BossMana.isAttacking = false;
-        if (BossMana.CurrentPhase == 1) //SpriteRend.enabled = false;
+        //if (BossMana.CurrentPhase == 1) SpriteRend.enabled = false;
         if(BossMana.CurrentPhase != 3) BossMana.BossMoves.CanMove = true;
     }
 
@@ -191,6 +199,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void DashCrashOnWall()
     {
+        this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         CancelInvoke("EndAttack");
         EndAttack();
         Debug.Log("Le boss s'est crash contre un mur : il est raplapla");
