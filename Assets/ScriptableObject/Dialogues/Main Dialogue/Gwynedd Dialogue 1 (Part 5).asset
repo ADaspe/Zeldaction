@@ -25,16 +25,30 @@ MonoBehaviour:
     RynSentence: 0
   RandomDialog:
   - Dialogs:
-    - DialLine: 
+    - DialLine: Still here?
       RynSentence: 0
-    - DialLine: 
+    - DialLine: The exit is somewhere else...
       RynSentence: 0
-    - DialLine: 
+    - DialLine: Please.. leave me be...
       RynSentence: 0
   - Dialogs:
-    - DialLine: 
+    - DialLine: What a beautiful song you were playing
+      RynSentence: 1
+    - DialLine: 'Thank you... '
       RynSentence: 0
-    - DialLine: 
+    - DialLine: It reminds me of a time where everything was happier...
       RynSentence: 0
-    - DialLine: 
+  - Dialogs:
+    - DialLine: Go back and see Arthael
+      RynSentence: 0
+    - DialLine: I have given you all I could...
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: How do you know Arthael?
+      RynSentence: 1
+    - DialLine: She is a kind and noble spirit
+      RynSentence: 0
+    - DialLine: She puts others before herself
+      RynSentence: 0
+    - DialLine: I trust and respect her
       RynSentence: 0

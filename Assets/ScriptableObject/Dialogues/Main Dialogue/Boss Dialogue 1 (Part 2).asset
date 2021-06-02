@@ -15,36 +15,6 @@ MonoBehaviour:
   Name: ???
   MiniaturePerso: {fileID: 0}
   Dialog:
-  - DialLine: Ah yes...
-    RynSentence: 0
-  - DialLine: So fresh, so sweet, so... Fascinating...
-    RynSentence: 0
-  - DialLine: Fascinating...
-    RynSentence: 0
-  - DialLine: Ryn.. was it?
-    RynSentence: 0
-  - DialLine: 'No need to speak.. I already know everything. '
-    RynSentence: 0
-  - DialLine: Lost are you? Nowhere to go?
-    RynSentence: 0
-  - DialLine: Abandoned by your kin?
-    RynSentence: 0
-  - DialLine: I feel your sadness child...
-    RynSentence: 0
-  - DialLine: Don't be afraid
-    RynSentence: 0
-  - DialLine: It will all be over quickly...
-    RynSentence: 0
-  - DialLine: Let go...
-    RynSentence: 0
-  - DialLine: Give in to me...
-    RynSentence: 0
-  - DialLine: You do not know why you are here or who I am?
-    RynSentence: 0
-  - DialLine: It is better that way.
-    RynSentence: 0
-  - DialLine: Give me your life.
-    RynSentence: 0
   - DialLine: LET ME KILL YOU
     RynSentence: 0
   RandomDialog:

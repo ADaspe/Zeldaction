@@ -19,16 +19,49 @@ MonoBehaviour:
     RynSentence: 0
   RandomDialog:
   - Dialogs:
-    - DialLine: 
+    - DialLine: Where do I go now?
+      RynSentence: 1
+    - DialLine: Wherever you wish
       RynSentence: 0
-    - DialLine: 
+    - DialLine: I do not make choices for you
       RynSentence: 0
-    - DialLine: 
+    - DialLine: Perhaps head back to that grove of yours
+      RynSentence: 0
+    - DialLine: Make your own decisions
       RynSentence: 0
   - Dialogs:
-    - DialLine: 
+    - DialLine: That spirit of yours...
       RynSentence: 0
-    - DialLine: 
+    - DialLine: Iden?
+      RynSentence: 1
+    - DialLine: Yes.. Iden..
       RynSentence: 0
-    - DialLine: 
+    - DialLine: He is a special one
+      RynSentence: 0
+    - DialLine: There is something familiar about him
+      RynSentence: 0
+    - DialLine: He is a powerfull spirit
+      RynSentence: 0
+    - DialLine: Would it have been other circumstances, I would have eaten him
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: Why do you live in such a secluded place
+      RynSentence: 1
+    - DialLine: I prefer to be alone
+      RynSentence: 0
+    - DialLine: You will not understand
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: I have already helped you
+      RynSentence: 0
+    - DialLine: Now leave me before I change my mind
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: You are one of the three great spirits?
+      RynSentence: 1
+    - DialLine: That is correct...
+      RynSentence: 0
+    - DialLine: But I will stop you there
+      RynSentence: 0
+    - DialLine: There is no need to reminisce about the past
       RynSentence: 0

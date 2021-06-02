@@ -29,16 +29,48 @@ MonoBehaviour:
     RynSentence: 0
   RandomDialog:
   - Dialogs:
-    - DialLine: 
+    - DialLine: Who was the Wolf creature?
+      RynSentence: 1
+    - DialLine: The Wolf creature?
       RynSentence: 0
-    - DialLine: 
+    - DialLine: A plague to these lands.
       RynSentence: 0
-    - DialLine: 
+    - DialLine: A dark spirit wanting only to quench his thirst.
+      RynSentence: 0
+    - DialLine: But I am not the one who can tell you more about him...
       RynSentence: 0
   - Dialogs:
-    - DialLine: 
+    - DialLine: Will you not come with me?
+      RynSentence: 1
+    - DialLine: I cannot come with you...
       RynSentence: 0
-    - DialLine: 
+    - DialLine: I cannot leave the grove and my children
       RynSentence: 0
-    - DialLine: 
+    - DialLine: These are dark times
+      RynSentence: 0
+    - DialLine: But I will pray for your safe return
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: You're a Guardian?
+      RynSentence: 1
+    - DialLine: Yes child
+      RynSentence: 0
+    - DialLine: I guard the grove and all who stay here
+      RynSentence: 0
+    - DialLine: I take care of them as if they were my own
+      RynSentence: 0
+    - DialLine: Many of them have had a troubled past
+      RynSentence: 0
+    - DialLine: Many were once in your place, comming here to seek help and guidance
+      RynSentence: 0
+    - DialLine: But alas, I couldn't help any of them.
+      RynSentence: 0
+    - DialLine: So I watch them, nurse them
+      RynSentence: 0
+    - DialLine: It is all they have left
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: Head eastwards to find the Pale Spirit
+      RynSentence: 0
+    - DialLine: I have opened a path for you
       RynSentence: 0

@@ -40,16 +40,39 @@ MonoBehaviour:
     RynSentence: 0
   RandomDialog:
   - Dialogs:
-    - DialLine: 
+    - DialLine: Head westwards to the Ruins of the Deep
       RynSentence: 0
-    - DialLine: 
-      RynSentence: 0
-    - DialLine: 
+    - DialLine: I have opened another path for you
       RynSentence: 0
   - Dialogs:
-    - DialLine: 
+    - DialLine: How come none of the other spirits here made it?
+      RynSentence: 1
+    - DialLine: They all lacked something...
       RynSentence: 0
-    - DialLine: 
+    - DialLine: As such, they were all defeated...
       RynSentence: 0
-    - DialLine: 
+    - DialLine: They were only children after all
+      RynSentence: 0
+    - DialLine: But you,
+      RynSentence: 0
+    - DialLine: I sense something greater in you
+      RynSentence: 0
+    - DialLine: A light in your soul, fighting for your survival
+      RynSentence: 0
+    - DialLine: And not to mention Iden, who guides you
+      RynSentence: 0
+    - DialLine: I believe in you Ryn
+      RynSentence: 0
+  - Dialogs:
+    - DialLine: Where do you come from Arthael?
+      RynSentence: 1
+    - DialLine: I am just a common spirit child...
+      RynSentence: 0
+    - DialLine: I only help others and guard this grove...
+      RynSentence: 0
+    - DialLine: Many others live in these woods, but they choose to remain hidden
+      RynSentence: 0
+    - DialLine: I do not blame them
+      RynSentence: 0
+    - DialLine: They do what they do to survive
       RynSentence: 0
