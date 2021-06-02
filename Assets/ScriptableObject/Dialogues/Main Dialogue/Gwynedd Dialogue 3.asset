@@ -10,17 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
-  m_Name: Arthael Dialogue 1 (Part 1)
+  m_Name: Gwynedd Dialogue 3
   m_EditorClassIdentifier: 
-  Name: ???
-  MiniaturePerso: {fileID: 21300000, guid: 94f81642b439f4e47a4fc0a383a6e201, type: 3}
+  Name: Gwynedd
+  MiniaturePerso: {fileID: 21300000, guid: af944cdc6afa366468302f2c485478d0, type: 3}
   Dialog:
   - Dialogs:
-    - DialLine: "My sweet child.. your life is fading\u2026"
+    - DialLine: Finally here?
       RynSentence: 0
-    - DialLine: Please, I mean no harm.
+    - DialLine: "This shrine will lead you near the Wolf\u2019s den."
       RynSentence: 0
-    - DialLine: My name is Arthael, I am the guardian of this grove.
+    - DialLine: I will open it for you.
+      RynSentence: 0
+    - DialLine: Do watch yourself.
+      RynSentence: 0
+    - DialLine: In the Ruins of the Divine only darkness prevails.
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: Good luck and may there always be a light within you.
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:

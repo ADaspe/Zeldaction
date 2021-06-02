@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
+  m_Name: Great Serpent
+  m_EditorClassIdentifier: 
+  Name: Great Serpent
+  MiniaturePerso: {fileID: 21300000, guid: 5193ab82e8eac474fa93e55686c2d89f, type: 3}
+  Dialog:
+  - Dialogs:
+    - DialLine: "I\u2019ve been watching you for a while now Ryn."
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: How does a little child like you gain the powers of a goddess I wonder?
+      RynSentence: 0
+    - DialLine: Tell me...
+      RynSentence: 0
+    - DialLine: Does death care you Ryn?
+      RynSentence: 0
+    - DialLine: I know why you are here child.
+      RynSentence: 0
+    - DialLine: You wish to cleanse yourself of this curse.
+      RynSentence: 0
+    - DialLine: Imagine your soul separating from your body.
+      RynSentence: 0
+    - DialLine: All your memories, your feelings..
+      RynSentence: 0
+    - DialLine: Gone
+      RynSentence: 0
+    - DialLine: You become an empty husk of your former self
+      RynSentence: 0
+    - DialLine: A wandering spirit, trying to latch on to anything it can.
+      RynSentence: 0
+    - DialLine: But also all your fears, your worries. Gone.
+      RynSentence: 0
+    - DialLine: No more needless struggle, no more pain.
+      RynSentence: 0
+    - DialLine: "It isn\u2019t so bad now is it?"
+      RynSentence: 0
+    - DialLine: "Why don\u2019t you just give up?"
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: "But you won\u2019t."
+      RynSentence: 0
+    - DialLine: I can feel it.
+      RynSentence: 0
+    - DialLine: Not just you. Her.
+      RynSentence: 0
+    - DialLine: That is why he wants you.
+      RynSentence: 0
+    - DialLine: He is missing something, something you have.
+      RynSentence: 0
+    - DialLine: For her, I will help you.
+      RynSentence: 0
+    - DialLine: She has chosen you, Ryn.
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: To save yourself you must remove the root.
+      RynSentence: 0
+    - DialLine: The root of every problem here.
+      RynSentence: 0
+    - DialLine: The Wolf King.
+      RynSentence: 0
+    - DialLine: Gwynedd knew of course.
+      RynSentence: 0
+    - DialLine: She knew.. she is just too scared to face him.
+      RynSentence: 0
+    - DialLine: Now now, do not worry, you will not leave empty handed.
+      RynSentence: 0
+    - DialLine: I will bless upon you my strength.
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: Now leave me.
+      RynSentence: 0
+    ThereIsEvent: 1
+  RandomDialog:
+  - Dialogs:
+    - DialLine: 'Where do I go now? '
+      RynSentence: 1
+    - DialLine: 'Wherever you wish '
+      RynSentence: 0
+    - DialLine: 'I do not make choices for you '
+      RynSentence: 0
+    - DialLine: 'Perhaps head back to that grove of yours '
+      RynSentence: 0
+    - DialLine: 'Make your own decisions '
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: 'That spirit of yours... '
+      RynSentence: 0
+    - DialLine: 'Iden? '
+      RynSentence: 1
+    - DialLine: 'Yes.. Iden.. '
+      RynSentence: 0
+    - DialLine: 'He is a special one '
+      RynSentence: 0
+    - DialLine: 'There is something familiar about him '
+      RynSentence: 0
+    - DialLine: 'He is a powerful spirit '
+      RynSentence: 0
+    - DialLine: 'Would it have been other circumstances, I would have eaten him '
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: 'Why do you live in such a secluded place '
+      RynSentence: 1
+    - DialLine: 'I prefer to be alone '
+      RynSentence: 0
+    - DialLine: 'You will not understand '
+      RynSentence: 0
+    - DialLine: 'I have already helped you '
+      RynSentence: 0
+    - DialLine: 'Now leave me before I change my mind '
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: 'You are one of the three great spirits? '
+      RynSentence: 1
+    - DialLine: "That is correct\u2026 "
+      RynSentence: 0
+    - DialLine: 'But I will stop you there '
+      RynSentence: 0
+    - DialLine: 'There is no need to reminisce about the past '
+      RynSentence: 0
+    ThereIsEvent: 0

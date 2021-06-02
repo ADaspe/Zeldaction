@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae277d8662adb5b42bed735f31542532, type: 3}
   m_Name: Gwynedd Dialogue 2 (Part 1)
   m_EditorClassIdentifier: 
-  Name: Gwynedd
-  MiniaturePerso: {fileID: 0}
+  Name: Iden
+  MiniaturePerso: {fileID: 21300000, guid: 67152084fe0a3004ba77cdc8942f7a8e, type: 3}
   Dialog:
-  - DialLine: Arthael?
-    RynSentence: 1
-  - DialLine: Nryah?
-    RynSentence: 0
-  - DialLine: "Don\u2019t worry Iden.. I\u2019m sure she\u2019s fine."
-    RynSentence: 1
+  - Dialogs:
+    - DialLine: Arthael?
+      RynSentence: 1
+    - DialLine: Nryah?
+      RynSentence: 0
+    - DialLine: "Don\u2019t worry Iden.. I\u2019m sure she\u2019s fine."
+      RynSentence: 0
+    ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
@@ -29,6 +31,7 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
       RynSentence: 0
@@ -36,3 +39,4 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0

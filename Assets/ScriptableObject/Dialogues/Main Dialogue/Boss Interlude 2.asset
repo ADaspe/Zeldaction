@@ -15,12 +15,14 @@ MonoBehaviour:
   Name: ???
   MiniaturePerso: {fileID: 0}
   Dialog:
-  - DialLine: You think you can save yourself?
-    RynSentence: 0
-  - DialLine: A childish and futile endeavor.
-    RynSentence: 0
-  - DialLine: I am always watching...
-    RynSentence: 0
+  - Dialogs:
+    - DialLine: You think you can save yourself?
+      RynSentence: 0
+    - DialLine: A childish and futile endeavor.
+      RynSentence: 0
+    - DialLine: I am always watching...
+      RynSentence: 0
+    ThereIsEvent: 0
   RandomDialog:
   - Dialogs:
     - DialLine: 
@@ -29,6 +31,7 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
       RynSentence: 0
@@ -36,3 +39,4 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0

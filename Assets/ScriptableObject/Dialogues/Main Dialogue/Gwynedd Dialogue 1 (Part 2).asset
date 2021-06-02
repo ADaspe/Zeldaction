@@ -13,34 +13,104 @@ MonoBehaviour:
   m_Name: Gwynedd Dialogue 1 (Part 2)
   m_EditorClassIdentifier: 
   Name: Gwynedd
-  MiniaturePerso: {fileID: 0}
+  MiniaturePerso: {fileID: 21300000, guid: af944cdc6afa366468302f2c485478d0, type: 3}
   Dialog:
-  - DialLine: 'I sense a strong link between you and this spirit of yours. '
-    RynSentence: 0
-  - DialLine: Something very uncommon here.
-    RynSentence: 0
-  - DialLine: I can also feel something very dark in you.
-    RynSentence: 0
-  - DialLine: Draining away your lifeforce. A curse of sorts.
-    RynSentence: 0
-  - DialLine: "I can tell you\u2019ve faced him."
-    RynSentence: 0
-  - DialLine: "The betrayer\u2026"
-    RynSentence: 0
-  - DialLine: There is nothing I can do.
-    RynSentence: 0
+  - Dialogs:
+    - DialLine: I sense a strong link between you and this spirit of yours.
+      RynSentence: 0
+    - DialLine: Something very uncommon here.
+      RynSentence: 0
+    - DialLine: I can also feel something very dark in you.
+      RynSentence: 0
+    - DialLine: Draining away your lifeforce. A curse of sorts.
+      RynSentence: 0
+    - DialLine: "I can tell you\u2019ve faced him."
+      RynSentence: 0
+    - DialLine: "The betrayer\u2026"
+      RynSentence: 0
+    - DialLine: There is nothing I can do.
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: But I will tell you a story.
+      RynSentence: 0
+    - DialLine: A story about 3 powerful spirits
+      RynSentence: 0
+    - DialLine: The three spirits were tasked to safeguard the forest.
+      RynSentence: 0
+    - DialLine: This task given to them by their mother, a powerful goddess.
+      RynSentence: 0
+    - DialLine: This goddess was the embodiment of everything good.
+      RynSentence: 0
+    - DialLine: Love, Life and Kindness.
+      RynSentence: 0
+    - DialLine: The 3 spirits respected and protected her. Together, they were invincible.
+      RynSentence: 0
+    - DialLine: "But one of these spirits wanted more\u2026"
+      RynSentence: 0
+    - DialLine: "\u201CWhy her when it can be me?\u201D He told himself"
+      RynSentence: 0
+    - DialLine: His respect slowly turned into hatred.
+      RynSentence: 0
+    - DialLine: And this went on until that spirit committed the irreversible.
+      RynSentence: 0
+    - DialLine: He killed the goddess and drained her power.
+      RynSentence: 0
+    - DialLine: The goddess that loved and raised him.
+      RynSentence: 0
+    - DialLine: He then destroyed all she had created and named himself king.
+      RynSentence: 0
+    - DialLine: Terrorizing all who went against him.
+      RynSentence: 0
+    - DialLine: Or so the story is told
+      RynSentence: 0
+    - DialLine: What of the other two you ask?
+      RynSentence: 0
+    - DialLine: " I am one of them. The other, well let\u2019s hope you don\u2019t
+        meet him."
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: "Go back to Arthael and tell her I can\u2019t help you with your
+        curse."
+      RynSentence: 0
+    - DialLine: But I will grant you strength.
+      RynSentence: 0
+    - DialLine: "Come now, you didn\u2019t think of me as cold hearted, did you? "
+      RynSentence: 0
+    - DialLine: Take this.
+      RynSentence: 0
+    ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
-    - DialLine: 
+    - DialLine: Still here?
       RynSentence: 0
-    - DialLine: 
+    - DialLine: The exit is somewhere else...
       RynSentence: 0
-    - DialLine: 
+    - DialLine: Please.. leave me be...
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
-    - DialLine: 
+    - DialLine: 'What a beautiful song you were playing '
+      RynSentence: 1
+    - DialLine: 'Thank you...  '
       RynSentence: 0
-    - DialLine: 
+    - DialLine: 'It reminds me of a time where everything was happier... '
       RynSentence: 0
-    - DialLine: 
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: Go back and see Arthael
       RynSentence: 0
+    - DialLine: "I have given you all I could\u2026 "
+      RynSentence: 0
+    ThereIsEvent: 0
+  - Dialogs:
+    - DialLine: 'How do you know Arthael? '
+      RynSentence: 1
+    - DialLine: She is a kind and noble spirit
+      RynSentence: 0
+    - DialLine: 'She puts others before herself '
+      RynSentence: 0
+    - DialLine: 'I trust and respect her '
+      RynSentence: 0
+    ThereIsEvent: 0
