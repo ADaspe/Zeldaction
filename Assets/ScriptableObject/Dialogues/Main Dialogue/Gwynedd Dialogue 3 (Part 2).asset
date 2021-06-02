@@ -29,3 +29,16 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: You are the only hope I have left.
       RynSentence: 0
+  - Dialogs:
+    - DialLine: Gwynedd, are you afraid?
+      RynSentence: 1
+    - DialLine: Why wouldn't I be?
+      RynSentence: 0
+    - DialLine: He is a plague, a disease
+      RynSentence: 0
+    - DialLine: He took from me all I had
+      RynSentence: 0
+    - DialLine: Reduced me to nothing
+      RynSentence: 0
+    - DialLine: I want nothing more to have with him
+      RynSentence: 0
