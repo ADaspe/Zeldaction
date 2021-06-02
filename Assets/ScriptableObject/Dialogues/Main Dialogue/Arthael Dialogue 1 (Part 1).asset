@@ -22,6 +22,8 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: My name is Arthael, I am the guardian of this grove.
       RynSentence: 0
+    - DialLine: 'Do not worry, I will take care of you.. please follow me.. '
+      RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
