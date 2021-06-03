@@ -5,6 +5,7 @@ using UnityEngine;
 public class ELC_GameManager : MonoBehaviour
 {
     public ELC_CharacterManager CharacterManager;
+    public AudioManager audioManager;
 
     public LayerMask PlayerMask; //Si on utilise le même layer pour les 2 personnages
     public LayerMask SpiritMask; // Layer de l'esprit

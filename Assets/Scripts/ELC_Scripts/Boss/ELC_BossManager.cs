@@ -27,6 +27,8 @@ public class ELC_BossManager : MonoBehaviour
     public float InvisibilityShaderTime;
     private SpriteRenderer SpriteRend;
     private Animator anims;
+    [HideInInspector]
+    public FLC_BossDynamicMusicFonctions music;
 
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class ELC_BossManager : MonoBehaviour
         BossAttacks.Rays = RaysList;
         canAttack = true;
         CurrentPhase = 0;
+        music = GetComponentInChildren<FLC_BossDynamicMusicFonctions>();
     }
 
     public void Attack(Vector3 TargetDir)
@@ -80,6 +83,7 @@ public class ELC_BossManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         Debug.Log("Agrou");
         yield return new WaitForSeconds(GrowlAnimationTime);
+        music.MusicsStart();
         Debug.Log("Invisibilité");
         yield return new WaitForSeconds(InvisibilityShaderTime);
         Debug.Log("début phase 1");
@@ -110,6 +114,7 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.CanMove = true;
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = MapCenter.position;
+        music.SwitchMusicPart(2);
     }
 
     public IEnumerator ThirdPhaseSwitch()
@@ -130,6 +135,7 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.CanMove = true;
         BossMoves.isGoingToPreciseLocation = true;
         BossMoves.Target = Spawn.position;
+        music.SwitchMusicPart(3);
     }
 
     public IEnumerator SecondAndThirdPhaseSwitch2()
