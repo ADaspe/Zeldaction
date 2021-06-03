@@ -303,6 +303,7 @@ Transform:
   - {fileID: 7141853122106500171}
   - {fileID: 4957780973541190399}
   - {fileID: 4165833553139726771}
+  - {fileID: 7109779714588665443}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -318,6 +319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftLock: 0
+  rightLock: 0
+  upLock: 0
+  downLock: 0
   PlayerDetectors:
   - {fileID: 7141853122341792359}
   - {fileID: 7141853122602505837}
@@ -477,6 +482,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   defaultMask: Obstacle
   projectedMask: IdenDash
+  BoomChampi: {fileID: 7109779714588665470}
 --- !u!1 &7141853122106500170
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,3 +543,79 @@ Transform:
   m_Father: {fileID: 7141853122341792358}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1319568934349084641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7141853122341792358}
+    m_Modifications:
+    - target: {fileID: 8141116209921509122, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116210684807174, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925441, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211066925471, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: m_Name
+      value: BoomChampi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141116211086450482, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 758e2935ee8f8e442a4558981a2bb7f2, type: 3}
+--- !u!1 &7109779714588665470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8141116211066925471, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1319568934349084641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7109779714588665443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8141116211066925442, guid: 758e2935ee8f8e442a4558981a2bb7f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1319568934349084641}
+  m_PrefabAsset: {fileID: 0}

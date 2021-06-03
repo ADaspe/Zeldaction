@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gwynedd Dialogue 1 (Part 1)
   m_EditorClassIdentifier: 
   Name: ???
-  MiniaturePerso: {fileID: 21300000, guid: af944cdc6afa366468302f2c485478d0, type: 3}
+  MiniaturePerso: {fileID: 21300000, guid: a3464b5105789a7428887cdb33f4d670, type: 3}
   Dialog:
   - Dialogs:
     - DialLine: You dare disturb my song?

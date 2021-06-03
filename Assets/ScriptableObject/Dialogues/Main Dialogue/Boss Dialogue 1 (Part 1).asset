@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss Dialogue 1 (Part 1)
   m_EditorClassIdentifier: 
   Name: ???
-  MiniaturePerso: {fileID: 21300000, guid: 7cb4a24a563f1914a998bd8e682302a9, type: 3}
+  MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
   Dialog:
   - Dialogs:
     - DialLine: Greetings Child.
@@ -65,20 +65,4 @@ MonoBehaviour:
     - DialLine: LET ME KILL YOU.
       RynSentence: 0
     ThereIsEvent: 1
-  RandomDialog:
-  - Dialogs:
-    - DialLine: 
-      RynSentence: 0
-    - DialLine: 
-      RynSentence: 0
-    - DialLine: 
-      RynSentence: 0
-    ThereIsEvent: 0
-  - Dialogs:
-    - DialLine: 
-      RynSentence: 0
-    - DialLine: 
-      RynSentence: 0
-    - DialLine: 
-      RynSentence: 0
-    ThereIsEvent: 0
+  RandomDialog: []
