@@ -15,12 +15,7 @@ public class FLC_BossDynamicMusicFonctions : MonoBehaviour
     int lastPartPlayed = 0;
     [SerializeField] int partPlayed = 0;
 
-    private void Awake()
-    {
-        MusicsStart();
-    }
-
-    private void MusicsStart()
+    public void MusicsStart()
     {
         for(int i =0; i < audioPlayer.Length; i++)
         {
