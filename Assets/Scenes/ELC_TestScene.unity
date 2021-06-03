@@ -3659,6 +3659,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1280133135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3914866377638774636, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 8035345064690998872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1296033861 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 701354207612222063, guid: c3b82ff2e40626a4daa0c7f4210d1778,
@@ -14938,6 +14944,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3751649488854153288, guid: 6ab27886158bbbf4a82164cffde25037,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8be72eca9761034b8b70c4d08481853, type: 2}
     - target: {fileID: 3751649488854153289, guid: 6ab27886158bbbf4a82164cffde25037,
         type: 3}
       propertyPath: m_Name
@@ -15310,6 +15321,11 @@ PrefabInstance:
       objectReference: {fileID: 778000660}
     - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
+      propertyPath: ShieldGO
+      value: 
+      objectReference: {fileID: 1280133135}
+    - target: {fileID: 6788487066792825596, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
       propertyPath: dashMask
       value: IdenDash
       objectReference: {fileID: 0}
@@ -15518,6 +15534,21 @@ PrefabInstance:
       propertyPath: InvincibilityTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3914866377565145008, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914866377565145013, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914866377565145013, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_RootOrder
@@ -15553,6 +15584,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 8035345064547430159, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+        type: 3}
+      propertyPath: Shield
+      value: 
+      objectReference: {fileID: 1280133135}
+    - target: {fileID: 8035345064547430159, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
+        type: 3}
+      propertyPath: ShieldGO
+      value: 
+      objectReference: {fileID: 1280133135}
     - target: {fileID: 8035345064547430159, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: CharStats
