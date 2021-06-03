@@ -5,7 +5,9 @@ using UnityEngine;
 public class ELC_Door : AXD_Activable
 {
     public bool ActivateOnDisable;
-    
+    public bool jingleOnFirstOpen;
+
+    public AudioManager audioManager;
     private Collider2D rb;
     private int currentNumberOfActivation;
 
@@ -36,6 +38,11 @@ public class ELC_Door : AXD_Activable
                     isActivated = true;
                     LockTorches();
                     rb.enabled = false;
+                    if (jingleOnFirstOpen)
+                    {
+                        jingleOnFirstOpen = false;
+                        audioManager.Play("Door_Open");
+                    }
                     if (ObjectAnimator != null) // Pas de null pointer exception :)
                     {
                         ObjectAnimator.SetBool("Activated", isActivated);
@@ -57,8 +64,7 @@ public class ELC_Door : AXD_Activable
     }
 
     public override void Activate()
-    {
-        
+    {        
         CheckActivations();
     }
 }
