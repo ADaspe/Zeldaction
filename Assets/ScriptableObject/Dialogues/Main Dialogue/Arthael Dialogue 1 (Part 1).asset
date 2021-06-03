@@ -15,12 +15,16 @@ MonoBehaviour:
   Name: ???
   MiniaturePerso: {fileID: 21300000, guid: 94f81642b439f4e47a4fc0a383a6e201, type: 3}
   Dialog:
-  - DialLine: My sweet child.. your life is fading...
-    RynSentence: 0
-  - DialLine: Please, I mean no harm.
-    RynSentence: 0
-  - DialLine: My name is Arthael, I am the guardian of this grove.
-    RynSentence: 0
+  - Dialogs:
+    - DialLine: "My sweet child.. your life is fading\u2026"
+      RynSentence: 0
+    - DialLine: Please, I mean no harm.
+      RynSentence: 0
+    - DialLine: My name is Arthael, I am the guardian of this grove.
+      RynSentence: 0
+    - DialLine: 'Do not worry, I will take care of you.. please follow me.. '
+      RynSentence: 0
+    ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
@@ -29,6 +33,7 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
       RynSentence: 0
@@ -36,3 +41,4 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
