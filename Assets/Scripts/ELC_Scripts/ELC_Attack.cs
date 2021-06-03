@@ -7,6 +7,7 @@ public class ELC_Attack : MonoBehaviour
     public AXD_CharacterVariablesSO CharStats;
     [SerializeField]
     ELC_CharacterManager CharManager;
+    public GameObject ShieldGO;
     [SerializeField]
     ELC_GameManager gameManager;
     //public float enemyDetectionRadius;
@@ -18,11 +19,13 @@ public class ELC_Attack : MonoBehaviour
     public float attackTogetherCooldown;
     public string defaultMask;
     public string dashMask;
+    ParticleSystem ShieldPS;
 
 
     private void Start()
     {
         SpiritAttackScript = CharManager.SpiritGO.GetComponent<ELC_Attack>();
+        ShieldPS = ShieldGO.GetComponent<ParticleSystem>();
     }
     private void FixedUpdate()
     {
@@ -103,6 +106,11 @@ public class ELC_Attack : MonoBehaviour
         CharManager.RynMove.canMove = false;
         CharManager.RynMove.rawInputMovement = Vector2.zero;
         NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
+        var mainShieldPS = ShieldPS.main;
+        mainShieldPS.duration = CharManager.stats.ShieldDuration;
+        mainShieldPS.startLifetime = CharManager.stats.ShieldDuration;
+        ShieldPS.Play();
+
         Invoke("RynLoseShield", CharManager.stats.ShieldDuration);
     }
 

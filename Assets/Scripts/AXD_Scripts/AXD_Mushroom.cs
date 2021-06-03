@@ -13,6 +13,7 @@ public class AXD_Mushroom : MonoBehaviour
     public Rigidbody2D rb;
     public string defaultMask;
     public string projectedMask;
+    public GameObject BoomChampi;
     //public float timeDecreaseSpeed;
     private void Start()
     {
@@ -61,6 +62,8 @@ public class AXD_Mushroom : MonoBehaviour
 
     public void Explode()
     {
+        BoomChampi.GetComponent<ParticleSystem>().Play();
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         Collider2D[] allObjectsDetected = Physics2D.OverlapCircleAll(transform.position, ExplodingRadius, interact.GameManagerScript.ExplodingMushroomMask);
         if(allObjectsDetected != null)
         {
@@ -90,6 +93,11 @@ public class AXD_Mushroom : MonoBehaviour
             }
         }
         Debug.Log("Kaboom");
+        Invoke("DestroyGO", 0.5f);
+    }
+
+    private void DestroyGO()
+    {
         Destroy(this.gameObject);
     }
 
