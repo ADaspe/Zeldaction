@@ -1104,6 +1104,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945648859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5043244716070678156, guid: 776eb60a9d942854191078cad129bb32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881736632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1959d4ecedb3067489cb4183612bd13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068786449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,9 +2771,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929167, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 945648859}
+    - target: {fileID: 2858453801201929167, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
       propertyPath: ObjectAnimator
       value: 
       objectReference: {fileID: 1965229482}
+    - target: {fileID: 2858453801201929167, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: jingleOnFirstOpen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06921b1f49855a249b241f1df674815a, type: 3}
 --- !u!114 &1965229481 stripped
