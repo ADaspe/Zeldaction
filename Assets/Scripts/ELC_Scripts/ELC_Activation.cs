@@ -17,11 +17,13 @@ public class ELC_Activation : MonoBehaviour
     //public LayerMask LayersToDetect;
     public AXD_Activable[] objectsToActivate;
     private Animator animator;
+    private AudioManager audioManager;
 
     private void Start()
     {
         animator = this.GetComponent<Animator>();
         interactScript = this.GetComponent<ELC_Interact>();
+        audioManager = interactScript.GameManagerScript.GetComponentInChildren<AudioManager>();
         objectCollider = GetComponent<BoxCollider2D>();
         foreach (AXD_Activable item in objectsToActivate)
         {        
@@ -34,6 +36,7 @@ public class ELC_Activation : MonoBehaviour
         {
             isActivated = !isActivated;
             AnimatorUpdate();
+            CheckSounds();
             foreach (AXD_Activable item in objectsToActivate)
             {
                 //Debug.Log(gameObject.name + " Activate " + item.gameObject.name);
@@ -64,6 +67,7 @@ public class ELC_Activation : MonoBehaviour
                 {
                     item.Activate();
                 }
+                CheckSounds();
             }
             ConditionsEnabled = (isEntering || itemOnPlate);
             //return;
@@ -78,6 +82,7 @@ public class ELC_Activation : MonoBehaviour
             {
                 item.Activate();
             }
+            CheckSounds();
             ConditionsEnabled = true;
             return;
         }
@@ -93,8 +98,9 @@ public class ELC_Activation : MonoBehaviour
             {
                 item.Activate();
             }
+            CheckSounds();
         }
-        
+
     }
 
     IEnumerator Countdown()
@@ -108,6 +114,24 @@ public class ELC_Activation : MonoBehaviour
     private void AnimatorUpdate()
     {
         animator.SetBool("Activated", isActivated);
+    }
+
+    private void CheckSounds()
+    {
+        switch (type)
+        {
+            case ActivatorType.LEVER:
+                audioManager.Play("Lever");
+                return;
+            case ActivatorType.TORCH:
+                if (isActivated) audioManager.Play("Torch_On");
+                Debug.Log("Torche Son");
+                return;
+            case ActivatorType.PRESSUREPLATE:
+                if (isActivated) audioManager.Play("PressurePlate_On");
+                else audioManager.Play("PressurePlate_Off");
+                return;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
