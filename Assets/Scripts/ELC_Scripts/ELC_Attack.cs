@@ -40,6 +40,10 @@ public class ELC_Attack : MonoBehaviour
             {
                 RynActivateShield();
             }
+            else
+            {
+                CharManager.gameManager.audioManager.Play("Capacity_Cooldown");
+            }
         }
         else if (!CharManager.RynMove.canMove && ShieldOn)
         {
@@ -55,12 +59,17 @@ public class ELC_Attack : MonoBehaviour
 
     public void AttackTogether()
     {
-        if (attackTogetherCooldown > Time.time) return;
+
+        if (attackTogetherCooldown > Time.time)
+        {
+            CharManager.gameManager.audioManager.Play("Capacity_Cooldown");
+            return;
+        }
 
         attackTogetherCooldown = Time.time + CharManager.stats.AttackCooldown;
         //Debug.Log("Attack Together");
         Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, CharStats.AttackTogetherRange, gameManager.EnemiesMask);
-
+        gameManager.audioManager.Play("");
         
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -88,6 +97,7 @@ public class ELC_Attack : MonoBehaviour
 
     public void RynActivateShield()
     {
+        CharManager.gameManager.audioManager.Play("Ryn_ShieldOn");
         CharManager.AnimationManager.isAttacking = true;
         ShieldOn = true;
         CharManager.RynMove.canMove = false;
@@ -100,6 +110,7 @@ public class ELC_Attack : MonoBehaviour
     {
         if (ShieldOn)
         {
+            CharManager.gameManager.audioManager.Play("ShieldDown");
             NextShield = Time.time + CharManager.stats.ShieldCooldown;
             ShieldOn = false;
             CharManager.RynMove.canMove = true;
@@ -108,6 +119,7 @@ public class ELC_Attack : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
+        CharManager.gameManager.audioManager.Play("Spirit_Dash");
         gameObject.layer = LayerMask.NameToLayer(dashMask.ToString());
         CharManager.spiritMove.wasDashingWhenColliding = true;
         CharManager.spiritMove.isDashing = true;
