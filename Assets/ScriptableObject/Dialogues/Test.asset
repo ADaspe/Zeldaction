@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   Name: 
-  MiniaturePerso: {fileID: 0}
+  MiniaturePerso: {fileID: 21300000, guid: 94f81642b439f4e47a4fc0a383a6e201, type: 3}
   Dialog:
   - Dialogs:
     - DialLine: "\xE7a c'est la premi\xE8re phrase"
@@ -25,7 +25,7 @@ MonoBehaviour:
     - DialLine: "\xE9ooo"
       RynSentence: 0
     - DialLine: "l\xE0 c'est le second"
-      RynSentence: 0
+      RynSentence: 1
     - DialLine: "c'est qu'\xE7a commence \xE0 marcher ehe"
       RynSentence: 0
     ThereIsEvent: 0

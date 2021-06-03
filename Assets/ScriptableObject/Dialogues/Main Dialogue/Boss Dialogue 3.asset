@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss Dialogue 3
   m_EditorClassIdentifier: 
   Name: The Wolf King
-  MiniaturePerso: {fileID: 21300000, guid: 7cb4a24a563f1914a998bd8e682302a9, type: 3}
+  MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
   Dialog:
   - Dialogs:
     - DialLine: So.. the little child and her pet fox has slain the king.
