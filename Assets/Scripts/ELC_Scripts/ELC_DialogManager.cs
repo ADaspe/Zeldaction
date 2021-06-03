@@ -14,6 +14,9 @@ public class ELC_DialogManager : MonoBehaviour
     public Text textZone;
     public GameObject DialogGameObject;
     public GameObject ContinueButton;
+    public GameObject[] ElementsToDisable;
+    public Sprite PortraitRyn;
+    public Image image;
     public int CurrentLineIndex;
     public int CurrentDialogIndex;
     public bool isRandomDialog;
@@ -27,6 +30,10 @@ public class ELC_DialogManager : MonoBehaviour
 
     public void StartNewDialog(ELC_DialoguesSO dialSO, bool randomDial)
     {
+        foreach (GameObject item in ElementsToDisable)
+        {
+            item.SetActive(false);
+        }
         DialogGameObject.SetActive(true);
         camSwitchScript.SwitchCamFocus(CharacterGO.transform);
         CurrentDialSO = dialSO;
@@ -46,8 +53,25 @@ public class ELC_DialogManager : MonoBehaviour
         if (!isRandomDialog)
         {
             textZone.text = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine;
+
+            if (CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].RynSentence)
+            {
+                image.sprite = PortraitRyn;
+                //image.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(PortraitRyn.rect.width, PortraitRyn.rect.height);
+            }
+            else
+            {
+                image.sprite = CurrentDialSO.MiniaturePerso;
+                //image.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(CurrentDialSO.MiniaturePerso.rect.width, CurrentDialSO.MiniaturePerso.rect.height);
+            }
         }
-        else textZone.text = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine;
+        else
+        {
+            textZone.text = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine;
+
+            if (CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].RynSentence) image.sprite = PortraitRyn;
+            else image.sprite = CurrentDialSO.MiniaturePerso;
+        }
 
         float timeToWait = 0;
         if (isRandomDialog) timeToWait = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
@@ -135,6 +159,10 @@ public class ELC_DialogManager : MonoBehaviour
 
         yield return new WaitWhile(() => dialScript.isInEvent);
 
+        foreach (GameObject item in ElementsToDisable)
+        {
+            item.SetActive(true);
+        }
         CurrentDialSO = null;
         CurrentDialogIndex = 0;
         CurrentLineIndex = 0;
