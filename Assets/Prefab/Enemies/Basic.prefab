@@ -176,7 +176,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -2906685493316469465, guid: b1188f2a2b240c34291fede86e5a62d7,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -228,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAI: {fileID: 1196873883694285090}
+  deathShader: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!114 &1196873883694285090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37de0a031717dc04e8bee7ffbd86230a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test:
+    serializedVersion: 2
+    m_Bits: 0
   Target: {x: 0, y: 0, z: 0}
   EnemyStats: {fileID: 11400000, guid: a7f3845904e01674987ce0b4b79bd164, type: 2}
   gameMana: {fileID: 0}
@@ -256,6 +262,7 @@ MonoBehaviour:
   PatrolPath:
   - {fileID: 1196873883516002296}
   - {fileID: 1196873883197744184}
+  LastDirection: {x: 0, y: 0}
 --- !u!95 &601586104501102092
 Animator:
   serializedVersion: 3

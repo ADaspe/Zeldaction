@@ -25,7 +25,7 @@ public class ELC_EnemyAI : MonoBehaviour
     public bool isAttacking;
     public List<Transform> PatrolPath;
 
-
+    public Vector2 LastDirection;
     Vector2 direction;
     Path path;
     int currentWaypoint = 0;
@@ -118,7 +118,7 @@ public class ELC_EnemyAI : MonoBehaviour
 
         direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * Speed * Time.deltaTime;
-
+        if (direction.magnitude >= 0.05f) LastDirection = direction;
 
 
 
@@ -164,7 +164,7 @@ public class ELC_EnemyAI : MonoBehaviour
         isAttacking = true;
         anims.SetBool("isAttacking", true);
         
-        List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy));
+        List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy));
         
         GameObject target = null;
 
@@ -244,14 +244,13 @@ public class ELC_EnemyAI : MonoBehaviour
         List<GameObject> collidersInsideArea = new List<GameObject>();
         foreach (var collider in col)
         {
-            float currentAngle = Vector2.Angle(direction, collider.transform.position - origin);
+            float currentAngle = Vector2.Angle(LastDirection, collider.transform.position - origin);
             if (currentAngle <= angle && currentAngle >= -angle)
             {
                 collidersInsideArea.Add(collider.gameObject);
                 
             }
         }
-        
         return collidersInsideArea;
     }
 
@@ -281,7 +280,7 @@ public class ELC_EnemyAI : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(this.transform.position, EnemyStats.detectionRadius);
-        Gizmos.DrawRay(new Ray(this.transform.position, direction));
-        Gizmos.DrawWireSphere(this.transform.position + (Vector3)(direction.normalized * EnemyStats.attackAreaPositionFromEnemy), EnemyStats.attackAreaRadius);
+        Gizmos.DrawRay(new Ray(this.transform.position, LastDirection));
+        Gizmos.DrawWireSphere(this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy), EnemyStats.attackAreaRadius);
     }
 }

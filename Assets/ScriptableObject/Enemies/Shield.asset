@@ -18,9 +18,9 @@ MonoBehaviour:
   attackAreaRadius: 0.5
   attackAreaAngle: 180
   detectionRadius: 2.5
-  DetectionAngle: 40
+  DetectionAngle: 60
   haveInsensibilityZone: 1
-  insensibilityRadius: 1.7
+  insensibilityRadius: 3.5
   insensibilityAngle: 40
   DetectionMask:
     serializedVersion: 2
