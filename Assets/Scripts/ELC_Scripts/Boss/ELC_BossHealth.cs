@@ -25,6 +25,7 @@ public class ELC_BossHealth : MonoBehaviour
     public void BossGetHit()
     {
         Debug.Log("tapé");
+        BossMana.music.SwitchMusicPart(0);
         if (CurrentHealth - 1 > 0) CurrentHealth--;
         else BossMana.SwitchPhase();
     }

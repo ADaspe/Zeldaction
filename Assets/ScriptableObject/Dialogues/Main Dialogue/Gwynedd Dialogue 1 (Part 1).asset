@@ -13,22 +13,24 @@ MonoBehaviour:
   m_Name: Gwynedd Dialogue 1 (Part 1)
   m_EditorClassIdentifier: 
   Name: ???
-  MiniaturePerso: {fileID: 0}
+  MiniaturePerso: {fileID: 21300000, guid: af944cdc6afa366468302f2c485478d0, type: 3}
   Dialog:
-  - DialLine: You dare disturb my song?
-    RynSentence: 0
-  - DialLine: Who are you?
-    RynSentence: 0
-  - DialLine: 'My name is Ryn.. I am looking for the Pale Spirit.. '
-    RynSentence: 1
-  - DialLine: Yes and?
-    RynSentence: 0
-  - DialLine: Arthael sent me.. she said you could help me?
-    RynSentence: 1
-  - DialLine: Arthael? Perhaps yes.
-    RynSentence: 0
-  - DialLine: I am Gwynedd, the Pale Spirit.
-    RynSentence: 0
+  - Dialogs:
+    - DialLine: You dare disturb my song?
+      RynSentence: 0
+    - DialLine: Who are you?
+      RynSentence: 0
+    - DialLine: 'My name is Ryn.. I am looking for the Pale Spirit.. '
+      RynSentence: 1
+    - DialLine: Yes and?
+      RynSentence: 0
+    - DialLine: Arthael sent me.. she said you could help me?
+      RynSentence: 1
+    - DialLine: Arthael? Perhaps yes.
+      RynSentence: 0
+    - DialLine: I am Gwynedd, the Pale Spirit.
+      RynSentence: 0
+    ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
@@ -37,6 +39,7 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
       RynSentence: 0
@@ -44,3 +47,4 @@ MonoBehaviour:
       RynSentence: 0
     - DialLine: 
       RynSentence: 0
+    ThereIsEvent: 0
