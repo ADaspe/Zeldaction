@@ -6,6 +6,7 @@ public class ELC_Door : AXD_Activable
 {
     public bool ActivateOnDisable;
     public bool jingleOnFirstOpen;
+    public bool IsOpenAtStart;
 
     public AudioManager audioManager;
     private Collider2D rb;
@@ -18,7 +19,8 @@ public class ELC_Door : AXD_Activable
             ObjectAnimator = GetComponent<Animator>();
         }
         rb = this.GetComponent<Collider2D>();
-        CheckActivations();
+        isActivated = IsOpenAtStart;
+        rb.enabled = !IsOpenAtStart;
     }
 
     public void CheckActivations()
