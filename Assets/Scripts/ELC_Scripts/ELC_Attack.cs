@@ -7,6 +7,7 @@ public class ELC_Attack : MonoBehaviour
     public AXD_CharacterVariablesSO CharStats;
     [SerializeField]
     ELC_CharacterManager CharManager;
+    public GameObject ShieldGO;
     [SerializeField]
     ELC_GameManager gameManager;
     //public float enemyDetectionRadius;
@@ -18,11 +19,13 @@ public class ELC_Attack : MonoBehaviour
     public float attackTogetherCooldown;
     public string defaultMask;
     public string dashMask;
+    ParticleSystem ShieldPS;
 
 
     private void Start()
     {
         SpiritAttackScript = CharManager.SpiritGO.GetComponent<ELC_Attack>();
+        ShieldPS = ShieldGO.GetComponent<ParticleSystem>();
     }
     private void FixedUpdate()
     {
@@ -93,6 +96,11 @@ public class ELC_Attack : MonoBehaviour
         CharManager.RynMove.canMove = false;
         CharManager.RynMove.rawInputMovement = Vector2.zero;
         NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
+        var mainShieldPS = ShieldPS.main;
+        mainShieldPS.duration = CharManager.stats.ShieldDuration;
+        mainShieldPS.startLifetime = CharManager.stats.ShieldDuration;
+        ShieldPS.Play();
+
         Invoke("RynLoseShield", CharManager.stats.ShieldDuration);
     }
 
@@ -133,7 +141,7 @@ public class ELC_Attack : MonoBehaviour
         direction = direction.normalized * (direction.magnitude / duration);
         this.transform.Translate(direction * Time.deltaTime);
         bool canTouch = true;
-        Collider2D[] col = Physics2D.OverlapCircleAll(CharManager.SpiritGO.transform.position, 1f, CharManager.stats.EnemiesLayerMask);
+        Collider2D[] col = Physics2D.OverlapCircleAll(CharManager.SpiritGO.transform.position, 0.5f, CharManager.stats.EnemiesLayerMask);
 
         foreach (var item in col)
         {
@@ -144,12 +152,10 @@ public class ELC_Attack : MonoBehaviour
                 if(GameO.CompareTag("Spirit"))
                 {
                     canTouch = false;
-                }
-                else if(canTouch && GameO.CompareTag("Spirit"))
-                {
-                    item.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(CharManager.stats.StunTime);
+                    spiritAttack = false;
                 }
             }
+            if (canTouch) item.gameObject.GetComponent<AXD_EnemyHealth>().GetHit(CharManager.stats.StunTime);
         }
     }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   Name: ???
-  MiniaturePerso: {fileID: 0}
+  MiniaturePerso: {fileID: 21300000, guid: 4338b20ea9bdb9545b6847cbe2c5c821, type: 3}
   Dialog:
   - Dialogs:
     - DialLine: "Tree of the Divine\u2026"
