@@ -10,13 +10,19 @@ public class ELC_Dialog : MonoBehaviour
     public bool HasAlreadyTalk;
     public Evenements[] events;
     public bool isInEvent;
+    public bool isSpeaking;
 
     public void Dialog()
     {
-        DialMana.dialScript = this;
-        DialMana.CharacterGO = this.gameObject;
-        DialMana.StartNewDialog(Dialogue, HasAlreadyTalk);
-        HasAlreadyTalk = true;
+        if(!isSpeaking)
+        {
+            isSpeaking = true;
+            DialMana.dialScript = this;
+            DialMana.CharacterGO = this.gameObject;
+            DialMana.StartNewDialog(Dialogue, HasAlreadyTalk);
+            HasAlreadyTalk = true;
+        }
+        
     }
 
     public IEnumerator checkEvents(bool EndConversation = false)
@@ -50,7 +56,7 @@ public class ELC_Dialog : MonoBehaviour
         }
 
         isInEvent = false;
-
+        if (EndConversation) isSpeaking = false;
 
     }
 
