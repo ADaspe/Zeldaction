@@ -16,6 +16,10 @@ MonoBehaviour:
   MiniaturePerso: {fileID: 21300000, guid: f8e755ffb1d62fd4c8d9a63532274c37, type: 3}
   Dialog:
   - Dialogs:
+    - DialLine: ...
+      RynSentence: 1
+    - DialLine: Arthael!
+      RynSentence: 1
     - DialLine: Arthael?
       RynSentence: 1
     - DialLine: Nryah?
