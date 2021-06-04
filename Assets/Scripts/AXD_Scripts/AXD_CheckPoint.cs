@@ -19,6 +19,10 @@ public class AXD_CheckPoint : MonoBehaviour
         {
             //Appliquer un feedback
             ELC_CharacterManager tempManager = collision.GetComponent<AXD_CharacterMove>().charaManager;
+            if(tempManager.lastCheckPoint != this)
+            {
+                GameObject.FindObjectOfType<AudioManager>().Play("Autel");
+            }
 
             tempManager.lastCheckPoint = this;
         }
