@@ -163,12 +163,12 @@ TextureImporter:
       name: M_mort+hit_front_0
       rect:
         serializedVersion: 2
-        x: 250
+        x: 0
         y: 0
-        width: 360
+        width: 858
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: M_mort+hit_front_1
       rect:
         serializedVersion: 2
-        x: 1108
+        x: 858
         y: 0
-        width: 360
+        width: 858
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,12 +205,12 @@ TextureImporter:
       name: M_mort+hit_front_2
       rect:
         serializedVersion: 2
-        x: 1963
+        x: 1716
         y: 0
-        width: 365
+        width: 858
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,12 +226,12 @@ TextureImporter:
       name: M_mort+hit_front_3
       rect:
         serializedVersion: 2
-        x: 2824
+        x: 2574
         y: 0
-        width: 375
+        width: 858
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: M_mort+hit_front_4
       rect:
         serializedVersion: 2
-        x: 3659
-        y: 9
-        width: 353
-        height: 591
+        x: 3432
+        y: 0
+        width: 858
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: M_mort+hit_front_5
       rect:
         serializedVersion: 2
-        x: 4302
-        y: 2
-        width: 521
-        height: 598
+        x: 4290
+        y: 0
+        width: 858
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: M_mort+hit_front_6
       rect:
         serializedVersion: 2
-        x: 5161
-        y: 2
-        width: 520
-        height: 598
+        x: 5148
+        y: 0
+        width: 858
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

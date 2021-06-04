@@ -174,7 +174,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Bite
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: GetHit
+    m_ConditionEvent: isStun
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isMoving
@@ -259,6 +259,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: AttackPhase
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isStun
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1602037224599058197}
@@ -348,6 +351,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isGrowling
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isStun
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5897906369230470828}
   m_Solo: 0
@@ -424,7 +430,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Growl
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: GetHit
+    m_ConditionEvent: isStun
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Bite
@@ -585,6 +591,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: AttackPhase
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isStun
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7786417672637070263}
   m_Solo: 0
@@ -662,7 +671,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: GetHit
+    m_ConditionEvent: isStun
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: AttackPhase
@@ -695,55 +704,55 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: MovesY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Growl
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Bite
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Dash
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: GetHit
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: AttackPhase
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isGrowling
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: isStun
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
