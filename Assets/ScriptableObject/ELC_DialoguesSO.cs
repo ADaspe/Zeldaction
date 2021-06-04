@@ -8,6 +8,7 @@ public class ELC_DialoguesSO : ScriptableObject
 {
     public string Name;
     public Sprite MiniaturePerso;
+    public bool AutoSkip;
     public List<MultiDialogs> Dialog;
     public List<MultiDialogs> RandomDialog;
 }

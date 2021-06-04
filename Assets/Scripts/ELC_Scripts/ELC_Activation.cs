@@ -7,6 +7,7 @@ public class ELC_Activation : MonoBehaviour
 {
     public enum ActivatorType {TORCH, LEVER, PRESSUREPLATE};
     public ActivatorType type;
+    public ParticleSystem ActivationParticles;
     public bool isActivated;
     public float TorchDuration;
     [SerializeField]
@@ -18,6 +19,7 @@ public class ELC_Activation : MonoBehaviour
     public AXD_Activable[] objectsToActivate;
     private Animator animator;
     private AudioManager audioManager;
+    public bool definitivelyActivated;
 
     private void Start()
     {
@@ -78,6 +80,8 @@ public class ELC_Activation : MonoBehaviour
             StartCoroutine("Countdown");
             isActivated = true;
             AnimatorUpdate();
+            ActivationParticles.Play();
+
             foreach (AXD_Activable item in objectsToActivate)
             {
                 item.Activate();
@@ -107,6 +111,7 @@ public class ELC_Activation : MonoBehaviour
     {
         yield return new WaitForSeconds(TorchDuration);
         isActivated = false;
+        ActivationParticles.Stop();
         AnimatorUpdate();
     }
 
@@ -136,11 +141,11 @@ public class ELC_Activation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
-        Detection(collision);
+        if(!definitivelyActivated) Detection(collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Detection(collision , false);
+        if(!definitivelyActivated) Detection(collision , false);
     }
 }

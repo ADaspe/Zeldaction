@@ -313,6 +313,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
         type: 3}
+      propertyPath: PurifyParticles
+      value: 
+      objectReference: {fileID: 7811191320660861715, guid: 61fdd529d7f37154099d4d88f5a20713,
+        type: 3}
+    - target: {fileID: 8176392399248210517, guid: 16673731a79871a459acf5da8ed9e501,
+        type: 3}
       propertyPath: rbInteractObject
       value: 
       objectReference: {fileID: 8843035624213004795}
