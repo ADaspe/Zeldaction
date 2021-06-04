@@ -241,12 +241,12 @@ TextureImporter:
       name: Spritesheet_Esprit_0
       rect:
         serializedVersion: 2
-        x: 121
-        y: 7147
-        width: 533
-        height: 298
+        x: 0
+        y: 7000
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: Spritesheet_Esprit_1
       rect:
         serializedVersion: 2
-        x: 891
-        y: 7105
-        width: 317
-        height: 491
+        x: 700
+        y: 7000
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: Spritesheet_Esprit_2
       rect:
         serializedVersion: 2
-        x: 1591
-        y: 7019
-        width: 317
-        height: 449
+        x: 1400
+        y: 7000
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: Spritesheet_Esprit_3
       rect:
         serializedVersion: 2
-        x: 121
-        y: 6447
-        width: 532
-        height: 296
+        x: 0
+        y: 6300
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: Spritesheet_Esprit_4
       rect:
         serializedVersion: 2
-        x: 891
-        y: 6405
-        width: 318
-        height: 487
+        x: 700
+        y: 6300
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,12 +346,12 @@ TextureImporter:
       name: Spritesheet_Esprit_5
       rect:
         serializedVersion: 2
-        x: 1591
-        y: 6320
-        width: 317
-        height: 448
+        x: 1400
+        y: 6300
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,12 +367,12 @@ TextureImporter:
       name: Spritesheet_Esprit_6
       rect:
         serializedVersion: 2
-        x: 121
-        y: 5747
-        width: 531
-        height: 296
+        x: 0
+        y: 5600
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,12 +388,12 @@ TextureImporter:
       name: Spritesheet_Esprit_7
       rect:
         serializedVersion: 2
-        x: 890
-        y: 5705
-        width: 320
-        height: 490
+        x: 700
+        y: 5600
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: Spritesheet_Esprit_8
       rect:
         serializedVersion: 2
-        x: 1589
-        y: 5619
-        width: 321
-        height: 450
+        x: 1400
+        y: 5600
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,12 +430,12 @@ TextureImporter:
       name: Spritesheet_Esprit_9
       rect:
         serializedVersion: 2
-        x: 121
-        y: 5047
-        width: 528
-        height: 294
+        x: 0
+        y: 4900
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -451,12 +451,12 @@ TextureImporter:
       name: Spritesheet_Esprit_10
       rect:
         serializedVersion: 2
-        x: 890
-        y: 5005
-        width: 320
-        height: 491
+        x: 700
+        y: 4900
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -472,12 +472,12 @@ TextureImporter:
       name: Spritesheet_Esprit_11
       rect:
         serializedVersion: 2
-        x: 1590
-        y: 4919
-        width: 319
-        height: 450
+        x: 1400
+        y: 4900
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -493,12 +493,12 @@ TextureImporter:
       name: Spritesheet_Esprit_12
       rect:
         serializedVersion: 2
-        x: 121
-        y: 4347
-        width: 527
-        height: 293
+        x: 0
+        y: 4200
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -514,12 +514,12 @@ TextureImporter:
       name: Spritesheet_Esprit_13
       rect:
         serializedVersion: 2
-        x: 886
-        y: 4305
-        width: 327
-        height: 491
+        x: 700
+        y: 4200
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -535,12 +535,12 @@ TextureImporter:
       name: Spritesheet_Esprit_14
       rect:
         serializedVersion: 2
-        x: 1588
-        y: 4220
-        width: 323
-        height: 449
+        x: 1400
+        y: 4200
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -556,12 +556,12 @@ TextureImporter:
       name: Spritesheet_Esprit_15
       rect:
         serializedVersion: 2
-        x: 121
-        y: 3647
-        width: 528
-        height: 295
+        x: 0
+        y: 3500
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -577,12 +577,12 @@ TextureImporter:
       name: Spritesheet_Esprit_16
       rect:
         serializedVersion: 2
-        x: 888
-        y: 3605
-        width: 320
-        height: 489
+        x: 700
+        y: 3500
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -598,12 +598,12 @@ TextureImporter:
       name: Spritesheet_Esprit_17
       rect:
         serializedVersion: 2
-        x: 1590
-        y: 3519
-        width: 319
-        height: 449
+        x: 1400
+        y: 3500
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -619,12 +619,12 @@ TextureImporter:
       name: Spritesheet_Esprit_18
       rect:
         serializedVersion: 2
-        x: 121
-        y: 2947
-        width: 531
-        height: 296
+        x: 0
+        y: 2800
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -640,12 +640,12 @@ TextureImporter:
       name: Spritesheet_Esprit_19
       rect:
         serializedVersion: 2
-        x: 899
-        y: 2905
-        width: 320
-        height: 491
+        x: 700
+        y: 2800
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -661,12 +661,12 @@ TextureImporter:
       name: Spritesheet_Esprit_20
       rect:
         serializedVersion: 2
-        x: 1591
-        y: 2819
-        width: 317
-        height: 449
+        x: 1400
+        y: 2800
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -682,12 +682,12 @@ TextureImporter:
       name: Spritesheet_Esprit_21
       rect:
         serializedVersion: 2
-        x: 121
-        y: 2247
-        width: 532
-        height: 296
+        x: 0
+        y: 2100
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -703,12 +703,12 @@ TextureImporter:
       name: Spritesheet_Esprit_22
       rect:
         serializedVersion: 2
-        x: 892
-        y: 2205
-        width: 314
-        height: 490
+        x: 700
+        y: 2100
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -724,12 +724,12 @@ TextureImporter:
       name: Spritesheet_Esprit_23
       rect:
         serializedVersion: 2
-        x: 1591
-        y: 2119
-        width: 317
-        height: 450
+        x: 1400
+        y: 2100
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -745,12 +745,12 @@ TextureImporter:
       name: Spritesheet_Esprit_24
       rect:
         serializedVersion: 2
-        x: 285
-        y: 1689
-        width: 125
-        height: 124
+        x: 0
+        y: 1400
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -766,12 +766,12 @@ TextureImporter:
       name: Spritesheet_Esprit_25
       rect:
         serializedVersion: 2
-        x: 111
-        y: 1016
-        width: 557
-        height: 80
+        x: 0
+        y: 700
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -787,12 +787,12 @@ TextureImporter:
       name: Spritesheet_Esprit_26
       rect:
         serializedVersion: 2
-        x: 997
-        y: 798
-        width: 105
-        height: 506
+        x: 700
+        y: 700
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -808,12 +808,12 @@ TextureImporter:
       name: Spritesheet_Esprit_27
       rect:
         serializedVersion: 2
-        x: 1697
-        y: 744
-        width: 105
-        height: 507
+        x: 1400
+        y: 700
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -829,12 +829,12 @@ TextureImporter:
       name: Spritesheet_Esprit_28
       rect:
         serializedVersion: 2
-        x: 144
-        y: 180
-        width: 460
-        height: 260
+        x: 0
+        y: 0
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -850,12 +850,12 @@ TextureImporter:
       name: Spritesheet_Esprit_29
       rect:
         serializedVersion: 2
-        x: 904
-        y: 275
-        width: 10
-        height: 105
+        x: 700
+        y: 0
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -871,12 +871,12 @@ TextureImporter:
       name: Spritesheet_Esprit_30
       rect:
         serializedVersion: 2
-        x: 913
-        y: 120
-        width: 273
-        height: 420
+        x: 1400
+        y: 0
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -884,48 +884,6 @@ TextureImporter:
       bones: []
       spriteID: 4595ce68340e4cee0800000000000000
       internalID: -1241621016616347308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_Esprit_31
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 274
-        width: 10
-        height: 104
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e3e621ff393ba280800000000000000
-      internalID: -9031061680969817120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_Esprit_32
-      rect:
-        serializedVersion: 2
-        x: 1615
-        y: 87
-        width: 269
-        height: 363
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4447b5200d1ffcbe0800000000000000
-      internalID: -1454678278922341308
       vertices: []
       indices: 
       edges: []
