@@ -11,17 +11,18 @@ public class ELC_Bridge : AXD_Activable
     private bool isOpen;
     private Tile BasicTile;
     public bool ActivateOnDisable;
+    public bool DialogActivation;
 
     private void Start()
     {
         BasicTile = tilesScript.BasicTile;
-        CheckActivations();
+        CloseBridge();
     }
 
-    private void Update()
-    {
-        //CheckActivations();
-    }
+    //private void Update()
+    //{
+    //    CheckActivations();
+    //}
 
 
 
@@ -50,32 +51,34 @@ public class ELC_Bridge : AXD_Activable
 
     public void CheckActivations()
     {
-        int currentNumberOfActivation = 0;
-
-        foreach (ELC_Activation active in ActivationsNeeded)
+        if(!DialogActivation)
         {
-            if ( (!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
-        }
-        //Debug.Log(currentNumberOfActivation);
+            int currentNumberOfActivation = 0;
 
-        if (currentNumberOfActivation == ActivationsNeeded.Count)
-        {
-            if (!isOpen)
+            foreach (ELC_Activation active in ActivationsNeeded)
             {
-                OpenBridge();
+                if ((!ActivateOnDisable && active.isActivated) || (ActivateOnDisable && !active.isActivated)) currentNumberOfActivation++;
+            }
+            //Debug.Log(currentNumberOfActivation);
+
+            if (currentNumberOfActivation == ActivationsNeeded.Count)
+            {
+                if (!isOpen)
+                {
+                    OpenBridge();
+                }
+            }
+            else if (isOpen)
+            {
+                CloseBridge();
             }
         }
-        else if (isOpen)
-        {
-            CloseBridge();
-        }
-
-        
     }
 
     public override void Activate()
     {
-        CheckActivations();
+        if (!DialogActivation) CheckActivations();
+        else OpenBridge();
     }
     
 }
