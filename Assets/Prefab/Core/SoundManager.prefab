@@ -585,3 +585,323 @@ MonoBehaviour:
     mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
       type: 2}
     source: {fileID: 0}
+  - name: Esprit_Hiboux1
+    clip: {fileID: 8300000, guid: 1f89b87fcfc2d7e439c7b4d372eb1d08, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux2
+    clip: {fileID: 8300000, guid: 14afb8f9167881542ad1d1d368fb72c3, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux3
+    clip: {fileID: 8300000, guid: ad127cc2bb8188143984dd772d4c5333, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux4
+    clip: {fileID: 8300000, guid: ec626850bd73b544cb609934c0c781b0, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux5
+    clip: {fileID: 8300000, guid: d01ef1830dd25ab4eb5dec975f374517, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux6
+    clip: {fileID: 8300000, guid: febfd84882d4412469c0edc2497e84c6, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux7
+    clip: {fileID: 8300000, guid: 45d2bab58fddfd74995dccd58677bfb2, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux8
+    clip: {fileID: 8300000, guid: b4b7ed2566a3ea547966cf35ed7cddee, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Hiboux9
+    clip: {fileID: 8300000, guid: 72a0781cd060aeb43ba13405c072bda8, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Pale1
+    clip: {fileID: 8300000, guid: 8b62becf126a71b46a261293202eedee, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Pale2
+    clip: {fileID: 8300000, guid: 70b1c773fa95e6d49a707f5bd9f9a73b, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Pale3
+    clip: {fileID: 8300000, guid: 67206a39fba0ed44cb8201ba25cf24de, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Pale4
+    clip: {fileID: 8300000, guid: 2c985815ab9e20f4fabd72b31256b73e, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Pale5
+    clip: {fileID: 8300000, guid: 3b2bd660be1497f4ba832695254d1b85, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup1
+    clip: {fileID: 8300000, guid: 70c3a7aa970f1f04e9690a8928d9ad45, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup2
+    clip: {fileID: 8300000, guid: 752e9166317298d49b3371b614bbd6c3, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup3
+    clip: {fileID: 8300000, guid: 48717543ee8271341908534cdc51957d, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup4
+    clip: {fileID: 8300000, guid: ae524ea8527585d45b3815fe278c050a, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup5
+    clip: {fileID: 8300000, guid: 9ab25ff36b071984ebc4ceb86481807e, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup6
+    clip: {fileID: 8300000, guid: 2fb4ef3689cb6ee4da347b67e3818ca9, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup7
+    clip: {fileID: 8300000, guid: 12a650b4d1313044db3fa2cb73221818, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup8
+    clip: {fileID: 8300000, guid: 1c920c2a94e9d2d4d97e187e95d4c0bd, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup9
+    clip: {fileID: 8300000, guid: 4f9c9700aa06975428e5356948a42d4d, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Roi_Loup10
+    clip: {fileID: 8300000, guid: 864c497f38ada8d4d97ab3717b3b6cdc, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent1
+    clip: {fileID: 8300000, guid: 806f4a4863f49aa499ca17aaa9ec3939, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent2
+    clip: {fileID: 8300000, guid: ecb97c25ad09523468cabbeafe84e073, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent3
+    clip: {fileID: 8300000, guid: 584d3f96ba46cc241865a0ec8403b50b, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent4
+    clip: {fileID: 8300000, guid: 63669ab0e95efab4b872d06afaca5077, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent5
+    clip: {fileID: 8300000, guid: 177c6980da07e3749ab43360047d69e4, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent6
+    clip: {fileID: 8300000, guid: 5313153386ca5a349ad060b4fe5398d9, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent7
+    clip: {fileID: 8300000, guid: db590f75bc9732940a6bd5f9ae7507c0, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Esprit_Serpent8
+    clip: {fileID: 8300000, guid: bac53f50ad8e76e4393178292238c3e5, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
