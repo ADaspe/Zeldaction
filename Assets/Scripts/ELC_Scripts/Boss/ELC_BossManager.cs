@@ -129,6 +129,8 @@ public class ELC_BossManager : MonoBehaviour
         BossAttacks.EndAttack();
         BossAttacks.StopAllCoroutines();
         BossAttacks.enabled = false;
+        BossHealth.HaveShield = false;
+        BossHealth.ShieldParticles.Stop();
         canAttack = false;
         CamScript.SwitchCamFocus(this.transform, false);
         IsInSwitchPhase = true;
