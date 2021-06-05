@@ -43,6 +43,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     public bool isAttacking;
     Animator anims;
+    bool isFading;
 
     private void Awake()
     {
@@ -75,6 +76,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     public void PrepareAttack()
     {
+        
         BossMana.isAttacking = true;
         switch (BossMana.CurrentPhase)
         {
@@ -85,6 +87,7 @@ public class ELC_BossAttacks : MonoBehaviour
                 AttackRadius = BasicAttackRadius;
                 AttackAngle = BasicAttackAngle;
                 //SpriteRend.enabled = true;
+                StartCoroutine(Fade(true));
                 break;
             case 2:
                 PrepareAttackDuration = DashPreparationTime;
@@ -164,7 +167,9 @@ public class ELC_BossAttacks : MonoBehaviour
         anims.SetBool("AttackPhase", false);
         anims.SetBool("isGrowling", false);
         StartCoroutine("CooldownsAttack");
-        
+        if (BossMana.CurrentPhase == 1) StartCoroutine(Fade());
+
+
         anims.SetBool("Dash", false);
         BossMana.isAttacking = false;
         //if (BossMana.CurrentPhase == 1) SpriteRend.enabled = false;
@@ -233,6 +238,38 @@ public class ELC_BossAttacks : MonoBehaviour
         {
             BossRay.StartCoroutine("Spawn");
         }
+    }
+
+    public IEnumerator Fade(bool FadeIn = false)
+    {
+        yield return new WaitWhile(() => isFading);
+        isFading = true;
+        float alphaValue = 0;
+        if(!FadeIn)
+        {
+            alphaValue = 1;
+            while (alphaValue > 0)
+            {
+                yield return new WaitForSeconds(0.05f);
+                alphaValue -= 0.1f;
+                var mat = SpriteRend.material.color;
+                mat.a = alphaValue;
+                SpriteRend.color = mat;
+            }
+        }
+        else
+        {
+            alphaValue = 0;
+            while (alphaValue < 1)
+            {
+                yield return new WaitForSeconds(0.05f);
+                alphaValue += 0.1f;
+                var mat = SpriteRend.material.color;
+                mat.a = alphaValue;
+                SpriteRend.color = mat;
+            }
+        }
+        isFading = false;
     }
 
     public IEnumerator CooldownsAttack()
