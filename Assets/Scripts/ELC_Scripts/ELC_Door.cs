@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using UnityEngine.InputSystem;
 
 public class ELC_Door : AXD_Activable
 {
@@ -11,6 +13,15 @@ public class ELC_Door : AXD_Activable
     public AudioManager audioManager;
     private Collider2D rb;
     private int currentNumberOfActivation;
+    private bool openedOnce = false;
+
+    [Header("Cam Cinematic Parameters")]
+    public bool openingCinematic;
+    public float cinematicDuration = 2f;
+    public ELC_CharacterManager charaMana;
+    public CinemachineVirtualCamera vCam;
+    public PlayerInput playerInput;
+    private ELC_SwitchCamFocus switchCam;
 
     private void Start()
     {
@@ -21,6 +32,15 @@ public class ELC_Door : AXD_Activable
         rb = this.GetComponent<Collider2D>();
         isActivated = IsOpenAtStart;
         rb.enabled = !IsOpenAtStart;
+        
+        if(openingCinematic)
+        {
+            Debug.Log("Vu");
+            switchCam = gameObject.AddComponent<ELC_SwitchCamFocus>();
+            switchCam.CharaMana = charaMana;
+            switchCam.vCam = vCam;
+            switchCam.Inputs = playerInput;
+        }
     }
 
     public void CheckActivations()
@@ -40,11 +60,19 @@ public class ELC_Door : AXD_Activable
                     isActivated = true;
                     LockTorches();
                     rb.enabled = false;
-                    if (jingleOnFirstOpen)
+                    if(!openedOnce)
                     {
-                        jingleOnFirstOpen = false;
-                        audioManager.Play("Door_Open");
-                    }
+                        openedOnce = true;
+                        if(openingCinematic)
+                        {
+                            switchCam.SwitchCamFocus(this.transform, false);
+                            StartCoroutine(CamSwapCanceler());
+                        }
+                        if (jingleOnFirstOpen)
+                        {
+                            audioManager.Play("Door_Open");
+                        }
+                    }                    
                     if (ObjectAnimator != null) // Pas de null pointer exception :)
                     {
                         ObjectAnimator.SetBool("Activated", isActivated);
@@ -68,5 +96,11 @@ public class ELC_Door : AXD_Activable
     public override void Activate()
     {        
         CheckActivations();
+    }
+
+    private IEnumerator CamSwapCanceler()
+    {
+        yield return new WaitForSeconds(cinematicDuration);
+        switchCam.CancelCamFocus();
     }
 }

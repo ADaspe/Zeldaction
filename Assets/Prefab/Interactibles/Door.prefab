@@ -247,6 +247,9 @@ MonoBehaviour:
   jingleOnFirstOpen: 1
   IsOpenAtStart: 0
   audioManager: {fileID: 0}
+  openingCinematic: 0
+  switchCam: {fileID: 0}
+  charaMana: {fileID: 0}
 --- !u!95 &6073511561315566862
 Animator:
   serializedVersion: 3
