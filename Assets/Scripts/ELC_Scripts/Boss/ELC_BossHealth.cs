@@ -14,6 +14,7 @@ public class ELC_BossHealth : MonoBehaviour
     public bool IsStunned;
     public bool HaveShield;
     public float shieldRecoveryTime;
+    public ParticleSystem ShieldParticles;
 
     public int CurrentHealth;
 
@@ -44,8 +45,13 @@ public class ELC_BossHealth : MonoBehaviour
     public IEnumerator ShieldLostAndRecover()
     {
         HaveShield = false;
+        ShieldParticles.Stop();
         yield return new WaitForSeconds(shieldRecoveryTime);
-        HaveShield = true;
+        if (!BossMana.IsInSwitchPhase && BossMana.CurrentPhase == 2)
+        {
+            HaveShield = true;
+            ShieldParticles.Play();
+        }
     }
 
     public void Pacificate()
