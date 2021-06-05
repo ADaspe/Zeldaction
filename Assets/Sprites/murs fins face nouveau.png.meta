@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9096a1eb8ef64e84d8137a2f7d2ba283
+guid: 9229490780ee0af4997a586615611661
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5516379349934787152
-    second: murs fins_0
-  - first:
-      213: 1641169681611284504
-    second: murs fins_1
+      213: -6480544341813978012
+    second: murs fins face nouveau_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 630
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,7 +106,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -145,43 +142,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: murs fins_0
+      name: murs fins face nouveau_0
       rect:
         serializedVersion: 2
-        x: 159
-        y: 128
-        width: 578
-        height: 559
+        x: 43
+        y: 0
+        width: 772
+        height: 724
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 175, y: 0, z: 176, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 242, y: 0, z: 224, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05ac92faacd1e8c40800000000000000
-      internalID: 5516379349934787152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: murs fins_1
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 128
-        width: 577
-        height: 574
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 208, y: 0, z: 208, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 810e490512b96c610800000000000000
-      internalID: 1641169681611284504
+      spriteID: 46c920ba14b7016a0800000000000000
+      internalID: -6480544341813978012
       vertices: []
       indices: 
       edges: []
