@@ -19,6 +19,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CharacterVariablesSO stats;
     private ELC_SpiritIdle spiritIdle;
     public ELC_GameManager gameManager;
+    public AXD_Health health;
     public int currentHP;
     public int maxHP;
     public ELC_CharacterAnimationsManager AnimationManager;
@@ -76,6 +77,7 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
         RynAnimator = RynGO.GetComponent<Animator>();
         IdenAnimator = SpiritGO.GetComponent<Animator>();
+        health = RynGO.GetComponent<AXD_Health>();
         currentHP = maxHP = stats.initialHP;
         ticTacEnabled = false;
         timeToTeleportTooFar = 0;
@@ -464,6 +466,8 @@ public class ELC_CharacterManager : MonoBehaviour
         RynGO.transform.position = lastCheckPoint.GetSpawnPosition();
         RynMove.canMove = true;
         spiritIdle.Teleport();
+        health.FullHeal();
+
     }
 
     [Button]
