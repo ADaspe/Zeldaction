@@ -185,13 +185,13 @@ public class ELC_CharacterManager : MonoBehaviour
                     DetectedInteraction.isGrabbed = true;
                     RynMove.isRynGrabbing = true;
                     Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y - DetectedInteraction.transform.position.y);
-                    if (Mathf.Abs(vectorDiff.x) >= 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
+                    if (Mathf.Abs(vectorDiff.x) >= 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est ï¿½ droite de la caisse
                     {
-                        //Animation à gauche
+                        //Animation ï¿½ gauche
                         yLocked = true;
-                    } else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
+                    } else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est ï¿½ gauche de la caisse
                     {
-                        //Animation à droite
+                        //Animation ï¿½ droite
                         yLocked = true;
                     }
                     else if (Mathf.Abs(vectorDiff.y) >= 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessus de la caisse
@@ -216,7 +216,7 @@ public class ELC_CharacterManager : MonoBehaviour
             } else if (DetectedInteraction == null && followingCharacter == RynMove)
             {
                 int tempEnemyNumber = 0;
-                allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy"));
+                allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy","Boss"));
                 if(allDetected.Length >0)
                 {
                     gameManager.audioManager.Play("Pacification");
@@ -227,6 +227,12 @@ public class ELC_CharacterManager : MonoBehaviour
                     {
                         tempEnemyNumber++;
                         item.gameObject.GetComponent<AXD_EnemyHealth>().Pacificate();
+                    }
+                    else if(item.CompareTag("Boss") && tempEnemyNumber < stats.maxEnemyPacification)
+                    {
+                        tempEnemyNumber++;
+                        item.gameObject.GetComponent<ELC_BossHealth>().Pacificate();
+                        Debug.Log("Boss pacifiï¿½");
                     }
                 }
             }

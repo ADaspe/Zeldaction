@@ -7,10 +7,12 @@ public class AXD_EnemyHealth : MonoBehaviour
     public ELC_EnemyAI enemyAI;
     public Material deathShader;
     public SpriteRenderer sr;
+    private Animator anims;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        anims = this.GetComponent<Animator>();
     }
 
     public bool GetHit(float timeToStun)
@@ -19,6 +21,7 @@ public class AXD_EnemyHealth : MonoBehaviour
         {
             Debug.Log("Bang bang");
             enemyAI.isStunned = true;
+            anims.SetBool("isStun", true);
             Invoke("CancelStun", timeToStun);
             return true;
         }
@@ -28,6 +31,7 @@ public class AXD_EnemyHealth : MonoBehaviour
     private void CancelStun()
     {
         enemyAI.isStunned = false;
+        anims.SetBool("isStun", false);
     }
 
     public void Pacificate()
@@ -45,7 +49,7 @@ public class AXD_EnemyHealth : MonoBehaviour
     
     IEnumerator PacificateCoroutine()
     {
-
+        CancelInvoke();
         sr.material = deathShader;
         yield return new WaitForSeconds(1f/*Mettre le vrai temps de shader de dissolution*/);
         Destroy(this);

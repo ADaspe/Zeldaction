@@ -71,7 +71,7 @@ public class ELC_BossMoves : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (path == null || !CanMove)
+        if (path == null || !CanMove || BossMana.isStunned)
         {
             anims.SetBool("isMoving", false);
             return;
@@ -126,7 +126,7 @@ public class ELC_BossMoves : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        if(!BossMana.isAttacking)
+        if(!BossMana.isAttacking && !BossMana.BossAttacks.isAttacking)
         {
             anims.SetFloat("MovesX", LastDirection.x);
             anims.SetFloat("MovesY", LastDirection.y);

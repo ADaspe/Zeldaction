@@ -28,11 +28,11 @@ MonoBehaviour:
   SpiritSpeed: 3.5
   ShieldCooldown: 2.5
   AttackCooldown: 1
-  AttackTogetherRange: 3
+  AttackTogetherRange: 4
   StunTime: 20
   SpiritRespawn: 1
   SpeedGrabbing: 1.5
-  TogetherAttackDetectionAngle: 60
+  TogetherAttackDetectionAngle: 80
   IdenProjectionDistance: 2
   IdenProjectionTime: 0.3
   IdenSlowDownTime: 0.4
