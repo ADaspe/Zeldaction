@@ -78,12 +78,17 @@ public class ELC_DialogManager : MonoBehaviour
             if(CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].Sound.Length != 0) SoundMana.Play(CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].Sound);
         }
 
-        
+        if (CurrentDialSO.AutoSkip)
+        {
+            ContinueButton.SetActive(false);
+            float timeToWait = 0;
 
-        float timeToWait = 0;
-        if (isRandomDialog) timeToWait = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
-        else timeToWait = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
-        Invoke("WriteNextSentence", timeToWait);
+            if (isRandomDialog) timeToWait = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
+            else timeToWait = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
+            Invoke("WriteNextSentence", timeToWait);
+        }
+        else ContinueButton.SetActive(true);
+
     }
 
     public void WriteNextSentence()
@@ -92,7 +97,6 @@ public class ELC_DialogManager : MonoBehaviour
         {
             if(CurrentLineIndex < CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs.Length - 2)
             {
-                
                 CurrentLineIndex++;
                 Write(CurrentLineIndex);
             }
@@ -131,7 +135,7 @@ public class ELC_DialogManager : MonoBehaviour
     public IEnumerator NextDialog()
     {
         CurrentLineIndex = 0;
-
+        if (!CurrentDialSO.AutoSkip) ContinueButton.SetActive(false);
         StartCoroutine(dialScript.checkEvents());
 
         yield return new WaitWhile(() => dialScript.isInEvent);
