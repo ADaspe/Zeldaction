@@ -1385,6 +1385,11 @@ PrefabInstance:
       objectReference: {fileID: 8259352534926387431}
     - target: {fileID: 5547120372911743439, guid: c3b82ff2e40626a4daa0c7f4210d1778,
         type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1868863768}
+    - target: {fileID: 5547120372911743439, guid: c3b82ff2e40626a4daa0c7f4210d1778,
+        type: 3}
       propertyPath: AnimationManager
       value: 
       objectReference: {fileID: 1871164983}
@@ -3506,6 +3511,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 557430706}
     m_Modifications:
+    - target: {fileID: 4134849747144275605, guid: 6d08d616687b9514d95e9600c8025003,
+        type: 3}
+      propertyPath: sounds.Array.data[23].volume
+      value: 0.254
+      objectReference: {fileID: 0}
     - target: {fileID: 7805689310011672333, guid: 6d08d616687b9514d95e9600c8025003,
         type: 3}
       propertyPath: m_Name
@@ -3705,6 +3715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MushSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794218971470581621, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7114628119585244884, guid: ec62fce0676dd1f4289cec9412c84418,
         type: 3}
@@ -15052,7 +15067,7 @@ PrefabInstance:
     - target: {fileID: 5613618017327066211, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5613618017327066214, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
         type: 3}

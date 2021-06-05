@@ -77,6 +77,7 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator Intro()
     {
+        BossMoves.distToStopNearTarget = BossMoves.BasicDistToStopNearPlayer;
         IsInSwitchPhase = true;
         BossMoves.CanMove = false;
         BossHealth.CurrentHealth = BossHealth.FirstPhaseHealth;
@@ -97,7 +98,8 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator SecondPhaseSwitch()
     {
-        
+        BossMoves.distToStopNearTarget = BossMoves.DashDistToStopNearPlayer;
+        StartCoroutine(BossAttacks.Fade(true));
         BossAttacks.CancelInvoke();
         BossAttacks.EndAttack();
         BossAttacks.StopAllCoroutines();

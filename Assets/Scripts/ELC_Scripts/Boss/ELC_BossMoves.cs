@@ -12,6 +12,9 @@ public class ELC_BossMoves : MonoBehaviour
     [HideInInspector]
     ELC_BossManager BossMana;
     public float NextWaypointDist = 0.3f;
+    public float BasicDistToStopNearPlayer;
+    public float DashDistToStopNearPlayer;
+    [HideInInspector]
     public float distToStopNearTarget;
     public float speed;
     public bool CanMove;
