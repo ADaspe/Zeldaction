@@ -35,6 +35,7 @@ public class ELC_BossHealth : MonoBehaviour
             if (CurrentHealth - 1 > 0) CurrentHealth--;
             else
             {
+                BossMana.gameManager.audioManager.Play("Boss_Paralyzed");
                 IsStunned = true;
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
