@@ -20,6 +20,9 @@ public class ELC_Activation : MonoBehaviour
     private Animator animator;
     private AudioManager audioManager;
     public bool definitivelyActivated;
+    [HideInInspector]
+    public bool ticTacTorch;
+    private static bool ticTacEnabled;
 
     private void Start()
     {
@@ -81,7 +84,10 @@ public class ELC_Activation : MonoBehaviour
             isActivated = true;
             AnimatorUpdate();
             ActivationParticles.Play();
-
+            if (!ticTacEnabled)
+            {
+                audioManager.Play("TicTac");
+            }
             foreach (AXD_Activable item in objectsToActivate)
             {
                 item.Activate();
@@ -107,10 +113,17 @@ public class ELC_Activation : MonoBehaviour
 
     }
 
+    public void StopTicTac()
+    {
+        ticTacEnabled = false;
+        audioManager.Stop("TicTac");
+    }
+
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(TorchDuration);
         isActivated = false;
+        StopTicTac();
         ActivationParticles.Stop();
         AnimatorUpdate();
     }
