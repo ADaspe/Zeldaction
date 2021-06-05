@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5697138928547135055}
   - component: {fileID: 5697138928547135054}
   - component: {fileID: 5697138928547135053}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Totem
-  m_TagString: Untagged
+  m_TagString: Totem
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PurifyParticles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
@@ -198,7 +199,7 @@ GameObject:
   - component: {fileID: 5697138928951463136}
   - component: {fileID: 5697138928951463138}
   - component: {fileID: 5697138928951463137}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CircleDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

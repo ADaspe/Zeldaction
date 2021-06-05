@@ -221,6 +221,7 @@ MonoBehaviour:
   isStunned: 0
   isProtected: 0
   ShieldParticles: {fileID: 0}
+  type: 1
   Speed: 200
   NextWaypointDistance: 0.5
   canPatrol: 1

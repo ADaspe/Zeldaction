@@ -81,10 +81,8 @@ public class ELC_Interact : MonoBehaviour
     {
         if (corrupted)
         {
-            if (isTotem) this.GetComponent<ELC_Totem>().Purify();
             if (isBrambles) this.GetComponent<AXD_Brambles>().Purify();
             Instantiate(PurifyParticles, this.transform).GetComponent<ParticleSystem>().Play();
-            
             corrupted = !corrupted;
         }
     }
