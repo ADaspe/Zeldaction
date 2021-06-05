@@ -14,6 +14,7 @@ public class ELC_Totem : MonoBehaviour
         {
             enemy.isProtected = true;
             enemy.ShieldParticles.Play();
+            enemy.ShieldParticles.gameObject.GetComponent<Animator>().SetBool("ActivateShield", true);
         }
     }
 
@@ -25,7 +26,7 @@ public class ELC_Totem : MonoBehaviour
             isActive = false;
             foreach (ELC_EnemyAI enemy in EnemiesToProtect)
             {
-                enemy.ShieldParticles.Stop();
+                enemy.ShieldParticles.gameObject.GetComponent<Animator>().SetBool("Dissolve", true);
                 enemy.isProtected = false;
             }
         }

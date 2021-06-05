@@ -28,7 +28,7 @@ public class ELC_BossHealth : MonoBehaviour
 
     public void BossGetHit()
     {
-        if(!BossMana.IsInSwitchPhase || !HaveShield)
+        if(!BossMana.IsInSwitchPhase && !HaveShield)
         {
             Debug.Log("tapé");
             BossMana.music.SwitchMusicPart(0);
@@ -36,6 +36,7 @@ public class ELC_BossHealth : MonoBehaviour
             else
             {
                 IsStunned = true;
+                this.GetComponent<Animator>().SetBool("isStun", true);
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
                 if(BossMana.CurrentPhase == 1) StartCoroutine(BossMana.BossAttacks.Fade(true));
@@ -51,7 +52,7 @@ public class ELC_BossHealth : MonoBehaviour
         ShieldGO.GetComponent<Animator>().SetBool("Dissolve", false);
         ShieldGO.GetComponent<ParticleSystem>().Stop();
         yield return new WaitForSeconds(shieldRecoveryTime);
-        if (!BossMana.IsInSwitchPhase && BossMana.CurrentPhase == 2)
+        if (!BossMana.IsInSwitchPhase && BossMana.CurrentPhase == 2 && !IsStunned)
         {
             HaveShield = true;
             ShieldGO.GetComponent<ParticleSystem>().Play();
@@ -65,6 +66,7 @@ public class ELC_BossHealth : MonoBehaviour
         {
             IsStunned = false;
             BossMana.isStunned = IsStunned;
+            this.GetComponent<Animator>().SetBool("isStun", false);
             if (BossMana.CurrentPhase < 3) BossMana.SwitchPhase();
             else BossMana.End();
         }
