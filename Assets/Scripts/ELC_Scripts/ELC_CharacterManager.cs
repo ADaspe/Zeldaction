@@ -8,28 +8,27 @@ using Sirenix.OdinInspector;
 
 public class ELC_CharacterManager : MonoBehaviour
 {
-    public bool Together;
+    [Header("References")]
     public GameObject RynGO;
     public GameObject SpiritGO;
     public CinemachineVirtualCamera vCam;
     public AXD_CharacterMove followingCharacter;
     public AXD_CharacterMove RynMove;
     public AXD_CharacterMove spiritMove;
-    public ELC_Interact DetectedInteraction;
     public AXD_CharacterVariablesSO stats;
     private ELC_SpiritIdle spiritIdle;
     public ELC_GameManager gameManager;
-    public AXD_Health health;
-    public int currentHP;
-    public int maxHP;
     public ELC_CharacterAnimationsManager AnimationManager;
+    //[HideInInspector]
     public ELC_Interact ToPurify;
-    //Variables locales
-    public bool isDead;
     [HideInInspector]
     public ELC_Attack RynAttack;
     [HideInInspector]
     public ELC_Attack SpiritAttack;
+    [Header("Movements")]
+    public bool Together;
+    public bool xLocked;
+    public bool yLocked;
     [Header("Animations")]
     public Animator RynAnimator;
     public Animator IdenAnimator;
@@ -41,23 +40,20 @@ public class ELC_CharacterManager : MonoBehaviour
     public string PlayerDetachSpirit;
     public string PlayerDeath;
     public string PlayerPushObject;
-    public float SpiritReleaseDuration;
-    public float nextDash;
-    public bool spiritProjected;
-    public AXD_CheckPoint lastCheckPoint;
-    public Collider2D[] allDetected;
+    [Header("Menu")]
+    public GameObject PauseMenu;
     public UnityEvent enableMenu;
     public UnityEvent disableMenu;
-    public GameObject PauseMenu;
     public bool toggleMenu;
-    private bool ticTacEnabled;
-    private float timeToTeleportTooFar;
-    [SerializeField]
-    private float timeToRynScared;
 
-    public bool xLocked;
-    public bool yLocked;
 
+    [Header("Health")]
+
+    public int currentHP;
+    [HideInInspector]
+    public AXD_Health health;
+    public int maxHP;
+    public bool isDead;
     [Header("Upgrades")]
     [ReadOnly]
     public bool returnUpgrade;
@@ -65,7 +61,22 @@ public class ELC_CharacterManager : MonoBehaviour
     public bool dashPlusUpgrade;
     [ReadOnly]
     public bool purificationUpgrade;
-    
+
+    [HideInInspector]
+    public float SpiritReleaseDuration;
+    [HideInInspector]
+    public float nextDash;
+    [HideInInspector]
+    public bool spiritProjected;
+    [HideInInspector]
+    public AXD_CheckPoint lastCheckPoint;
+    [HideInInspector]
+    private Collider2D[] allDetected;
+    [HideInInspector]
+    public ELC_Interact DetectedInteraction;
+    private bool ticTacEnabled;
+    private float timeToTeleportTooFar;
+    private float timeToRynScared;
 
     private void Awake()
     {
@@ -231,22 +242,23 @@ public class ELC_CharacterManager : MonoBehaviour
             {
                 int tempEnemyNumber = 0;
                 allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy","Boss"));
-                if(allDetected.Length >0)
-                {
-                    gameManager.audioManager.Play("Pacification");
-                }
                 foreach (Collider2D item in allDetected)
                 {
                     if (item.CompareTag("Enemy") && tempEnemyNumber<stats.maxEnemyPacification)
                     {
+                        
                         tempEnemyNumber++;
                         item.gameObject.GetComponent<AXD_EnemyHealth>().Pacificate();
                     }
                     else if(item.CompareTag("Boss") && tempEnemyNumber < stats.maxEnemyPacification)
                     {
+                        gameManager.audioManager.Play("Pacification");
                         tempEnemyNumber++;
                         item.gameObject.GetComponent<ELC_BossHealth>().Pacificate();
-                        Debug.Log("Boss pacifi�");
+                    }else if (item.CompareTag("Totem"))
+                    {
+                        item.gameObject.GetComponent<ELC_Totem>().Pacificate();
+                        
                     }
                 }
             }

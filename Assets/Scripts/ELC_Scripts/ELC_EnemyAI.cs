@@ -13,7 +13,8 @@ public class ELC_EnemyAI : MonoBehaviour
     public bool isStunned;
     public bool isProtected;
     public ParticleSystem ShieldParticles;
-
+    public enum EnemyType { BASIC,SHIELD}
+    public EnemyType type;
     public float Speed = 200f;
     public float NextWaypointDistance = 0.3f; //à quelle distance il doit être d'un checkpoint pour se diriger vers le suivant (pour éviter que ce soit à 0 de distance qui serait impossible à atteindre pile)
     
@@ -150,6 +151,14 @@ public class ELC_EnemyAI : MonoBehaviour
 
     IEnumerator PrepareAttack(float time)
     {
+        if(type == EnemyType.BASIC)
+        {
+            gameMana.audioManager.Play("Basic_Atk");
+        }else if (type == EnemyType.SHIELD)
+        {
+            gameMana.audioManager.Play("DS_Atk");
+        }
+        
         anims.SetBool("PrepareAttack", true);
         isPreparingAttack = true;
         if(EnableDebug) Debug.Log("prepare");
@@ -266,15 +275,22 @@ public class ELC_EnemyAI : MonoBehaviour
                 if (gameMana.CharacterManager.spiritMove.isDashing)
                 {
                     gameMana.CharacterManager.SpiritGO.GetComponent<ELC_Attack>().StopDashCoroutine();
+                    gameMana.audioManager.Play("DS_SpiritDefense");
                     Debug.Log("bloqué");
                 }
                 else if (gameMana.CharacterManager.RynGO.GetComponent<ELC_Attack>().spiritAttack)
                 {
                     gameMana.CharacterManager.RynGO.GetComponent<ELC_Attack>().spiritAttack = false;
+                    gameMana.audioManager.Play("DS_SpiritDefense");
                     Debug.Log("bloqué");
                 }
             }
         }
+    }
+
+    public void PlayFootStepShieldEnemy()
+    {
+        gameMana.audioManager.Play("DS_Move");
     }
 
     private void OnDrawGizmos()

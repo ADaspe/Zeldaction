@@ -19,7 +19,13 @@ public class AXD_EnemyHealth : MonoBehaviour
     {
         if (!enemyAI.isStunned && !enemyAI.isProtected)
         {
-            Debug.Log("Bang bang");
+            if (enemyAI.type == ELC_EnemyAI.EnemyType.BASIC)
+            {
+                enemyAI.gameMana.audioManager.Play("Basic_Paralyzed");
+            }else if (enemyAI.type == ELC_EnemyAI.EnemyType.SHIELD)
+            {
+                enemyAI.gameMana.audioManager.Play("DS_Paralyzed");
+            }
             enemyAI.isStunned = true;
             anims.SetBool("isStun", true);
             Invoke("CancelStun", timeToStun);
@@ -36,6 +42,7 @@ public class AXD_EnemyHealth : MonoBehaviour
 
     public void Pacificate()
     {
+        enemyAI.gameMana.audioManager.Play("Pacification");
         Debug.Log("Tentative de pacification");
         // Mettre shader de dissolution
 
@@ -50,6 +57,10 @@ public class AXD_EnemyHealth : MonoBehaviour
     IEnumerator PacificateCoroutine()
     {
         CancelInvoke();
+        if ( enemyAI.type == ELC_EnemyAI.EnemyType.SHIELD)
+        {
+            enemyAI.gameMana.audioManager.Play("DS_Pacification");
+        }
         sr.material = deathShader;
         yield return new WaitForSeconds(1f/*Mettre le vrai temps de shader de dissolution*/);
         Destroy(this);
