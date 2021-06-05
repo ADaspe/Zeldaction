@@ -38,7 +38,7 @@ public class ELC_BossHealth : MonoBehaviour
                 IsStunned = true;
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
-                StartCoroutine(BossMana.BossAttacks.Fade(true));
+                if(BossMana.CurrentPhase == 1) StartCoroutine(BossMana.BossAttacks.Fade(true));
             }
         }
     }
@@ -55,6 +55,7 @@ public class ELC_BossHealth : MonoBehaviour
         {
             HaveShield = true;
             ShieldGO.GetComponent<ParticleSystem>().Play();
+            ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
         }
     }
 

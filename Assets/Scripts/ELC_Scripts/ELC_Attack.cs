@@ -109,10 +109,7 @@ public class ELC_Attack : MonoBehaviour
         CharManager.RynMove.canMove = false;
         CharManager.RynMove.rawInputMovement = Vector2.zero;
         NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
-        var mainShieldPS = ShieldPS.main;
-        mainShieldPS.duration = CharManager.stats.ShieldDuration;
-        mainShieldPS.startLifetime = CharManager.stats.ShieldDuration;
-        ShieldPS.Play();
+        ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
 
         Invoke("RynLoseShield", CharManager.stats.ShieldDuration);
     }
@@ -122,6 +119,7 @@ public class ELC_Attack : MonoBehaviour
         if (ShieldOn)
         {
             CharManager.gameManager.audioManager.Play("ShieldDown");
+            ShieldGO.GetComponent<Animator>().SetBool("Dissolve", true);
             NextShield = Time.time + CharManager.stats.ShieldCooldown;
             ShieldOn = false;
             CharManager.RynMove.canMove = true;
