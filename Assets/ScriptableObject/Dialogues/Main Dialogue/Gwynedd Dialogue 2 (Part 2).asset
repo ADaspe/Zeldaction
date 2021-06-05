@@ -16,7 +16,7 @@ MonoBehaviour:
   MiniaturePerso: {fileID: 21300000, guid: a3464b5105789a7428887cdb33f4d670, type: 3}
   Dialog:
   - Dialogs:
-    - DialLine: "She\u2019s not."
+    - DialLine: "She\u2019s not fine, no."
       RynSentence: 0
     - DialLine: The grove has been decimated, none are left.
       RynSentence: 0
