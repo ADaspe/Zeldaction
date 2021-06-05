@@ -8,6 +8,7 @@ public class ELC_DialogManager : MonoBehaviour
     public ELC_DialoguesSO CurrentDialSO;
     [HideInInspector]
     public ELC_SwitchCamFocus camSwitchScript;
+    public AudioManager SoundMana;
     public GameObject CharacterGO;
     [HideInInspector]
     public ELC_Dialog dialScript;
@@ -53,6 +54,8 @@ public class ELC_DialogManager : MonoBehaviour
         if (!isRandomDialog)
         {
             textZone.text = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine;
+            if(CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].Sound.Length != 0) SoundMana.Play(CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].Sound);
+
 
             if (CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].RynSentence)
             {
@@ -71,7 +74,11 @@ public class ELC_DialogManager : MonoBehaviour
 
             if (CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].RynSentence) image.sprite = PortraitRyn;
             else image.sprite = CurrentDialSO.MiniaturePerso;
+
+            if(CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].Sound.Length != 0) SoundMana.Play(CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].Sound);
         }
+
+        
 
         float timeToWait = 0;
         if (isRandomDialog) timeToWait = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
