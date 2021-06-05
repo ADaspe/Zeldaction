@@ -16,6 +16,7 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float DashCoolDown;
     public float SeparationDistance;
     public float SeparationTime;
+    public float SFXRynScaredFrequency;
     public int initialHP;
     public float TorchActivationDuration;
     public float RynSpeed;

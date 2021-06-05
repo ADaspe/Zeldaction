@@ -50,7 +50,9 @@ public class ELC_CharacterManager : MonoBehaviour
     public GameObject PauseMenu;
     public bool toggleMenu;
     private bool ticTacEnabled;
-    public float timeToTeleportTooFar;
+    private float timeToTeleportTooFar;
+    [SerializeField]
+    private float timeToRynScared;
 
     public bool xLocked;
     public bool yLocked;
@@ -77,6 +79,7 @@ public class ELC_CharacterManager : MonoBehaviour
         currentHP = maxHP = stats.initialHP;
         ticTacEnabled = false;
         timeToTeleportTooFar = 0;
+        timeToRynScared = 0;
     }
 
     private void FixedUpdate()
@@ -89,9 +92,20 @@ public class ELC_CharacterManager : MonoBehaviour
                 gameManager.audioManager.Play("TicTac");
                 
             }
+            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)// TO CHANGE
+            {
+                gameManager.audioManager.Play("Ryn_Scared" + Random.Range(1, 9));
+                timeToRynScared = 0;
+            }
+            else
+            {
+                timeToRynScared += Time.deltaTime;
+            }
+            
             if(timeToTeleportTooFar >= stats.SeparationTime)
             {
                 spiritIdle.Teleport();
+                RegroupTogether();
                 timeToTeleportTooFar = 0;
             }
             else
