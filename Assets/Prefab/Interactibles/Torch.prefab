@@ -208,12 +208,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  ActivationParticles: {fileID: 0}
+  ActivationParticles: {fileID: 8784202029550115833}
   isActivated: 0
   TorchDuration: 5
   ConditionsEnabled: 0
-  detectionRadius: 0.7
+  detectionRadius: 1
   objectsToActivate: []
+  definitivelyActivated: 0
+  ticTacTorch: 0
 --- !u!114 &6526799955626206081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +427,12 @@ PrefabInstance:
 --- !u!4 &8784202029550115838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2511203512711756252, guid: fb21e371785c75a408f40101a30b71c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6574788707696255522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8784202029550115833 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2511203512711756251, guid: fb21e371785c75a408f40101a30b71c2,
     type: 3}
   m_PrefabInstance: {fileID: 6574788707696255522}
   m_PrefabAsset: {fileID: 0}

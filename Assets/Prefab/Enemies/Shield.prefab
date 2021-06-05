@@ -220,7 +220,7 @@ MonoBehaviour:
   EnableDebug: 0
   isStunned: 0
   isProtected: 0
-  ShieldParticles: {fileID: 0}
+  ShieldParticles: {fileID: 3538620323196581188}
   type: 1
   Speed: 200
   NextWaypointDistance: 0.5
@@ -382,7 +382,7 @@ PrefabInstance:
     - target: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,
         type: 3}
@@ -434,6 +434,12 @@ PrefabInstance:
 --- !u!4 &3538620323196581191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7221517090631750717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3538620323196581188 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6137368246318834041, guid: 9c17739d89375844d92d35323ab8868a,
     type: 3}
   m_PrefabInstance: {fileID: 7221517090631750717}
   m_PrefabAsset: {fileID: 0}
