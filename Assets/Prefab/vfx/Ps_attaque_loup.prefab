@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3355156829930481677}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &3355156828981649010
 ParticleSystem:
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.57
+      scalar: 3.87
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -982,21 +982,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.3999977
-          inSlope: 0.15278608
-          outSlope: 0.15278608
+          value: 0
+          inSlope: 2
+          outSlope: 2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.16216414
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 0.6615387
-          inSlope: 0.70674044
-          outSlope: 0.70674044
+          value: 1
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.1621518
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1305,7 +1305,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1320,16 +1320,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 30840
-        atime2: 65535
-        atime3: 0
+        atime1: 964
+        atime2: 30840
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4778,7 +4778,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4919,7 +4919,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5088,7 +5088,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.88
+      scalar: 2.22
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5786,21 +5786,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.8307686
-          inSlope: -0.44615966
-          outSlope: -0.44615966
-          tangentMode: 34
+          value: 0
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 0.38460892
-          inSlope: -0.44615966
-          outSlope: -0.44615966
-          tangentMode: 34
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -6047,7 +6047,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.9093165
+      scalar: -2.7925267
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -6107,7 +6107,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -9637,10 +9637,9 @@ Transform:
   m_LocalPosition: {x: 0.618, y: -5.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3355156830384091595}
   - {fileID: 3355156830767016168}
   - {fileID: 3355156828981649008}
-  - {fileID: 911795518366961672}
+  - {fileID: 3355156830384091595}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -9727,7 +9726,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9896,7 +9895,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 2.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10594,21 +10593,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.4153846
-          inSlope: 0.5846154
-          outSlope: 0.5846154
-          tangentMode: 34
+          value: 0
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 0.5846154
-          outSlope: 0.5846154
-          tangentMode: 34
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -10855,7 +10854,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.9093165
+      scalar: 2.7925267
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -10915,7 +10914,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -14390,7 +14389,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -14446,8 +14445,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3355156829366190962}
+  - {fileID: 911795518366961672}
   m_Father: {fileID: 3355156829930481677}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &3355156830384091605
 ParticleSystem:
@@ -14532,7 +14532,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -14701,7 +14701,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.79
+      scalar: 3.07
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15399,21 +15399,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.8307686
-          inSlope: -0.44615966
-          outSlope: -0.44615966
-          tangentMode: 34
+          value: 0
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 0.38460892
-          inSlope: -0.44615966
-          outSlope: -0.44615966
-          tangentMode: 34
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -15660,7 +15660,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.9093165
+      scalar: 2.7925267
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -15720,7 +15720,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -19195,7 +19195,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -19251,7 +19251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3355156829930481677}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &3355156830767016170
 ParticleSystem:
@@ -19336,7 +19336,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -19505,7 +19505,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.43
+      scalar: 3.96
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -20204,20 +20204,20 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0.61538506
-          outSlope: 0.61538506
-          tangentMode: 34
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 0.61538506
-          inSlope: 0.61538506
-          outSlope: 0.61538506
-          tangentMode: 34
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -20464,7 +20464,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.9093165
+      scalar: -2.7925267
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -20524,7 +20524,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -23999,7 +23999,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -24030,8 +24030,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3355156829930481677}
+    m_TransformParent: {fileID: 3355156830384091595}
     m_Modifications:
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: lengthInSec
@@ -24040,12 +24045,12 @@ PrefabInstance:
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 4.53
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 5.17
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24055,32 +24060,87 @@ PrefabInstance:
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.6792453
+      value: 0.764151
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.12882248
+      value: 0.206435
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.074973285
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime0
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
-      value: 32189
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime3
+      value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.a
-      value: 0.6901961
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.a
-      value: 0.81960785
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24099,13 +24159,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.b
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.g
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
-      value: 0.45643553
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24115,7 +24200,12 @@ PrefabInstance:
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
-      value: 0.21537757
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24125,7 +24215,12 @@ PrefabInstance:
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
-      value: 3.0740154
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24135,7 +24230,17 @@ PrefabInstance:
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
-      value: 3.0740154
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24150,7 +24255,12 @@ PrefabInstance:
     - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outWeight
-      value: 0.19444773
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705975845140721080, guid: 632818c952eeb1b419935006db86fcd8,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1881072612324493272, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
@@ -24160,7 +24270,7 @@ PrefabInstance:
     - target: {fileID: 2461411179432848754, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2461411179432848754, guid: 632818c952eeb1b419935006db86fcd8,
         type: 3}
