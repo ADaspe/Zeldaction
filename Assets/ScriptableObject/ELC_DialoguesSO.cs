@@ -17,6 +17,7 @@ public class ELC_DialoguesSO : ScriptableObject
 public class DialStruct
 {
     public string DialLine;
+    public string Sound;
     public bool RynSentence;
 }
 
