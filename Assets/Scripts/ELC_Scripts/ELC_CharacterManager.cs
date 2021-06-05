@@ -19,6 +19,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CharacterVariablesSO stats;
     private ELC_SpiritIdle spiritIdle;
     public ELC_GameManager gameManager;
+    public AXD_Health health;
     public int currentHP;
     public int maxHP;
     public ELC_CharacterAnimationsManager AnimationManager;
@@ -50,7 +51,9 @@ public class ELC_CharacterManager : MonoBehaviour
     public GameObject PauseMenu;
     public bool toggleMenu;
     private bool ticTacEnabled;
-    public float timeToTeleportTooFar;
+    private float timeToTeleportTooFar;
+    [SerializeField]
+    private float timeToRynScared;
 
     public bool xLocked;
     public bool yLocked;
@@ -74,9 +77,11 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
         RynAnimator = RynGO.GetComponent<Animator>();
         IdenAnimator = SpiritGO.GetComponent<Animator>();
+        health = RynGO.GetComponent<AXD_Health>();
         currentHP = maxHP = stats.initialHP;
         ticTacEnabled = false;
         timeToTeleportTooFar = 0;
+        timeToRynScared = 0;
     }
 
     private void FixedUpdate()
@@ -89,9 +94,20 @@ public class ELC_CharacterManager : MonoBehaviour
                 gameManager.audioManager.Play("TicTac");
                 
             }
+            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)// TO CHANGE
+            {
+                gameManager.audioManager.Play("Ryn_Scared" + Random.Range(1, 9));
+                timeToRynScared = 0;
+            }
+            else
+            {
+                timeToRynScared += Time.deltaTime;
+            }
+            
             if(timeToTeleportTooFar >= stats.SeparationTime)
             {
                 spiritIdle.Teleport();
+                RegroupTogether();
                 timeToTeleportTooFar = 0;
             }
             else
@@ -450,6 +466,8 @@ public class ELC_CharacterManager : MonoBehaviour
         RynGO.transform.position = lastCheckPoint.GetSpawnPosition();
         RynMove.canMove = true;
         spiritIdle.Teleport();
+        health.FullHeal();
+
     }
 
     [Button]

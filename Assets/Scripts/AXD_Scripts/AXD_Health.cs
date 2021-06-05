@@ -21,6 +21,7 @@ public class AXD_Health : MonoBehaviour
                 if (CharacterManager.TakeDamage(this.tag))
                 {
                     hpDisplay.LoseLife();
+                    CharacterManager.gameManager.audioManager.Play("Ryn_Hurt"+Random.Range(1,6));
                 }
                 Invoke("Vulnerable", InvincibilityTime);
             }else if (CharacterManager.RynAttack.ShieldOn)
@@ -39,5 +40,11 @@ public class AXD_Health : MonoBehaviour
     void Vulnerable()
     {
         Invincible = false;
+    }
+
+    public void FullHeal()
+    {
+        CharacterManager.currentHP = CharacterManager.maxHP;
+        hpDisplay.HealFullLife();
     }
 }

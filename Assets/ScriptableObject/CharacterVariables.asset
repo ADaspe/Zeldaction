@@ -22,6 +22,8 @@ MonoBehaviour:
   DashUpgradeTime: 0.7
   DashCoolDown: 0.6
   SeparationDistance: 25
+  SeparationTime: 5
+  SFXRynScaredFrequency: 3
   initialHP: 3
   TorchActivationDuration: 3
   RynSpeed: 2.75

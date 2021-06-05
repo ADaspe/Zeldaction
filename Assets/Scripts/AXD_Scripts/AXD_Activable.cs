@@ -18,6 +18,7 @@ public abstract class AXD_Activable : MonoBehaviour
                 item.isActivated = true;
                 item.definitivelyActivated = true;
                 item.StopCoroutine("Countdown");
+                item.StopTicTac();
             }
         }
     }
