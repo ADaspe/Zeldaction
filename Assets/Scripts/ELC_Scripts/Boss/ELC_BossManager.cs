@@ -165,6 +165,8 @@ public class ELC_BossManager : MonoBehaviour
         {
             Debug.Log("Graou + shield");
             BossHealth.HaveShield = true;
+            BossHealth.ShieldGO.GetComponent<ParticleSystem>().Play();
+            BossHealth.ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
         }
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(GrowlAnimationTime);
