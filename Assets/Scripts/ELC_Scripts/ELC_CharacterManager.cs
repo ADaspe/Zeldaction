@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class ELC_CharacterManager : MonoBehaviour
 {
@@ -17,14 +18,18 @@ public class ELC_CharacterManager : MonoBehaviour
     public ELC_Interact DetectedInteraction;
     public AXD_CharacterVariablesSO stats;
     private ELC_SpiritIdle spiritIdle;
+    public ELC_GameManager gameManager;
+    public AXD_Health health;
     public int currentHP;
     public int maxHP;
     public ELC_CharacterAnimationsManager AnimationManager;
     public ELC_Interact ToPurify;
     //Variables locales
     public bool isDead;
-    private ELC_Attack RynAttack;
-    private ELC_Attack SpiritAttack;
+    [HideInInspector]
+    public ELC_Attack RynAttack;
+    [HideInInspector]
+    public ELC_Attack SpiritAttack;
     [Header("Animations")]
     public Animator RynAnimator;
     public Animator IdenAnimator;
@@ -45,14 +50,20 @@ public class ELC_CharacterManager : MonoBehaviour
     public UnityEvent disableMenu;
     public GameObject PauseMenu;
     public bool toggleMenu;
-
+    private bool ticTacEnabled;
+    private float timeToTeleportTooFar;
+    [SerializeField]
+    private float timeToRynScared;
 
     public bool xLocked;
     public bool yLocked;
 
     [Header("Upgrades")]
+    [ReadOnly]
     public bool returnUpgrade;
+    [ReadOnly]
     public bool dashPlusUpgrade;
+    [ReadOnly]
     public bool purificationUpgrade;
     
 
@@ -66,7 +77,55 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritIdle = SpiritGO.GetComponent<ELC_SpiritIdle>();
         RynAnimator = RynGO.GetComponent<Animator>();
         IdenAnimator = SpiritGO.GetComponent<Animator>();
+        health = RynGO.GetComponent<AXD_Health>();
         currentHP = maxHP = stats.initialHP;
+        ticTacEnabled = false;
+        timeToTeleportTooFar = 0;
+        timeToRynScared = 0;
+    }
+
+    private void FixedUpdate()
+    {
+        if(Vector2.Distance(RynGO.transform.position, SpiritGO.transform.position) > stats.SeparationDistance)
+        {
+            if(!ticTacEnabled)
+            {
+                ticTacEnabled = true;
+                gameManager.audioManager.Play("TicTac");
+                
+            }
+            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)// TO CHANGE
+            {
+                gameManager.audioManager.Play("Ryn_Scared" + Random.Range(1, 9));
+                timeToRynScared = 0;
+            }
+            else
+            {
+                timeToRynScared += Time.deltaTime;
+            }
+            
+            if(timeToTeleportTooFar >= stats.SeparationTime)
+            {
+                spiritIdle.Teleport();
+                RegroupTogether();
+                timeToTeleportTooFar = 0;
+            }
+            else
+            {
+                timeToTeleportTooFar += Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (ticTacEnabled)
+            {
+                ticTacEnabled = false;
+
+                gameManager.audioManager.Stop("TicTac");
+            }
+           
+            
+        }
     }
     public void ChangeCamFocus(InputAction.CallbackContext value)
     {
@@ -102,6 +161,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (followingCharacter.canMove && !toggleMenu)
         {
+            
             Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
             if (xLocked)
             {
@@ -115,8 +175,6 @@ public class ELC_CharacterManager : MonoBehaviour
             {
                 followingCharacter.rawInputMovement = new Vector2(inputMovement.x, inputMovement.y).normalized;
             }
-            
-
         }
         if (value.canceled && !toggleMenu)
         {
@@ -141,13 +199,13 @@ public class ELC_CharacterManager : MonoBehaviour
                     DetectedInteraction.isGrabbed = true;
                     RynMove.isRynGrabbing = true;
                     Vector2 vectorDiff = new Vector2(RynMove.transform.position.x - DetectedInteraction.transform.position.x, RynMove.transform.position.y - DetectedInteraction.transform.position.y);
-                    if (Mathf.Abs(vectorDiff.x) >= 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à droite de la caisse
+                    if (Mathf.Abs(vectorDiff.x) >= 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est ï¿½ droite de la caisse
                     {
-                        //Animation à gauche
+                        //Animation ï¿½ gauche
                         yLocked = true;
-                    } else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est à gauche de la caisse
+                    } else if (Mathf.Abs(vectorDiff.x) < 0 && Mathf.Abs(vectorDiff.y) <= Mathf.Abs(vectorDiff.x)) // Si on est ï¿½ gauche de la caisse
                     {
-                        //Animation à droite
+                        //Animation ï¿½ droite
                         yLocked = true;
                     }
                     else if (Mathf.Abs(vectorDiff.y) >= 0 && Mathf.Abs(vectorDiff.x) <= Mathf.Abs(vectorDiff.y)) // Si on est au dessus de la caisse
@@ -167,11 +225,16 @@ public class ELC_CharacterManager : MonoBehaviour
             }
             else if (ToPurify != null && followingCharacter == spiritMove && purificationUpgrade)
             {
+                gameManager.audioManager.Play("Spirit_Purification");
                 ToPurify.Purify();
             } else if (DetectedInteraction == null && followingCharacter == RynMove)
             {
                 int tempEnemyNumber = 0;
                 allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy","Boss"));
+                if(allDetected.Length >0)
+                {
+                    gameManager.audioManager.Play("Pacification");
+                }
                 foreach (Collider2D item in allDetected)
                 {
                     if (item.CompareTag("Enemy") && tempEnemyNumber<stats.maxEnemyPacification)
@@ -183,7 +246,7 @@ public class ELC_CharacterManager : MonoBehaviour
                     {
                         tempEnemyNumber++;
                         item.gameObject.GetComponent<ELC_BossHealth>().Pacificate();
-                        Debug.Log("Boss pacifié");
+                        Debug.Log("Boss pacifiï¿½");
                     }
                 }
             }
@@ -249,6 +312,9 @@ public class ELC_CharacterManager : MonoBehaviour
             else if(Time.time >= nextDash && followingCharacter == spiritMove)
             {
                 SpiritAttack.SpiritDashAttack();
+            }else if (Time.time < nextDash && followingCharacter == spiritMove)
+            {
+                gameManager.audioManager.Play("Capacity_Cooldown");
             }
         }
     }
@@ -276,6 +342,7 @@ public class ELC_CharacterManager : MonoBehaviour
     }
     public void ChangeCamFocusRyn()
     {
+        gameManager.audioManager.Play("CamSwap");
         //Disabling Spirit
         spiritMove.currentCharacter = false;
         spiritMove.rb.velocity = Vector2.zero;
@@ -288,6 +355,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void ChangeCamFocusSpirit()
     {
+        gameManager.audioManager.Play("CamSwap");
         //Disabling Ryn
         RynMove.currentCharacter = false;
         RynMove.rb.velocity = Vector2.zero;
@@ -303,8 +371,8 @@ public class ELC_CharacterManager : MonoBehaviour
     public void RegroupTogether()
     {
         //Debug.Log("Regroup");
+        gameManager.audioManager.Play("Spirit_Return");
         Together = true;
-
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
@@ -398,8 +466,31 @@ public class ELC_CharacterManager : MonoBehaviour
         RynGO.transform.position = lastCheckPoint.GetSpawnPosition();
         RynMove.canMove = true;
         spiritIdle.Teleport();
+        health.FullHeal();
+
     }
 
+    [Button]
+    public void UpgradeDash()
+    {
+
+        dashPlusUpgrade = true;
+        gameManager.audioManager.Play("Jingle_Spirit");
+    }
+    [Button]
+    public void UpgradePurification()
+    {
+
+        purificationUpgrade = true;
+        gameManager.audioManager.Play("Jingle_Spirit");
+    }
+    [Button]
+    public void UpgradeReturn()
+    {
+
+        returnUpgrade = true;
+        gameManager.audioManager.Play("Jingle_Spirit");
+    }
 
     public IEnumerator ProjectionSlowdown()
     {

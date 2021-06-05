@@ -14,125 +14,177 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Great Serpent
   MiniaturePerso: {fileID: 21300000, guid: 5bf19e632b1815b44b3b0f69c455b4a8, type: 3}
+  AutoSkip: 0
   Dialog:
   - Dialogs:
     - DialLine: "I\u2019ve been watching you for a while now Ryn."
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: How does a little child like you gain the powers of a goddess I wonder?
+      Sound: 
       RynSentence: 0
     - DialLine: Tell me...
+      Sound: 
       RynSentence: 0
     - DialLine: Does death care you Ryn?
+      Sound: 
       RynSentence: 0
     - DialLine: I know why you are here child.
+      Sound: 
       RynSentence: 0
     - DialLine: You wish to cleanse yourself of this curse.
+      Sound: 
       RynSentence: 0
     - DialLine: Imagine your soul separating from your body.
+      Sound: 
       RynSentence: 0
     - DialLine: All your memories, your feelings..
+      Sound: 
       RynSentence: 0
     - DialLine: Gone
+      Sound: 
       RynSentence: 0
     - DialLine: You become an empty husk of your former self
+      Sound: 
       RynSentence: 0
     - DialLine: A wandering spirit, trying to latch on to anything it can.
+      Sound: 
       RynSentence: 0
     - DialLine: But also all your fears, your worries. Gone.
+      Sound: 
       RynSentence: 0
     - DialLine: No more needless struggle, no more pain.
+      Sound: 
       RynSentence: 0
     - DialLine: "It isn\u2019t so bad now is it?"
+      Sound: 
       RynSentence: 0
     - DialLine: "Why don\u2019t you just give up?"
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: "But you won\u2019t."
+      Sound: 
       RynSentence: 0
     - DialLine: I can feel it.
+      Sound: 
       RynSentence: 0
     - DialLine: Not just you. Her.
+      Sound: 
       RynSentence: 0
     - DialLine: That is why he wants you.
+      Sound: 
       RynSentence: 0
     - DialLine: He is missing something, something you have.
+      Sound: 
       RynSentence: 0
     - DialLine: For her, I will help you.
+      Sound: 
       RynSentence: 0
     - DialLine: She has chosen you, Ryn.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: To save yourself you must remove the root.
+      Sound: 
       RynSentence: 0
     - DialLine: The root of every problem here.
+      Sound: 
       RynSentence: 0
     - DialLine: The Wolf King.
+      Sound: 
       RynSentence: 0
     - DialLine: Gwynedd knew of course.
+      Sound: 
       RynSentence: 0
     - DialLine: She knew.. she is just too scared to face him.
+      Sound: 
       RynSentence: 0
     - DialLine: Now now, do not worry, you will not leave empty handed.
+      Sound: 
       RynSentence: 0
     - DialLine: I will bless upon you my strength.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Now leave me.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 'Where do I go now? '
+      Sound: 
       RynSentence: 1
     - DialLine: 'Wherever you wish '
+      Sound: 
       RynSentence: 0
     - DialLine: 'I do not make choices for you '
+      Sound: 
       RynSentence: 0
     - DialLine: 'Perhaps head back to that grove of yours '
+      Sound: 
       RynSentence: 0
     - DialLine: 'Make your own decisions '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 'That spirit of yours... '
+      Sound: 
       RynSentence: 0
     - DialLine: 'Iden? '
+      Sound: 
       RynSentence: 1
     - DialLine: 'Yes.. Iden.. '
+      Sound: 
       RynSentence: 0
     - DialLine: 'He is a special one '
+      Sound: 
       RynSentence: 0
     - DialLine: 'There is something familiar about him '
+      Sound: 
       RynSentence: 0
     - DialLine: 'He is a powerful spirit '
+      Sound: 
       RynSentence: 0
     - DialLine: 'Would it have been other circumstances, I would have eaten him '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 'Why do you live in such a secluded place '
+      Sound: 
       RynSentence: 1
     - DialLine: 'I prefer to be alone '
+      Sound: 
       RynSentence: 0
     - DialLine: 'You will not understand '
+      Sound: 
       RynSentence: 0
     - DialLine: 'I have already helped you '
+      Sound: 
       RynSentence: 0
     - DialLine: 'Now leave me before I change my mind '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 'You are one of the three great spirits? '
+      Sound: 
       RynSentence: 1
     - DialLine: "That is correct\u2026 "
+      Sound: 
       RynSentence: 0
     - DialLine: 'But I will stop you there '
+      Sound: 
       RynSentence: 0
     - DialLine: 'There is no need to reminisce about the past '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0

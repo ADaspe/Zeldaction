@@ -85,6 +85,7 @@ public class ELC_BossManager : MonoBehaviour
         Debug.Log("Agrou");
         yield return new WaitForSeconds(GrowlAnimationTime);
         music.MusicsStart();
+        StartCoroutine(BossAttacks.Fade());
         Debug.Log("Invisibilité");
         yield return new WaitForSeconds(InvisibilityShaderTime);
         Debug.Log("début phase 1");
