@@ -75,7 +75,7 @@ public class ELC_Attack : MonoBehaviour
         attackTogetherCooldown = Time.time + CharManager.stats.AttackCooldown;
         //Debug.Log("Attack Together");
         Collider2D[] enemies = Physics2D.OverlapCircleAll(this.transform.position, CharStats.AttackTogetherRange, gameManager.EnemiesMask);
-        gameManager.audioManager.Play("");
+        //gameManager.audioManager.Play("");
         
         for (int i = 0; i < enemies.Length; i++)
         {
