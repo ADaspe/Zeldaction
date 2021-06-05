@@ -11,6 +11,9 @@ public class ELC_BossHealth : MonoBehaviour
     public int FirstPhaseHealth;
     public int SecondPhaseHealth;
     public int ThirdPhaseHealth;
+    public bool IsStunned;
+    public bool HaveShield;
+    public float shieldRecoveryTime;
 
     public int CurrentHealth;
 
@@ -24,9 +27,35 @@ public class ELC_BossHealth : MonoBehaviour
 
     public void BossGetHit()
     {
-        Debug.Log("tapé");
-        BossMana.music.SwitchMusicPart(0);
-        if (CurrentHealth - 1 > 0) CurrentHealth--;
-        else BossMana.SwitchPhase();
+        if(!BossMana.IsInSwitchPhase || !HaveShield)
+        {
+            Debug.Log("tapé");
+            BossMana.music.SwitchMusicPart(0);
+            if (CurrentHealth - 1 > 0) CurrentHealth--;
+            else
+            {
+                IsStunned = true;
+                BossMana.isStunned = IsStunned;
+                BossMana.BossAttacks.EndAttack();
+            }
+        }
+    }
+
+    public IEnumerator ShieldLostAndRecover()
+    {
+        HaveShield = false;
+        yield return new WaitForSeconds(shieldRecoveryTime);
+        HaveShield = true;
+    }
+
+    public void Pacificate()
+    {
+        if(IsStunned)
+        {
+            IsStunned = false;
+            BossMana.isStunned = IsStunned;
+            if (BossMana.CurrentPhase < 3) BossMana.SwitchPhase();
+            else BossMana.End();
+        }
     }
 }

@@ -8,9 +8,12 @@ public class ELC_BossSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ryn")) BossGO.SetActive(true);
-        BossGO.GetComponent<ELC_BossManager>().SwitchPhase();
-        this.GetComponent<Collider2D>().enabled = false;
+        if (collision.CompareTag("Ryn"))
+        {
+            BossGO.SetActive(true);
+            BossGO.GetComponent<ELC_BossManager>().SwitchPhase();
+            this.GetComponent<Collider2D>().enabled = false;
+        }
         
     }
 }

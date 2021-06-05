@@ -171,13 +171,19 @@ public class ELC_CharacterManager : MonoBehaviour
             } else if (DetectedInteraction == null && followingCharacter == RynMove)
             {
                 int tempEnemyNumber = 0;
-                allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy"));
+                allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy","Boss"));
                 foreach (Collider2D item in allDetected)
                 {
                     if (item.CompareTag("Enemy") && tempEnemyNumber<stats.maxEnemyPacification)
                     {
                         tempEnemyNumber++;
                         item.gameObject.GetComponent<AXD_EnemyHealth>().Pacificate();
+                    }
+                    else if(item.CompareTag("Boss") && tempEnemyNumber < stats.maxEnemyPacification)
+                    {
+                        tempEnemyNumber++;
+                        item.gameObject.GetComponent<ELC_BossHealth>().Pacificate();
+                        Debug.Log("Boss pacifié");
                     }
                 }
             }

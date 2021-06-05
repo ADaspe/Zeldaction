@@ -5,7 +5,6 @@ using Pathfinding;
 
 public class ELC_EnemyAI : MonoBehaviour
 {
-    public LayerMask test;
     [HideInInspector]
     public Vector3 Target;
     public ELC_EnemySO EnemyStats;

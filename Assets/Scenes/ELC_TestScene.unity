@@ -3579,6 +3579,7 @@ MonoBehaviour:
   GrowlAnimationTime: 1
   InvisibilityShaderTime: 1
   music: {fileID: 0}
+  isStunned: 0
 --- !u!114 &1176425438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3644,16 +3645,17 @@ MonoBehaviour:
   BasicAttackRadius: 2
   BasicAttackAngle: 30
   DashPreparationTime: 1
-  DashDistance: 3
+  DashDistance: 5
   DashDuration: 0.5
   DashCooldown: 3
-  DashDetectionRadius: 2
+  DashDetectionRadius: 3
   DashDetectionAngle: 20
   RayAttackPreparationTime: 1
   RayAttackCooldown: 4
   RaySpawnTime: 0.19
   RayDespawnTime: 0.54
   Rays: []
+  isAttacking: 0
 --- !u!114 &1176425441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3686,6 +3688,9 @@ MonoBehaviour:
   FirstPhaseHealth: 1
   SecondPhaseHealth: 1
   ThirdPhaseHealth: 1
+  IsStunned: 0
+  HaveShield: 0
+  shieldRecoveryTime: 8
   CurrentHealth: 0
 --- !u!95 &1176425443
 Animator:
@@ -15572,12 +15577,12 @@ PrefabInstance:
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.52
+      value: 12.18
       objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.68
+      value: -12.11
       objectReference: {fileID: 0}
     - target: {fileID: 7736387844858650822, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
@@ -15771,12 +15776,12 @@ PrefabInstance:
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.22
+      value: 13.72
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.81
+      value: -11.03
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
