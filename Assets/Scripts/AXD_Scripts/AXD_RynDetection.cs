@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AXD_RynDetection : MonoBehaviour
 {
+    [HideInInspector]
     public ELC_SpiritIdle spiritIdle;
 
     private void Start()
@@ -16,7 +17,7 @@ public class AXD_RynDetection : MonoBehaviour
         if (collision.CompareTag("Ryn") )
         {
             ELC_CharacterManager tempManager = this.GetComponentInParent<AXD_CharacterMove>().charaManager;
-            if(tempManager.followingCharacter == tempManager.RynMove && tempManager.RynMove.canMove)
+            if(tempManager.followingCharacter == tempManager.RynMove && tempManager.RynMove.canMove && !tempManager.Together)
             {
                 //Vérifier qu'il y a pas d'obstacle entre les deux personnages
                 /*Debug.Log("Layer : "+ LayerMask.LayerToName(Physics2D.Raycast(spiritIdle.transform.position, collision.transform.position, 100f, LayerMask.GetMask("PlayerRyn","Obstacle", "ObstacleSpirit", "ThinWall")).collider.gameObject.layer));
