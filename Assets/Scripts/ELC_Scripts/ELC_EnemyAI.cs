@@ -5,7 +5,6 @@ using Pathfinding;
 
 public class ELC_EnemyAI : MonoBehaviour
 {
-    public LayerMask test;
     [HideInInspector]
     public Vector3 Target;
     public ELC_EnemySO EnemyStats;
@@ -13,6 +12,7 @@ public class ELC_EnemyAI : MonoBehaviour
     public bool EnableDebug;
     public bool isStunned;
     public bool isProtected;
+    public ParticleSystem ShieldParticles;
 
     public float Speed = 200f;
     public float NextWaypointDistance = 0.3f; //à quelle distance il doit être d'un checkpoint pour se diriger vers le suivant (pour éviter que ce soit à 0 de distance qui serait impossible à atteindre pile)
@@ -236,7 +236,7 @@ public class ELC_EnemyAI : MonoBehaviour
     {
         if (isProtected)
         {
-            radius = 0.8f;
+            radius = 1.5f;
             angle = 180;
         }
         Collider2D[] col = Physics2D.OverlapCircleAll(origin, radius);

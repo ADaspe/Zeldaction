@@ -29,6 +29,7 @@ public class ELC_BossManager : MonoBehaviour
     private Animator anims;
     [HideInInspector]
     public FLC_BossDynamicMusicFonctions music;
+    public bool isStunned;
 
     private void Awake()
     {
@@ -84,6 +85,7 @@ public class ELC_BossManager : MonoBehaviour
         Debug.Log("Agrou");
         yield return new WaitForSeconds(GrowlAnimationTime);
         music.MusicsStart();
+        StartCoroutine(BossAttacks.Fade());
         Debug.Log("Invisibilité");
         yield return new WaitForSeconds(InvisibilityShaderTime);
         Debug.Log("début phase 1");
@@ -95,6 +97,11 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator SecondPhaseSwitch()
     {
+        
+        BossAttacks.CancelInvoke();
+        BossAttacks.EndAttack();
+        BossAttacks.StopAllCoroutines();
+        BossAttacks.enabled = false;
         canAttack = false;
         IsInSwitchPhase = true;
         //SpriteRend.enabled = true;
@@ -119,6 +126,12 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator ThirdPhaseSwitch()
     {
+        BossAttacks.CancelInvoke();
+        BossAttacks.EndAttack();
+        BossAttacks.StopAllCoroutines();
+        BossAttacks.enabled = false;
+        BossHealth.HaveShield = false;
+        BossHealth.ShieldParticles.Stop();
         canAttack = false;
         CamScript.SwitchCamFocus(this.transform, false);
         IsInSwitchPhase = true;
@@ -142,17 +155,36 @@ public class ELC_BossManager : MonoBehaviour
     {
         //Apparition bouclier + grognement
         anims.SetBool("Growl", true);
-        Debug.Log("Graou + shield");
+        if (CurrentPhase == 2)
+        {
+            Debug.Log("Graou + shield");
+            BossHealth.HaveShield = true;
+        }
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(GrowlAnimationTime);
         anims.SetBool("isGrowling", false);
         if (CurrentPhase == 2) BossMoves.CanMove = true;
         Debug.Log("Phase " + CurrentPhase);
         if (CurrentPhase == 3) BossAttacks.StartCoroutine("RayPhase");
-        IsInSwitchPhase = false;
         BossMoves.FollowPlayer = true;
+        BossMoves.Target = BossMoves.TargetGO.transform.position;
+        IsInSwitchPhase = false;
+        BossAttacks.EndAttack();
+        BossAttacks.enabled = true;
+        
         CamScript.CancelCamFocus();
         canAttack = true;
+    }
+
+    public IEnumerator End()
+    {
+        //Bullshit du boss qui donne envie de chialax parceque ce jeu était trop émotionnellement rude et que cela va créer un manque chez le joueur qui va pas pouvoir dormir pendant des nuits et va chercher à aller aider Ryn en allant dans le monde des esprits comme ces débiles qui foncent dans les poteaux de toutes les gares pour aller à Poudlard.
+        Debug.Log("Adieu");
+        //Shader de dissolve
+        yield return new WaitForSeconds(1); //mettre le temps de dissolve
+
+        Debug.Log("C'est la fin.");
+
     }
 
     
