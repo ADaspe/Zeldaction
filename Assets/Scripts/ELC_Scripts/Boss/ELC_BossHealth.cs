@@ -38,6 +38,7 @@ public class ELC_BossHealth : MonoBehaviour
                 IsStunned = true;
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
+                StartCoroutine(BossMana.BossAttacks.Fade(true));
             }
         }
     }
