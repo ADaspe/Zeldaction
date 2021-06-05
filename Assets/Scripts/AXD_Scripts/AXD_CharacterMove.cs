@@ -19,6 +19,7 @@ public class AXD_CharacterMove : MonoBehaviour
     public ELC_Interact grabbedObject;
     public bool wasDashingWhenColliding;
     private Vector2 tempDirMultiplier;
+    private bool dragSoundEnabled;
     Animator animsIden;
     SpriteRenderer spriteRend;
 
@@ -57,7 +58,6 @@ public class AXD_CharacterMove : MonoBehaviour
             {
                 if (grabbedObject != null)
                 {
-                    
                     tempDirMultiplier.x = tempDirMultiplier.y = 1;
                     if ((grabbedObject.rightLock && rawInputMovement.x > 0) || rb.velocity.x == 0)
                     {
@@ -90,7 +90,22 @@ public class AXD_CharacterMove : MonoBehaviour
                     {
                         grabbedObject.downLock = false;
                     }
-                    
+                    if(tempDirMultiplier != Vector2.zero)
+                    {
+                        if (!dragSoundEnabled)
+                        {
+                            dragSoundEnabled = true;
+                            charaManager.gameManager.audioManager.Play("Box_Drag");
+                        }
+                    }
+                    else
+                    {
+                        if (dragSoundEnabled)
+                        {
+                            dragSoundEnabled = false;
+                            charaManager.gameManager.audioManager.Stop("Box_Drag");
+                        }
+                    }
                     grabbedObject.rbInteractObject.velocity = rb.velocity * tempDirMultiplier;
                 }
                 else
