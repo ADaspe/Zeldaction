@@ -279,7 +279,7 @@ Transform:
   - {fileID: 8692832491471785572}
   - {fileID: 2075724529542820308}
   - {fileID: 8253646339375682758}
-  - {fileID: 3686696378119554027}
+  - {fileID: 8911722425180536382}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -299,6 +299,9 @@ MonoBehaviour:
   isActivated: 0
   ObjectAnimator: {fileID: 0}
   ActivateOnDisable: 0
+  jingleOnFirstOpen: 0
+  IsOpenAtStart: 0
+  audioManager: {fileID: 0}
 --- !u!61 &8355251534706335222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -344,7 +347,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &1143454239492730029
+--- !u!1001 &5141799144807813496
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -355,6 +358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PS_Pollen
+      objectReference: {fileID: 0}
+    - target: {fileID: 343895068391605740, guid: ed5e6b093570e1c40ae369840ac6df89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4393150661733773126, guid: ed5e6b093570e1c40ae369840ac6df89,
         type: 3}
@@ -413,9 +421,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5e6b093570e1c40ae369840ac6df89, type: 3}
---- !u!4 &3686696378119554027 stripped
+--- !u!4 &8911722425180536382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4393150661733773126, guid: ed5e6b093570e1c40ae369840ac6df89,
     type: 3}
-  m_PrefabInstance: {fileID: 1143454239492730029}
+  m_PrefabInstance: {fileID: 5141799144807813496}
   m_PrefabAsset: {fileID: 0}
