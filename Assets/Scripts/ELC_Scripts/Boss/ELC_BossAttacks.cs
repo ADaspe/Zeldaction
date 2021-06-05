@@ -134,7 +134,7 @@ public class ELC_BossAttacks : MonoBehaviour
     {
         anims.SetBool("Dash", true);
         
-        RaycastHit2D WallDetector = Physics2D.Raycast(this.transform.position, BossMana.LastDir.normalized, 1f, BossMana.ObstaclesMask);
+        RaycastHit2D WallDetector = Physics2D.Raycast(this.gameObject.GetComponent<Rigidbody2D>().position, BossMana.LastDir.normalized, 1.5f, BossMana.ObstaclesMask);
         if (WallDetector.collider != null)
         {
             DashCrashOnWall();
