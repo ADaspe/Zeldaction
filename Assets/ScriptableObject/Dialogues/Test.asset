@@ -18,7 +18,7 @@ MonoBehaviour:
   Dialog:
   - Dialogs:
     - DialLine: "\xE7a c'est la premi\xE8re phrase"
-      Sound: Autel
+      Sound: 
       RynSentence: 0
     - DialLine: "l\xE0 c'est la 2 faites pas trop attention"
       Sound: 
