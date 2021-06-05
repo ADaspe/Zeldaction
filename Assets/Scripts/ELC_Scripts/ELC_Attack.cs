@@ -25,7 +25,10 @@ public class ELC_Attack : MonoBehaviour
     private void Start()
     {
         SpiritAttackScript = CharManager.SpiritGO.GetComponent<ELC_Attack>();
-        ShieldPS = ShieldGO.GetComponent<ParticleSystem>();
+        if (CompareTag("Ryn"))
+        {
+            ShieldPS = ShieldGO.GetComponent<ParticleSystem>();
+        }
     }
     private void FixedUpdate()
     {
