@@ -15,7 +15,7 @@ public class AXD_EnemyHealth : MonoBehaviour
         anims = this.GetComponent<Animator>();
     }
 
-    public void GetHit(float timeToStun)
+    public bool GetHit(float timeToStun)
     {
         if (!enemyAI.isStunned && !enemyAI.isProtected)
         {
@@ -23,7 +23,9 @@ public class AXD_EnemyHealth : MonoBehaviour
             enemyAI.isStunned = true;
             anims.SetBool("isStun", true);
             Invoke("CancelStun", timeToStun);
+            return true;
         }
+        return false;
     }
 
     private void CancelStun()
@@ -36,9 +38,11 @@ public class AXD_EnemyHealth : MonoBehaviour
     {
         Debug.Log("Tentative de pacification");
         // Mettre shader de dissolution
+
         if (enemyAI.isStunned)
         {
             Debug.Log("Pacification");
+
             StartCoroutine(PacificateCoroutine());
         }
     }

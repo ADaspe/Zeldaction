@@ -46,7 +46,10 @@ public class AXD_UIHPDisplay : MonoBehaviour
     {
         if (charaManager.maxHP < 6)
         {
+            
+            charaManager.maxHP++;
             allHPs[charaManager.maxHP] = (Instantiate(HPPrefab, this.transform).GetComponent<AXD_HP>());
+            charaManager.gameManager.audioManager.Play("Jingle_Ryn");
         }
     }
 
