@@ -90,7 +90,7 @@ public class AXD_CharacterMove : MonoBehaviour
                     {
                         grabbedObject.downLock = false;
                     }
-                    if(tempDirMultiplier != Vector2.zero)
+                    if(tempDirMultiplier != Vector2.zero && !grabbedObject.gameObject.CompareTag("Mushroom"))
                     {
                         if (!dragSoundEnabled)
                         {
@@ -100,7 +100,7 @@ public class AXD_CharacterMove : MonoBehaviour
                     }
                     else
                     {
-                        if (dragSoundEnabled)
+                        if (dragSoundEnabled && !grabbedObject.gameObject.CompareTag("Mushroom"))
                         {
                             dragSoundEnabled = false;
                             charaManager.gameManager.audioManager.Stop("Box_Drag");
