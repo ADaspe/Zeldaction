@@ -663,59 +663,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 796123186}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &288924516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288924512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 474400680}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &288924517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288924512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
-    type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
 --- !u!1 &412779529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1385,11 @@ PrefabInstance:
       objectReference: {fileID: 8259352534926387431}
     - target: {fileID: 5547120372911743439, guid: c3b82ff2e40626a4daa0c7f4210d1778,
         type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1868863768}
+    - target: {fileID: 5547120372911743439, guid: c3b82ff2e40626a4daa0c7f4210d1778,
+        type: 3}
       propertyPath: AnimationManager
       value: 
       objectReference: {fileID: 1871164983}
@@ -1711,11 +1663,6 @@ PrefabInstance:
     - target: {fileID: 6133234844738256349, guid: 21c080ed8e9029f489531afea6d4b3ea,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6202983304490654606, guid: 21c080ed8e9029f489531afea6d4b3ea,
-        type: 3}
-      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6420895449044007393, guid: 21c080ed8e9029f489531afea6d4b3ea,
@@ -3564,6 +3511,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 557430706}
     m_Modifications:
+    - target: {fileID: 4134849747144275605, guid: 6d08d616687b9514d95e9600c8025003,
+        type: 3}
+      propertyPath: sounds.Array.data[23].volume
+      value: 0.254
+      objectReference: {fileID: 0}
     - target: {fileID: 7805689310011672333, guid: 6d08d616687b9514d95e9600c8025003,
         type: 3}
       propertyPath: m_Name
@@ -3763,6 +3715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MushSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794218971470581621, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7114628119585244884, guid: ec62fce0676dd1f4289cec9412c84418,
         type: 3}
@@ -15201,6 +15158,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442743592339528265, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92ac698bcfb2ed449949f4c4200c8f0a, type: 3}
