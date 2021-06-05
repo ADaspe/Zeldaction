@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5892553936378466688}
   - component: {fileID: 1152322671942395907}
   m_Layer: 0
-  m_Name: Serpent
+  m_Name: Great Serpent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,8 +120,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04328215, y: -0.00000011920929}
-  m_Size: {x: 2.4865644, y: 2.4865644}
+  m_Offset: {x: 0.03366089, y: -0.038526535}
+  m_Size: {x: 2.948944, y: 2.958561}
   m_Direction: 0
 --- !u!50 &3482966566024695082
 Rigidbody2D:
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PurifyParticles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
@@ -200,3 +201,6 @@ MonoBehaviour:
   Dialogue: {fileID: 0}
   DialMana: {fileID: 0}
   HasAlreadyTalk: 0
+  events: []
+  isInEvent: 0
+  isSpeaking: 0
