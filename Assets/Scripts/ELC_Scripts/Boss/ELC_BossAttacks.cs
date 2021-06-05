@@ -41,7 +41,7 @@ public class ELC_BossAttacks : MonoBehaviour
     [HideInInspector]
     public ELC_BossRay[] Rays;
 
-    bool isAttacking;
+    public bool isAttacking;
     Animator anims;
 
     private void Awake()
@@ -67,7 +67,7 @@ public class ELC_BossAttacks : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isAttacking && BossMana.CurrentPhase == 2) //Attaque Dash
+        if(isAttacking && BossMana.CurrentPhase == 2 && !BossMana.isStunned) //Attaque Dash
         {
             Dash();
         }
@@ -157,7 +157,7 @@ public class ELC_BossAttacks : MonoBehaviour
         }
     }
 
-    void EndAttack()
+    public void EndAttack()
     {
         isAttacking = false;
         anims.SetBool("Bite", false);
@@ -201,7 +201,10 @@ public class ELC_BossAttacks : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         CancelInvoke("EndAttack");
+
         EndAttack();
+
+        if(BossMana.BossHealth.HaveShield) StartCoroutine(BossMana.BossHealth.ShieldLostAndRecover());
         Debug.Log("Le boss s'est crash contre un mur : il est raplapla");
     }
 
@@ -232,7 +235,7 @@ public class ELC_BossAttacks : MonoBehaviour
         }
     }
 
-    IEnumerator CooldownsAttack()
+    public IEnumerator CooldownsAttack()
     {
         yield return new WaitForSeconds(Cooldown);
         BossMana.canAttack = true;
