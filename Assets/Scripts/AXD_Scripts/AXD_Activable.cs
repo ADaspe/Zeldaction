@@ -15,7 +15,6 @@ public abstract class AXD_Activable : MonoBehaviour
         {
             if(item.type == ELC_Activation.ActivatorType.TORCH)
             {
-                Debug.Log(item.gameObject.name);
                 item.isActivated = true;
                 item.definitivelyActivated = true;
                 item.StopCoroutine("Countdown");
