@@ -383,6 +383,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public void RegroupTogether()
     {
         //Debug.Log("Regroup");
+        gameManager.audioManager.Stop("Spirit_Move");
         gameManager.audioManager.Play("Spirit_Return");
         Together = true;
         followingCharacter = RynMove;
@@ -395,8 +396,10 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void DetachSpirit()
     {
+
         if (!spiritIdle.stuck)
         {
+            gameManager.audioManager.Play("Spirit_Move");
             Together = false;
             RynMove.currentCharacter = false;
             GoToRyn();
