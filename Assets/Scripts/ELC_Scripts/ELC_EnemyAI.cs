@@ -33,6 +33,7 @@ public class ELC_EnemyAI : MonoBehaviour
     int PatrolPathIndex = 0;
     bool reachedEndOfPath = false;
     Animator anims;
+    private bool startingPosition = true;
 
     Seeker seeker; //Le calculateur de chemin
     Rigidbody2D rb;
@@ -40,6 +41,7 @@ public class ELC_EnemyAI : MonoBehaviour
     
     void Start()
     {
+        startingPosition = true;
         spriteRend = this.GetComponent<SpriteRenderer>();
         anims = this.GetComponent<Animator>();
         currentWaypoint = 0;
@@ -51,10 +53,10 @@ public class ELC_EnemyAI : MonoBehaviour
             t.SetParent(null);
         }
 
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        InvokeRepeating("UpdatePath", 0.5f, 0.5f);
         
         Target = Detection();
-        seeker.StartPath(rb.position, Target, OnPathCalculated);
+        seeker.StartPath(rb.position, PatrolPath[PatrolPathIndex].position, OnPathCalculated);
     }
 
     void OnPathCalculated(Path p)
@@ -205,6 +207,15 @@ public class ELC_EnemyAI : MonoBehaviour
         if (mainRadius.Length == 0 )
         {
             isFollowingPlayer = false;
+            if (startingPosition)
+            {
+                if (reachedEndOfPath)
+                {
+                    startingPosition = false;
+                }
+                else return PatrolPath[PatrolPathIndex].position;
+            }
+
             if (reachedEndOfPath)
             {
                 if (canPatrol) //Fait patrouiller l'ennemi si personne est détecté
