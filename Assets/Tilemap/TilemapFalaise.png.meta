@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -5954748726341575911
     second: TilemapFalaise_10
+  - first:
+      213: -3773482075610834448
+    second: TilemapFalaise_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -260,6 +263,27 @@ TextureImporter:
       bones: []
       spriteID: 91b53bf359b7c5da0800000000000000
       internalID: -5954748726341575911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilemapFalaise_0
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 497
+        width: 500
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f999e48b06e1abc0800000000000000
+      internalID: -3773482075610834448
       vertices: []
       indices: 
       edges: []

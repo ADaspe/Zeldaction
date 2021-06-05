@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ELC_Totem : MonoBehaviour
 {
+    public bool isActive;
     public ELC_EnemyAI[] EnemiesToProtect;
 
     private void Start()
     {
+        isActive = true;
         foreach (ELC_EnemyAI enemy in EnemiesToProtect)
         {
             enemy.isProtected = true;
@@ -15,12 +17,17 @@ public class ELC_Totem : MonoBehaviour
         }
     }
 
-    public void Purify()
+    public void Pacificate()
     {
-        foreach (ELC_EnemyAI enemy in EnemiesToProtect)
+        if (isActive)
         {
-            enemy.ShieldParticles.Stop();
-            enemy.isProtected = false;
+            EnemiesToProtect[0].gameMana.audioManager.Play("Totem_Pacification");
+            isActive = false;
+            foreach (ELC_EnemyAI enemy in EnemiesToProtect)
+            {
+                enemy.ShieldParticles.Stop();
+                enemy.isProtected = false;
+            }
         }
     }
 
