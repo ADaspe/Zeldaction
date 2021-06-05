@@ -15,6 +15,7 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float DashUpgradeTime;
     public float DashCoolDown;
     public float SeparationDistance;
+    public float SeparationTime;
     public int initialHP;
     public float TorchActivationDuration;
     public float RynSpeed;
@@ -29,5 +30,6 @@ public class AXD_CharacterVariablesSO : ScriptableObject
     public float IdenProjectionDistance;
     public float IdenProjectionTime;
     public float IdenSlowDownTime;
+    
     public LayerMask EnemiesLayerMask;
 }
