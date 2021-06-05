@@ -11,6 +11,7 @@ public class ELC_Totem : MonoBehaviour
         foreach (ELC_EnemyAI enemy in EnemiesToProtect)
         {
             enemy.isProtected = true;
+            enemy.ShieldParticles.Play();
         }
     }
 
@@ -18,6 +19,7 @@ public class ELC_Totem : MonoBehaviour
     {
         foreach (ELC_EnemyAI enemy in EnemiesToProtect)
         {
+            enemy.ShieldParticles.Stop();
             enemy.isProtected = false;
         }
     }
