@@ -131,7 +131,7 @@ public class ELC_BossManager : MonoBehaviour
         BossAttacks.StopAllCoroutines();
         BossAttacks.enabled = false;
         BossHealth.HaveShield = false;
-        BossHealth.ShieldParticles.Stop();
+        BossHealth.ShieldGO.GetComponent<Animator>().SetBool("Dissolve", true);
         canAttack = false;
         CamScript.SwitchCamFocus(this.transform, false);
         IsInSwitchPhase = true;
@@ -139,6 +139,9 @@ public class ELC_BossManager : MonoBehaviour
         BossMoves.FollowPlayer = false;
         BossMoves.CanMove = false;
         yield return new WaitForSeconds(1);
+
+        BossHealth.ShieldGO.GetComponent<Animator>().SetBool("Dissolve", false);
+        BossHealth.ShieldGO.GetComponent<ParticleSystem>().Stop();
 
         anims.SetBool("Growl", true);
         //Joue l'animation de grognement
