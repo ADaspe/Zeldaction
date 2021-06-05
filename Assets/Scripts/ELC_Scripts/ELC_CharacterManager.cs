@@ -50,7 +50,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public GameObject PauseMenu;
     public bool toggleMenu;
     public bool tooFarAway;
-    private float nextTicTac;
+    private bool ticTacEnabled;
     private Sound ticTacSource;
 
     public bool xLocked;
@@ -77,7 +77,7 @@ public class ELC_CharacterManager : MonoBehaviour
         IdenAnimator = SpiritGO.GetComponent<Animator>();
         currentHP = maxHP = stats.initialHP;
         tooFarAway = false;
-        nextTicTac = Time.time;
+        ticTacEnabled = false;
         foreach (Sound item in gameManager.audioManager.sounds)
         {
             if(item.name == "TicTac")
@@ -92,16 +92,24 @@ public class ELC_CharacterManager : MonoBehaviour
         if(Vector2.Distance(RynGO.transform.position, SpiritGO.transform.position) > stats.SeparationDistance)
         {
             tooFarAway = true;
-            if(nextTicTac<= Time.time)
+            if(!ticTacEnabled)
             {
+                ticTacEnabled = true;
                 Debug.Log("Tic tac");
                 gameManager.audioManager.Play("TicTac");
-                nextTicTac = Time.time + ticTacSource.clip.length;
+                
             }
         }
         else
         {
             tooFarAway = false;
+            if (ticTacEnabled)
+            {
+                ticTacEnabled = false;
+                Debug.Log("Plus tic tac");
+                gameManager.audioManager.Stop("TicTac");
+            }
+           
             
         }
     }
