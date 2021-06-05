@@ -14,7 +14,7 @@ public class ELC_BossHealth : MonoBehaviour
     public bool IsStunned;
     public bool HaveShield;
     public float shieldRecoveryTime;
-    public ParticleSystem ShieldParticles;
+    public GameObject ShieldGO;
 
     public int CurrentHealth;
 
@@ -38,6 +38,7 @@ public class ELC_BossHealth : MonoBehaviour
                 IsStunned = true;
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
+                StartCoroutine(BossMana.BossAttacks.Fade(true));
             }
         }
     }
@@ -45,12 +46,15 @@ public class ELC_BossHealth : MonoBehaviour
     public IEnumerator ShieldLostAndRecover()
     {
         HaveShield = false;
-        ShieldParticles.Stop();
+        ShieldGO.GetComponent<Animator>().SetBool("Dissolve", true);
+        yield return new WaitForSeconds(1);
+        ShieldGO.GetComponent<Animator>().SetBool("Dissolve", false);
+        ShieldGO.GetComponent<ParticleSystem>().Stop();
         yield return new WaitForSeconds(shieldRecoveryTime);
         if (!BossMana.IsInSwitchPhase && BossMana.CurrentPhase == 2)
         {
             HaveShield = true;
-            ShieldParticles.Play();
+            ShieldGO.GetComponent<ParticleSystem>().Play();
         }
     }
 

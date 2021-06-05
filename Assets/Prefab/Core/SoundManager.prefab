@@ -905,3 +905,32 @@ MonoBehaviour:
     mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
       type: 2}
     source: {fileID: 0}
+  - name: Spirit_Move
+    clip: {fileID: 8300000, guid: b7bf9fde8ddf490488c49d4de4cf268c, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Basic_Move
+    clip: {fileID: 8300000, guid: 4798a7be4e78f664eb5a3b7709c51c3d, type: 3}
+    volume: 0.19
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Basic_Impact
+    clip: {fileID: 8300000, guid: 350459c92d808474e8175b898749264c, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}

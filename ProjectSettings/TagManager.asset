@@ -12,6 +12,7 @@ TagManager:
   - ThinWall
   - Torch
   - Boss
+  - Mushroom
   layers:
   - Default
   - TransparentFX
