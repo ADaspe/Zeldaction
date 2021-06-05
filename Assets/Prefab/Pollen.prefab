@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActivationsNeeded: []
   isActivated: 0
-  ObjectAnimator: {fileID: 0}
+  ObjectAnimator: {fileID: 4810812886358365132}
   ActivateOnDisable: 0
   jingleOnFirstOpen: 0
   IsOpenAtStart: 0

@@ -188,7 +188,11 @@ public class ELC_EnemyAI : MonoBehaviour
                 target = GO;
             }
         }
-        if(target != null) target.GetComponent<AXD_Health>().GetHit();
+        if (target != null)
+        {
+            gameMana.audioManager.Play("Basic_Impact");
+            target.GetComponent<AXD_Health>().GetHit();
+        }
 
         yield return new WaitForSeconds(time);
         isAttacking = false;
@@ -288,9 +292,15 @@ public class ELC_EnemyAI : MonoBehaviour
         }
     }
 
-    public void PlayFootStepShieldEnemy()
+    public void PlayFootStepEnemy()
     {
-        gameMana.audioManager.Play("DS_Move");
+        if (type == EnemyType.SHIELD)
+        {
+            gameMana.audioManager.Play("DS_Move");
+        }else if (type == EnemyType.BASIC)
+        {
+            gameMana.audioManager.Play("Basic_Move");
+        }
     }
 
     private void OnDrawGizmos()

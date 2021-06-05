@@ -101,7 +101,6 @@ public class ELC_Activation : MonoBehaviour
 
         if (ConditionsEnabled == false && isActivated)
         {
-            Debug.Log("oui");
             isActivated = false;
             AnimatorUpdate();
             foreach (AXD_Activable item in objectsToActivate)

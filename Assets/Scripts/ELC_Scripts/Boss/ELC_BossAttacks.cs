@@ -78,6 +78,7 @@ public class ELC_BossAttacks : MonoBehaviour
     {
         
         BossMana.isAttacking = true;
+        BossMana.gameManager.audioManager.Play("Boss_Growl");
         switch (BossMana.CurrentPhase)
         {
             case 1:
@@ -111,6 +112,7 @@ public class ELC_BossAttacks : MonoBehaviour
     void Attack()
     {
         anims.SetBool("Growl", false);
+        BossMana.gameManager.audioManager.Play("Boss_Atk");
         switch (BossMana.CurrentPhase)
         {
             case 1:

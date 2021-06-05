@@ -12,6 +12,7 @@ public class ELC_BossManager : MonoBehaviour
     public ELC_BossHealth BossHealth;
     [HideInInspector]
     public ELC_SwitchCamFocus CamScript;
+    public ELC_GameManager gameManager;
     public GameObject RynGO;
     public GameObject MushSpawner;
     public Transform Spawn;

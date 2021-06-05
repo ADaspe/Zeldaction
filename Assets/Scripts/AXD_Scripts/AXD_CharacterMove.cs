@@ -22,6 +22,7 @@ public class AXD_CharacterMove : MonoBehaviour
     private bool dragSoundEnabled;
     Animator animsIden;
     SpriteRenderer spriteRend;
+    private bool SFXIdenEnabled;
 
     private void Start()
     {
@@ -47,7 +48,6 @@ public class AXD_CharacterMove : MonoBehaviour
 
             if (rawInputMovement.magnitude >= 0.05f) rb.velocity = rawInputMovement * currentSpeed;
             else rb.velocity = Vector2.zero;
-
 
             if (rawInputMovement.magnitude >= 0.05f)
             {
