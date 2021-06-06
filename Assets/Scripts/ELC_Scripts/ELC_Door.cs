@@ -15,6 +15,10 @@ public class ELC_Door : AXD_Activable
     private int currentNumberOfActivation;
     private bool openedOnce = false;
 
+    [Header("Sounds Names")]
+    public string openSound;
+    public string closeSound;
+
     [Header("Cam Cinematic Parameters")]
     public bool openingCinematic;
     public float cinematicDuration = 2f;
@@ -35,7 +39,6 @@ public class ELC_Door : AXD_Activable
         
         if(openingCinematic)
         {
-            Debug.Log("Vu");
             switchCam = gameObject.AddComponent<ELC_SwitchCamFocus>();
             switchCam.CharaMana = charaMana;
             switchCam.vCam = vCam;
@@ -76,6 +79,7 @@ public class ELC_Door : AXD_Activable
                     if (ObjectAnimator != null) // Pas de null pointer exception :)
                     {
                         ObjectAnimator.SetBool("Activated", isActivated);
+                        if (openSound != "") audioManager.Play(openSound);
                     }
                 }
                 return;
@@ -87,6 +91,7 @@ public class ELC_Door : AXD_Activable
                 if (ObjectAnimator != null) // Pas de null pointer exception :)
                 {
                     ObjectAnimator.SetBool("Activated", isActivated);
+                    if(closeSound != "") audioManager.Play(closeSound);
                 }
             }
         }
