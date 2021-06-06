@@ -69,7 +69,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public float SpiritReleaseDuration;
     [HideInInspector]
     public float nextDash;
-    [HideInInspector]
+    //[HideInInspector]
     public bool spiritProjected;
     [HideInInspector]
     public AXD_CheckPoint lastCheckPoint;
@@ -80,6 +80,7 @@ public class ELC_CharacterManager : MonoBehaviour
     private bool ticTacEnabled;
     private float timeToTeleportTooFar;
     private float timeToRynScared;
+    [SerializeField]
     private bool toggleCheats;
 
     private void Awake()
@@ -110,7 +111,7 @@ public class ELC_CharacterManager : MonoBehaviour
                 gameManager.audioManager.Play("TicTac");
                 
             }
-            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)// TO CHANGE
+            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)
             {
                 gameManager.audioManager.Play("Ryn_Scared" + Random.Range(1, 9));
                 timeToRynScared = 0;
@@ -447,7 +448,7 @@ public class ELC_CharacterManager : MonoBehaviour
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
-        //SpiritGO.GetComponent<Collider2D>().enabled = false;
+        SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().disabled = false;
         ResetProjection();
     }
