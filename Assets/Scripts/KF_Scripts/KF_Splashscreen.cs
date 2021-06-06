@@ -10,15 +10,12 @@ public class KF_Splashscreen : MonoBehaviour
     public Evenements events;
 
     // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        if (Input.anyKey)
-        {
             if (events != null)
             {
                 events.evenement.Invoke();
             }
-        }
     }
 
     [System.Serializable]
