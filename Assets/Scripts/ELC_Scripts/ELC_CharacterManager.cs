@@ -338,6 +338,16 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
+    public void TPCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            mousePos.z = 0;
+            RynGO.transform.position = mousePos;
+        }
+    }
+
 
     public void EnableMenu() 
     {

@@ -76,6 +76,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TPCheat",
+                    "type": "Button",
+                    "id": "399e3108-8e03-4fe4-97c2-153eb112bccb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -285,6 +293,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "CamSwap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42041744-f383-4113-b93b-95ae3cd253be",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TPCheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
