@@ -84,6 +84,46 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Invincibility cheat",
+                    "type": "Button",
+                    "id": "ec0ab075-3758-407b-b965-fb358d618b1f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ReturnUpgradeCheat",
+                    "type": "Button",
+                    "id": "42974e77-2da8-428a-afe1-cd25da8a1b6f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PurificationUpgradeCheat",
+                    "type": "Button",
+                    "id": "42caed77-1e8e-4652-b24e-be11b119c344",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DashPlusUpgradeCheat",
+                    "type": "Button",
+                    "id": "0ee21c4a-b26c-4c1f-a6cc-054cc802e63a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TPBossCheat",
+                    "type": "Button",
+                    "id": "e84a1de6-bd37-401a-80b1-32765c5b6cde",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -304,6 +344,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "TPCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b2b62a1e-12d7-4818-af97-686f8ee31bb6",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Invincibility cheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8f803be-1f80-4055-8242-44f8bfc74610",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReturnUpgradeCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9073e573-4e78-4122-a582-609621f5362a",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PurificationUpgradeCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "976ded60-5c69-494e-bf56-fd7cd379c36e",
+                    "path": "<Keyboard>/semicolon",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashPlusUpgradeCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fba1f08e-87c8-4292-ae0f-4af2f5320597",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TPBossCheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

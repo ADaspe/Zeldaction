@@ -15,7 +15,7 @@ public class AXD_Health : MonoBehaviour
     {
         if (this.CompareTag("Ryn"))
         {
-            if (!Invincible && !CharacterManager.RynAttack.ShieldOn)
+            if (!Invincible && !CharacterManager.RynAttack.ShieldOn && !CharacterManager.invincibilityCheat)
             {
                 Invincible = true;
                 if (CharacterManager.TakeDamage(this.tag))
