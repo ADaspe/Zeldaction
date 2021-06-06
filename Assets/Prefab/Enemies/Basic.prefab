@@ -252,7 +252,7 @@ MonoBehaviour:
   EnableDebug: 0
   isStunned: 0
   isProtected: 0
-  ShieldParticles: {fileID: 0}
+  ShieldParticles: {fileID: 2306656836514718545}
   ShieldAttackPS: {fileID: 0}
   type: 0
   Speed: 200
@@ -532,6 +532,12 @@ PrefabInstance:
 --- !u!4 &2306656836514718546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8443875247496036904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2306656836514718545 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6137368246318834041, guid: 9c17739d89375844d92d35323ab8868a,
     type: 3}
   m_PrefabInstance: {fileID: 8443875247496036904}
   m_PrefabAsset: {fileID: 0}
