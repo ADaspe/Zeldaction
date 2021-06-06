@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 6a2a182db0459034cac895edad590d59
+guid: 396d280cb4e4cf74e89f0f83222e1ad4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9020472557327961948
-    second: "porte cot\xE9 final_0"
+      213: -6934857939467372048
+    second: PatpatRyn_spritesheet_0
   - first:
-      213: 5936400936952904023
-    second: "porte cot\xE9 final_1"
+      213: -6788369125244178331
+    second: PatpatRyn_spritesheet_1
   - first:
-      213: -3628407826789331705
-    second: "porte cot\xE9 final_2"
+      213: 1678687820114803215
+    second: PatpatRyn_spritesheet_2
   - first:
-      213: -1181687746400491090
-    second: "porte cot\xE9 final_3"
+      213: -65413081468021135
+    second: PatpatRyn_spritesheet_3
   - first:
-      213: 2931590221430332970
-    second: "porte cot\xE9 final_4"
-  - first:
-      213: -1028384255053423277
-    second: "porte cot\xE9 final_5"
+      213: -7648559976909217912
+    second: PatpatRyn_spritesheet_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 260
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -157,118 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "porte cot\xE9 final_0"
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1200
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a0be4a6008d0d280800000000000000
-      internalID: -9020472557327961948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "porte cot\xE9 final_1"
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 1200
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 759bf532335526250800000000000000
-      internalID: 5936400936952904023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "porte cot\xE9 final_2"
-      rect:
-        serializedVersion: 2
-        x: 2400
-        y: 1200
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70d89ff3e4e45adc0800000000000000
-      internalID: -3628407826789331705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "porte cot\xE9 final_3"
-      rect:
-        serializedVersion: 2
-        x: 3600
-        y: 1200
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea9ed58614dc99fe0800000000000000
-      internalID: -1181687746400491090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "porte cot\xE9 final_4"
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 1200
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2e1d5f26c91fa820800000000000000
-      internalID: 2931590221430332970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "porte cot\xE9 final_5"
+      name: PatpatRyn_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1200
+        width: 400
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +168,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35d9fe8f7f17ab1f0800000000000000
-      internalID: -1028384255053423277
+      spriteID: 0f9ff3e427f62cf90800000000000000
+      internalID: -6934857939467372048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PatpatRyn_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56077953f3edac1a0800000000000000
+      internalID: -6788369125244178331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PatpatRyn_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ab7b6ada5eb4710800000000000000
+      internalID: 1678687820114803215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PatpatRyn_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1765f63262b971ff0800000000000000
+      internalID: -65413081468021135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PatpatRyn_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f5e0d893bdad590800000000000000
+      internalID: -7648559976909217912
       vertices: []
       indices: 
       edges: []
@@ -285,7 +261,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f2076158e7077224e92a80405b60086b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

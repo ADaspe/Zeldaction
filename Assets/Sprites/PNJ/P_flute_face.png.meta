@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 6a2a182db0459034cac895edad590d59
+guid: a458d9b30d2f5ea419451f67e40aa0b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9020472557327961948
-    second: "porte cot\xE9 final_0"
+      213: 1115007128082898361
+    second: P_flute_face_0
   - first:
-      213: 5936400936952904023
-    second: "porte cot\xE9 final_1"
+      213: -7060227877639421476
+    second: P_flute_face_1
   - first:
-      213: -3628407826789331705
-    second: "porte cot\xE9 final_2"
+      213: 6579010939468211097
+    second: P_flute_face_2
   - first:
-      213: -1181687746400491090
-    second: "porte cot\xE9 final_3"
+      213: 9189107401043812899
+    second: P_flute_face_3
   - first:
-      213: 2931590221430332970
-    second: "porte cot\xE9 final_4"
+      213: -7070385155627470700
+    second: P_flute_face_4
   - first:
-      213: -1028384255053423277
-    second: "porte cot\xE9 final_5"
+      213: -6487991284756631792
+    second: P_flute_face_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 260
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -157,13 +157,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "porte cot\xE9 final_0"
+      name: P_flute_face_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1200
-        width: 1200
-        height: 1200
+        y: 650
+        width: 850
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a0be4a6008d0d280800000000000000
-      internalID: -9020472557327961948
+      spriteID: 9bdd86f431d497f00800000000000000
+      internalID: 1115007128082898361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "porte cot\xE9 final_1"
+      name: P_flute_face_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1200
-        width: 1200
-        height: 1200
+        x: 850
+        y: 650
+        width: 850
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 759bf532335526250800000000000000
-      internalID: 5936400936952904023
+      spriteID: cd10ef7e628050e90800000000000000
+      internalID: -7060227877639421476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "porte cot\xE9 final_2"
+      name: P_flute_face_2
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1200
-        width: 1200
-        height: 1200
+        x: 1700
+        y: 650
+        width: 850
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70d89ff3e4e45adc0800000000000000
-      internalID: -3628407826789331705
+      spriteID: 9936964a7975d4b50800000000000000
+      internalID: 6579010939468211097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "porte cot\xE9 final_3"
+      name: P_flute_face_3
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 1200
-        width: 1200
-        height: 1200
+        x: 2550
+        y: 650
+        width: 850
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea9ed58614dc99fe0800000000000000
-      internalID: -1181687746400491090
+      spriteID: 322212ace74468f70800000000000000
+      internalID: 9189107401043812899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "porte cot\xE9 final_4"
+      name: P_flute_face_4
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 1200
-        width: 1200
-        height: 1200
+        x: 3400
+        y: 650
+        width: 850
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2e1d5f26c91fa820800000000000000
-      internalID: 2931590221430332970
+      spriteID: 49031a55922f0ed90800000000000000
+      internalID: -7070385155627470700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "porte cot\xE9 final_5"
+      name: P_flute_face_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1200
+        width: 850
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35d9fe8f7f17ab1f0800000000000000
-      internalID: -1028384255053423277
+      spriteID: 01f20462d4606f5a0800000000000000
+      internalID: -6487991284756631792
       vertices: []
       indices: 
       edges: []
@@ -285,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f2076158e7077224e92a80405b60086b
+    spriteID: bb316c4d51584cd4cbc73a120d686005
     internalID: 0
     vertices: []
     indices: 

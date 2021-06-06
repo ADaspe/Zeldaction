@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 29455079687999599, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 29455079687999599, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.458
+      objectReference: {fileID: 0}
     - target: {fileID: 267364121918811188, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
       propertyPath: m_IsActive
@@ -86,12 +96,12 @@ PrefabInstance:
     - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.5
+      value: 0.87003326
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 3.7886658
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
@@ -100,18 +110,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
+      propertyPath: m_Offset.x
+      value: 0.098407745
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -0.0825119
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.4
+      value: 4.6153846
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929165, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.4
+      value: 4.6153846
       objectReference: {fileID: 0}
     - target: {fileID: 2858453801201929167, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
@@ -122,6 +137,16 @@ PrefabInstance:
         type: 3}
       propertyPath: jingleOnFirstOpen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086549469666282856, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086549469666282856, guid: 06921b1f49855a249b241f1df674815a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.126
       objectReference: {fileID: 0}
     - target: {fileID: 6073511561315566862, guid: 06921b1f49855a249b241f1df674815a,
         type: 3}
