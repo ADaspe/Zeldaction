@@ -14,64 +14,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Gwynedd
   MiniaturePerso: {fileID: 21300000, guid: a3464b5105789a7428887cdb33f4d670, type: 3}
+  AutoSkip: 0
   Dialog:
   - Dialogs:
     - DialLine: "She\u2019s not fine, no."
+      Sound: 
       RynSentence: 0
     - DialLine: The grove has been decimated, none are left.
+      Sound: 
       RynSentence: 0
     - DialLine: He wants you Ryn.
+      Sound: 
       RynSentence: 0
     - DialLine: I need to face him.
+      Sound: 
       RynSentence: 1
     - DialLine: And who told you that? Serunos?
+      Sound: 
       RynSentence: 0
     - DialLine: "That snake\u2026"
+      Sound: 
       RynSentence: 0
     - DialLine: Although he speaks true.
+      Sound: 
       RynSentence: 0
     - DialLine: It is time.
+      Sound: 
       RynSentence: 0
     - DialLine: Although I cannot aid you.
+      Sound: 
       RynSentence: 0
     - DialLine: The forest forbids we fight among us.
+      Sound: 
       RynSentence: 0
     - DialLine: 'That said.. '
+      Sound: 
       RynSentence: 0
     - DialLine: I can bring you to him.
+      Sound: 
       RynSentence: 0
     - DialLine: Follow the path North. Meet me at the Shrine.
+      Sound: 
       RynSentence: 0
     - DialLine: "It will not be easy\u2026 but if she has chosen you I cannot stop
         you."
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 'What are you waiting for? '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 'Don''t tell me your backing out now '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 'Should you fail, I will leave these lands. '
+      Sound: 
       RynSentence: 0
     - DialLine: 'You are the only hope I have left. '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 'Gwynedd, are you afraid? '
+      Sound: 
       RynSentence: 1
     - DialLine: 'Why wouldn''t I be? '
+      Sound: 
       RynSentence: 0
     - DialLine: 'He is a plague, a disease '
+      Sound: 
       RynSentence: 0
     - DialLine: 'He took from me all I had '
+      Sound: 
       RynSentence: 0
     - DialLine: 'Reduced me to nothing '
+      Sound: 
       RynSentence: 0
     - DialLine: 'I want nothing more to have with him '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0

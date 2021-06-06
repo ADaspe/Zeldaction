@@ -13,30 +13,40 @@ MonoBehaviour:
   m_Name: Boss Interlude 2
   m_EditorClassIdentifier: 
   Name: ???
-  MiniaturePerso: {fileID: 0}
+  MiniaturePerso: {fileID: 21300000, guid: 4338b20ea9bdb9545b6847cbe2c5c821, type: 3}
+  AutoSkip: 1
   Dialog:
   - Dialogs:
     - DialLine: You think you can save yourself?
+      Sound: 
       RynSentence: 0
     - DialLine: A childish and futile endeavor.
+      Sound: 
       RynSentence: 0
     - DialLine: I am always watching...
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   RandomDialog:
   - Dialogs:
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
