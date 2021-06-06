@@ -40,10 +40,14 @@ public class ELC_BossAttacks : MonoBehaviour
     public float RayDespawnTime;
     [HideInInspector]
     public ELC_BossRay[] Rays;
+    public int NumberOfRaysPerPhase;
+    public float TiredTime;
+    int currentNumberOfRays;
 
     public bool isAttacking;
     Animator anims;
     bool isFading;
+    public bool isTired;
 
     private void Awake()
     {
@@ -196,9 +200,16 @@ public class ELC_BossAttacks : MonoBehaviour
     public IEnumerator RayPhase()
     {
         yield return new WaitForSeconds(RayAttackCooldown);
+        currentNumberOfRays++;
+        if (!isTired) PrepareAttack();
 
-        PrepareAttack();
+        if (currentNumberOfRays == NumberOfRaysPerPhase)
+        {
+            currentNumberOfRays = 0;
+            Tired();
+        }
 
+        yield return new WaitWhile(() => isTired);
         yield return new WaitForSeconds(RayAttackPreparationTime + RaySpawnTime + RayDespawnTime);
 
         StartCoroutine(RayPhase());
@@ -236,10 +247,19 @@ public class ELC_BossAttacks : MonoBehaviour
     
     private void Ray()
     {
+        
         foreach (ELC_BossRay BossRay in Rays)
         {
             BossRay.StartCoroutine("Spawn");
         }
+
+        
+    }
+
+    private void Tired()
+    {
+        isTired = true;
+        BossMana.BossHealth.ShieldLostAndRecover();
     }
 
     public IEnumerator Fade(bool FadeIn = false)
