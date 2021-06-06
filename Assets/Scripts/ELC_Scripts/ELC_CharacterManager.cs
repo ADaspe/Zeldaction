@@ -246,7 +246,6 @@ public class ELC_CharacterManager : MonoBehaviour
                 {
                     if (item.CompareTag("Enemy") && tempEnemyNumber<stats.maxEnemyPacification)
                     {
-                        
                         tempEnemyNumber++;
                         item.gameObject.GetComponent<AXD_EnemyHealth>().Pacificate();
                     }

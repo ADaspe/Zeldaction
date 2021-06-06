@@ -25,9 +25,14 @@ public class AXD_UIHPDisplay : MonoBehaviour
         else Debug.Log("HP à 0");
     }
 
+    [Button]
     public void HealLife()
     {
-        allHPs[charaManager.currentHP - 1].FullfillHP();
+        if(charaManager.currentHP < charaManager.maxHP)
+        {
+            allHPs[charaManager.currentHP - 1].FullfillHP();
+            charaManager.currentHP++;
+        }
     }
 
     public void HealFullLife()
@@ -48,7 +53,8 @@ public class AXD_UIHPDisplay : MonoBehaviour
         {
             
             charaManager.maxHP++;
-            allHPs[charaManager.maxHP] = (Instantiate(HPPrefab, this.transform).GetComponent<AXD_HP>());
+            allHPs[charaManager.maxHP -1] = (Instantiate(HPPrefab, this.transform).GetComponent<AXD_HP>());
+            HealLife();
             charaManager.gameManager.audioManager.Play("Jingle_Ryn");
         }
     }

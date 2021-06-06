@@ -922,12 +922,53 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
     source: {fileID: 0}
   - name: Basic_Impact
     clip: {fileID: 8300000, guid: 350459c92d808474e8175b898749264c, type: 3}
     volume: 0.75
     volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Basic_Pacification
+    clip: {fileID: 8300000, guid: 48100375464aa14479a2e17962f6c68f, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Boss_Pacification
+    clip: {fileID: 8300000, guid: ef23716174e81574e876bd52fd1f076c, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Door_Open
+    clip: {fileID: 8300000, guid: 0a2170bb44fb1654db02f3724e9873bd, type: 3}
+    volume: 0.75
+    volumeVariance: 0.05
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Door_Close
+    clip: {fileID: 8300000, guid: d0d40344102964941a152bb4de327773, type: 3}
+    volume: 0.75
+    volumeVariance: 0.05
     pitch: 1
     pitchVariance: 0
     loop: 0
