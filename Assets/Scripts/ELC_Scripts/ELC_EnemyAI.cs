@@ -13,6 +13,7 @@ public class ELC_EnemyAI : MonoBehaviour
     public bool isStunned;
     public bool isProtected;
     public ParticleSystem ShieldParticles;
+    public ParticleSystem ShieldAttackPS;
     public enum EnemyType { BASIC,SHIELD}
     public EnemyType type;
     public float Speed = 200f;
@@ -153,6 +154,7 @@ public class ELC_EnemyAI : MonoBehaviour
 
     IEnumerator PrepareAttack(float time)
     {
+        this.GetComponent<Collider2D>().isTrigger = true;
         if(type == EnemyType.BASIC)
         {
             gameMana.audioManager.Play("Basic_Atk");
@@ -175,8 +177,14 @@ public class ELC_EnemyAI : MonoBehaviour
         isAttacking = true;
         anims.SetBool("isAttacking", true);
         
-        List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy));
-        
+        List<GameObject> col = DetectionZone(EnemyStats.attackAreaRadius, EnemyStats.attackAreaAngle, (Vector3)this.GetComponent<Collider2D>().offset + this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy));
+
+        if(ShieldAttackPS != null)
+        {
+            ShieldAttackPS.gameObject.transform.position = (Vector3)this.GetComponent<Collider2D>().offset + this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy);
+            ShieldAttackPS.Play();
+        }
+
         GameObject target = null;
 
         foreach (GameObject GO in col)
@@ -197,6 +205,7 @@ public class ELC_EnemyAI : MonoBehaviour
         }
 
         yield return new WaitForSeconds(time);
+        this.GetComponent<Collider2D>().isTrigger = false;
         isAttacking = false;
     }
 
@@ -318,6 +327,6 @@ public class ELC_EnemyAI : MonoBehaviour
     {
         Gizmos.DrawWireSphere(this.transform.position, EnemyStats.detectionRadius);
         Gizmos.DrawRay(new Ray(this.transform.position, LastDirection));
-        Gizmos.DrawWireSphere(this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy), EnemyStats.attackAreaRadius);
+        Gizmos.DrawWireSphere((Vector3)this.GetComponent<Collider2D>().offset + this.transform.position + (Vector3)(LastDirection.normalized * EnemyStats.attackAreaPositionFromEnemy), EnemyStats.attackAreaRadius);
     }
 }

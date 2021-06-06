@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ELC_Interact : MonoBehaviour
 {
     public GameObject PurifyParticles;
+    public GameObject CorruptedBrambles;
     [HideInInspector]
     public bool leftLock, rightLock, upLock, downLock;
     public List<Transform> PlayerDetectors = new List<Transform>();
@@ -24,12 +25,18 @@ public class ELC_Interact : MonoBehaviour
     public Rigidbody2D rbInteractObject;
     
     private int touchedSideIndex;
+    private GameObject InstantiatedBrambles;
     //private bool playerIsTouchingSide;
 
     private void Start()
     {
         touchedSideIndex = -1;
         rbInteractObject = GetComponent<Rigidbody2D>();
+        if (corrupted && CorruptedBrambles != null)
+        {
+            InstantiatedBrambles = Instantiate(CorruptedBrambles, this.transform);
+            
+        }
     }
     void Update()
     {
@@ -83,6 +90,7 @@ public class ELC_Interact : MonoBehaviour
         {
             if (isBrambles) this.GetComponent<AXD_Brambles>().Purify();
             Instantiate(PurifyParticles, this.transform).GetComponent<ParticleSystem>().Play();
+            Destroy(InstantiatedBrambles);
             corrupted = !corrupted;
         }
     }
