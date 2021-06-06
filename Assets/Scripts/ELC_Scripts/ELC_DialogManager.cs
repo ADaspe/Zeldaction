@@ -15,6 +15,7 @@ public class ELC_DialogManager : MonoBehaviour
     public Text textZone;
     public GameObject DialogGameObject;
     public GameObject ContinueButton;
+    public Text NamePlaceHolder;
     public GameObject[] ElementsToDisable;
     public Sprite PortraitRyn;
     public Image image;
@@ -22,6 +23,7 @@ public class ELC_DialogManager : MonoBehaviour
     public int CurrentDialogIndex;
     public bool isRandomDialog;
     public int CurrentRandomIndex;
+    public float timeToWaitForNextLine;
     public float timeToWaitForeachCharInSentence;
 
     private void Awake()
@@ -46,49 +48,75 @@ public class ELC_DialogManager : MonoBehaviour
             CurrentRandomIndex = Random.Range(0, CurrentDialSO.RandomDialog.Count);
         }
 
-        Write(0);
+        StartCoroutine(Write(0));
     }
 
-    private void Write(int dialIndex)
+    private IEnumerator Write(int dialIndex)
     {
+        string[] decomposedSentence = DecomposeSentence(CurrentLineIndex);
+        string currentSentence = "";
         if (!isRandomDialog)
         {
-            textZone.text = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine;
+            
             if(CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].Sound.Length != 0) SoundMana.Play(CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].Sound);
 
 
             if (CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].RynSentence)
             {
                 image.sprite = PortraitRyn;
+                NamePlaceHolder.text = "Ryn";
                 //image.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(PortraitRyn.rect.width, PortraitRyn.rect.height);
             }
             else
             {
                 image.sprite = CurrentDialSO.MiniaturePerso;
+                NamePlaceHolder.text = CurrentDialSO.Name;
                 //image.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(CurrentDialSO.MiniaturePerso.rect.width, CurrentDialSO.MiniaturePerso.rect.height);
             }
+
+            foreach (string item in decomposedSentence)
+            {
+                currentSentence = currentSentence + item;
+                textZone.text = currentSentence;
+                yield return new WaitForSeconds(timeToWaitForeachCharInSentence);
+            }
+            //textZone.text = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine;
         }
         else
         {
-            textZone.text = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine;
+            
 
-            if (CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].RynSentence) image.sprite = PortraitRyn;
-            else image.sprite = CurrentDialSO.MiniaturePerso;
+            if (CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].RynSentence)
+            {
+                image.sprite = PortraitRyn;
+                NamePlaceHolder.text = "Ryn";
+            }
+            else
+            {
+                image.sprite = CurrentDialSO.MiniaturePerso;
+                NamePlaceHolder.text = CurrentDialSO.Name;
+            }
 
             if(CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].Sound.Length != 0) SoundMana.Play(CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].Sound);
+
+            foreach (string item in decomposedSentence)
+            {
+                currentSentence = currentSentence + item;
+                textZone.text = currentSentence;
+                yield return new WaitForSeconds(timeToWaitForeachCharInSentence);
+            }
+            //textZone.text = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine;
         }
 
         if (CurrentDialSO.AutoSkip)
         {
             ContinueButton.SetActive(false);
-            float timeToWait = 0;
 
-            if (isRandomDialog) timeToWait = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
-            else timeToWait = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
-            Invoke("WriteNextSentence", timeToWait);
+            //if (isRandomDialog) timeToWait = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
+            //else timeToWait = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length * timeToWaitForeachCharInSentence;
+            Invoke("WriteNextSentence", timeToWaitForNextLine);
         }
         else ContinueButton.SetActive(true);
-
     }
 
     public void WriteNextSentence()
@@ -98,7 +126,7 @@ public class ELC_DialogManager : MonoBehaviour
             if(CurrentLineIndex < CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs.Length - 2)
             {
                 CurrentLineIndex++;
-                Write(CurrentLineIndex);
+                StartCoroutine(Write(CurrentLineIndex));
             }
             else if(CurrentLineIndex == CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs.Length - 2)
             {
@@ -119,7 +147,7 @@ public class ELC_DialogManager : MonoBehaviour
             if (CurrentLineIndex < CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs.Length - 2)
             {
                 CurrentLineIndex++;
-                Write(CurrentLineIndex);
+                StartCoroutine(Write(CurrentLineIndex));
             }
             else if(CurrentLineIndex == CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs.Length - 2)
             {
@@ -141,24 +169,35 @@ public class ELC_DialogManager : MonoBehaviour
         yield return new WaitWhile(() => dialScript.isInEvent);
 
         CurrentDialogIndex++;
-        Write(0);
+        StartCoroutine(Write(0));
     }
 
-    private string[] DecomposeSentence(int dialIndex)
+    private string[] DecomposeSentence(int dialIndex, bool RandomDialog = false)
     {
-        string[] characters = new string[CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length];
+        string[] characters = null;
+
+        if (!RandomDialog)
+        {
+            characters = new string[CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length];
+        }
+        else
+        {
+            characters = new string[CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine.Length];
+        }
 
         for (int i = 0; i < CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine.Length; i++)
         {
-            characters[i] = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine[i].ToString();
+            if(!RandomDialog) characters[i] = CurrentDialSO.Dialog[CurrentDialogIndex].Dialogs[dialIndex].DialLine[i].ToString();
+            else characters[i] = CurrentDialSO.RandomDialog[CurrentRandomIndex].Dialogs[dialIndex].DialLine[i].ToString();
         }
+
         return characters;
     }
 
     private void LastSentence()
     {
         CurrentLineIndex++;
-        Write(CurrentLineIndex);
+        StartCoroutine(Write(CurrentLineIndex));
         Debug.Log("Dernier dialogue");
     }
 

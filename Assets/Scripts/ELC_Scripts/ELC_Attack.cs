@@ -109,6 +109,7 @@ public class ELC_Attack : MonoBehaviour
         CharManager.RynMove.canMove = false;
         CharManager.RynMove.rawInputMovement = Vector2.zero;
         NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
+        ShieldPS.Play();
         ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
 
         Invoke("RynLoseShield", CharManager.stats.ShieldDuration);

@@ -251,6 +251,7 @@ MonoBehaviour:
   isStunned: 0
   isProtected: 0
   ShieldParticles: {fileID: 0}
+  type: 0
   Speed: 200
   NextWaypointDistance: 0.5
   canPatrol: 1
@@ -371,7 +372,7 @@ PrefabInstance:
     - target: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,
         type: 3}

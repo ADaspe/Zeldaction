@@ -10,6 +10,8 @@ public class ELC_BossRay : MonoBehaviour
     public float timeBeforeSpawn;
     [HideInInspector]
     public float timeBeforeDespawn;
+    public ParticleSystem PrepareAttackPS;
+    public ParticleSystem AttackPS;
     SpriteRenderer SpriteRender;
     Collider2D col;
 
@@ -18,17 +20,18 @@ public class ELC_BossRay : MonoBehaviour
         SpriteRender = this.GetComponent<SpriteRenderer>();
         col = this.GetComponent<Collider2D>();
 
-        SpriteRender.enabled = false;
         col.enabled = false;
     }
 
     public IEnumerator Spawn()
     {
+        PrepareAttackPS.Play();
+        Debug.Log("Prepare " + Time.time);
         yield return new WaitForSeconds(timeBeforeSpawn);
-        SpriteRender.enabled = true;
+        Debug.Log("Attack " + Time.time);
         col.enabled = true;
+        AttackPS.Play();
         yield return new WaitForSeconds(timeBeforeDespawn);
-        SpriteRender.enabled = false;
         col.enabled = false;
     }
 

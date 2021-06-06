@@ -132,7 +132,8 @@ public class ELC_BossMoves : MonoBehaviour
         if(!BossMana.isAttacking && !BossMana.BossAttacks.isAttacking)
         {
             anims.SetFloat("MovesX", LastDirection.x);
-            anims.SetFloat("MovesY", LastDirection.y);
+            if(BossMana.CurrentPhase != 3) anims.SetFloat("MovesY", LastDirection.y);
+            else anims.SetFloat("MovesY", -1);
             if (LastDirection.x > 0 && LastDirection.x != 0) SpriteRend.flipX = true;
             else SpriteRend.flipX = false;
         }
