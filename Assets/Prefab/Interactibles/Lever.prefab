@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e84185280e91e4e93a15950e2ba89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPurify: {fileID: 0}
+  objectToPurify: {fileID: 5108866911671756687}
 --- !u!1 &5108866911671756693
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +112,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PurifyParticles: {fileID: 7811191320660861715, guid: 61fdd529d7f37154099d4d88f5a20713,
+    type: 3}
+  CorruptedBrambles: {fileID: 5340873597019341496, guid: e8977abf992a00947aaa7d312608e553,
+    type: 3}
+  leftLock: 0
+  rightLock: 0
+  upLock: 0
+  downLock: 0
   PlayerDetectors:
   - {fileID: 5108866911880524882}
   - {fileID: 5108866912078662067}
@@ -250,14 +258,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  ActivationParticles: {fileID: 0}
   isActivated: 0
   TorchDuration: 0
   ConditionsEnabled: 0
   detectionRadius: 0
-  LayersToDetect:
-    serializedVersion: 2
-    m_Bits: 0
   objectsToActivate: []
+  definitivelyActivated: 0
+  ticTacTorch: 0
 --- !u!95 &6651386813279041546
 Animator:
   serializedVersion: 3

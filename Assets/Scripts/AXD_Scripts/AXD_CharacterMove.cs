@@ -23,6 +23,7 @@ public class AXD_CharacterMove : MonoBehaviour
     Animator animsIden;
     SpriteRenderer spriteRend;
     private bool SFXIdenEnabled;
+    public ParticleSystem IdenTrailPS;
 
     private void Start()
     {
@@ -132,6 +133,9 @@ public class AXD_CharacterMove : MonoBehaviour
 
         if(this.gameObject.CompareTag("Spirit"))
         {
+            if (charaManager.Together) IdenTrailPS.Stop();
+            else IdenTrailPS.Play();
+
             if (isDashing)
             {
                 animsIden.SetBool("Dash", true);

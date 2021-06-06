@@ -6,13 +6,17 @@ public class AXD_EnemyHealth : MonoBehaviour
 {
     public ELC_EnemyAI enemyAI;
     public Material deathShader;
+    public Material StunShader;
     public SpriteRenderer sr;
     private Animator anims;
+    private Material BasicMaterial;
 
     private void Start()
     {
+        
         sr = GetComponent<SpriteRenderer>();
         anims = this.GetComponent<Animator>();
+        BasicMaterial = sr.material;
     }
 
     public bool GetHit(float timeToStun)
@@ -26,6 +30,7 @@ public class AXD_EnemyHealth : MonoBehaviour
             {
                 enemyAI.gameMana.audioManager.Play("DS_Paralyzed");
             }
+            sr.material = StunShader;
             enemyAI.isStunned = true;
             anims.SetBool("isStun", true);
             Invoke("CancelStun", timeToStun);
@@ -36,6 +41,7 @@ public class AXD_EnemyHealth : MonoBehaviour
 
     private void CancelStun()
     {
+        sr.material = BasicMaterial;
         enemyAI.isStunned = false;
         anims.SetBool("isStun", false);
     }

@@ -378,17 +378,7 @@ PrefabInstance:
     - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.28
       objectReference: {fileID: 0}
     - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
         type: 3}
@@ -967,11 +957,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &509109470 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7442743592339528263, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+--- !u!198 &554574876 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4011138453166799443, guid: df41e291436ece548a035c45239d0e9d,
     type: 3}
-  m_PrefabInstance: {fileID: 5613618018436120507}
+  m_PrefabInstance: {fileID: 6788487067024490079}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &557430705
 GameObject:
@@ -1367,6 +1357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: RaiseShieldDuration
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547120372911743439, guid: c3b82ff2e40626a4daa0c7f4210d1778,
+        type: 3}
+      propertyPath: purificationUpgrade
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5547120372911743439, guid: c3b82ff2e40626a4daa0c7f4210d1778,
         type: 3}
@@ -3121,12 +3116,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5613618018436120507}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1215312309 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3538620323196581188, guid: 5dd35d9ac7599494c9682c8c78a3901e,
-    type: 3}
-  m_PrefabInstance: {fileID: 4562436891368768612}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1248697508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,6 +4626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
@@ -14614,7 +14604,7 @@ PrefabInstance:
     - target: {fileID: 1196873883694285088, guid: 06684ec49d5f2694499f669ba8df78ab,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1196873883694285090, guid: 06684ec49d5f2694499f669ba8df78ab,
         type: 3}
@@ -14838,6 +14828,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 55929364}
     m_Modifications:
+    - target: {fileID: 276763486455732346, guid: 5dd35d9ac7599494c9682c8c78a3901e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276763486665066129, guid: 5dd35d9ac7599494c9682c8c78a3901e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276763486855299172, guid: 5dd35d9ac7599494c9682c8c78a3901e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276763487463547524, guid: 5dd35d9ac7599494c9682c8c78a3901e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3538620323196581191, guid: 5dd35d9ac7599494c9682c8c78a3901e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14898,11 +14908,6 @@ PrefabInstance:
       propertyPath: gameMana
       value: 
       objectReference: {fileID: 1868863768}
-    - target: {fileID: 3721872750462281909, guid: 5dd35d9ac7599494c9682c8c78a3901e,
-        type: 3}
-      propertyPath: ShieldParticles
-      value: 
-      objectReference: {fileID: 1215312309}
     - target: {fileID: 3721872750462281911, guid: 5dd35d9ac7599494c9682c8c78a3901e,
         type: 3}
       propertyPath: m_Name
@@ -14922,6 +14927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725579143397459279, guid: 5dd35d9ac7599494c9682c8c78a3901e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd35d9ac7599494c9682c8c78a3901e, type: 3}
@@ -15193,6 +15203,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5108866911671756687, guid: b026f1e0607d4524d8f8f3b0ce38ac14,
         type: 3}
+      propertyPath: corrupted
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108866911671756687, guid: b026f1e0607d4524d8f8f3b0ce38ac14,
+        type: 3}
       propertyPath: GameManagerScript
       value: 
       objectReference: {fileID: 1868863768}
@@ -15204,12 +15219,12 @@ PrefabInstance:
     - target: {fileID: 5108866911671756690, guid: b026f1e0607d4524d8f8f3b0ce38ac14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.74
+      value: 7.58
       objectReference: {fileID: 0}
     - target: {fileID: 5108866911671756690, guid: b026f1e0607d4524d8f8f3b0ce38ac14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.17
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 5108866911671756690, guid: b026f1e0607d4524d8f8f3b0ce38ac14,
         type: 3}
@@ -15270,11 +15285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5613618017327066201, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
-        type: 3}
-      propertyPath: ShieldGO
-      value: 
-      objectReference: {fileID: 509109470}
     - target: {fileID: 5613618017327066202, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
         type: 3}
       propertyPath: vCam
@@ -15326,6 +15336,11 @@ PrefabInstance:
       propertyPath: MushSpawner
       value: 
       objectReference: {fileID: 1937623987}
+    - target: {fileID: 5613618017327066214, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1868863768}
     - target: {fileID: 5613618017327066214, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
         type: 3}
       propertyPath: RaysList.Array.size
@@ -15573,6 +15588,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3328617221431476744, guid: 0968cddf8976ee34dab5824c1526f23c,
         type: 3}
+    - target: {fileID: 3218543606898988728, guid: df41e291436ece548a035c45239d0e9d,
+        type: 3}
+      propertyPath: IdenTrailPS
+      value: 
+      objectReference: {fileID: 554574876}
     - target: {fileID: 3218543606898988728, guid: df41e291436ece548a035c45239d0e9d,
         type: 3}
       propertyPath: charaManager
