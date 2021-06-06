@@ -957,12 +957,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &509109470 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7442743592339528263, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5613618018436120507}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &554574876 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4011138453166799443, guid: df41e291436ece548a035c45239d0e9d,
@@ -15291,11 +15285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5613618017327066201, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
-        type: 3}
-      propertyPath: ShieldGO
-      value: 
-      objectReference: {fileID: 509109470}
     - target: {fileID: 5613618017327066202, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
         type: 3}
       propertyPath: vCam
@@ -15347,6 +15336,11 @@ PrefabInstance:
       propertyPath: MushSpawner
       value: 
       objectReference: {fileID: 1937623987}
+    - target: {fileID: 5613618017327066214, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1868863768}
     - target: {fileID: 5613618017327066214, guid: 92ac698bcfb2ed449949f4c4200c8f0a,
         type: 3}
       propertyPath: RaysList.Array.size
