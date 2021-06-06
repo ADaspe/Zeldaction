@@ -55,6 +55,11 @@ public class AXD_CharacterMove : MonoBehaviour
                 LastDirection = rawInputMovement.normalized; // Sauvegarder la derni�re direction dans laquelle le joueur est tourn�;
                 
             }
+            if(grabbedObject == null || isRynGrabbing)
+            {
+                charaManager.gameManager.audioManager.Stop("Box_Drag");
+            }
+
             if (isRynGrabbing)
             {
                 if (grabbedObject != null)
@@ -115,6 +120,8 @@ public class AXD_CharacterMove : MonoBehaviour
                     charaManager.xLocked = false;
                     charaManager.yLocked = false;
                     currentSpeed = charaManager.stats.RynSpeed;
+                    dragSoundEnabled = false;
+
                 }
             }
             if (this.gameObject.CompareTag("Ryn"))
