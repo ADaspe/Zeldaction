@@ -30,12 +30,6 @@ public class AXD_RynDetection : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ryn"))
-        {
-            spiritIdle.closeToRyn = false;
-        }
-    }
+
 
 }

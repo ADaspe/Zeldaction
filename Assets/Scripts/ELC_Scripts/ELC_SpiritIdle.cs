@@ -52,7 +52,7 @@ public class ELC_SpiritIdle : MonoBehaviour
 
         if (!stuck)
         {
-            float tempDist = Mathf.Abs(Mathf.Sqrt(Mathf.Pow((CharaManager.RynGO.transform.position.x - CharaManager.SpiritGO.transform.position.x), 2) + Mathf.Pow((CharaManager.RynGO.transform.position.y - CharaManager.SpiritGO.transform.position.y), 2)));
+            float tempDist = Vector2.Distance(CharaManager.RynGO.transform.position,CharaManager.SpiritGO.transform.position);
             if (tempDist >= minDistToTeleport)
             {
                 closeToRyn = false;
@@ -80,7 +80,7 @@ public class ELC_SpiritIdle : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (CharaManager.followingCharacter == CharaManager.RynMove)
-        { 
+        {
             if (collision.gameObject.layer != LayerMask.NameToLayer("ObstacleSpirit") && !collision.gameObject.CompareTag("Ryn") && !closeToRyn && !CharaManager.spiritProjected)
             {
                 Teleport(targetPos);
