@@ -58,6 +58,7 @@ MonoBehaviour:
   BossAttacks: {fileID: 0}
   BossHealth: {fileID: 0}
   CamScript: {fileID: 0}
+  gameManager: {fileID: 0}
   RynGO: {fileID: 0}
   MushSpawner: {fileID: 0}
   Spawn: {fileID: 0}
@@ -169,7 +170,7 @@ MonoBehaviour:
   IsStunned: 0
   HaveShield: 0
   shieldRecoveryTime: 8
-  ShieldGO: {fileID: 0}
+  ShieldGO: {fileID: 7442743592339528263}
   CurrentHealth: 0
 --- !u!50 &5613618017327066209
 Rigidbody2D:
@@ -496,6 +497,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c17739d89375844d92d35323ab8868a, type: 3}
+--- !u!1 &7442743592339528263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6137368246318834039, guid: 9c17739d89375844d92d35323ab8868a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3631484845616462640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7442743592339528266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6137368246318834042, guid: 9c17739d89375844d92d35323ab8868a,

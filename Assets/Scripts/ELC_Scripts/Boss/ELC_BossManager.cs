@@ -173,7 +173,11 @@ public class ELC_BossManager : MonoBehaviour
         anims.SetBool("isGrowling", false);
         if (CurrentPhase == 2) BossMoves.CanMove = true;
         Debug.Log("Phase " + CurrentPhase);
-        if (CurrentPhase == 3) BossAttacks.StartCoroutine("RayPhase");
+        if (CurrentPhase == 3)
+        {
+            BossAttacks.StartCoroutine("RayPhase");
+            anims.SetFloat("MoveY", -1);
+        }
         BossMoves.FollowPlayer = true;
         BossMoves.Target = BossMoves.TargetGO.transform.position;
         IsInSwitchPhase = false;

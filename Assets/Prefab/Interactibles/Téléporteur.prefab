@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 1530161462696331332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 20, z: 1}
+  m_LocalScale: {x: 300, y: 300, z: 1}
   m_Children: []
   m_Father: {fileID: 1530161463436507420}
   m_RootOrder: 0
@@ -144,6 +144,8 @@ GameObject:
   - component: {fileID: 1530161463436507420}
   - component: {fileID: 1530161463436507423}
   - component: {fileID: 1530161463436507422}
+  - component: {fileID: 3632341185554297112}
+  - component: {fileID: 3992819349874260125}
   - component: {fileID: 1530161463436507409}
   m_Layer: 0
   m_Name: "T\xE9l\xE9porteur"
@@ -165,6 +167,7 @@ Transform:
   m_Children:
   - {fileID: 1530161462696331331}
   - {fileID: 1530161462087858049}
+  - {fileID: 5367511417073602344}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -234,8 +237,68 @@ MonoBehaviour:
   destination: {fileID: 1530161462087858048}
   audioManager: {fileID: 0}
   animator: {fileID: 1530161462696331333}
+  inputsPlayer: {fileID: 0}
+  thingsToTeleport: []
   tp: 0
   giveBackControl: 0
+--- !u!58 &3632341185554297112
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530161463436507408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.574
+--- !u!114 &3992819349874260125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530161463436507408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PurifyParticles: {fileID: 0}
+  leftLock: 0
+  rightLock: 0
+  upLock: 0
+  downLock: 0
+  PlayerDetectors:
+  - {fileID: 5367511417073602344}
+  GameManagerScript: {fileID: 0}
+  corrupted: 0
+  PlayerCanInteract: 0
+  Interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1530161463436507422}
+        m_TargetAssemblyTypeName: FLC_Teleporter, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isMobile: 0
+  isGrabbed: 0
+  isTotem: 0
+  isBrambles: 0
+  rbInteractObject: {fileID: 0}
 --- !u!95 &1530161463436507409
 Animator:
   serializedVersion: 3
@@ -255,3 +318,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &7445352305270428898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5367511417073602344}
+  m_Layer: 0
+  m_Name: Detector (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5367511417073602344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445352305270428898}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -1.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1530161463436507420}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

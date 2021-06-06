@@ -247,6 +247,13 @@ MonoBehaviour:
   jingleOnFirstOpen: 1
   IsOpenAtStart: 0
   audioManager: {fileID: 0}
+  openSound: Door_Open
+  closeSound: Door_Close
+  openingCinematic: 0
+  cinematicDuration: 2
+  charaMana: {fileID: 0}
+  vCam: {fileID: 0}
+  playerInput: {fileID: 0}
 --- !u!95 &6073511561315566862
 Animator:
   serializedVersion: 3
