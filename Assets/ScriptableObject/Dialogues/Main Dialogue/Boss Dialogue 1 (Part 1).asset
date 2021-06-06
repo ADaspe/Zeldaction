@@ -14,55 +14,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: ???
   MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
+  AutoSkip: 1
   Dialog:
   - Dialogs:
     - DialLine: Greetings Child.
+      Sound: 
       RynSentence: 0
     - DialLine: Oh, there is no need to be scared.
+      Sound: 
       RynSentence: 0
     - DialLine: 'Please.. come closer... '
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: "Ah yes\u2026"
+      Sound: 
       RynSentence: 0
     - DialLine: So fresh, so sweet,so..
+      Sound: 
       RynSentence: 0
     - DialLine: Fascinating..
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Ryn.. was it?
+      Sound: 
       RynSentence: 0
     - DialLine: No need to speak.. I already know everything.
+      Sound: 
       RynSentence: 0
     - DialLine: Lost are you? Nowhere to go?
+      Sound: 
       RynSentence: 0
     - DialLine: Abandoned by your kin?
+      Sound: 
       RynSentence: 0
     - DialLine: I feel your sadness child.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: "Don\u2019t be afraid."
+      Sound: 
       RynSentence: 0
     - DialLine: It will all be over quickly...
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Let go...
+      Sound: 
       RynSentence: 0
     - DialLine: "Give in to me\u2026"
+      Sound: 
       RynSentence: 0
     - DialLine: You do not know why you are here or who I am.
+      Sound: 
       RynSentence: 0
     - DialLine: It is better that way.
+      Sound: 
       RynSentence: 0
     - DialLine: Give me your life.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: LET ME KILL YOU.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog: []
