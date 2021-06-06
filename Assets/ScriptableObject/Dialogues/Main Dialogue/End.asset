@@ -14,50 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: ???
   MiniaturePerso: {fileID: 21300000, guid: 4338b20ea9bdb9545b6847cbe2c5c821, type: 3}
+  AutoSkip: 1
   Dialog:
   - Dialogs:
     - DialLine: "Tree of the Divine\u2026"
-      RynSentence: 1
-    - DialLine: I pray to you.
-      RynSentence: 1
-    - DialLine: For all these lost souls
-      RynSentence: 1
-    - DialLine: That you may comfort them in the world beyond.
+      Sound: 
       RynSentence: 1
     ThereIsEvent: 1
   - Dialogs:
-    - DialLine: You have done well child.
-      RynSentence: 0
-    - DialLine: You and Iden have both proven yourselves.
-      RynSentence: 0
-    - DialLine: You have ushered a new age for this forest and the spirits living
-        within.
-      RynSentence: 0
-    - DialLine: I will now bestow upon you something even greater.
-      RynSentence: 0
-    - DialLine: You deserve this.
-      RynSentence: 0
-    - DialLine: For there will always be a light within you.
-      RynSentence: 0
-    - DialLine: Rise now,
-      RynSentence: 0
-    - DialLine: Goddess.
-      RynSentence: 0
+    - DialLine: I pray to you.
+      Sound: 
+      RynSentence: 1
+    - DialLine: For all these lost souls
+      Sound: 
+      RynSentence: 1
+    - DialLine: That you may comfort them in the world beyond.
+      Sound: 
+      RynSentence: 1
     ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     - DialLine: 
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
