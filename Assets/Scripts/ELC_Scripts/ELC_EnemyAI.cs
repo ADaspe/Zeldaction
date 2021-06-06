@@ -330,7 +330,7 @@ public class ELC_EnemyAI : MonoBehaviour
                 gameMana.audioManager.Play("Basic_Move");
             }
         }
-        else Debug.Log("ne casse plus les oreilles");
+        //else Debug.Log("ne casse plus les oreilles");
     }
 
     private void OnDrawGizmos()
