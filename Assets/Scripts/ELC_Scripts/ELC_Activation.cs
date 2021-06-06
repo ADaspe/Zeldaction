@@ -23,6 +23,7 @@ public class ELC_Activation : MonoBehaviour
     [HideInInspector]
     public bool ticTacTorch;
     private static bool ticTacEnabled;
+    private bool LastActivationState;
 
     private void Start()
     {
@@ -50,34 +51,77 @@ public class ELC_Activation : MonoBehaviour
         }
     }
 
-    private void Detection(Collider2D collision, bool isEntering = true)
+    private void FixedUpdate()
     {
-        //ConditionsEnabled = false;
-        if (type == ActivatorType.PRESSUREPLATE && (collision.gameObject.CompareTag("Crate") || collision.gameObject.CompareTag("Ryn")))
+        if(type == ActivatorType.PRESSUREPLATE)
         {
             bool itemOnPlate = false;
             Collider2D[] detected = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + objectCollider.offset.x, transform.position.y + objectCollider.offset.y), detectionRadius);
             foreach (Collider2D item in detected)
             {
-                if (item.CompareTag("Crate") || item.CompareTag("Ryn"))
+                if ((item.CompareTag("Crate") || item.CompareTag("Ryn")))
                 {
                     itemOnPlate = true;
                 }
             }
-            if (!isActivated)
+            
+            isActivated = itemOnPlate;
+            
+            if (itemOnPlate != LastActivationState)
             {
-                isActivated = true;
+                LastActivationState = itemOnPlate;
+                CheckSounds();
                 AnimatorUpdate();
                 foreach (AXD_Activable item in objectsToActivate)
                 {
                     item.Activate();
                 }
-                CheckSounds();
             }
-            ConditionsEnabled = (isEntering || itemOnPlate);
-            //return;
         }
-        else if (type == ActivatorType.TORCH && collision.gameObject.CompareTag("Spirit") && collision.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
+    }
+
+    private void Detection(Collider2D collision, bool isEntering = true)
+    {
+        //ConditionsEnabled = false;
+        //if (type == ActivatorType.PRESSUREPLATE && (collision.gameObject.CompareTag("Crate") || collision.gameObject.CompareTag("Ryn")))
+        //{
+        //    bool itemOnPlate = false;
+        //    Collider2D[] detected = Physics2D.OverlapCircleAll(new Vector2(transform.position.x + objectCollider.offset.x, transform.position.y + objectCollider.offset.y), detectionRadius);
+        //    foreach (Collider2D item in detected)
+        //    {
+        //        if ((item.CompareTag("Crate") || item.CompareTag("Ryn")))
+        //        {
+        //            itemOnPlate = true;
+        //        }
+        //    }
+        //    if (!isActivated && itemOnPlate)
+        //    {
+        //        isActivated = true;
+        //        AnimatorUpdate();
+        //        foreach (AXD_Activable item in objectsToActivate)
+        //        {
+        //            item.Activate();
+        //        }
+        //        CheckSounds();
+        //    }
+
+        //    if(!itemOnPlate)
+        //    {
+        //        isActivated = false;
+        //        AnimatorUpdate();
+        //        foreach (AXD_Activable item in objectsToActivate)
+        //        {
+        //            item.Activate();
+        //        }
+        //        CheckSounds();
+        //    }
+
+        //    ConditionsEnabled = (isEntering || itemOnPlate);
+        //    //return;
+        //}
+
+
+        if (type == ActivatorType.TORCH && collision.gameObject.CompareTag("Spirit") && collision.gameObject.GetComponent<AXD_CharacterMove>().isDashing)
         {
             StopCoroutine("Countdown");
             StartCoroutine("Countdown");
@@ -96,10 +140,14 @@ public class ELC_Activation : MonoBehaviour
             ConditionsEnabled = true;
             return;
         }
-        else if (type == ActivatorType.TORCH) return;
+        else if (type == ActivatorType.TORCH)
+        {
+            ConditionsEnabled = false;
+            return;
+        }
         
 
-        if (type != ActivatorType.LEVER && ConditionsEnabled == false && isActivated)
+        if (type != ActivatorType.LEVER && type != ActivatorType.PRESSUREPLATE && ConditionsEnabled == false && isActivated)
         {
             isActivated = false;
             AnimatorUpdate();
