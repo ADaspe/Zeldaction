@@ -99,7 +99,7 @@ public class ELC_Activation : MonoBehaviour
         else if (type == ActivatorType.TORCH) return;
         
 
-        if (ConditionsEnabled == false && isActivated)
+        if (type != ActivatorType.LEVER && ConditionsEnabled == false && isActivated)
         {
             isActivated = false;
             AnimatorUpdate();

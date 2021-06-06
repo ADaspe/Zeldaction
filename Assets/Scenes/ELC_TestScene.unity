@@ -276,18 +276,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1159071915}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &162548551 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2351456187438762495, guid: 21c080ed8e9029f489531afea6d4b3ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 796123186}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &166641862
 GameObject:
   m_ObjectHideFlags: 0
@@ -13711,6 +13699,75 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1884757776
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7304443043908311372, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_Name
+      value: Pollen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945129659819422867, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69308a5c4ed246e4e98b67b0f019d922, type: 3}
 --- !u!1 &1930877173
 GameObject:
   m_ObjectHideFlags: 0
@@ -14246,12 +14303,12 @@ PrefabInstance:
         type: 3}
       propertyPath: textZone
       value: 
-      objectReference: {fileID: 162548551}
+      objectReference: {fileID: 0}
     - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
       propertyPath: SoundMana
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1563733715}
     - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
       propertyPath: PortraitRyn
@@ -14265,9 +14322,19 @@ PrefabInstance:
       objectReference: {fileID: 474400680}
     - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
+      propertyPath: NamePlaceHolder
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
       propertyPath: DialogGameObject
       value: 
       objectReference: {fileID: 288924512}
+    - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
+        type: 3}
+      propertyPath: timeToWaitForNextLine
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
       propertyPath: ElementsToDisable.Array.size
