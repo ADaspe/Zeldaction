@@ -52,6 +52,25 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
     min: 0
+--- !u!114 &-7353463746810805630
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
 --- !u!114 &-7243588429987679410
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -119,17 +138,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   shadows:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 0.9759044, y: 0.9980859, z: 1, w: 0.032642163}
   midtones:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.99911296, z: 0.9855693, w: 0.04146474}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.91196865, z: 0.8869014, w: -0.052933402}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -171,12 +190,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.225
+    m_Value: 0.28
     min: 0
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.942
+    m_Value: 1
     min: 0.01
     max: 1
   rounded:
@@ -198,12 +217,12 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: -11.4
+    m_Value: -0.6
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 13.4
+    m_Value: 3.8
     min: -100
     max: 100
 --- !u!114 &11400000
@@ -226,6 +245,7 @@ MonoBehaviour:
   - {fileID: -5424499283892360619}
   - {fileID: -7649857031448098347}
   - {fileID: 93510461565024885}
+  - {fileID: -7353463746810805630}
 --- !u!114 &93510461565024885
 MonoBehaviour:
   m_ObjectHideFlags: 3
