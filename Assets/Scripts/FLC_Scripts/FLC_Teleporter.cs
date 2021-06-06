@@ -1,25 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FLC_Teleporter : MonoBehaviour
 {
     public GameObject destination;
     public AudioManager audioManager;
     public Animator animator;
+    public PlayerInput inputsPlayer;
+    public GameObject[] thingsToTeleport;
     private bool teleportationEnd;
+    [HideInInspector]
     public bool tp;
+    [HideInInspector]
     public bool giveBackControl;
 
-    public void Teleport(GameObject[] thingsToTeleport)
+    public void Teleport()
     {
-        //Retirer le contrôle au joueur
-        StartCoroutine(Teleportation(thingsToTeleport));        
+        inputsPlayer.enabled = false;
+        StartCoroutine(Teleportation());
         animator.SetTrigger("TP");
         giveBackControl = false;
     }
 
-    IEnumerator Teleportation(GameObject[] thingsToTeleport)
+    IEnumerator Teleportation()
     {
         yield return new WaitForSeconds(0.05f);
 
@@ -32,15 +37,16 @@ public class FLC_Teleporter : MonoBehaviour
             teleportationEnd = true;
         }
        
-        if(!tp || !giveBackControl)
-        {
-            StartCoroutine(Teleportation(thingsToTeleport));
-        }
-        else
+        if(tp && giveBackControl)
         {
             teleportationEnd = false;
             tp = false;
-            //Rendre le contrôle au joueur
+            inputsPlayer.enabled = true;
+        }
+        else
+        {
+            Debug.Log("ça passe par là en fait du coup ça complique la solution là");
+            StartCoroutine(Teleportation());
         }
     }
 
