@@ -111,7 +111,7 @@ public class ELC_CharacterManager : MonoBehaviour
                 gameManager.audioManager.Play("TicTac");
                 
             }
-            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)// TO CHANGE
+            if (timeToRynScared-stats.SFXRynScaredFrequency > 0)
             {
                 gameManager.audioManager.Play("Ryn_Scared" + Random.Range(1, 9));
                 timeToRynScared = 0;
@@ -447,7 +447,7 @@ public class ELC_CharacterManager : MonoBehaviour
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
-        //SpiritGO.GetComponent<Collider2D>().enabled = false;
+        SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().disabled = false;
         ResetProjection();
     }
