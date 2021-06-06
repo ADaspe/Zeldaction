@@ -25,13 +25,13 @@ public class ELC_BossRay : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        PrepareAttackPS.Play();
-        Debug.Log("Prepare " + Time.time);
         yield return new WaitForSeconds(timeBeforeSpawn);
+        PrepareAttackPS.Play();
         Debug.Log("Attack " + Time.time);
+        yield return new WaitForSeconds(timeBeforeDespawn);
         col.enabled = true;
         AttackPS.Play();
-        yield return new WaitForSeconds(timeBeforeDespawn);
+        yield return new WaitForSeconds(0.2f);
         col.enabled = false;
     }
 
