@@ -15,6 +15,8 @@ public class ELC_BossHealth : MonoBehaviour
     public bool HaveShield;
     public float shieldRecoveryTime;
     public GameObject ShieldGO;
+    public Material StunMaterial;
+    private Material BasicMat;
 
     public int CurrentHealth;
 
@@ -24,6 +26,7 @@ public class ELC_BossHealth : MonoBehaviour
     {
         CurrentHealth = FirstPhaseHealth;
         BossMana = this.GetComponent<ELC_BossManager>();
+        BasicMat = this.GetComponent<SpriteRenderer>().material;
     }
 
     public void BossGetHit()
@@ -37,6 +40,7 @@ public class ELC_BossHealth : MonoBehaviour
             {
                 BossMana.gameManager.audioManager.Play("Boss_Paralyzed");
                 IsStunned = true;
+                this.GetComponent<SpriteRenderer>().material = StunMaterial;
                 this.GetComponent<Animator>().SetBool("isStun", true);
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
@@ -67,6 +71,7 @@ public class ELC_BossHealth : MonoBehaviour
         {
             IsStunned = false;
             BossMana.isStunned = IsStunned;
+            this.GetComponent<SpriteRenderer>().material = BasicMat;
             this.GetComponent<Animator>().SetBool("isStun", false);
             if (BossMana.CurrentPhase < 3) BossMana.SwitchPhase();
             else BossMana.End();
