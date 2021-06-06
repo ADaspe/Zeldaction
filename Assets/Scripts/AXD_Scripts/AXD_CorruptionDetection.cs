@@ -27,7 +27,9 @@ public class AXD_CorruptionDetection : MonoBehaviour
         
         if (collision.CompareTag("Spirit"))
         {
+            
             ToPurifyInCharManager =  collision.GetComponent<AXD_CharacterMove>().charaManager.ToPurify = objectToPurify;
+            Debug.Log(ToPurifyInCharManager);
         }
     }
 

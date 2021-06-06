@@ -97,6 +97,7 @@ Transform:
   - {fileID: 1196873883197744184}
   - {fileID: 1196873883516002296}
   - {fileID: 2306656836514718546}
+  - {fileID: 6853074532214906797}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAI: {fileID: 1196873883694285090}
   deathShader: {fileID: 0}
+  StunShader: {fileID: 2100000, guid: ca3ae561d725302469d1960d721e7cca, type: 2}
   sr: {fileID: 0}
 --- !u!114 &1196873883694285090
 MonoBehaviour:
@@ -251,6 +253,7 @@ MonoBehaviour:
   isStunned: 0
   isProtected: 0
   ShieldParticles: {fileID: 0}
+  ShieldAttackPS: {fileID: 0}
   type: 0
   Speed: 200
   NextWaypointDistance: 0.5
@@ -282,6 +285,81 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &6181486188349373384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1196873883694285093}
+    m_Modifications:
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779701171789898858, guid: 6f758127cbc51594daf5d3d75db40422,
+        type: 3}
+      propertyPath: m_Name
+      value: Ps_Charge_sanglier
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f758127cbc51594daf5d3d75db40422, type: 3}
+--- !u!4 &6853074532214906797 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 779701171789898853, guid: 6f758127cbc51594daf5d3d75db40422,
+    type: 3}
+  m_PrefabInstance: {fileID: 6181486188349373384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8443875247496036904
 PrefabInstance:
   m_ObjectHideFlags: 0
