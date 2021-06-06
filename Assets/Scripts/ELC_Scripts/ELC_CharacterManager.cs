@@ -80,6 +80,7 @@ public class ELC_CharacterManager : MonoBehaviour
     private bool ticTacEnabled;
     private float timeToTeleportTooFar;
     private float timeToRynScared;
+    private bool toggleCheats;
 
     private void Awake()
     {
@@ -344,7 +345,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void TPCheat(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && toggleCheats)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             mousePos.z = 0;
@@ -354,7 +355,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void InvincibilityCheat(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && toggleCheats)
         {
             invincibilityCheat = !invincibilityCheat;
         }
@@ -362,21 +363,21 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void ReturnUpgradeCheat(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && toggleCheats)
         {
             UpgradeReturn();
         }
     }
     public void PurificationUpgradeCheat(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started &&toggleCheats)
         {
             UpgradePurification();
         }
     }
     public void DashPlusUpgradeCheat(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && toggleCheats)
         {
             UpgradeDash();
         }
@@ -384,13 +385,17 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void TPBossCheat(InputAction.CallbackContext value)
     {
-        if (value.started)
+        if (value.started && toggleCheats)
         {
             RynGO.transform.position = LastCheckPointBeforeBoss.GetSpawnPosition();
             spiritIdle.Teleport(spiritIdle.targetPos);
         }
     }
 
+    public void ToggleCheats()
+    {
+        toggleCheats = !toggleCheats;
+    }
 
     public void EnableMenu() 
     {
