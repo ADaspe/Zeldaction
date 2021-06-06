@@ -63,7 +63,7 @@ public class AXD_EnemyHealth : MonoBehaviour
         }
         sr.material = deathShader;
         yield return new WaitForSeconds(1f/*Mettre le vrai temps de shader de dissolution*/);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
     
 }
