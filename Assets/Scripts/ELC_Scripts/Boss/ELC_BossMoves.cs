@@ -21,6 +21,7 @@ public class ELC_BossMoves : MonoBehaviour
     public bool FollowPlayer;
     public bool isGoingToPreciseLocation;
     public bool ReachedThePreciseLocation;
+    public GameObject shadow;
 
     Vector2 direction;
     public Vector2 LastDirection;
@@ -137,5 +138,15 @@ public class ELC_BossMoves : MonoBehaviour
             if (LastDirection.x > 0 && LastDirection.x != 0) SpriteRend.flipX = true;
             else SpriteRend.flipX = false;
         }
+    }
+
+    public void RotateShadow0()
+    {
+        shadow.transform.SetPositionAndRotation(shadow.transform.position, new Quaternion(0,0,0,0));
+    }
+
+    public void RotateShadow90()
+    {
+        shadow.transform.SetPositionAndRotation(shadow.transform.position, new Quaternion(0, 0, 90, 0));
     }
 }
