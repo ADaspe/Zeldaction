@@ -63,6 +63,10 @@ public class ELC_BossHealth : MonoBehaviour
             ShieldGO.GetComponent<ParticleSystem>().Play();
             ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
         }
+        if(BossMana.CurrentPhase == 3)
+        {
+            BossMana.BossAttacks.isTired = false;
+        }
     }
 
     public void Pacificate()
