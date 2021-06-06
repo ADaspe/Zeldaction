@@ -22,16 +22,16 @@ AnimationClip:
     - time: 0
       value: {fileID: 5354037085761835137, guid: b1188f2a2b240c34291fede86e5a62d7,
         type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: -1971031052340152091, guid: b1188f2a2b240c34291fede86e5a62d7,
         type: 3}
-    - time: 0.33333334
+    - time: 0.16666667
       value: {fileID: -2906685493316469465, guid: b1188f2a2b240c34291fede86e5a62d7,
         type: 3}
-    - time: 0.5
+    - time: 0.25
       value: {fileID: 1867254703692704153, guid: b1188f2a2b240c34291fede86e5a62d7,
         type: 3}
-    - time: 0.6666667
+    - time: 0.33333334
       value: {fileID: -2809137050456405787, guid: b1188f2a2b240c34291fede86e5a62d7,
         type: 3}
     attribute: m_Sprite
@@ -63,7 +63,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -83,7 +83,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.16666667
+  - time: 0.083333336
     functionName: PlayFootStepEnemy
     data: 
     objectReferenceParameter: {fileID: 0}

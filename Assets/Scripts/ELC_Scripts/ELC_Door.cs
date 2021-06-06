@@ -63,7 +63,7 @@ public class ELC_Door : AXD_Activable
                 if (!isActivated)
                 {
                     isActivated = true;
-                    PollenParticles.SetActive(false);
+                    if(Pollen) PollenParticles.SetActive(false);
                     LockTorches();
                     rb.enabled = false;
                     if(!openedOnce)
@@ -90,7 +90,7 @@ public class ELC_Door : AXD_Activable
             else
             {
                 isActivated = false;
-                PollenParticles.SetActive(true);
+                if(Pollen) PollenParticles.SetActive(true);
                 rb.enabled = true;
                 if (ObjectAnimator != null) // Pas de null pointer exception :)
                 {
