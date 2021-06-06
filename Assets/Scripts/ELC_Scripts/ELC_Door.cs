@@ -10,6 +10,7 @@ public class ELC_Door : AXD_Activable
     public bool jingleOnFirstOpen;
     public bool IsOpenAtStart;
     public bool Pollen;
+    public GameObject PollenParticles;
 
     public AudioManager audioManager;
     private Collider2D rb;
@@ -62,6 +63,7 @@ public class ELC_Door : AXD_Activable
                 if (!isActivated)
                 {
                     isActivated = true;
+                    if(Pollen) PollenParticles.SetActive(false);
                     LockTorches();
                     rb.enabled = false;
                     if(!openedOnce)
@@ -88,6 +90,7 @@ public class ELC_Door : AXD_Activable
             else
             {
                 isActivated = false;
+                if(Pollen) PollenParticles.SetActive(true);
                 rb.enabled = true;
                 if (ObjectAnimator != null) // Pas de null pointer exception :)
                 {

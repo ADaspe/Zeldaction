@@ -75,7 +75,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public AXD_CheckPoint lastCheckPoint;
     [HideInInspector]
     private Collider2D[] allDetected;
-    [HideInInspector]
+    
     public ELC_Interact DetectedInteraction;
     private bool ticTacEnabled;
     private float timeToTeleportTooFar;
@@ -244,7 +244,8 @@ public class ELC_CharacterManager : MonoBehaviour
             {
                 gameManager.audioManager.Play("Spirit_Purification");
                 ToPurify.Purify();
-            } else if (DetectedInteraction == null && followingCharacter == RynMove)
+            }
+            if (followingCharacter == RynMove && DetectedInteraction == null)
             {
                 int tempEnemyNumber = 0;
                 allDetected = Physics2D.OverlapCircleAll(RynGO.transform.position, stats.pacificationRadius, LayerMask.GetMask("Enemy","Boss"));

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ELC_DialogManager : MonoBehaviour
 {
@@ -12,10 +13,10 @@ public class ELC_DialogManager : MonoBehaviour
     public GameObject CharacterGO;
     [HideInInspector]
     public ELC_Dialog dialScript;
-    public TextMesh textZone;
+    public TextMeshProUGUI textZone;
     public GameObject DialogGameObject;
     public GameObject ContinueButton;
-    public TextMesh NamePlaceHolder;
+    public TextMeshProUGUI NamePlaceHolder;
     public GameObject[] ElementsToDisable;
     public Sprite PortraitRyn;
     public Image image;

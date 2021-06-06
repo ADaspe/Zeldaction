@@ -155,13 +155,18 @@ public class ELC_EnemyAI : MonoBehaviour
     IEnumerator PrepareAttack(float time)
     {
         this.GetComponent<Collider2D>().isTrigger = true;
-        if(type == EnemyType.BASIC)
+        if (Vector2.Distance(gameMana.CharacterManager.RynGO.transform.position, this.transform.position) < 10)
         {
-            gameMana.audioManager.Play("Basic_Atk");
-        }else if (type == EnemyType.SHIELD)
-        {
-            gameMana.audioManager.Play("DS_Atk");
+            if (type == EnemyType.BASIC)
+            {
+                gameMana.audioManager.Play("Basic_Atk");
+            }
+            else if (type == EnemyType.SHIELD)
+            {
+                gameMana.audioManager.Play("DS_Atk");
+            }
         }
+            
         
         anims.SetBool("PrepareAttack", true);
         isPreparingAttack = true;
@@ -314,13 +319,18 @@ public class ELC_EnemyAI : MonoBehaviour
 
     public void PlayFootStepEnemy()
     {
-        if (type == EnemyType.SHIELD)
+        if (Vector2.Distance(gameMana.CharacterManager.RynGO.transform.position, this.transform.position) < 10)
         {
-            gameMana.audioManager.Play("DS_Move");
-        }else if (type == EnemyType.BASIC)
-        {
-            gameMana.audioManager.Play("Basic_Move");
+            if (type == EnemyType.SHIELD)
+            {
+                gameMana.audioManager.Play("DS_Move");
+            }
+            else if (type == EnemyType.BASIC)
+            {
+                gameMana.audioManager.Play("Basic_Move");
+            }
         }
+        else Debug.Log("ne casse plus les oreilles");
     }
 
     private void OnDrawGizmos()

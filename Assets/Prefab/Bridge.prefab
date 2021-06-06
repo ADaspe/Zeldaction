@@ -118,9 +118,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActivationsNeeded: []
   isActivated: 0
+  ObjectAnimator: {fileID: 0}
   tilesScript: {fileID: 837270328356672767}
   isOpen: 0
   ActivateOnDisable: 0
+  DialogActivation: 0
 --- !u!95 &4641078757239906776
 Animator:
   serializedVersion: 3
