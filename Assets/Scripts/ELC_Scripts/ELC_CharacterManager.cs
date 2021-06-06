@@ -19,7 +19,8 @@ public class ELC_CharacterManager : MonoBehaviour
     private ELC_SpiritIdle spiritIdle;
     public ELC_GameManager gameManager;
     public ELC_CharacterAnimationsManager AnimationManager;
-    //[HideInInspector]
+    public AXD_CheckPoint LastCheckPointBeforeBoss;
+    [HideInInspector]
     public ELC_Interact ToPurify;
     [HideInInspector]
     public ELC_Attack RynAttack;
@@ -49,6 +50,8 @@ public class ELC_CharacterManager : MonoBehaviour
 
     [Header("Health")]
 
+    [ReadOnly]
+    public bool invincibilityCheat;
     public int currentHP;
     [HideInInspector]
     public AXD_Health health;
@@ -93,6 +96,7 @@ public class ELC_CharacterManager : MonoBehaviour
         ticTacEnabled = false;
         timeToTeleportTooFar = 0;
         timeToRynScared = 0;
+        invincibilityCheat = false;
     }
 
     private void FixedUpdate()
@@ -345,6 +349,45 @@ public class ELC_CharacterManager : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             mousePos.z = 0;
             RynGO.transform.position = mousePos;
+        }
+    }
+
+    public void InvincibilityCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            invincibilityCheat = !invincibilityCheat;
+        }
+    }
+
+    public void ReturnUpgradeCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpgradeReturn();
+        }
+    }
+    public void PurificationUpgradeCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpgradePurification();
+        }
+    }
+    public void DashPlusUpgradeCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            UpgradeDash();
+        }
+    }
+
+    public void TPBossCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            RynGO.transform.position = LastCheckPointBeforeBoss.GetSpawnPosition();
+            spiritIdle.Teleport(spiritIdle.targetPos);
         }
     }
 
