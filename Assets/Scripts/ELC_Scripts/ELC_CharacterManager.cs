@@ -69,7 +69,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public float SpiritReleaseDuration;
     [HideInInspector]
     public float nextDash;
-    [HideInInspector]
+    //[HideInInspector]
     public bool spiritProjected;
     [HideInInspector]
     public AXD_CheckPoint lastCheckPoint;
