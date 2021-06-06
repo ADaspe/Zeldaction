@@ -134,7 +134,10 @@ MonoBehaviour:
   RaySpawnTime: 0.19
   RayDespawnTime: 0.54
   Rays: []
+  NumberOfRaysPerPhase: 3
+  TiredTime: 0
   isAttacking: 0
+  isTired: 0
 --- !u!114 &5613618017327066202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +174,7 @@ MonoBehaviour:
   HaveShield: 0
   shieldRecoveryTime: 8
   ShieldGO: {fileID: 7442743592339528263}
+  StunMaterial: {fileID: 2100000, guid: ca3ae561d725302469d1960d721e7cca, type: 2}
   CurrentHealth: 0
 --- !u!50 &5613618017327066209
 Rigidbody2D:

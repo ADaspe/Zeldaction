@@ -16,7 +16,8 @@ public class ELC_BossHealth : MonoBehaviour
     public float shieldRecoveryTime;
     public GameObject ShieldGO;
     public Material StunMaterial;
-    private Material BasicMat;
+    [HideInInspector]
+    public Material BasicMat;
 
     public int CurrentHealth;
 
@@ -38,13 +39,20 @@ public class ELC_BossHealth : MonoBehaviour
             if (CurrentHealth - 1 > 0) CurrentHealth--;
             else
             {
+                SpriteRenderer SpriteRend = this.GetComponent<SpriteRenderer>();
+                BossMana.BossAttacks.StopAllCoroutines();
+                var mat = SpriteRend.material.color;
+                mat.a = 1;
+                SpriteRend.color = mat;
                 BossMana.gameManager.audioManager.Play("Boss_Paralyzed");
                 IsStunned = true;
                 this.GetComponent<SpriteRenderer>().material = StunMaterial;
                 this.GetComponent<Animator>().SetBool("isStun", true);
                 BossMana.isStunned = IsStunned;
                 BossMana.BossAttacks.EndAttack();
-                if(BossMana.CurrentPhase == 1) StartCoroutine(BossMana.BossAttacks.Fade(true));
+                
+                
+                //if(BossMana.CurrentPhase == 1) StartCoroutine(BossMana.BossAttacks.Fade(true));
             }
         }
     }
@@ -63,6 +71,13 @@ public class ELC_BossHealth : MonoBehaviour
             ShieldGO.GetComponent<ParticleSystem>().Play();
             ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
         }
+        if(BossMana.CurrentPhase == 3 && !IsStunned && !BossMana.IsInSwitchPhase)
+        {
+            BossMana.BossAttacks.isTired = false;
+            HaveShield = true;
+            ShieldGO.GetComponent<ParticleSystem>().Play();
+            ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
+        }
     }
 
     public void Pacificate()
@@ -74,7 +89,12 @@ public class ELC_BossHealth : MonoBehaviour
             this.GetComponent<SpriteRenderer>().material = BasicMat;
             this.GetComponent<Animator>().SetBool("isStun", false);
             if (BossMana.CurrentPhase < 3) BossMana.SwitchPhase();
-            else BossMana.End();
+            else
+            {
+                BossMana.End();
+                Debug.Log("end");
+            }
+            
         }
     }
 }

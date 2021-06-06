@@ -40,10 +40,14 @@ public class ELC_BossAttacks : MonoBehaviour
     public float RayDespawnTime;
     [HideInInspector]
     public ELC_BossRay[] Rays;
+    public int NumberOfRaysPerPhase;
+    public float TiredTime;
+    int currentNumberOfRays;
 
     public bool isAttacking;
     Animator anims;
     bool isFading;
+    public bool isTired;
 
     private void Awake()
     {
@@ -196,9 +200,16 @@ public class ELC_BossAttacks : MonoBehaviour
     public IEnumerator RayPhase()
     {
         yield return new WaitForSeconds(RayAttackCooldown);
+        currentNumberOfRays++;
+        if (!isTired) PrepareAttack();
 
-        PrepareAttack();
+        if (currentNumberOfRays == NumberOfRaysPerPhase)
+        {
+            currentNumberOfRays = 0;
+            Tired();
+        }
 
+        yield return new WaitWhile(() => isTired);
         yield return new WaitForSeconds(RayAttackPreparationTime + RaySpawnTime + RayDespawnTime);
 
         StartCoroutine(RayPhase());
@@ -236,42 +247,65 @@ public class ELC_BossAttacks : MonoBehaviour
     
     private void Ray()
     {
+        
         foreach (ELC_BossRay BossRay in Rays)
         {
             BossRay.StartCoroutine("Spawn");
         }
+
+        
+    }
+
+    private void Tired()
+    {
+        isTired = true;
+        StartCoroutine(BossMana.BossHealth.ShieldLostAndRecover());
     }
 
     public IEnumerator Fade(bool FadeIn = false)
     {
-        yield return new WaitWhile(() => isFading);
-        isFading = true;
-        float alphaValue = 0;
-        if(!FadeIn)
+        if(SpriteRend.material == BossMana.BossHealth.BasicMat)
         {
-            alphaValue = 1;
-            while (alphaValue > 0)
+            yield return new WaitWhile(() => isFading);
+            isFading = true;
+            float alphaValue = 0;
+            if (!FadeIn)
             {
-                yield return new WaitForSeconds(0.05f);
-                alphaValue -= 0.1f;
-                var mat = SpriteRend.material.color;
-                mat.a = alphaValue;
-                SpriteRend.color = mat;
+                alphaValue = 1;
+                while (alphaValue > 0 && SpriteRend.material == BossMana.BossHealth.BasicMat)
+                {
+                    yield return new WaitForSeconds(0.05f);
+                    if (SpriteRend.material == BossMana.BossHealth.BasicMat)
+                    {
+                        alphaValue -= 0.1f;
+                        var mat = SpriteRend.material.color;
+                        mat.a = alphaValue;
+                        SpriteRend.color = mat;
+                    }
+                    else yield return null;
+                        
+                }
             }
-        }
-        else
-        {
-            alphaValue = 0;
-            while (alphaValue < 1)
+            else
             {
-                yield return new WaitForSeconds(0.05f);
-                alphaValue += 0.1f;
-                var mat = SpriteRend.material.color;
-                mat.a = alphaValue;
-                SpriteRend.color = mat;
+                alphaValue = 0;
+                while (alphaValue < 1 && SpriteRend.material == BossMana.BossHealth.BasicMat)
+                {
+                    yield return new WaitForSeconds(0.05f);
+                    if(SpriteRend.material == BossMana.BossHealth.BasicMat)
+                    {
+                        alphaValue += 0.1f;
+                        var mat = SpriteRend.material.color;
+                        mat.a = alphaValue;
+                        SpriteRend.color = mat;
+                    }
+                    else yield return null;
+                }
             }
+            isFading = false;
         }
-        isFading = false;
+        else yield return null;
+
     }
 
     public IEnumerator CooldownsAttack()
