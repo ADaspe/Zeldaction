@@ -13,10 +13,10 @@ public class ELC_DialogManager : MonoBehaviour
     public GameObject CharacterGO;
     [HideInInspector]
     public ELC_Dialog dialScript;
-    public TextMeshPro textZone;
+    public TextMeshProUGUI textZone;
     public GameObject DialogGameObject;
     public GameObject ContinueButton;
-    public TextMeshPro NamePlaceHolder;
+    public TextMeshProUGUI NamePlaceHolder;
     public GameObject[] ElementsToDisable;
     public Sprite PortraitRyn;
     public Image image;

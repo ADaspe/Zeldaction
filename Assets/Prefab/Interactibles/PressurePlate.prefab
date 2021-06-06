@@ -149,11 +149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  ActivationParticles: {fileID: 0}
   isActivated: 0
   TorchDuration: 0
   ConditionsEnabled: 0
   detectionRadius: 0.1
   objectsToActivate: []
+  definitivelyActivated: 0
+  ticTacTorch: 0
 --- !u!114 &237884969641447571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0b782817f44e34497876cfc28f6db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 5340873597019341496, guid: e8977abf992a00947aaa7d312608e553,
+    type: 3}
+  leftLock: 0
+  rightLock: 0
+  upLock: 0
+  downLock: 0
   PlayerDetectors: []
   GameManagerScript: {fileID: 0}
   corrupted: 0

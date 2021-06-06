@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 5340873597019341496, guid: e8977abf992a00947aaa7d312608e553,
+    type: 3}
   leftLock: 0
   rightLock: 0
   upLock: 0
