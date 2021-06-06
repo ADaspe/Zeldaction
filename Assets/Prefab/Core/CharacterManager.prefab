@@ -45,39 +45,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2b634a4e1dcc44e91fe4c55d4a9019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Together: 0
   RynGO: {fileID: 0}
   SpiritGO: {fileID: 0}
   vCam: {fileID: 0}
   followingCharacter: {fileID: 0}
   RynMove: {fileID: 0}
   spiritMove: {fileID: 0}
-  DetectedInteraction: {fileID: 0}
   stats: {fileID: 11400000, guid: 9f402210f14bc3e44a8c68ea2e39b242, type: 2}
-  currentHP: 0
-  maxHP: 0
+  gameManager: {fileID: 0}
   AnimationManager: {fileID: 8464918147117064711}
+  LastCheckPointBeforeBoss: {fileID: 0}
   ToPurify: {fileID: 0}
+  RynAttack: {fileID: 0}
+  SpiritAttack: {fileID: 0}
+  Together: 0
+  xLocked: 0
+  yLocked: 0
+  RynAnimator: {fileID: 0}
+  IdenAnimator: {fileID: 0}
   PlayerIdle: Player_Idle
   PlayerWalk: Player_Walk
   PlayerShield: Player_Shield
   PlayerAttackTogether: Player_AttackTogether
   PlayerHit: Player_Hit
   PlayerDetachSpirit: 
-  SpiritReleaseDuration: 0
-  nextDash: 0
-  spiritProjected: 0
+  PlayerDeath: 
+  PlayerPushObject: 
+  PauseMenu: {fileID: 0}
   enableMenu:
     m_PersistentCalls:
       m_Calls: []
   disableMenu:
     m_PersistentCalls:
       m_Calls: []
-  PauseMenu: {fileID: 0}
   toggleMenu: 0
-  xLocked: 0
-  yLocked: 0
+  invincibilityCheat: 0
+  currentHP: 0
+  health: {fileID: 0}
+  maxHP: 0
+  isDead: 0
+  returnUpgrade: 0
   dashPlusUpgrade: 0
+  purificationUpgrade: 0
+  SpiritReleaseDuration: 0
+  nextDash: 0
+  spiritProjected: 0
+  lastCheckPoint: {fileID: 0}
+  DetectedInteraction: {fileID: 0}
 --- !u!114 &701354207612222063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +205,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 564ee36f-3ae2-4a60-8884-363bec6eaf58
-    m_ActionName: PlayerControls/Shield Ryn[/Mouse/leftButton]
+    m_ActionName: PlayerControls/Shield Ryn[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -207,7 +221,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: faf8ddf3-4b9e-4b6c-a067-74d79d6f16ee
-    m_ActionName: PlayerControls/Combat Iden[/Mouse/rightButton]
+    m_ActionName: PlayerControls/Combat Iden[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5547120372911743439}
@@ -256,6 +270,262 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ff959931-daff-4843-88d6-4cba468fb16c
     m_ActionName: PlayerControls/CamSwap[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dee473b6-aad1-49a4-97a3-c23ba3506b32
+    m_ActionName: MenuNav/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7de28beb-67a5-4961-964f-5090b6ad5a4e
+    m_ActionName: MenuNav/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e8420a7d-2bdd-4c3a-a466-cac6826751ef
+    m_ActionName: MenuNav/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 73c5722f-8f8b-4244-a09c-b9f7ee989cbd
+    m_ActionName: MenuNav/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4669d8eb-f198-43bb-9bd7-21e7b345ddc3
+    m_ActionName: MenuNav/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 82c79192-ba9e-4e66-9702-a0c17071ac6a
+    m_ActionName: MenuNav/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8ef5326e-e529-4aaf-953c-7cff0755934e
+    m_ActionName: MenuNav/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 31e2fbcb-2c83-42d7-866f-9277bb66e448
+    m_ActionName: MenuNav/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c304a1aa-2667-4f34-8f78-46ff51ffee37
+    m_ActionName: MenuNav/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ChangeCamFocus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c8f1f7a7-c583-4578-9100-9fcabc9da389
+    m_ActionName: MenuNav/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: TPCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 399e3108-8e03-4fe4-97c2-153eb112bccb
+    m_ActionName: PlayerControls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: InvincibilityCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ec0ab075-3758-407b-b965-fb358d618b1f
+    m_ActionName: PlayerControls/Invincibility cheat[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: ReturnUpgradeCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 42974e77-2da8-428a-afe1-cd25da8a1b6f
+    m_ActionName: PlayerControls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: PurificationUpgradeCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 42caed77-1e8e-4652-b24e-be11b119c344
+    m_ActionName: PlayerControls/New action1
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: DashPlusUpgradeCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0ee21c4a-b26c-4c1f-a6cc-054cc802e63a
+    m_ActionName: PlayerControls/New action2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547120372911743439}
+        m_TargetAssemblyTypeName: ELC_CharacterManager, Assembly-CSharp
+        m_MethodName: TPBossCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e84a1de6-bd37-401a-80b1-32765c5b6cde
+    m_ActionName: PlayerControls/TPBossCheat[/Keyboard/o]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -277,3 +547,4 @@ MonoBehaviour:
   isMoving: 0
   isAttacking: 0
   shielding: 0
+  isPushingObjects: 0

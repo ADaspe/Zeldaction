@@ -161,7 +161,7 @@ public class ELC_BossManager : MonoBehaviour
     {
         //Apparition bouclier + grognement
         anims.SetBool("Growl", true);
-        if (CurrentPhase == 2)
+        if (CurrentPhase == 2 || CurrentPhase == 3)
         {
             Debug.Log("Graou + shield");
             BossHealth.HaveShield = true;
@@ -176,7 +176,7 @@ public class ELC_BossManager : MonoBehaviour
         if (CurrentPhase == 3)
         {
             BossAttacks.StartCoroutine("RayPhase");
-            anims.SetFloat("MoveY", -1);
+            anims.SetFloat("MovesY", -1);
         }
         BossMoves.FollowPlayer = true;
         BossMoves.Target = BossMoves.TargetGO.transform.position;
