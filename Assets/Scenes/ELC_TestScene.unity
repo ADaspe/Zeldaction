@@ -1701,18 +1701,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9173012789001392075}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &876625663 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8537250411517887139, guid: 21c080ed8e9029f489531afea6d4b3ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 796123186}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &886090414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14275,11 +14263,6 @@ PrefabInstance:
       propertyPath: ContinueButton
       value: 
       objectReference: {fileID: 474400680}
-    - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
-        type: 3}
-      propertyPath: NamePlaceHolder
-      value: 
-      objectReference: {fileID: 876625663}
     - target: {fileID: 9095271264741744285, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
       propertyPath: DialogGameObject
