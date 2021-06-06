@@ -3103,6 +3103,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5613618018436120507}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1229573658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4872496406181500052, guid: 69308a5c4ed246e4e98b67b0f019d922,
+    type: 3}
+  m_PrefabInstance: {fileID: 1884757776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1248697508
 GameObject:
   m_ObjectHideFlags: 0
@@ -13706,6 +13712,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1558845720966640551, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1563733715}
+    - target: {fileID: 1558845720966640551, guid: 69308a5c4ed246e4e98b67b0f019d922,
+        type: 3}
+      propertyPath: PollenParticles
+      value: 
+      objectReference: {fileID: 1229573658}
     - target: {fileID: 7304443043908311372, guid: 69308a5c4ed246e4e98b67b0f019d922,
         type: 3}
       propertyPath: m_Name
@@ -15902,12 +15918,12 @@ PrefabInstance:
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.43
+      value: 10.69
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.71
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 6551577504776777015, guid: 91589d2c42d84814984f7bd0e5b6a8ab,
         type: 3}
