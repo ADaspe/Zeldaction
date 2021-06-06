@@ -80,6 +80,7 @@ public class ELC_CharacterManager : MonoBehaviour
     private bool ticTacEnabled;
     private float timeToTeleportTooFar;
     private float timeToRynScared;
+    [SerializeField]
     private bool toggleCheats;
 
     private void Awake()
