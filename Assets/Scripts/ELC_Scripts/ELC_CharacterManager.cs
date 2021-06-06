@@ -19,7 +19,8 @@ public class ELC_CharacterManager : MonoBehaviour
     private ELC_SpiritIdle spiritIdle;
     public ELC_GameManager gameManager;
     public ELC_CharacterAnimationsManager AnimationManager;
-    //[HideInInspector]
+    public AXD_CheckPoint LastCheckPointBeforeBoss;
+    [HideInInspector]
     public ELC_Interact ToPurify;
     [HideInInspector]
     public ELC_Attack RynAttack;
@@ -378,6 +379,15 @@ public class ELC_CharacterManager : MonoBehaviour
         if (value.started)
         {
             UpgradeDash();
+        }
+    }
+
+    public void TPBossCheat(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            RynGO.transform.position = LastCheckPointBeforeBoss.GetSpawnPosition();
+            spiritIdle.Teleport(spiritIdle.targetPos);
         }
     }
 

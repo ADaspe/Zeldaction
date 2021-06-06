@@ -116,6 +116,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TPBossCheat",
+                    "type": "Button",
+                    "id": "e84a1de6-bd37-401a-80b1-32765c5b6cde",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -380,6 +388,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "DashPlusUpgradeCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fba1f08e-87c8-4292-ae0f-4af2f5320597",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TPBossCheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
