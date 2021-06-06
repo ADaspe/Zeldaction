@@ -176,7 +176,7 @@ public class ELC_BossManager : MonoBehaviour
         if (CurrentPhase == 3)
         {
             BossAttacks.StartCoroutine("RayPhase");
-            anims.SetFloat("MoveY", -1);
+            anims.SetFloat("MovesY", -1);
         }
         BossMoves.FollowPlayer = true;
         BossMoves.Target = BossMoves.TargetGO.transform.position;
