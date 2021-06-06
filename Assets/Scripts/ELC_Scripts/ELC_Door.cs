@@ -9,6 +9,7 @@ public class ELC_Door : AXD_Activable
     public bool ActivateOnDisable;
     public bool jingleOnFirstOpen;
     public bool IsOpenAtStart;
+    public bool Pollen;
 
     public AudioManager audioManager;
     private Collider2D rb;
