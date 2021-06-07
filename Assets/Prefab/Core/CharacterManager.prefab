@@ -68,9 +68,9 @@ MonoBehaviour:
   PlayerShield: Player_Shield
   PlayerAttackTogether: Player_AttackTogether
   PlayerHit: Player_Hit
-  PlayerDetachSpirit: 
-  PlayerDeath: 
-  PlayerPushObject: 
+  PlayerDetachSpirit: Player_DetachSpirit
+  PlayerDeath: Player_Death
+  PlayerPushObject: Player_PushObjects
   PauseMenu: {fileID: 0}
   enableMenu:
     m_PersistentCalls:
@@ -92,6 +92,8 @@ MonoBehaviour:
   spiritProjected: 0
   lastCheckPoint: {fileID: 0}
   DetectedInteraction: {fileID: 0}
+  toggleCheats: 0
+  inactivityTime: 0
 --- !u!114 &701354207612222063
 MonoBehaviour:
   m_ObjectHideFlags: 0
