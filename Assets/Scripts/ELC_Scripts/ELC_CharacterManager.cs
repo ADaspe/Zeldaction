@@ -12,6 +12,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public GameObject RynGO;
     public GameObject SpiritGO;
     public CinemachineVirtualCamera vCam;
+    public CinemachineVirtualCamera vCam2;
     public AXD_CharacterMove followingCharacter;
     public AXD_CharacterMove RynMove;
     public AXD_CharacterMove spiritMove;
@@ -89,6 +90,7 @@ public class ELC_CharacterManager : MonoBehaviour
     private void Awake()
     {
         vCam.Follow = RynMove.transform;
+        vCam2.Follow = RynMove.transform;
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         RynAttack = RynGO.GetComponent<ELC_Attack>();
@@ -106,6 +108,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         /*
         if (stats.TimeToPatPat != -1)
         {
@@ -453,6 +456,7 @@ public class ELC_CharacterManager : MonoBehaviour
 
         //Enabling Ryn
         vCam.Follow = RynMove.transform;
+        vCam2.Follow = RynMove.transform;
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
     }
@@ -470,6 +474,7 @@ public class ELC_CharacterManager : MonoBehaviour
         followingCharacter = spiritMove;
         spiritMove.currentCharacter = true;
         vCam.Follow = spiritMove.transform;
+        vCam2.Follow = spiritMove.transform;
     }
 
     public void RegroupTogether()
@@ -483,6 +488,7 @@ public class ELC_CharacterManager : MonoBehaviour
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
+        vCam2.Follow = RynMove.transform;
         //SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().disabled = false;
         ResetProjection();
@@ -515,6 +521,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public void ProjectSpirit()
     {
         vCam.Follow = SpiritGO.transform;
+        vCam2.Follow = SpiritGO.transform;
         IdenAnimator.SetBool("Ball", false);
         IdenAnimator.SetBool("Dash", true);
         spiritMove.rb.velocity = RynMove.LastDirection.normalized * (stats.IdenProjectionDistance / stats.IdenProjectionTime);

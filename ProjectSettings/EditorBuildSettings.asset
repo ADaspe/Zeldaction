@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LogoScene.unity
     guid: 1f877ead6bbebc54a9183bba51818507
   - enabled: 1
