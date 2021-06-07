@@ -206,5 +206,5 @@ MonoBehaviour:
   objectsToHide:
   - {fileID: 2875878745959481825}
   setactive: 0
-  hide: 0
+  hide: 1
   animator: {fileID: 0}
