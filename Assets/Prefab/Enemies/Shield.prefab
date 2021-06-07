@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAI: {fileID: 3721872750462281909}
-  deathShader: {fileID: 0}
+  deathShader: {fileID: 2100000, guid: c797e2a169832fb40be1754c1a492923, type: 2}
   StunShader: {fileID: 2100000, guid: ca3ae561d725302469d1960d721e7cca, type: 2}
   sr: {fileID: 0}
 --- !u!114 &3721872750462281909
