@@ -21,7 +21,7 @@ MonoBehaviour:
   DashUpgradeDistance: 3.5
   DashUpgradeTime: 0.7
   DashCoolDown: 0.6
-  SeparationDistance: 25
+  SeparationDistance: 20
   SeparationTime: 5
   SFXRynScaredFrequency: 3
   initialHP: 3
@@ -34,7 +34,7 @@ MonoBehaviour:
   StunTime: 20
   SpiritRespawn: 1
   SpeedGrabbing: 1.5
-  TogetherAttackDetectionAngle: 80
+  TogetherAttackDetectionAngle: 110
   IdenProjectionDistance: 2
   IdenProjectionTime: 0.3
   IdenSlowDownTime: 0.4
