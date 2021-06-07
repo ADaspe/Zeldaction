@@ -16,7 +16,8 @@ public class ELC_Bridge : AXD_Activable
     private void Start()
     {
         BasicTile = tilesScript.BasicTile;
-        CloseBridge(true);
+        if (!isActivated) CloseBridge(true);
+        else OpenBridge();
     }
 
     //private void Update()
