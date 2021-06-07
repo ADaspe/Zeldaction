@@ -13,10 +13,12 @@ public class ELC_Bridge : AXD_Activable
     public bool ActivateOnDisable;
     public bool DialogActivation;
     public bool persistentActivation;
+    public Animator[] animators;
 
     private void Start()
     {
         ObjectAnimator = this.GetComponent<Animator>();
+        animators = GetComponentsInChildren<Animator>();
         BasicTile = tilesScript.BasicTile;
         if (!isActivated) CloseBridge(true);
         else OpenBridge();
@@ -32,8 +34,8 @@ public class ELC_Bridge : AXD_Activable
     {
         if(this.gameObject.activeInHierarchy)
         {
-            if (isOpen) ObjectAnimator.SetBool("Activated", true);
-            else ObjectAnimator.SetBool("Activated", false);
+            if (isOpen) AnimatorChange("Activated", true);
+            else AnimatorChange("Activated", false);
         }
 
     }
@@ -47,7 +49,7 @@ public class ELC_Bridge : AXD_Activable
         {
             tilesScript.TileMap.SetTile(tilePos, detectedTilesColor);
         }
-        ObjectAnimator.SetBool("Activated", true);
+        AnimatorChange("Activated", true);
     }
 
     public void CloseBridge(bool start = false)
@@ -60,7 +62,7 @@ public class ELC_Bridge : AXD_Activable
             {
                 tilesScript.TileMap.SetTile(tilePos, BasicTile);
             }
-            ObjectAnimator.SetBool("Activated", false);
+            AnimatorChange("Activated",false);
         }
         
     }
@@ -97,4 +99,12 @@ public class ELC_Bridge : AXD_Activable
         else OpenBridge();
     }
     
+    void AnimatorChange(string boolToChange, bool activate)
+    {
+        for(int i = 0; i < animators.Length; i++)
+        {
+            animators[i].SetBool(boolToChange,activate);
+        }
+    }
+
 }

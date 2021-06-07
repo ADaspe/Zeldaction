@@ -6,6 +6,8 @@ public class ELC_Totem : MonoBehaviour
 {
     public bool isActive;
     public ELC_EnemyAI[] EnemiesToProtect;
+    [SerializeField]
+    private GameObject[] effects;
 
     private void Start()
     {
@@ -30,6 +32,10 @@ public class ELC_Totem : MonoBehaviour
             {
                 enemy.ShieldParticles.gameObject.GetComponent<Animator>().SetBool("Dissolve", true);
                 enemy.isProtected = false;
+            }
+            foreach(GameObject gameObjects in effects)
+            {
+                gameObjects.SetActive(false);
             }
         }
     }
