@@ -390,7 +390,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14497656, y: 0.1423209}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &7141853121840803204
 Rigidbody2D:
@@ -484,7 +484,7 @@ MonoBehaviour:
   projected: 0
   rb: {fileID: 0}
   sr: {fileID: 0}
-  defaultMask: Obstacle
+  defaultMask: Mushroom
   projectedMask: IdenDash
   BoomChampi: {fileID: 7109779714588665470}
 --- !u!1 &7141853122106500170

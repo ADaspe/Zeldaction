@@ -112,7 +112,13 @@ MonoBehaviour:
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
-    - DialLine: '**Purify Unlocked** (Debug)'
+    - DialLine: With my bless, Iden will now be able to purify the Wolf brambles.
+      Sound: 
+      RynSentence: 0
+    - DialLine: (Interact with the brambles with Iden to purify them)
+      Sound: 
+      RynSentence: 0
+    - DialLine: Be careful, child.
       Sound: 
       RynSentence: 0
     ThereIsEvent: 0
