@@ -273,6 +273,7 @@ public class ELC_CharacterManager : MonoBehaviour
         {
             if (DetectedInteraction != null && DetectedInteraction.isGrabbed)
             {
+                Debug.Log("Oui ?");
                 DetectedInteraction.isGrabbed = false;
                 RynMove.isRynGrabbing = false;
                 xLocked = yLocked = false;

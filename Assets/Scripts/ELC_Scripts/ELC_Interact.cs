@@ -16,7 +16,7 @@ public class ELC_Interact : MonoBehaviour
     public UnityEvent Interact;
     [HideInInspector]
     public bool isMobile;
-    [HideInInspector]
+    //[HideInInspector]
     public bool isGrabbed;
     [HideInInspector]
     public bool isTotem;
@@ -87,8 +87,11 @@ public class ELC_Interact : MonoBehaviour
         }
         else
         {
-            PlayerCanInteract = false;
-            GameManagerScript.CharacterManager.DetectedInteraction = null;
+            if (!isGrabbed)
+            {
+                PlayerCanInteract = false;
+                GameManagerScript.CharacterManager.DetectedInteraction = null;
+            }
         }
     }
 
