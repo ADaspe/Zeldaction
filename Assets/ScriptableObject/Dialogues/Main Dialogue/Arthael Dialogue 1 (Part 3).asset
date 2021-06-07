@@ -18,7 +18,7 @@ MonoBehaviour:
   Dialog:
   - Dialogs:
     - DialLine: Wait
-      Sound: 
+      Sound: Esprit_Hiboux6
       RynSentence: 0
     - DialLine: Before you go, please take this.
       Sound: 
@@ -47,7 +47,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 1
     - DialLine: The Wolf creature?
-      Sound: 
+      Sound: Esprit_Hiboux4
       RynSentence: 0
     - DialLine: A plague to these lands.
       Sound: 
@@ -81,7 +81,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 1
     - DialLine: Yes child
-      Sound: 
+      Sound: Esprit_Hiboux3
       RynSentence: 0
     - DialLine: I guard the grove and all who stay here
       Sound: 
@@ -110,6 +110,6 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I have opened a path for you
-      Sound: 
+      Sound: Esprit_Hiboux6
       RynSentence: 0
     ThereIsEvent: 0
