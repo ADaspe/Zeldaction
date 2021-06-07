@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActivationsNeeded: []
   isActivated: 0
-  ObjectAnimator: {fileID: 0}
+  ObjectAnimator: {fileID: 4641078757239906776}
   tilesScript: {fileID: 837270328356672767}
   isOpen: 0
   ActivateOnDisable: 0

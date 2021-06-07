@@ -12,12 +12,15 @@ public class ELC_Bridge : AXD_Activable
     private Tile BasicTile;
     public bool ActivateOnDisable;
     public bool DialogActivation;
+    public bool persistentActivation;
 
     private void Start()
     {
+        ObjectAnimator = this.GetComponent<Animator>();
         BasicTile = tilesScript.BasicTile;
         if (!isActivated) CloseBridge(true);
         else OpenBridge();
+        InvokeRepeating("Check", 1f, 1f);
     }
 
     //private void Update()
@@ -25,7 +28,15 @@ public class ELC_Bridge : AXD_Activable
     //    CheckActivations();
     //}
 
+    private void Check()
+    {
+        if(this.gameObject.activeInHierarchy)
+        {
+            if (isOpen) ObjectAnimator.SetBool("Activated", true);
+            else ObjectAnimator.SetBool("Activated", false);
+        }
 
+    }
 
     public void OpenBridge()
     {
@@ -82,7 +93,7 @@ public class ELC_Bridge : AXD_Activable
 
     public override void Activate()
     {
-        if (!DialogActivation) CheckActivations();
+        if (!DialogActivation && !persistentActivation) CheckActivations();
         else OpenBridge();
     }
     
