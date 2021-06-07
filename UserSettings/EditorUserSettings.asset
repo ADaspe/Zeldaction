@@ -6,6 +6,7 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c733838282c2f3f3c230f2b315326ece92021
       flags: 0
 <<<<<<< HEAD
@@ -20,6 +21,12 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-4:
       value: 22424703114646680e0b0227036c6c0417050c192f2d2835633c133af6f9
+=======
+      value: 22424703114646680e0b0227036c7a3c35282c2f3f3c15332827187df7ee3d2cfb
+      flags: 0
+    RecentlyUsedScenePath-1:
+      value: 22424703114646680e0b0227036c7436293b3c072d21287e38271427fb
+>>>>>>> Eliott
       flags: 0
 =======
 >>>>>>> main
