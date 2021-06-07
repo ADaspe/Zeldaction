@@ -1015,3 +1015,183 @@ MonoBehaviour:
     mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
       type: 2}
     source: {fileID: 0}
+  - name: Habitant1_1
+    clip: {fileID: 8300000, guid: a9eebdd4e869c984f8084f516abb33cc, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant1_2
+    clip: {fileID: 8300000, guid: 4698ce28994803542bc9cbe90fca89b2, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant1_3
+    clip: {fileID: 8300000, guid: 72192b2e5fdab1547844aaaa42220043, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant1_4
+    clip: {fileID: 8300000, guid: 76af0b2c6f6b8ea438fd7b437147b01d, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant2_1
+    clip: {fileID: 8300000, guid: 0998bae9dd570af42846c9bf8bbdf907, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant2_2
+    clip: {fileID: 8300000, guid: ae9b23894f6896f40a8bd3664f1129e9, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant2_3
+    clip: {fileID: 8300000, guid: 193111c44f5daeb4c86b41782b86bd39, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant2_4
+    clip: {fileID: 8300000, guid: f7de42b11b7e57c4094635184e02f05f, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant2_5
+    clip: {fileID: 8300000, guid: 3c90e0eeea0dfaf4c89155a452831b73, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant3_1
+    clip: {fileID: 8300000, guid: b16921a7d098ba241ba7c3683315927a, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant3_2
+    clip: {fileID: 8300000, guid: a89cc1d03da8c6d449f325796654d455, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant3_3
+    clip: {fileID: 8300000, guid: 9468a3d8399708b4395f97a0d7e2831e, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant3_4
+    clip: {fileID: 8300000, guid: fba32627e8339c6429f9a5ff2c48708a, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant3_5
+    clip: {fileID: 8300000, guid: d844152b118315047a81562a8d59d01f, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant4_1
+    clip: {fileID: 8300000, guid: 11553b6318795f94ebd5e7a012cc9d52, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant4_2
+    clip: {fileID: 8300000, guid: 06ee192f668a8ae4189b2410681be860, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant4_3
+    clip: {fileID: 8300000, guid: c8bb9f1d2fecf114cab7c748e10e6237, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
+  - name: Habitant4_4
+    clip: {fileID: 8300000, guid: 41cefaaf699105241a5c277c59128ff0, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1804166358588154886, guid: 06a4b23d8a09d6d41bab649a6b2abea0,
+      type: 2}
+    source: {fileID: 0}
