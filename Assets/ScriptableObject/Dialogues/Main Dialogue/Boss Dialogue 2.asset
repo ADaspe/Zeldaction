@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: The Wolf King
   MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
-  AutoSkip: 0
+  AutoSkip: 1
   Dialog:
   - Dialogs:
     - DialLine: Ryn...
@@ -51,10 +51,10 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I WILL RIP YOUR SOUL FROM YOUR BODY
-      Sound: Roi_Loup1
+      Sound: 
       RynSentence: 0
     - DialLine: AND TAKE WHAT IS MINE.
-      Sound: 
+      Sound: Roi_Loup1
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:
