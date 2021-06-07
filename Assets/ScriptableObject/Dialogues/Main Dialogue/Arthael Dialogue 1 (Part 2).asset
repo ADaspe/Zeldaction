@@ -14,36 +14,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Arthael
   MiniaturePerso: {fileID: 21300000, guid: 5e3161b155149974cbebd8cacdc0212d, type: 3}
+  AutoSkip: 0
   Dialog:
   - Dialogs:
     - DialLine: This grove that holds at its center the Tree of the Divine.
+      Sound: 
       RynSentence: 0
     - DialLine: ..And all these sweet children you see around you.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: "You must be confused\u2026 like many before you."
+      Sound: 
       RynSentence: 0
     - DialLine: Yet you survived.
+      Sound: 
       RynSentence: 0
     - DialLine: But you are dying.. I can feel it.
+      Sound: 
       RynSentence: 0
     - DialLine: 'Although, your time has not yet come. '
+      Sound: 
       RynSentence: 0
     - DialLine: There may yet still be hope.
+      Sound: 
       RynSentence: 0
     - DialLine: I fear I am not entirely sure how to cure you..
+      Sound: 
       RynSentence: 0
     - DialLine: But there is someone who might.
+      Sound: 
       RynSentence: 0
     - DialLine: Please.. find the Pale Spirit, she might know.
+      Sound: 
       RynSentence: 0
     - DialLine: She is a great spirit with long white hair.
+      Sound: 
       RynSentence: 0
     - DialLine: She lives to the west of here, follow the sound of the flute and
         you may find her..
+      Sound: 
       RynSentence: 0
     - DialLine: Tell her I've sent you.
+      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
-  RandomDialog: []
+  RandomDialog:
+  - Dialogs:
+    - DialLine: Ready to go?
+      Sound: 
+      RynSentence: 0
+    ThereIsEvent: 0
