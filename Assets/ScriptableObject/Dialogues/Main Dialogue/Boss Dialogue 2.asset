@@ -14,69 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: The Wolf King
   MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
-  AutoSkip: 1
   Dialog:
   - Dialogs:
     - DialLine: Ryn...
-      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Back so soon?
-      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Have you come to give yourself up to me?
-      Sound: 
       RynSentence: 0
     - DialLine: Have you accepted your fate?
-      Sound: 
       RynSentence: 0
     - DialLine: WILL YOU DIE?
-      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Silence?
-      Sound: 
       RynSentence: 0
     - DialLine: Well then child, I will devour you like I did all those children
-      Sound: 
       RynSentence: 0
     - DialLine: I care not if she has made you her champion.
-      Sound: 
       RynSentence: 0
     - DialLine: I will only get the honour of killing her a second time.
-      Sound: 
       RynSentence: 0
     - DialLine: I WILL RIP YOUR SOUL FROM YOUR BODY
-      Sound: 
       RynSentence: 0
     - DialLine: AND TAKE WHAT IS MINE.
-      Sound: 
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
-      Sound: 
       RynSentence: 0
     - DialLine: 
-      Sound: 
       RynSentence: 0
     - DialLine: 
-      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
     - DialLine: 
-      Sound: 
       RynSentence: 0
     - DialLine: 
-      Sound: 
       RynSentence: 0
     - DialLine: 
-      Sound: 
       RynSentence: 0
     ThereIsEvent: 0
