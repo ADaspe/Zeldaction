@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8337778635262084068}
   - component: {fileID: 5677959877520991313}
   - component: {fileID: 9223304099639301681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeartCollectible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   isTotem: 0
   isBrambles: 0
   rbInteractObject: {fileID: 0}
+  maxDistanceFromObstacle: 0
 --- !u!1 &450136683619211942
 GameObject:
   m_ObjectHideFlags: 0
