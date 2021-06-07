@@ -14,11 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: The Wolf King
   MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
-<<<<<<< HEAD
-  AutoSkip: 1
-=======
   AutoSkip: 0
->>>>>>> Félix
   Dialog:
   - Dialogs:
     - DialLine: So.. the little child and her pet fox has slain the king.
@@ -28,11 +24,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I have no pity for you.
-<<<<<<< HEAD
-      Sound: 
-=======
       Sound: Roi_Loup5
->>>>>>> Félix
       RynSentence: 0
     - DialLine: "This is my land and I will come back\u2026"
       Sound: 
@@ -50,14 +42,11 @@ MonoBehaviour:
   - Dialogs:
     - DialLine: Be free.
       Sound: 
-<<<<<<< HEAD
       RynSentence: 1
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: ...
       Sound: 
-=======
->>>>>>> Félix
       RynSentence: 1
     ThereIsEvent: 1
   RandomDialog:
