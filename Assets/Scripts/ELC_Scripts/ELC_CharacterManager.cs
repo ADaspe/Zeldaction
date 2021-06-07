@@ -72,6 +72,7 @@ public class ELC_CharacterManager : MonoBehaviour
     public float nextDash;
     //[HideInInspector]
     public bool spiritProjected;
+    [HideInInspector]
     public AXD_CheckPoint lastCheckPoint;
     [HideInInspector]
     private Collider2D[] allDetected;
