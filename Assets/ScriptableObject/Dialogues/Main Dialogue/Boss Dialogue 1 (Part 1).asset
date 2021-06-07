@@ -79,12 +79,15 @@ MonoBehaviour:
     - DialLine: Give me your life.
       Sound: 
       RynSentence: 0
+    - DialLine: GIVE IT TO ME
+      Sound: 
+      RynSentence: 0
+    - DialLine: .
+      Sound: 
+      RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: LET ME KILL YOU
-      Sound: 
-      RynSentence: 0
-    - DialLine: ...
       Sound: 
       RynSentence: 0
     ThereIsEvent: 1
