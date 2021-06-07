@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2734123465957688221}
   m_Layer: 6
   m_Name: ExplosionDetection
-  m_TagString: Untagged
+  m_TagString: Mushroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
