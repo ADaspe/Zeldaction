@@ -29,7 +29,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: Yet you survived.
-      Sound: 
+      Sound: Esprit_Hiboux6
       RynSentence: 0
     - DialLine: But you are dying.. I can feel it.
       Sound: 
@@ -41,13 +41,13 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I fear I am not entirely sure how to cure you..
-      Sound: 
+      Sound: Esprit_Hiboux4
       RynSentence: 0
     - DialLine: But there is someone who might.
       Sound: 
       RynSentence: 0
     - DialLine: Please.. find the Pale Spirit, she might know.
-      Sound: 
+      Sound: Esprit_Hiboux8
       RynSentence: 0
     - DialLine: She is a great spirit with long white hair.
       Sound: 
