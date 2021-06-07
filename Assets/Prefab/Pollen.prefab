@@ -301,7 +301,7 @@ MonoBehaviour:
   ActivateOnDisable: 0
   jingleOnFirstOpen: 0
   IsOpenAtStart: 0
-  Pollen: 0
+  Pollen: 1
   PollenParticles: {fileID: 4872496406181500052}
   audioManager: {fileID: 0}
   openSound: 

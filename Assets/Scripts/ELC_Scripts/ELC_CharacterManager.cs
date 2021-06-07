@@ -83,6 +83,9 @@ public class ELC_CharacterManager : MonoBehaviour
     [SerializeField]
     private bool toggleCheats;
 
+    [Header("PatPat Animation settings")]
+    public float inactivityTime;
+
     private void Awake()
     {
         vCam.Follow = RynMove.transform;
@@ -103,6 +106,17 @@ public class ELC_CharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
+        if (stats.TimeToPatPat != -1)
+        {
+            inactivityTime += Time.deltaTime;
+        }
+
+        if(inactivityTime >= stats.TimeToPatPat && Together)
+        {
+            PatPat();
+        }
+        */
         if(Vector2.Distance(RynGO.transform.position, SpiritGO.transform.position) > stats.SeparationDistance)
         {
             if(!ticTacEnabled)
@@ -148,6 +162,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !Together && !toggleMenu)
         {
+            ResetInactivity();
             if (RynMove != null && followingCharacter == RynMove)
             {
                 ChangeCamFocusSpirit();
@@ -163,6 +178,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !Together && !toggleMenu)
         {
+            ResetInactivity();
             ChangeCamFocusRyn();
         }
     }
@@ -170,6 +186,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !Together && !toggleMenu)
         {
+            ResetInactivity();
             ChangeCamFocusSpirit();
         }
     }
@@ -178,7 +195,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (followingCharacter.canMove && !toggleMenu)
         {
-            
+            ResetInactivity();
             Vector2 inputMovement = value.ReadValue<Vector2>() * followingCharacter.currentSpeed;
             if (xLocked)
             {
@@ -203,7 +220,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
-
+            ResetInactivity();
             if (DetectedInteraction != null && followingCharacter == RynMove)
             {
                 if (DetectedInteraction.PlayerCanInteract && !DetectedInteraction.isMobile)
@@ -289,6 +306,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
+            ResetInactivity();
             if (Together)
             {
                 DetachSpirit();
@@ -307,7 +325,8 @@ public class ELC_CharacterManager : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext value)
     {
-        if (value.started) { 
+        if (value.started) {
+            ResetInactivity();
             if (!toggleMenu)
             {
             
@@ -324,6 +343,7 @@ public class ELC_CharacterManager : MonoBehaviour
     {
         if (value.started && !toggleMenu)
         {
+            ResetInactivity();
             if (Together)
             {
                 RynAttack.AttackTogether();
@@ -340,6 +360,7 @@ public class ELC_CharacterManager : MonoBehaviour
     
     public void RynShield(InputAction.CallbackContext value)
     {
+        ResetInactivity();
         if (value.started && !toggleMenu && !Together)
         {
             RynAttack.RynShield();
@@ -395,6 +416,17 @@ public class ELC_CharacterManager : MonoBehaviour
         }
     }
 
+    public void PatPat()
+    {
+        //Trop chelou cette histoire
+        RynMove.LastDirection = Vector2.left;
+        RynAnimator.Play("PatPatRyn");
+        IdenAnimator.Play("PatPatIden");
+
+        ResetInactivity();
+
+    }
+
     public void ToggleCheats()
     {
         toggleCheats = !toggleCheats;
@@ -443,6 +475,8 @@ public class ELC_CharacterManager : MonoBehaviour
     public void RegroupTogether()
     {
         //Debug.Log("Regroup");
+        SpiritGO.layer = LayerMask.NameToLayer(SpiritAttack.dashMask);
+        spiritMove.isDashing = true;
         gameManager.audioManager.Stop("Spirit_Move");
         gameManager.audioManager.Play("Spirit_Return");
         Together = true;
@@ -502,6 +536,11 @@ public class ELC_CharacterManager : MonoBehaviour
         spiritProjected = false;
         spiritMove.currentSpeed = stats.SpiritSpeed;
 
+    }
+
+    public void ResetInactivity()
+    {
+        inactivityTime = 0;
     }
 
     public bool TakeDamage(string tag)

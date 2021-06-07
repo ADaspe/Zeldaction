@@ -11,6 +11,7 @@ public class AXD_Mushroom : MonoBehaviour
     public float ProjectionTime;
     public bool projected;
     public Rigidbody2D rb;
+    public SpriteRenderer sr;
     public string defaultMask;
     public string projectedMask;
     public GameObject BoomChampi;
@@ -19,6 +20,7 @@ public class AXD_Mushroom : MonoBehaviour
     {
         interact = GetComponent<ELC_Interact>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         //timeDecreaseSpeed = ProjectionTime;
     }
 
@@ -92,8 +94,8 @@ public class AXD_Mushroom : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Kaboom");
-        Invoke("DestroyGO", 0.5f);
+        sr.enabled = false;
+        Invoke("DestroyGO",0.5f);
     }
 
     private void DestroyGO()
@@ -121,7 +123,7 @@ public class AXD_Mushroom : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("J'ai tapé : "+collision.gameObject);
+        
         AXD_CharacterMove tempCharaMove = collision.gameObject.GetComponent<AXD_CharacterMove>();
         if (tempCharaMove != null && tempCharaMove.wasDashingWhenColliding)
         {
