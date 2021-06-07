@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TileMap: {fileID: 0}
   detectedTilecolor: {fileID: 11400000, guid: ab046c66bafb70b4492b6065ca7b8252, type: 2}
-  BasicTile: {fileID: 0}
+  BasicTile: {fileID: 11400000, guid: 5574083983ddf494d912cece45e14054, type: 2}
 --- !u!114 &837270328356672764
 MonoBehaviour:
   m_ObjectHideFlags: 0
