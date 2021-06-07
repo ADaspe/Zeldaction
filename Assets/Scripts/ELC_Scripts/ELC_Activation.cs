@@ -49,6 +49,25 @@ public class ELC_Activation : MonoBehaviour
                 item.Activate();
             }
         }
+        else if(!interactScript.corrupted && type == ActivatorType.TORCH)
+        {
+            StopCoroutine("Countdown");
+            StartCoroutine("Countdown");
+            isActivated = true;
+            AnimatorUpdate();
+            ActivationParticles.Play();
+            if (!ticTacEnabled)
+            {
+                audioManager.Play("TicTac");
+            }
+            foreach (AXD_Activable item in objectsToActivate)
+            {
+                item.Activate();
+            }
+            CheckSounds();
+            ConditionsEnabled = true;
+            return;
+        }
     }
 
     private void FixedUpdate()
