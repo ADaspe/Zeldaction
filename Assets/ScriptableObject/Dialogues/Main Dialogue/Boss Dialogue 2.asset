@@ -14,11 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: The Wolf King
   MiniaturePerso: {fileID: 21300000, guid: 7f3198b525d4a3b468ba9c11178f048c, type: 3}
-<<<<<<< HEAD
   AutoSkip: 1
-=======
-  AutoSkip: 0
->>>>>>> Félix
   Dialog:
   - Dialogs:
     - DialLine: Ryn...
@@ -27,11 +23,7 @@ MonoBehaviour:
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Back so soon?
-<<<<<<< HEAD
-      Sound: 
-=======
       Sound: Roi_Loup8
->>>>>>> Félix
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
@@ -42,20 +34,12 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: WILL YOU DIE?
-<<<<<<< HEAD
-      Sound: 
-=======
       Sound: Roi_Loup5
->>>>>>> Félix
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Silence?
-<<<<<<< HEAD
-      Sound: 
-=======
       Sound: Roi_Loup4
->>>>>>> Félix
       RynSentence: 0
     - DialLine: Well then child, I will devour you like I did all those children
       Sound: 
@@ -67,14 +51,10 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I WILL RIP YOUR SOUL FROM YOUR BODY
-<<<<<<< HEAD
       Sound: 
-=======
-      Sound: Roi_Loup1
->>>>>>> Félix
       RynSentence: 0
     - DialLine: AND TAKE WHAT IS MINE.
-      Sound: 
+      Sound: Roi_Loup1
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:

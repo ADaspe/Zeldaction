@@ -22,7 +22,7 @@ public class KF_Hide : MonoBehaviour
                         go.SetActive(false);
                     }
                 }
-                else
+                if (hide == false)
                 {
                     foreach (GameObject go in objectsToHide)
                     {
@@ -40,7 +40,7 @@ public class KF_Hide : MonoBehaviour
                         animator.SetTrigger("FadeOut");
                     }
                 }
-                else
+                if (hide == false)
                 {
                     foreach (GameObject go in objectsToHide)
                     {
@@ -69,7 +69,7 @@ public class KF_Hide : MonoBehaviour
                         go.SetActive(true);
                     }
                 }
-                else
+                if (hide == false)
                 {
                     foreach (GameObject go in objectsToHide)
                     {
@@ -87,7 +87,7 @@ public class KF_Hide : MonoBehaviour
                         animator.SetTrigger("FadeIn");
                     }
                 }
-                else
+                if (hide == false)
                 {
                     foreach (GameObject go in objectsToHide)
                     {
