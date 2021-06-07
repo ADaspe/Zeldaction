@@ -23,7 +23,7 @@ MonoBehaviour:
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Back so soon?
-      Sound: 
+      Sound: Roi_Loup8
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
@@ -34,12 +34,12 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: WILL YOU DIE?
-      Sound: 
+      Sound: Roi_Loup5
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Silence?
-      Sound: 
+      Sound: Roi_Loup4
       RynSentence: 0
     - DialLine: Well then child, I will devour you like I did all those children
       Sound: 
@@ -54,7 +54,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: AND TAKE WHAT IS MINE.
-      Sound: 
+      Sound: Roi_Loup1
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:

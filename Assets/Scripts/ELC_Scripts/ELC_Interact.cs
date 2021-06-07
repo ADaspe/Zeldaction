@@ -23,6 +23,7 @@ public class ELC_Interact : MonoBehaviour
     [HideInInspector]
     public bool isBrambles;
     public Rigidbody2D rbInteractObject;
+    public float maxDistanceFromObstacle;
     
     private int touchedSideIndex;
     private GameObject InstantiatedBrambles;
@@ -64,6 +65,34 @@ public class ELC_Interact : MonoBehaviour
                     {
                         GameManagerScript.CharacterManager.DetectedInteraction = null;
                     }
+                }
+
+            }
+
+            if (isMobile && isGrabbed)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, rbInteractObject.velocity, maxDistanceFromObstacle, LayerMask.GetMask("Obstacle", "ObstacleSpirit", "ObstacleRyn"));
+
+                if (hit.collider != null)
+                {
+                    
+                    if (hit.point.x > 0)
+                    {
+                        rightLock = true;
+                    }
+                    else if (hit.point.x < 0)
+                    {
+                        leftLock = true;
+                    }
+                    if (hit.point.y < 0)
+                    {
+                        downLock = true;
+                    }
+                    else if (hit.point.y > 0)
+                    {
+                        upLock = true;
+                    }
+
                 }
             }
         }

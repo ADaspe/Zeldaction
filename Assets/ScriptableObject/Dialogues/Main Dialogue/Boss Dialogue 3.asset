@@ -24,7 +24,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I have no pity for you.
-      Sound: 
+      Sound: Roi_Loup5
       RynSentence: 0
     - DialLine: "This is my land and I will come back\u2026"
       Sound: 

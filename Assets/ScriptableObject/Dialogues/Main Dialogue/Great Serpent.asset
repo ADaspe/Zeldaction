@@ -18,7 +18,7 @@ MonoBehaviour:
   Dialog:
   - Dialogs:
     - DialLine: "I\u2019ve been watching you for a while now Ryn."
-      Sound: 
+      Sound: Esprit_Serpent5
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
@@ -26,7 +26,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: Tell me...
-      Sound: 
+      Sound: Esprit_Serpent7
       RynSentence: 0
     - DialLine: Does death care you Ryn?
       Sound: 
@@ -44,7 +44,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: Gone
-      Sound: 
+      Sound: Esprit_Serpent8
       RynSentence: 0
     - DialLine: You become an empty husk of your former self
       Sound: 
@@ -59,7 +59,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: "It isn\u2019t so bad now is it?"
-      Sound: 
+      Sound: Esprit_Serpent2
       RynSentence: 0
     - DialLine: "Why don\u2019t you just give up?"
       Sound: 
@@ -79,13 +79,13 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: He is missing something, something you have.
-      Sound: 
+      Sound: Esprit_Serpent5
       RynSentence: 0
     - DialLine: For her, I will help you.
       Sound: 
       RynSentence: 0
     - DialLine: She has chosen you, Ryn.
-      Sound: 
+      Sound: Esprit_Serpent7
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
@@ -96,7 +96,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: The Wolf King.
-      Sound: 
+      Sound: Esprit_Serpent6
       RynSentence: 0
     - DialLine: Gwynedd knew of course.
       Sound: 
@@ -113,7 +113,7 @@ MonoBehaviour:
     ThereIsEvent: 1
   - Dialogs:
     - DialLine: Now leave me.
-      Sound: 
+      Sound: Esprit_Serpent8
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:

@@ -365,6 +365,7 @@ MonoBehaviour:
   isTotem: 0
   isBrambles: 0
   rbInteractObject: {fileID: 0}
+  maxDistanceFromObstacle: 0.3
 --- !u!61 &7141853121840803205
 BoxCollider2D:
   m_ObjectHideFlags: 0
