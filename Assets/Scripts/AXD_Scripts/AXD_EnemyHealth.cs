@@ -68,6 +68,7 @@ public class AXD_EnemyHealth : MonoBehaviour
             enemyAI.gameMana.audioManager.Play("DS_Pacification");
         }
         sr.material = deathShader;
+        anims.SetBool("Death", true);
         yield return new WaitForSeconds(1f/*Mettre le vrai temps de shader de dissolution*/);
         Destroy(this.gameObject);
     }
