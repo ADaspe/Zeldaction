@@ -515,7 +515,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6151558553877978949}
     - target: {fileID: 2176910316133793407, guid: 87f5669403a83af41853aabf8406d33b,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -620,7 +620,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6151558554740885622}
     - target: {fileID: 2176910316883454283, guid: 87f5669403a83af41853aabf8406d33b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
