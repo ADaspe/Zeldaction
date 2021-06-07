@@ -38,6 +38,7 @@ MonoBehaviour:
   IdenProjectionDistance: 2
   IdenProjectionTime: 0.3
   IdenSlowDownTime: 0.4
+  TimeToPatPat: -1
   EnemiesLayerMask:
     serializedVersion: 2
     m_Bits: 8192

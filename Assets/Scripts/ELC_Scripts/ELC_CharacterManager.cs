@@ -106,7 +106,10 @@ public class ELC_CharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        inactivityTime += Time.deltaTime;
+        if (stats.TimeToPatPat != -1)
+        {
+            inactivityTime += Time.deltaTime;
+        }
 
         if(inactivityTime >= stats.TimeToPatPat && Together)
         {
