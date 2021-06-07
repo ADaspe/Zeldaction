@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
@@ -163,7 +164,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1fdc8267eaf694d4c836147fbf26f5b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df08f284523a518469943d5500918595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
   EnemiesToProtect: []
 --- !u!1 &5697138928951463135
 GameObject:
