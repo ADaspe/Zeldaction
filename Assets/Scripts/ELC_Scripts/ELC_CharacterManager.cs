@@ -271,9 +271,6 @@ public class ELC_CharacterManager : MonoBehaviour
         }
         if (value.canceled && !toggleMenu)
         {
-            Debug.Log("Allo ?");
-            Debug.Log("Detected interraction : " + DetectedInteraction);
-            Debug.Log("Is grabbed : " + DetectedInteraction.isGrabbed);
             if (DetectedInteraction != null && DetectedInteraction.isGrabbed)
             {
                 Debug.Log("Oui ?");

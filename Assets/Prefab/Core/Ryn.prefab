@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -7291785450716766122, guid: a033309139084204c96e2ef5235c777d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,6 +153,7 @@ MonoBehaviour:
   grabbedObject: {fileID: 0}
   wasDashingWhenColliding: 0
   IdenTrailPS: {fileID: 0}
+  DashDontMove: 0
 --- !u!114 &8035345064547430159
 MonoBehaviour:
   m_ObjectHideFlags: 0
