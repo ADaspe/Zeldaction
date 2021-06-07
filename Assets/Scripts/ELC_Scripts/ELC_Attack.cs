@@ -146,6 +146,7 @@ public class ELC_Attack : MonoBehaviour
         CharManager.spiritMove.wasDashingWhenColliding = false;
         gameObject.layer = LayerMask.NameToLayer(defaultMask);
         CharManager.spiritMove.rb.velocity = Vector2.zero;
+        CharManager.spiritMove.DashDontMove = false;
     }
 
     public void SpiritAttackTogether(Vector3 targetPos, float duration)
