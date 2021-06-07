@@ -60,7 +60,10 @@ public class ELC_Interact : MonoBehaviour
                 else if (i == touchedSideIndex) //Si ça touche pas et que le dernier coté à être touché est celui-là, alors ça veut dire que le joueur ne touche aucun coté
                 {
                     PlayerCanInteract = false;
-                    GameManagerScript.CharacterManager.DetectedInteraction = null;
+                    if(GameManagerScript.CharacterManager.DetectedInteraction == this)
+                    {
+                        GameManagerScript.CharacterManager.DetectedInteraction = null;
+                    }
                 }
             }
         }
