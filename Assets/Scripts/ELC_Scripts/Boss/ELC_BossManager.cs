@@ -85,6 +85,7 @@ public class ELC_BossManager : MonoBehaviour
         inCinematic = true;
         IsInSwitchPhase = true;
         BossMoves.CanMove = false;
+        Debug.Log("cinématique_boss");
         yield return new WaitWhile(() => inCinematic);
 
         BossMoves.distToStopNearTarget = BossMoves.BasicDistToStopNearPlayer;
@@ -209,6 +210,10 @@ public class ELC_BossManager : MonoBehaviour
 
     }
 
+    public void StartFight()
+    {
+        inCinematic = false;
+    }
     
 
 
