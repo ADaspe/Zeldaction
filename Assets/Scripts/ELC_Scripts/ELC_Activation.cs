@@ -190,7 +190,7 @@ public class ELC_Activation : MonoBehaviour
         yield return new WaitForSeconds(TorchDuration);
         isActivated = false;
         StopTicTac();
-        ActivationParticles.Stop();
+        if(!definitivelyActivated) ActivationParticles.Stop();
         AnimatorUpdate();
     }
 
