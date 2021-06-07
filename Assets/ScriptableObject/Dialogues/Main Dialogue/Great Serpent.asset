@@ -116,6 +116,11 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: '**Mushroom Fluidity Unlocked** (Debug)'
+      Sound: 
+      RynSentence: 0
+    ThereIsEvent: 0
   RandomDialog:
   - Dialogs:
     - DialLine: 'Where do I go now? '
