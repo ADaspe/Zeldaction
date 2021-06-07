@@ -135,7 +135,7 @@ MonoBehaviour:
   objectsToHide:
   - {fileID: 6056549094104718660}
   setactive: 0
-  hide: 0
+  hide: 1
   animator: {fileID: 5205010930621213058}
 --- !u!61 &5842083238713256369
 BoxCollider2D:
