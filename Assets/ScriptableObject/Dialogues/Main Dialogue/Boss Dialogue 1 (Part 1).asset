@@ -17,10 +17,10 @@ MonoBehaviour:
   AutoSkip: 1
   Dialog:
   - Dialogs:
-    - DialLine: Greetings Child.
+    - DialLine: Greetings Child...
       Sound: 
       RynSentence: 0
-    - DialLine: Oh, there is no need to be scared.
+    - DialLine: Oh, there is no need to be afraid.
       Sound: 
       RynSentence: 0
     - DialLine: 'Please.. come closer... '
@@ -31,7 +31,7 @@ MonoBehaviour:
     - DialLine: "Ah yes\u2026"
       Sound: 
       RynSentence: 0
-    - DialLine: So fresh, so sweet,so..
+    - DialLine: So fresh, so sweet, so..
       Sound: 
       RynSentence: 0
     - DialLine: Fascinating..
@@ -81,7 +81,15 @@ MonoBehaviour:
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
-    - DialLine: LET ME KILL YOU.
+    - DialLine: LET ME KILL YOU
+      Sound: 
+      RynSentence: 0
+    - DialLine: ...
+      Sound: 
+      RynSentence: 0
+    ThereIsEvent: 1
+  - Dialogs:
+    - DialLine: WHEREVER YOU GO, IT WILL ALWAYS LEAD BACK TO ME.
       Sound: 
       RynSentence: 0
     ThereIsEvent: 1
