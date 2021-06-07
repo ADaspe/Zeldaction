@@ -21,7 +21,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I am always watching..
-      Sound: 
+      Sound: Roi_Loup1
       RynSentence: 0
     ThereIsEvent: 1
   RandomDialog:

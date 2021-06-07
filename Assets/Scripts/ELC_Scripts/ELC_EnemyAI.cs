@@ -27,6 +27,10 @@ public class ELC_EnemyAI : MonoBehaviour
     public bool isAttacking;
     public List<Transform> PatrolPath;
 
+    [Header("Sounds")]
+    public AudioSource stepAS;
+    public AudioSource atkAS;
+
     public Vector2 LastDirection;
     Vector2 direction;
     Path path;
@@ -157,16 +161,17 @@ public class ELC_EnemyAI : MonoBehaviour
         this.GetComponent<Collider2D>().isTrigger = true;
         if (Vector2.Distance(gameMana.CharacterManager.RynGO.transform.position, this.transform.position) < 10)
         {
-            if (type == EnemyType.BASIC)
+            /*if (type == EnemyType.BASIC)
             {
                 gameMana.audioManager.Play("Basic_Atk");
             }
             else if (type == EnemyType.SHIELD)
             {
                 gameMana.audioManager.Play("DS_Atk");
-            }
+            }*/
         }
-            
+        
+        atkAS.Play(); 
         
         anims.SetBool("PrepareAttack", true);
         isPreparingAttack = true;
@@ -319,7 +324,7 @@ public class ELC_EnemyAI : MonoBehaviour
 
     public void PlayFootStepEnemy()
     {
-        if (Vector2.Distance(gameMana.CharacterManager.RynGO.transform.position, this.transform.position) < 10)
+        /*if (Vector2.Distance(gameMana.CharacterManager.RynGO.transform.position, this.transform.position) < 10)
         {
             if (type == EnemyType.SHIELD)
             {
@@ -329,7 +334,9 @@ public class ELC_EnemyAI : MonoBehaviour
             {
                 gameMana.audioManager.Play("Basic_Move");
             }
-        }
+        }*/
+        stepAS.Stop();
+        stepAS.Play();
         //else Debug.Log("ne casse plus les oreilles");
     }
 

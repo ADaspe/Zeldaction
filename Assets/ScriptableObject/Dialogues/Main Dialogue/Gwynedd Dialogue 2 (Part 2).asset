@@ -39,7 +39,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: It is time.
-      Sound: 
+      Sound: Esprit_Pale5
       RynSentence: 0
     - DialLine: Although I cannot aid you.
       Sound: 
@@ -51,7 +51,7 @@ MonoBehaviour:
       Sound: 
       RynSentence: 0
     - DialLine: I can bring you to him.
-      Sound: 
+      Sound: Esprit_Pale1
       RynSentence: 0
     - DialLine: Follow the path North. Meet me at the Shrine.
       Sound: 
@@ -64,7 +64,7 @@ MonoBehaviour:
   RandomDialog:
   - Dialogs:
     - DialLine: 'What are you waiting for? '
-      Sound: 
+      Sound: Esprit_Pale1
       RynSentence: 0
     ThereIsEvent: 0
   - Dialogs:
