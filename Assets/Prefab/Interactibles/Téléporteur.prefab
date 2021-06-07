@@ -236,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1530161462087858048}
   audioManager: {fileID: 0}
-  animator: {fileID: 1530161462696331333}
+  animator: {fileID: 1530161463436507409}
   inputsPlayer: {fileID: 0}
   thingsToTeleport: []
   tp: 0
@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0

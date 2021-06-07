@@ -16,7 +16,7 @@ public class ELC_Bridge : AXD_Activable
     private void Start()
     {
         BasicTile = tilesScript.BasicTile;
-        CloseBridge();
+        CloseBridge(true);
     }
 
     //private void Update()
@@ -38,15 +38,19 @@ public class ELC_Bridge : AXD_Activable
         ObjectAnimator.SetBool("Activated", true);
     }
 
-    public void CloseBridge()
+    public void CloseBridge(bool start = false)
     {
-        detectedTiles = tilesScript.OverridedTiles(this.transform);
-        isOpen = false;
-        foreach (Vector3Int tilePos in detectedTiles)
+        if(!DialogActivation || start)
         {
-            tilesScript.TileMap.SetTile(tilePos, BasicTile);
+            detectedTiles = tilesScript.OverridedTiles(this.transform);
+            isOpen = false;
+            foreach (Vector3Int tilePos in detectedTiles)
+            {
+                tilesScript.TileMap.SetTile(tilePos, BasicTile);
+            }
+            ObjectAnimator.SetBool("Activated", false);
         }
-        ObjectAnimator.SetBool("Activated", false);
+        
     }
 
     public void CheckActivations()
