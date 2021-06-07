@@ -106,15 +106,15 @@ public class ELC_CharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (stats.TimeToPatPat != -1)
-        {
-            inactivityTime += Time.deltaTime;
-        }
+        //if (stats.TimeToPatPat != -1)
+        //{
+        //    inactivityTime += Time.deltaTime;
+        //}
 
-        if(inactivityTime >= stats.TimeToPatPat && Together)
-        {
-            PatPat();
-        }
+        //if(inactivityTime >= stats.TimeToPatPat && Together)
+        //{
+        //    PatPat();
+        //}
 
         if(Vector2.Distance(RynGO.transform.position, SpiritGO.transform.position) > stats.SeparationDistance)
         {
