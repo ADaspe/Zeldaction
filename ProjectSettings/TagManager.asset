@@ -13,6 +13,7 @@ TagManager:
   - Torch
   - Boss
   - Mushroom
+  - Totem
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - ThinWalls
   - IdenDash
   - Boss
-  - 
+  - Mushrooms
   - 
   - 
   - 

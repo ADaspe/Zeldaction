@@ -147,7 +147,7 @@ public class AXD_CharacterMove : MonoBehaviour
             if (isDashing)
             {
                 RaycastHit2D hit = Physics2D.Raycast(this.transform.position, LastDirection, 0.4f, LayerMask.GetMask("Obstacle", "ObstacleSpirit"));
-                Debug.Log("Name : "+hit.collider.gameObject.name);
+                if(hit.collider != null) Debug.Log("Name : "+hit.collider.gameObject.name);
                 if (hit.collider != null && !hit.collider.CompareTag("Mushroom"))
                 {
                     DashDontMove = true;
