@@ -31,6 +31,8 @@ public class ELC_BossManager : MonoBehaviour
     [HideInInspector]
     public FLC_BossDynamicMusicFonctions music;
     public bool isStunned;
+    public bool inCinematic;
+    public GameObject endDialogue;
 
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class ELC_BossManager : MonoBehaviour
         canAttack = true;
         CurrentPhase = 0;
         music = GetComponentInChildren<FLC_BossDynamicMusicFonctions>();
+        endDialogue.SetActive(false);
     }
 
     public void Attack(Vector3 TargetDir)
@@ -78,6 +81,13 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator Intro()
     {
+        //fonction
+        inCinematic = true;
+        IsInSwitchPhase = true;
+        BossMoves.CanMove = false;
+        Debug.Log("cinématique_boss");
+        yield return new WaitWhile(() => inCinematic);
+
         BossMoves.distToStopNearTarget = BossMoves.BasicDistToStopNearPlayer;
         IsInSwitchPhase = true;
         BossMoves.CanMove = false;
@@ -191,6 +201,7 @@ public class ELC_BossManager : MonoBehaviour
     public IEnumerator End()
     {
         //Bullshit du boss qui donne envie de chialax parceque ce jeu était trop émotionnellement rude et que cela va créer un manque chez le joueur qui va pas pouvoir dormir pendant des nuits et va chercher à aller aider Ryn en allant dans le monde des esprits comme ces débiles qui foncent dans les poteaux de toutes les gares pour aller à Poudlard.
+        endDialogue.SetActive(true);
         Debug.Log("Adieu");
         //Shader de dissolve
         yield return new WaitForSeconds(1); //mettre le temps de dissolve
@@ -199,6 +210,10 @@ public class ELC_BossManager : MonoBehaviour
 
     }
 
+    public void StartFight()
+    {
+        inCinematic = false;
+    }
     
 
 
