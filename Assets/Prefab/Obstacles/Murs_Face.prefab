@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5028051414870440195}
   - component: {fileID: 5171577657531669052}
-  - component: {fileID: 353614069887381232}
   - component: {fileID: 6668026543474339543}
   m_Layer: 6
   m_Name: Murs_Face
@@ -85,25 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &353614069887381232
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6736551020148988701}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3096fe330fe7bf94ebefffb58e097160, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &6668026543474339543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +99,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0026544333, y: -0.040033072}
   m_SpriteTilingProperty:
-    border: {x: 0.78000003, y: 0, z: 0.29200003, w: 0}
+    border: {x: 0.354, y: 0, z: 0.29200003, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.168, y: 0.886}
     newSize: {x: 1.892, y: 1.638}
