@@ -354,6 +354,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIRE
       objectReference: {fileID: 0}
+    - target: {fileID: 2511203512711756251, guid: fb21e371785c75a408f40101a30b71c2,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511203512711756251, guid: fb21e371785c75a408f40101a30b71c2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2511203512711756252, guid: fb21e371785c75a408f40101a30b71c2,
         type: 3}
       propertyPath: m_RootOrder
