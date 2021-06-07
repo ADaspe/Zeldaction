@@ -37,7 +37,10 @@ MonoBehaviour:
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
-    - DialLine: '**Recall Unlocked** (Debug)'
+    - DialLine: With this new Power, Iden will come back to you when you want
+      Sound: 
+      RynSentence: 0
+    - DialLine: (Press the separation button again to make Iden come back)
       Sound: 
       RynSentence: 0
     ThereIsEvent: 0

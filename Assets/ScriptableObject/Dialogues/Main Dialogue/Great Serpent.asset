@@ -117,7 +117,7 @@ MonoBehaviour:
       RynSentence: 0
     ThereIsEvent: 1
   - Dialogs:
-    - DialLine: '**Mushroom Fluidity Unlocked** (Debug)'
+    - DialLine: (Iden can now make Explosive mushrooms pass through fragile walls)
       Sound: 
       RynSentence: 0
     ThereIsEvent: 0
