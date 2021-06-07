@@ -443,6 +443,8 @@ public class ELC_CharacterManager : MonoBehaviour
     public void RegroupTogether()
     {
         //Debug.Log("Regroup");
+        SpiritGO.layer = LayerMask.NameToLayer(SpiritAttack.dashMask);
+        spiritMove.isDashing = true;
         gameManager.audioManager.Stop("Spirit_Move");
         gameManager.audioManager.Play("Spirit_Return");
         Together = true;

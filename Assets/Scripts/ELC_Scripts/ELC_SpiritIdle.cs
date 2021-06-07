@@ -38,9 +38,11 @@ public class ELC_SpiritIdle : MonoBehaviour
             if (CharaManager.Together)
             {
                 Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
-                if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
+                if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < DistanceToStayWhenTogether)
                 {
                     closeToRyn = true;
+                    CharaManager.spiritMove.isDashing = false;
+                    CharaManager.SpiritGO.layer = LayerMask.NameToLayer(CharaManager.SpiritAttack.defaultMask);
                     CharaManager.spiritMove.rb.velocity = dir * NearSpeedMultiplicator; //Si l'esprit commence � �tre proche du joueur on ralentit
                 }
                 else
@@ -67,6 +69,8 @@ public class ELC_SpiritIdle : MonoBehaviour
         CharaManager.IdenAnimator.SetBool("Dash", false);
         transform.position = targetPos;
         closeToRyn = true;
+        CharaManager.spiritMove.isDashing = false;
+        CharaManager.SpiritGO.layer = LayerMask.NameToLayer(CharaManager.SpiritAttack.defaultMask);
     }
     public void Teleport(Vector2 targetLocation)
     {
@@ -75,6 +79,8 @@ public class ELC_SpiritIdle : MonoBehaviour
         CharaManager.IdenAnimator.SetBool("Dash", false);
         transform.position = targetLocation;
         closeToRyn = true;
+        CharaManager.spiritMove.isDashing = false;
+        CharaManager.SpiritGO.layer = LayerMask.NameToLayer(CharaManager.SpiritAttack.defaultMask);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
