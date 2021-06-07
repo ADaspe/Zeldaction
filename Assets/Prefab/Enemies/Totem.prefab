@@ -162,6 +162,7 @@ MonoBehaviour:
   isTotem: 0
   isBrambles: 0
   rbInteractObject: {fileID: 0}
+  maxDistanceFromObstacle: 0
 --- !u!61 &5697138928547135056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,6 +275,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   EnemiesToProtect: []
+  effects:
+  - {fileID: 1378665606543411218}
+  - {fileID: 7832539509819126506}
 --- !u!1 &5697138928951463135
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +433,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 632818c952eeb1b419935006db86fcd8, type: 3}
+--- !u!1 &7832539509819126506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1881072612324493272, guid: 632818c952eeb1b419935006db86fcd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8550133081039336754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6089039120383825984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2461411179432848754, guid: 632818c952eeb1b419935006db86fcd8,
