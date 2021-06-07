@@ -449,7 +449,7 @@ public class ELC_CharacterManager : MonoBehaviour
         followingCharacter = RynMove;
         RynMove.currentCharacter = true;
         vCam.Follow = RynMove.transform;
-        SpiritGO.GetComponent<Collider2D>().enabled = false;
+        //SpiritGO.GetComponent<Collider2D>().enabled = false;
         SpiritGO.GetComponent<ELC_SpiritIdle>().disabled = false;
         ResetProjection();
     }
