@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,6 +31,8 @@ public class ELC_BossManager : MonoBehaviour
     [HideInInspector]
     public FLC_BossDynamicMusicFonctions music;
     public bool isStunned;
+    public bool inCinematic;
+    public GameObject endDialogue;
 
     private void Awake()
     {
@@ -78,6 +80,12 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator Intro()
     {
+        inCinematic = true;
+        IsInSwitchPhase = true;
+        BossMoves.CanMove = false;
+        Debug.Log("cinï¿½matique_boss");
+        yield return new WaitWhile(() => inCinematic);
+
         BossMoves.distToStopNearTarget = BossMoves.BasicDistToStopNearPlayer;
         IsInSwitchPhase = true;
         BossMoves.CanMove = false;
@@ -88,9 +96,9 @@ public class ELC_BossManager : MonoBehaviour
         yield return new WaitForSeconds(GrowlAnimationTime);
         music.MusicsStart();
         StartCoroutine(BossAttacks.Fade());
-        Debug.Log("Invisibilité");
+        Debug.Log("InvisibilitÃ©");
         yield return new WaitForSeconds(InvisibilityShaderTime);
-        Debug.Log("début phase 1");
+        Debug.Log("dÃ©but phase 1");
         IsInSwitchPhase = false;
         BossMoves.CanMove = true;
         CamScript.CancelCamFocus();
@@ -190,7 +198,8 @@ public class ELC_BossManager : MonoBehaviour
 
     public IEnumerator End()
     {
-        //Bullshit du boss qui donne envie de chialax parceque ce jeu était trop émotionnellement rude et que cela va créer un manque chez le joueur qui va pas pouvoir dormir pendant des nuits et va chercher à aller aider Ryn en allant dans le monde des esprits comme ces débiles qui foncent dans les poteaux de toutes les gares pour aller à Poudlard.
+        //Bullshit du boss qui donne envie de chialax parceque ce jeu Ã©tait trop Ã©motionnellement rude et que cela va crÃ©er un manque chez le joueur qui va pas pouvoir dormir pendant des nuits et va chercher Ã  aller aider Ryn en allant dans le monde des esprits comme ces dÃ©biles qui foncent dans les poteaux de toutes les gares pour aller Ã  Poudlard.
+        endDialogue.SetActive(true);
         Debug.Log("Adieu");
         //Shader de dissolve
         yield return new WaitForSeconds(1); //mettre le temps de dissolve
@@ -199,6 +208,10 @@ public class ELC_BossManager : MonoBehaviour
 
     }
 
+    public void StartFight()
+    {
+        inCinematic = false;
+    }
     
 
 
