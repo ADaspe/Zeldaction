@@ -38,7 +38,7 @@ public class ELC_SpiritIdle : MonoBehaviour
             if (CharaManager.Together)
             {
                 Vector2 dir = new Vector2(targetPos.x - this.transform.position.x, targetPos.y - this.transform.position.y); //La direction pour rejoindre le point d'idle de l'esprit
-                if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < DistanceToStayWhenTogether)
+                if (Vector2.Distance(new Vector2(targetPos.x, targetPos.y), this.transform.position) < MaxSpeed)
                 {
                     closeToRyn = true;
                     CharaManager.spiritMove.isDashing = false;
