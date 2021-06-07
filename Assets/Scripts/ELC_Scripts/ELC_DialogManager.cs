@@ -39,7 +39,7 @@ public class ELC_DialogManager : MonoBehaviour
             item.SetActive(false);
         }
         DialogGameObject.SetActive(true);
-        camSwitchScript.SwitchCamFocus(CharacterGO.transform);
+        camSwitchScript.SwitchCamFocus(CharacterGO.transform, false);
         CurrentDialSO = dialSO;
         isRandomDialog = randomDial;
         CurrentLineIndex = 0;
