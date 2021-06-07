@@ -301,7 +301,16 @@ MonoBehaviour:
   ActivateOnDisable: 0
   jingleOnFirstOpen: 0
   IsOpenAtStart: 0
+  Pollen: 0
+  PollenParticles: {fileID: 4872496406181500052}
   audioManager: {fileID: 0}
+  openSound: 
+  closeSound: 
+  openingCinematic: 0
+  cinematicDuration: 2
+  charaMana: {fileID: 0}
+  vCam: {fileID: 0}
+  playerInput: {fileID: 0}
 --- !u!61 &8355251534706335222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -421,6 +430,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5e6b093570e1c40ae369840ac6df89, type: 3}
+--- !u!1 &4872496406181500052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 343895068391605740, guid: ed5e6b093570e1c40ae369840ac6df89,
+    type: 3}
+  m_PrefabInstance: {fileID: 5141799144807813496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8911722425180536382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4393150661733773126, guid: ed5e6b093570e1c40ae369840ac6df89,

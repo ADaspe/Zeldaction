@@ -393,6 +393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843035624213004796, guid: bbde329e77cb5d745b494ad1351a9178,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -14159,6 +14164,100 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1382079681}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1968462839
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568928446573367840, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615710102491032833, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: GameManagerScript
+      value: 
+      objectReference: {fileID: 1868863768}
+    - target: {fileID: 4794218971470581621, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_Name
+      value: MushSpawn (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794218971470581621, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114628119585244884, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1868863768}
+    - target: {fileID: 8896420079407657467, guid: ec62fce0676dd1f4289cec9412c84418,
+        type: 3}
+      propertyPath: isActivated
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec62fce0676dd1f4289cec9412c84418, type: 3}
 --- !u!1 &1984659285
 GameObject:
   m_ObjectHideFlags: 0
@@ -14459,7 +14558,7 @@ PrefabInstance:
     - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
       propertyPath: ExplodingMushroomMask.m_Bits
-      value: 74240
+      value: 74496
       objectReference: {fileID: 0}
     - target: {fileID: 51745464285039160, guid: 776eb60a9d942854191078cad129bb32,
         type: 3}
@@ -15214,7 +15313,7 @@ PrefabInstance:
     - target: {fileID: 3721872750462281911, guid: 5dd35d9ac7599494c9682c8c78a3901e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3721872751040482735, guid: 5dd35d9ac7599494c9682c8c78a3901e,
         type: 3}
@@ -16254,12 +16353,12 @@ PrefabInstance:
     - target: {fileID: 9173012788802152867, guid: 02595277536aed641a8cc25104651540,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.74
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 9173012788802152867, guid: 02595277536aed641a8cc25104651540,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 9173012788802152867, guid: 02595277536aed641a8cc25104651540,
         type: 3}

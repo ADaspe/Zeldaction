@@ -23,7 +23,7 @@ MonoBehaviour:
     - DialLine: I am always watching..
       Sound: 
       RynSentence: 0
-    ThereIsEvent: 0
+    ThereIsEvent: 1
   RandomDialog:
   - Dialogs:
     - DialLine: 
