@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurifyParticles: {fileID: 0}
+  CorruptedBrambles: {fileID: 0}
   leftLock: 0
   rightLock: 0
   upLock: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
   isTotem: 0
   isBrambles: 0
   rbInteractObject: {fileID: 0}
+  maxDistanceFromObstacle: 0.3
 --- !u!61 &4442949660125393151
 BoxCollider2D:
   m_ObjectHideFlags: 0
