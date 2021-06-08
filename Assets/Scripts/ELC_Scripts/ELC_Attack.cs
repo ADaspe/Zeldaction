@@ -111,6 +111,7 @@ public class ELC_Attack : MonoBehaviour
         NextShield = Time.time + CharManager.stats.ShieldDuration + CharManager.stats.ShieldCooldown;
         ShieldPS.Play();
         ShieldGO.GetComponent<Animator>().SetBool("ActivateShield", true);
+        ShieldGO.transform.localPosition = Vector3.zero;
 
         Invoke("RynLoseShield", CharManager.stats.ShieldDuration);
     }
