@@ -1589,7 +1589,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 4.470251795277001
     m_PreExtrapolationTime: 0
-    m_DisplayName: BlackScreen_all_FadeIn
+    m_DisplayName: BlackScreen_all_FadeOut
   - m_Version: 1
     m_Start: 52.08691846194367
     m_ClipIn: 0
@@ -3257,7 +3257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 5d4b9911c0828724090d257a46480a0c, type: 2}
+  m_Clip: {fileID: 7400000, guid: 48a86950421eeea4b86a1e8af91407a0, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
